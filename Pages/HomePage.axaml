@@ -1,0 +1,29 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.HomePage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Spacing="20">
+            <TextBlock Text="Welcome to AlgoStart"
+                     FontSize="32"
+                     FontWeight="Bold"
+                     HorizontalAlignment="Center"/>
+            
+            <TextBlock Text="Your Algorithmic Journey Begins Here"
+                     FontSize="20"
+                     Foreground="#666666"
+                     HorizontalAlignment="Center"/>
+            
+            <TextBlock Text="Select an option from the menu to get started"
+                     FontSize="16"
+                     Foreground="#888888"
+                     HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
