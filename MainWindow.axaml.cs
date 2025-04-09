@@ -2,12 +2,16 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages;
+using Avalonia.Styling;
+using Avalonia.Media;
+using Avalonia;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
     public partial class SortProgram : Window
     {
         private Button? currentSelectedButton;
+        private bool isDarkTheme = false; // Default to light theme
 
         public SortProgram()
         {
@@ -15,6 +19,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             HomeButton?.Classes.Remove("selected");
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
+            
+            // Set initial theme to light
+            if (Application.Current != null)
+            {
+                Application.Current.RequestedThemeVariant = ThemeVariant.Light;
+            }
         }
 
         private void UpdateSelectedButton(Button? newSelectedButton)
@@ -83,6 +93,44 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             LoginWindow.LoginWindow loginWindow = new LoginWindow.LoginWindow();
             loginWindow.Show();
             this.Hide();
+        }
+
+        private void ToggleTheme(object? sender, RoutedEventArgs e)
+        {
+            isDarkTheme = !isDarkTheme;
+            
+            // Update the application theme
+            if (Application.Current != null)
+            {
+                Application.Current.RequestedThemeVariant = isDarkTheme ? ThemeVariant.Dark : ThemeVariant.Light;
+            }
+            
+            // Update the theme button icon and text
+            var themeIcon = this.FindControl<TextBlock>("ThemeIcon");
+            var themeText = this.FindControl<TextBlock>("ThemeText");
+            
+            if (themeIcon != null && themeText != null)
+            {
+                if (isDarkTheme)
+                {
+                    themeIcon.Text = "🌙";
+                    themeText.Text = "Темна тема";
+                }
+                else
+                {
+                    themeIcon.Text = "☀️";
+                    themeText.Text = "Світла тема";
+                }
+            }
+            
+            // Update the main content background color
+            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
+            if (mainContentGrid != null)
+            {
+                mainContentGrid.Background = isDarkTheme 
+                    ? new SolidColorBrush(Color.Parse("#1E1E2F")) 
+                    : new SolidColorBrush(Color.Parse("#F0F8FF"));
+            }
         }
     }
 }

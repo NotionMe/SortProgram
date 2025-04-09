@@ -18,7 +18,7 @@
                         Easing="CubicEaseOut"
                         Property="Width"
                         Duration="0:0:0.2" />
-                </Transitions>
+                </Transitions> 
             </Setter>
         </Style>
 
@@ -181,17 +181,28 @@
                 </Button>
             </StackPanel>
 
-            <!-- Кнопка для виходу з програми -->
-            <Button Grid.Row="1" Classes="navButton" Click="ExitButton_Click">
-                <DockPanel LastChildFill="True">
-                    <TextBlock Classes="navIcon" Text="🚪" />
-                    <TextBlock Classes="navText" Text="Вихід" />
-                </DockPanel>
-            </Button>
+            <!-- Нижні кнопки -->
+            <StackPanel Grid.Row="1">
+                <!-- Кнопка перемикання теми -->
+                <Button Name="ThemeButton" Classes="navButton" Click="ToggleTheme">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Name="ThemeIcon" Classes="navIcon" Text="☀️" />
+                        <TextBlock Name="ThemeText" Classes="navText" Text="Світла тема" />
+                    </DockPanel>
+                </Button>
+                
+                <!-- Кнопка для виходу з програми -->
+                <Button Classes="navButton" Click="ExitButton_Click">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Classes="navIcon" Text="🚪" />
+                        <TextBlock Classes="navText" Text="Вихід" />
+                    </DockPanel>
+                </Button>
+            </StackPanel>
         </Grid>
 
         <!-- Основний вміст сторінки -->
-        <Grid Background="#F0F8FF">
+        <Grid Name="MainContentGrid" Background="#F0F8FF">
             <ContentControl Name="PageContent" />
         </Grid>
     </DockPanel>

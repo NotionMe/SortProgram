@@ -64,3 +64,4 @@
 /home/linux/Repos/Praktika/SortProgram/obj/Debug/net9.0/Practika.FCEDA048.Up2Date
 /home/linux/Repos/Praktika/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/linux/Repos/Praktika/SortProgram/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
+/home/linux/Repos/Praktika/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.sourcelink.json
