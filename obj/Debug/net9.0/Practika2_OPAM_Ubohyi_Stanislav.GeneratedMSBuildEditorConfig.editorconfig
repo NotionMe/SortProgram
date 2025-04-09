@@ -42,5 +42,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Pages/StatisticsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/linux/Repos/Praktika/SortProgram/Styles/GlobalStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/linux/Repos/Praktika/SortProgram/Styles/LoginStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
