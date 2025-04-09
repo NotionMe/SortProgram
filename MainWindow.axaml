@@ -3,105 +3,17 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
+    xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
+    xmlns:conv="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Converters"
     Title="AlgoStart"
-    Width="1000"
-    Height="700"
+    Width="1260"
+    Height="800"
     WindowStartupLocation="CenterScreen">
-
-    <Window.Styles>
-        <Style Selector="Grid.sideMenu">
-            <Setter Property="Width" Value="50" />
-            <Setter Property="Background" Value="#1E1E2F" /> 
-            <Setter Property="Transitions">
-                <Transitions>
-                    <DoubleTransition
-                        Easing="CubicEaseOut"
-                        Property="Width"
-                        Duration="0:0:0.2" />
-                </Transitions> 
-            </Setter>
-        </Style>
-
-        <Style Selector="Grid.sideMenu:pointerover">
-            <Setter Property="Width" Value="200" />
-        </Style>
-
-        <Style Selector="Button.navButton">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Height" Value="50" />
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="Foreground" Value="#E0E0E0" />
-            <Setter Property="CornerRadius" Value="25" />
-            <Setter Property="Transitions">
-                <Transitions>
-                    <BrushTransition Property="Background" Duration="0:0:0.3" />
-                </Transitions>
-            </Setter>
-        </Style>
-
-        <Style Selector="Button.navButton:pointerover">
-            <Setter Property="Background" Value="#00A8E8" />
-        </Style>
-
-        <Style Selector="Button.navButton.selected">
-            <Setter Property="Background" Value="#0078D4" />
-        </Style>
-
-        <Style Selector="TextBlock.navText">
-            <Setter Property="Foreground" Value="#E0E0E0" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="IsVisible" Value="False" />
-            <Setter Property="Margin" Value="15,0,0,0" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-        </Style>
-
-        <Style Selector="Grid.sideMenu:pointerover TextBlock.navText">
-            <Setter Property="IsVisible" Value="True" />
-        </Style>
-
-        <Style Selector="TextBlock.navIcon">
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Width" Value="20" />
-            <Setter Property="Height" Value="20" />
-            <Setter Property="TextAlignment" Value="Left" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="Margin" Value="10,0,0,0" />
-            <Setter Property="Foreground" Value="#ffff" />
-        </Style>
-
-        <Style Selector="Button.titleBarButton">
-            <Setter Property="Width" Value="45"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Foreground" Value="#E0E0E0"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        </Style>
-
-        <Style Selector="Button.titleBarButton:pointerover">
-            <Setter Property="Background" Value="#404040"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-        </Style>
-
-        <Style Selector="Button.closeButton:pointerover">
-            <Setter Property="Background" Value="#DC3545"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-        </Style>
-    </Window.Styles>
 
     <DockPanel>
         <!-- Верхня панель з назвою програми та кнопками управління вікном -->
         <Border
-            Height="30"
-            Background="#1E1E2F"
+            Classes="titleBar"
             DockPanel.Dock="Top">
             <Grid>
                 <TextBlock 
@@ -111,56 +23,70 @@
                     FontWeight="Bold"
                     VerticalAlignment="Center"
                     Margin="15,0,0,0"/>
-                <StackPanel
-                    HorizontalAlignment="Right"
-                    Orientation="Horizontal"
-                    Spacing="5">
+                <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
                     <!-- Кнопка мінімізації вікна -->
-                    <Button
+                    <Button 
+                        Grid.Column="0"
                         Name="MinimizeButton"
                         Classes="titleBarButton"
                         Click="MinimizeWindow">
-                        <TextBlock Text="➖" FontFamily="Segoe UI" FontSize="14"/>
+                        <TextBlock Text="−" FontFamily="Segoe UI" Margin="0,0,0,0"/>
                     </Button>
+                    
                     <!-- Кнопка максимізації вікна -->
-                    <Button
+                    <Button 
+                        Grid.Column="1"
                         Name="MaximizeButton"
                         Classes="titleBarButton"
                         Click="MaximizeWindow">
-                        <TextBlock Text="⬜" FontFamily="Segoe UI" FontSize="14"/>
+                        <TextBlock Text="□" FontFamily="Segoe UI" Margin="0,-7,0,0"/>
                     </Button>
+                    
                     <!-- Кнопка закриття вікна -->
-                    <Button
+                    <Button 
+                        Grid.Column="2"
                         Name="CloseButton"
                         Classes="titleBarButton closeButton"
                         Click="CloseWindow">
-                        <TextBlock Text="✖" FontFamily="Segoe UI" FontSize="14"/>
+                        <TextBlock Text="×" FontFamily="Segoe UI" Margin="0,0,0,0"/>
                     </Button>
-                </StackPanel>
+                </Grid>
             </Grid>
         </Border>   
 
         <!-- Бічне меню навігації -->
         <Grid Classes="sideMenu" DockPanel.Dock="Left">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
+            <!-- Логотип та назва -->
+            <StackPanel Grid.Row="0" Margin="15,15,0,20">
+                <TextBlock Name="AppTitle" Text="SortProgram" FontWeight="Bold" Foreground="#E0E0E0" FontSize="16" Classes="navText" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
                 <!-- Кнопка для переходу на головну сторінку -->
-                <Button Name="HomeButton" Classes="navButton selected" Click="NavigateToHome">
+                <Button Name="HomeButton" Classes="navButton" Click="NavigateToHome">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🏡" />
                         <TextBlock Classes="navText" Text="Home" />
                     </DockPanel>
                 </Button>
 
-                <!-- Кнопка для переходу на сторінку алгоритмів сортування -->
+                <!-- Кнопка для переходу на сторінку списку таблиць -->
                 <Button Name="SortingButton" Classes="navButton" Click="NavigateToSorting">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="📈" />
-                        <TextBlock Classes="navText" Text="Sorting Algorithms" />
+                        <TextBlock Classes="navText" Text="Sorting" />
                     </DockPanel>
                 </Button>
 
@@ -182,12 +108,12 @@
             </StackPanel>
 
             <!-- Нижні кнопки -->
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="2" Margin="0,0,0,10">
                 <!-- Кнопка перемикання теми -->
                 <Button Name="ThemeButton" Classes="navButton" Click="ToggleTheme">
                     <DockPanel LastChildFill="True">
                         <TextBlock Name="ThemeIcon" Classes="navIcon" Text="☀️" />
-                        <TextBlock Name="ThemeText" Classes="navText" Text="Світла тема" />
+                        <TextBlock Name="ThemeText" Classes="navText" Text="Light Theme" />
                     </DockPanel>
                 </Button>
                 
@@ -195,14 +121,14 @@
                 <Button Classes="navButton" Click="ExitButton_Click">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🚪" />
-                        <TextBlock Classes="navText" Text="Вихід" />
+                        <TextBlock Classes="navText" Text="Logout" />
                     </DockPanel>
                 </Button>
             </StackPanel>
         </Grid>
 
         <!-- Основний вміст сторінки -->
-        <Grid Name="MainContentGrid" Background="#F0F8FF">
+        <Grid Name="MainContentGrid" Classes="ThemeLight">
             <ContentControl Name="PageContent" />
         </Grid>
     </DockPanel>

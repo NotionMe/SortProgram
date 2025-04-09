@@ -110,12 +110,24 @@
     
     <Style Selector="Button.CloseButton:pointerover">
         <Setter Property="Foreground" Value="#FF0000"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <Style Selector="Button.CloseButton:pointerover TextBlock">
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Foreground" Value="#FF0000"/>
     </Style>
     
     <!-- Checkbox Style -->
     <Style Selector="CheckBox.RememberCheckbox">
         <Setter Property="Foreground" Value="#505050"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <Style Selector="CheckBox.RememberCheckbox:pointerover">
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Foreground" Value="#505050"/>
     </Style>
     
     <!-- Forgot Password Text Style -->
@@ -123,6 +135,12 @@
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="#5a65ba"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <Style Selector="TextBlock.ForgotPasswordText:pointerover">
+        <Setter Property="Foreground" Value="#4a55aa"/>
+        <Setter Property="Opacity" Value="1"/>
     </Style>
     
     <!-- Footer Text Style -->
@@ -143,11 +161,18 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Opacity" Value="1"/>
     </Style>
     
     <Style Selector="Button.EyeButton:pointerover">
         <Setter Property="Background" Value="#f0f0f0"/>
         <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <Style Selector="Button.EyeButton:pointerover TextBlock">
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Foreground" Value="#505050"/>
     </Style>
     
     <Style Selector="Button.EyeButton:pressed">

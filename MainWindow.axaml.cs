@@ -5,6 +5,7 @@ using Practika2_OPAM_Ubohyi_Stanislav.Pages;
 using Avalonia.Styling;
 using Avalonia.Media;
 using Avalonia;
+using System.Diagnostics;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
@@ -12,11 +13,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
     {
         private Button? currentSelectedButton;
         private bool isDarkTheme = false; // Default to light theme
+        public bool IsDarkTheme => isDarkTheme;
 
         public SortProgram()
         {
             InitializeComponent();
-            HomeButton?.Classes.Remove("selected");
+            // Встановлюємо початкову сторінку та вибраний пункт меню
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
             
@@ -98,7 +100,20 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         private void ToggleTheme(object? sender, RoutedEventArgs e)
         {
             isDarkTheme = !isDarkTheme;
-            
+            ApplyTheme();
+        }
+
+        public void ToggleThemeFromSettings(bool isDark)
+        {
+            if (isDarkTheme != isDark)
+            {
+                isDarkTheme = isDark;
+                ApplyTheme();
+            }
+        }
+
+        private void ApplyTheme()
+        {
             // Update the application theme
             if (Application.Current != null)
             {
@@ -114,23 +129,35 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 if (isDarkTheme)
                 {
                     themeIcon.Text = "🌙";
-                    themeText.Text = "Темна тема";
+                    themeText.Text = "Dark Theme";
                 }
                 else
                 {
                     themeIcon.Text = "☀️";
-                    themeText.Text = "Світла тема";
+                    themeText.Text = "Light Theme";
                 }
             }
             
-            // Update the main content background color
+            // Update the main content background using theme classes
             var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
             if (mainContentGrid != null)
             {
-                mainContentGrid.Background = isDarkTheme 
-                    ? new SolidColorBrush(Color.Parse("#1E1E2F")) 
-                    : new SolidColorBrush(Color.Parse("#F0F8FF"));
+                // Remove both theme classes first
+                mainContentGrid.Classes.Remove("ThemeLight");
+                mainContentGrid.Classes.Remove("ThemeDark");
+                
+                // Add the appropriate theme class
+                if (isDarkTheme)
+                {
+                    mainContentGrid.Classes.Add("ThemeDark");
+                }
+                else
+                {
+                    mainContentGrid.Classes.Add("ThemeLight");
+                }
             }
+
+            Debug.WriteLine($"Theme changed to {(isDarkTheme ? "Dark" : "Light")}");
         }
     }
 }

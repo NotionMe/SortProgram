@@ -15,7 +15,9 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new Practika2_OPAM_Ubohyi_Stanislav.LoginWindow.LoginWindow();
+            //desktop.MainWindow = new Practika2_OPAM_Ubohyi_Stanislav.LoginWindow.LoginWindow();
+            SortProgram mainWindow = new SortProgram();
+            mainWindow.Show();
         }
 
         base.OnFrameworkInitializationCompleted();

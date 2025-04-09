@@ -1,10 +1,34 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Practika2_OPAM_Ubohyi_Stanislav.App"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Light">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="/Styles/GlobalStyles.axaml" />
+        <StyleInclude Source="/Styles/LoginStyles.axaml" />
     </Application.Styles>
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="OswaldFont">avares://Practika2_OPAM_Ubohyi_Stanislav/Fonts/Oswald-VariableFont_wght.ttf#Oswald</FontFamily>
+            <FontFamily x:Key="AnonymousPro">avares://Practika2_OPAM_Ubohyi_Stanislav/Fonts/AnonymousPro-Regular.ttf#Anonymous Pro</FontFamily>
+            <ResourceDictionary.ThemeDictionaries>
+                <!-- Light theme resources -->
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SystemAccentColor">#555555</Color>
+                    <SolidColorBrush x:Key="SystemControlBackgroundAccentBrush" Color="#555555"/>
+                    <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#555555"/>
+                </ResourceDictionary>
+                
+                <!-- Dark theme resources -->
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SystemAccentColor">#555555</Color>
+                    <SolidColorBrush x:Key="SystemControlBackgroundAccentBrush" Color="#555555"/>
+                    <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#555555"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

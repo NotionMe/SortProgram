@@ -1,5 +1,5 @@
-using System;
 using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -8,11 +8,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
         }
     }
 }

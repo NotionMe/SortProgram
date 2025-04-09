@@ -1,0 +1,350 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ==================== -->
+    <!-- THEME COLORS         -->
+    <!-- ==================== -->
+    <Style Selector="Grid.ThemeDark">
+        <Setter Property="Background" Value="#333333"/>
+    </Style>
+    
+    <Style Selector="Grid.ThemeLight">
+        <Setter Property="Background" Value="#FFFFFF"/>
+    </Style>
+
+    <!-- ==================== -->
+    <!-- SIDEBAR STYLES       -->
+    <!-- ==================== -->
+    <Style Selector="Grid.sideMenu">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Background" Value="#333333" /> 
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition
+                    Easing="CubicEaseOut"
+                    Property="Width"
+                    Duration="0:0:0.2" />
+            </Transitions> 
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.sideMenu:pointerover">
+        <Setter Property="Width" Value="250" />
+    </Style>
+
+    <Style Selector="Button.navButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Margin" Value="0,2" />
+        <Setter Property="Padding" Value="15,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="#E0E0E0" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.3" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button.navButton:pointerover">
+        <Setter Property="Background" Value="#555555" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected">
+        <Setter Property="Background" Value="#0078D4" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+
+    <Style Selector="TextBlock.navText">
+        <Setter Property="Foreground" Value="#E0E0E0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="IsVisible" Value="False" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Grid.sideMenu:pointerover TextBlock.navText">
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navText">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+    
+    <Style Selector="Button.navButton:pointerover TextBlock.navText">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="TextBlock.navIcon">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="#E0E0E0" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navIcon">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+    
+    <Style Selector="Button.navButton:pointerover TextBlock.navIcon">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- TITLE BAR STYLES     -->
+    <!-- ==================== -->
+    <Style Selector="Border.titleBar">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Background" Value="#333333" />
+    </Style>
+    
+    <Style Selector="Button.titleBarButton">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="#E0E0E0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.titleBarButton TextBlock">
+        <Setter Property="Foreground" Value="#E0E0E0"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    
+    <Style Selector="Button.titleBarButton:pointerover">
+        <Setter Property="Background" Value="#444444"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.titleBarButton.closeButton:pointerover">
+        <Setter Property="Background" Value="#E81123"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.titleBarButton:pointerover TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.titleBarButton.closeButton:pointerover TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="TextBlock.sectionTitle">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,10,0,10"/>
+    </Style>
+    
+    <Style Selector="Border.card">
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="BorderBrush" Value="#DDDDDD"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="15"/>
+        <Setter Property="Margin" Value="0,0,0,15"/>
+        <Setter Property="BoxShadow" Value="0 2 4 #20000000"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- BUTTON STYLES        -->
+    <!-- ==================== -->
+    <Style Selector="Button.primaryButton">
+        <Setter Property="Background" Value="#555555"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.primaryButton:pointerover">
+        <Setter Property="Background" Value="#666666"/>
+    </Style>
+    
+    <Style Selector="Button.primaryButton:pressed">
+        <Setter Property="Background" Value="#777777"/>
+    </Style>
+    
+    <Style Selector="Button.secondaryButton">
+        <Setter Property="Background" Value="#6c757d"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.secondaryButton:pointerover">
+        <Setter Property="Background" Value="#5a6268"/>
+    </Style>
+    
+    <Style Selector="Button.secondaryButton:pressed">
+        <Setter Property="Background" Value="#4e555b"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- FORM CONTROL STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBox.formControl">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="TextBox.formControl:focus">
+        <Setter Property="BorderBrush" Value="#555555"/>
+    </Style>
+    
+    <Style Selector="ComboBox.formControl">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="ComboBox.formControl:focus">
+        <Setter Property="BorderBrush" Value="#555555"/>
+    </Style>
+    
+    <Style Selector="CheckBox.formControl">
+        <Setter Property="Margin" Value="0,5"/>
+    </Style>
+    
+    <Style Selector="TextBlock.formLabel">
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- TABLE STYLES         -->
+    <!-- ==================== -->
+    <Style Selector="DataGrid.dataTable">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#dee2e6"/>
+        <Setter Property="GridLinesVisibility" Value="All"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#dee2e6"/>
+        <Setter Property="VerticalGridLinesBrush" Value="#dee2e6"/>
+    </Style>
+    
+    <Style Selector="DataGridColumnHeader">
+        <Setter Property="Background" Value="#f8f9fa"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    
+    <Style Selector="DataGridRow">
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    
+    <Style Selector="DataGridCell">
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- FLUENT DESIGN STYLES -->
+    <!-- ==================== -->
+    <Style Selector="Border.fluentCard">
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="BorderBrush" Value="#EEEEEE"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+        <Setter Property="BoxShadow" Value="0 2 8 #10000000"/>
+    </Style>
+    
+    <Style Selector=".ThemeDark Border.fluentCard">
+        <Setter Property="Background" Value="#3A3A3A"/>
+        <Setter Property="BorderBrush" Value="#444444"/>
+    </Style>
+    
+    <Style Selector="Button.fluentButton">
+        <Setter Property="Background" Value="#555555"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="16,10"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.fluentButton:pointerover">
+        <Setter Property="Background" Value="#666666"/>
+    </Style>
+    
+    <Style Selector="Button.fluentButton:pressed">
+        <Setter Property="Background" Value="#777777"/>
+    </Style>
+</Styles>
