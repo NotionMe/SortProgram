@@ -82,10 +82,12 @@
     
     <Style Selector="Button.infoButton:pointerover">
         <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
     
     <Style Selector="Button.infoButton:pressed">
         <Setter Property="Background" Value="#1f618d"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
     
     <!-- ==================== -->
@@ -136,30 +138,6 @@
     <Style Selector="Button.navButton.selected">
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}"/>
         <Setter Property="Foreground" Value="White"/>
-    </Style>
-    
-    <!-- ==================== -->
-    <!-- LOGIN BUTTONS        -->
-    <!-- ==================== -->
-    <Style Selector="Button.loginButton">
-        <Setter Property="Height" Value="45"/>
-        <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontWeight" Value="Medium"/>
-        <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Margin" Value="0,10,0,0"/>
-    </Style>
-    
-    <Style Selector="Button.loginButton:pointerover">
-        <Setter Property="Background" Value="{StaticResource AccentDarkColor}"/>
-    </Style>
-    
-    <Style Selector="Button.loginButton:pressed">
-        <Setter Property="Background" Value="#3a45aa"/>
     </Style>
     
     <!-- ==================== -->

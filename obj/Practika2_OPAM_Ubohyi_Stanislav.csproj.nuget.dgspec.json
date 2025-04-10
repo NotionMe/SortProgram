@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
+    "/home/linux/Repos/Praktika/SortProgram-1/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
   },
   "projects": {
-    "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
+    "/home/linux/Repos/Praktika/SortProgram-1/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "projectUniqueName": "/home/linux/Repos/Praktika/SortProgram-1/Practika2_OPAM_Ubohyi_Stanislav.csproj",
         "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-        "projectPath": "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "projectPath": "/home/linux/Repos/Praktika/SortProgram-1/Practika2_OPAM_Ubohyi_Stanislav.csproj",
         "packagesPath": "/home/linux/.nuget/packages/",
-        "outputPath": "/home/linux/Repos/Praktika/SortProgram/obj/",
+        "outputPath": "/home/linux/Repos/Praktika/SortProgram-1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/linux/.nuget/NuGet/NuGet.Config"
@@ -59,6 +59,10 @@
             "Avalonia.Fonts.Inter": {
               "target": "Package",
               "version": "[11.2.6, )"
+            },
+            "Avalonia.Svg.Skia": {
+              "target": "Package",
+              "version": "[11.2.0.2, )"
             },
             "Avalonia.Themes.Fluent": {
               "target": "Package",

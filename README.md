@@ -150,6 +150,10 @@ SortProgram/
 <div align="center">
   <p><i>Приклади інтерфейсу програми:</i></p>
   
+  | 🔐 Вхід в систему |
+  |-------------------|
+  | ![Login Menu](ImageProgram/LoginMenu.png) |
+  
   | 🌞 Світла тема | 🌙 Темна тема |
   |----------------|---------------|
   | ![Light Theme](ImageProgram/image.png) | ![Dark Theme](ImageProgram/image%20copy.png) |
@@ -193,4 +197,4 @@ SortProgram/
   
   <img src="https://img.shields.io/badge/Made%20with-❤️-red" alt="Made with love" />
   
-</div> 
+</div>

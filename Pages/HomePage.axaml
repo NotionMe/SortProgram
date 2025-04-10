@@ -87,33 +87,49 @@
                 </Border>
 
                 <!-- Info Buttons -->
-                <Button Grid.Column="0" Grid.Row="3" Content="Info" Classes="infoButton" Width="177" Height="32" 
+                <Button Grid.Column="0" Grid.Row="3" Content="Info" 
+                        Classes="primaryInfoButton" Width="177" Height="32" 
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         CornerRadius="20"
+                        Margin="0,0,5,15" 
                         FontFamily="{StaticResource AnonymousPro}"
-                        FontWeight="Regular" Margin="0,0,5,15" FontSize="20"
-                        HorizontalContentAlignment="Center"/>
+                        FontSize="20"
+                        FontWeight="Regular"
+                        HorizontalContentAlignment="Center"
+                        Name="InfoButton1"/>
                 
-                <Button Grid.Column="1" Grid.Row="3" Content="Info" Classes="infoButton" Width="177" Height="32" 
+                <Button Grid.Column="1" Grid.Row="3" Content="Info" 
+                        Classes="primaryInfoButton" Width="177" Height="32" 
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         CornerRadius="20"
+                        Margin="5,0,5,15" 
                         FontFamily="{StaticResource AnonymousPro}"
-                        FontWeight="Regular" Margin="5,0,5,15" FontSize="20"
-                        HorizontalContentAlignment="Center"/>
+                        FontSize="20"
+                        FontWeight="Regular"
+                        HorizontalContentAlignment="Center"
+                        Name="InfoButton2"/>
                 
-                <Button Grid.Column="2" Grid.Row="3" Content="Info" Classes="infoButton" Width="177" Height="32" 
+                <Button Grid.Column="2" Grid.Row="3" Content="Info" 
+                        Classes="primaryInfoButton" Width="177" Height="32" 
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         CornerRadius="20"
+                        Margin="5,0,5,15" 
                         FontFamily="{StaticResource AnonymousPro}"
-                        FontWeight="Regular" Margin="5,0,5,15" FontSize="20"
-                        HorizontalContentAlignment="Center"/>
+                        FontSize="20"
+                        FontWeight="Regular"
+                        HorizontalContentAlignment="Center"
+                        Name="InfoButton3"/>
                 
-                <Button Grid.Column="3" Grid.Row="3" Content="Info" Classes="infoButton" Width="177" Height="32" 
+                <Button Grid.Column="3" Grid.Row="3" Content="Info" 
+                        Classes="primaryInfoButton" Width="177" Height="32" 
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         CornerRadius="20"
+                        Margin="5,0,0,15" 
                         FontFamily="{StaticResource AnonymousPro}"
-                        FontWeight="Regular" Margin="5,0,0,15" FontSize="20"
-                        HorizontalContentAlignment="Center"/>
+                        FontSize="20"
+                        FontWeight="Regular"
+                        HorizontalContentAlignment="Center"
+                        Name="InfoButton4"/>
             </Grid>
         </StackPanel>
     </Grid>

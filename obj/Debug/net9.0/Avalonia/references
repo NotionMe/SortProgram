@@ -17,11 +17,13 @@
 /home/linux/.nuget/packages/avalonia/11.2.6/ref/net8.0/Avalonia.OpenGL.dll
 /home/linux/.nuget/packages/avalonia.remote.protocol/11.2.6/lib/net8.0/Avalonia.Remote.Protocol.dll
 /home/linux/.nuget/packages/avalonia.skia/11.2.6/lib/net8.0/Avalonia.Skia.dll
+/home/linux/.nuget/packages/avalonia.svg.skia/11.2.0.2/lib/net8.0/Avalonia.Svg.Skia.dll
 /home/linux/.nuget/packages/avalonia.themes.fluent/11.2.6/lib/net8.0/Avalonia.Themes.Fluent.dll
 /home/linux/.nuget/packages/avalonia.themes.simple/11.2.6/lib/net8.0/Avalonia.Themes.Simple.dll
 /home/linux/.nuget/packages/avalonia/11.2.6/ref/net8.0/Avalonia.Vulkan.dll
 /home/linux/.nuget/packages/avalonia.win32/11.2.6/lib/net8.0/Avalonia.Win32.dll
 /home/linux/.nuget/packages/avalonia.x11/11.2.6/lib/net8.0/Avalonia.X11.dll
+/home/linux/.nuget/packages/excss/4.2.3/lib/net7.0/ExCSS.dll
 /home/linux/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
 /home/linux/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/Microsoft.CSharp.dll
@@ -31,7 +33,12 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/Microsoft.Win32.Registry.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/mscorlib.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/netstandard.dll
+/home/linux/.nuget/packages/shimskiasharp/2.0.0.4/lib/net8.0/ShimSkiaSharp.dll
 /home/linux/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
+/home/linux/.nuget/packages/skiasharp.harfbuzz/2.88.8/lib/net6.0/SkiaSharp.HarfBuzz.dll
+/home/linux/.nuget/packages/svg.custom/2.0.0.4/lib/net8.0/Svg.Custom.dll
+/home/linux/.nuget/packages/svg.model/2.0.0.4/lib/net8.0/Svg.Model.dll
+/home/linux/.nuget/packages/svg.skia/2.0.0.4/lib/net8.0/Svg.Skia.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/System.AppContext.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/System.Buffers.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/System.Collections.Concurrent.dll

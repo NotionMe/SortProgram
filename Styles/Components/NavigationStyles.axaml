@@ -5,20 +5,8 @@
     <!-- SIDEBAR STYLES       -->
     <!-- ==================== -->
     <Style Selector="Grid.sideMenu">
-        <Setter Property="Width" Value="50" />
-        <Setter Property="Background" Value="{StaticResource DarkSideMenuBackground}" /> 
-        <Setter Property="Transitions">
-            <Transitions>
-                <DoubleTransition
-                    Easing="CubicEaseOut"
-                    Property="Width"
-                    Duration="0:0:0.2" />
-            </Transitions> 
-        </Setter>
-    </Style>
-
-    <Style Selector="Grid.sideMenu:pointerover">
         <Setter Property="Width" Value="250" />
+        <Setter Property="Background" Value="{StaticResource DarkSideMenuBackground}" /> 
     </Style>
 
     <!-- ==================== -->
@@ -27,15 +15,10 @@
     <Style Selector="TextBlock.navText">
         <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="IsVisible" Value="False" />
+        <Setter Property="IsVisible" Value="True" />
         <Setter Property="Margin" Value="15,0,0,0" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Opacity" Value="1" />
-    </Style>
-
-    <Style Selector="Grid.sideMenu:pointerover TextBlock.navText">
-        <Setter Property="IsVisible" Value="True" />
         <Setter Property="Opacity" Value="1" />
     </Style>
 

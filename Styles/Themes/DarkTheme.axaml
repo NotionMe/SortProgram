@@ -70,8 +70,18 @@
     </Style>
     
     <!-- Стилі для кнопок у темній темі -->
-    <Style Selector="Grid.ThemeDark Button.infoButton">
+    <Style Selector="Grid.ThemeDark Button.primaryInfoButton">
         <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style Selector="Grid.ThemeDark Button.primaryInfoButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style Selector="Grid.ThemeDark Button.primaryInfoButton:pressed">
+        <Setter Property="Background" Value="#1f618d"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
     

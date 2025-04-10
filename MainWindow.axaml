@@ -155,7 +155,7 @@
                 <Button Classes="navButton" Click="ExitButton_Click">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🚪" />
-                        <TextBlock Classes="navText" Text="Logout" />
+                        <TextBlock Classes="navText" Text="Exit" />
                     </DockPanel>
                 </Button>
             </StackPanel>

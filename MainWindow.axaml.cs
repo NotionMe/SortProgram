@@ -96,9 +96,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         public void ExitButton_Click(object? sender, RoutedEventArgs e)
         {
-            LoginWindow.LoginWindow loginWindow = new LoginWindow.LoginWindow();
-            loginWindow.Show();
-            this.Hide();
+            Environment.Exit(0);
         }
 
         private void ToggleTheme(object? sender, RoutedEventArgs e)
