@@ -1,0 +1,34 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ==================== -->
+    <!-- INFO BUTTON STYLES   -->
+    <!-- ==================== -->
+    
+    <!-- Основний стиль кнопок Info -->
+    <Style Selector="Button.primaryInfoButton">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <!-- Стиль для стану наведення курсора -->
+    <Style Selector="Button.primaryInfoButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <!-- Стиль для стану натискання -->
+    <Style Selector="Button.primaryInfoButton:pressed">
+        <Setter Property="Background" Value="#1f618d"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</Styles> 
