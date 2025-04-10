@@ -152,7 +152,7 @@ SortProgram/
   
   | 🌞 Світла тема | 🌙 Темна тема |
   |----------------|---------------|
-  | ![Light Theme]() | ![Dark Theme]() |
+  | ![Light Theme](ImageProgram/image.png) | ![Dark Theme](ImageProgram/image%20copy.png) |
   
 </div>
 
