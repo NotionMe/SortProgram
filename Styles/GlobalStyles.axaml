@@ -1,6 +1,67 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Імпорт кольорової палітри -->
+    <StyleInclude Source="/Styles/Colors.axaml"/>
+    
+    <!-- Імпорт тем -->
+    <StyleInclude Source="/Styles/Themes/LightTheme.axaml"/>
+    <StyleInclude Source="/Styles/Themes/DarkTheme.axaml"/>
+    
+    <!-- Імпорт стилів компонентів -->
+    <StyleInclude Source="/Styles/Components/ButtonStyles.axaml"/>
+    <StyleInclude Source="/Styles/Components/CardStyles.axaml"/>
+    <StyleInclude Source="/Styles/Components/FormStyles.axaml"/>
+    <StyleInclude Source="/Styles/Components/NavigationStyles.axaml"/>
+    
+    <!-- Імпорт стилів сторінок -->
+    <StyleInclude Source="/Styles/Pages/LoginStyles.axaml"/>
+    
+    <!-- ==================== -->
+    <!-- BASIC TEXT STYLES    -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.heading1">
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,0,0,16"/>
+    </Style>
+    
+    <Style Selector="TextBlock.heading2">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,0,0,12"/>
+    </Style>
+    
+    <Style Selector="TextBlock.heading3">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+    </Style>
+    
+    <Style Selector="TextBlock.paragraph">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+        <Setter Property="LineHeight" Value="1.5"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- LAYOUT STYLES        -->
+    <!-- ==================== -->
+    <Style Selector="Grid.container">
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+    
+    <Style Selector="StackPanel.section">
+        <Setter Property="Margin" Value="0,0,0,20"/>
+    </Style>
+    
+    <Style Selector="Border.separator">
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Background" Value="{StaticResource GreyMedium}"/>
+        <Setter Property="Margin" Value="0,10"/>
+    </Style>
+
     <!-- ==================== -->
     <!-- THEME COLORS         -->
     <!-- ==================== -->

@@ -1,13 +1,17 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Practika2_OPAM_Ubohyi_Stanislav.App"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Dark">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="/Styles/Colors.axaml" />
         <StyleInclude Source="/Styles/GlobalStyles.axaml" />
-        <StyleInclude Source="/Styles/LoginStyles.axaml" />
+        <StyleInclude Source="/Styles/Components/NavigationStyles.axaml" />
+        <StyleInclude Source="/Styles/Pages/LoginStyles.axaml" />
+        <StyleInclude Source="/Styles/Themes/DarkTheme.axaml" />
+        <StyleInclude Source="/Styles/Themes/LightTheme.axaml" />
     </Application.Styles>
     
     <Application.Resources>

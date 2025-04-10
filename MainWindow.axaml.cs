@@ -6,14 +6,15 @@ using Avalonia.Styling;
 using Avalonia.Media;
 using Avalonia;
 using System.Diagnostics;
+using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
     public partial class SortProgram : Window
     {
         private Button? currentSelectedButton;
-        private bool isDarkTheme = false; // Default to light theme
-        public bool IsDarkTheme => isDarkTheme;
+        // Використовуємо ThemeManager для керування темою
+        public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
         public SortProgram()
         {
@@ -22,11 +23,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
             
-            // Set initial theme to light
-            if (Application.Current != null)
+            // Початкова ініціалізація темної теми замість світлої
+            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
+            if (mainContentGrid != null)
             {
-                Application.Current.RequestedThemeVariant = ThemeVariant.Light;
+                // Використовуємо темну тему за замовчуванням
+                ThemeManager.SetLightTheme(mainContentGrid);
             }
+            UpdateThemeUI();
         }
 
         private void UpdateSelectedButton(Button? newSelectedButton)
@@ -99,34 +103,23 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         private void ToggleTheme(object? sender, RoutedEventArgs e)
         {
-            isDarkTheme = !isDarkTheme;
-            ApplyTheme();
+            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
+            if (mainContentGrid != null)
+            {
+                ThemeManager.ToggleTheme(mainContentGrid);
+            }
+            UpdateThemeUI();
         }
 
-        public void ToggleThemeFromSettings(bool isDark)
+        private void UpdateThemeUI()
         {
-            if (isDarkTheme != isDark)
-            {
-                isDarkTheme = isDark;
-                ApplyTheme();
-            }
-        }
-
-        private void ApplyTheme()
-        {
-            // Update the application theme
-            if (Application.Current != null)
-            {
-                Application.Current.RequestedThemeVariant = isDarkTheme ? ThemeVariant.Dark : ThemeVariant.Light;
-            }
-            
-            // Update the theme button icon and text
+            // Оновлюємо іконку та текст кнопки теми
             var themeIcon = this.FindControl<TextBlock>("ThemeIcon");
             var themeText = this.FindControl<TextBlock>("ThemeText");
             
             if (themeIcon != null && themeText != null)
             {
-                if (isDarkTheme)
+                if (ThemeManager.IsDarkTheme)
                 {
                     themeIcon.Text = "🌙";
                     themeText.Text = "Dark Theme";
@@ -137,27 +130,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                     themeText.Text = "Light Theme";
                 }
             }
-            
-            // Update the main content background using theme classes
-            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
-            if (mainContentGrid != null)
-            {
-                // Remove both theme classes first
-                mainContentGrid.Classes.Remove("ThemeLight");
-                mainContentGrid.Classes.Remove("ThemeDark");
-                
-                // Add the appropriate theme class
-                if (isDarkTheme)
-                {
-                    mainContentGrid.Classes.Add("ThemeDark");
-                }
-                else
-                {
-                    mainContentGrid.Classes.Add("ThemeLight");
-                }
-            }
 
-            Debug.WriteLine($"Theme changed to {(isDarkTheme ? "Dark" : "Light")}");
+            Debug.WriteLine($"Theme changed to {(ThemeManager.IsDarkTheme ? "Dark" : "Light")}");
+        }
+
+        // Публічний метод для навігації, який можна викликати з інших класів
+        public void NavigateToPagePublic(Control page)
+        {
+            NavigateToPage(page);
         }
     }
 }

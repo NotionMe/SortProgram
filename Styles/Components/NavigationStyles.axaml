@@ -1,0 +1,71 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ==================== -->
+    <!-- SIDEBAR STYLES       -->
+    <!-- ==================== -->
+    <Style Selector="Grid.sideMenu">
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Background" Value="{StaticResource DarkSideMenuBackground}" /> 
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition
+                    Easing="CubicEaseOut"
+                    Property="Width"
+                    Duration="0:0:0.2" />
+            </Transitions> 
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.sideMenu:pointerover">
+        <Setter Property="Width" Value="250" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- SIDEBAR TEXT STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.navText">
+        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="IsVisible" Value="False" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Grid.sideMenu:pointerover TextBlock.navText">
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- SIDEBAR ICON STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.navIcon">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- TITLE BAR STYLES     -->
+    <!-- ==================== -->
+    <Style Selector="Border.titleBar">
+        <Setter Property="Background" Value="{StaticResource DarkTitleBarBackground}" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Padding" Value="15,0" />
+    </Style>
+    
+    <Style Selector="TextBlock.titleText">
+        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</Styles> 

@@ -1,0 +1,40 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ==================== -->
+    <!-- LIGHT THEME STYLES   -->
+    <!-- ==================== -->
+    
+    <!-- Загальні стилі для світлої теми -->
+    <Style Selector="Grid.ThemeLight">
+        <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+    </Style>
+    
+    <!-- Стилі для елементів у світлій темі -->
+    <Style Selector="Grid.ThemeLight TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource LightTextBrush}"/>
+    </Style>
+    
+    <Style Selector="Grid.ThemeLight Border">
+        <Setter Property="Background" Value="{StaticResource LightCardBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColorBrush}"/>
+    </Style>
+    
+    <!-- Стилі для карток у світлій темі -->
+    <Style Selector="Grid.ThemeLight Border.card">
+        <Setter Property="Background" Value="{StaticResource LightCardBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColorBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BoxShadow" Value="0 2 4 #20000000"/>
+    </Style>
+    
+    <!-- Стилі для заголовків у світлій темі -->
+    <Style Selector="Grid.ThemeLight Border.header">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+    </Style>
+    
+    <Style Selector="Grid.ThemeLight TextBlock.description-title">
+        <Setter Property="Foreground" Value="{StaticResource InfoBrush}"/>
+    </Style>
+</Styles> 

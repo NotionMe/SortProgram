@@ -2,65 +2,72 @@
     x:Class="Practika2_OPAM_Ubohyi_Stanislav.SortProgram"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
-    xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
     xmlns:conv="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Converters"
+    xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
+    xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
     Title="AlgoStart"
     Width="1260"
-    Height="800"
+    Height="900"
     WindowStartupLocation="CenterScreen">
 
     <DockPanel>
-        <!-- Верхня панель з назвою програми та кнопками управління вікном -->
-        <Border
-            Classes="titleBar"
-            DockPanel.Dock="Top">
+        <!--  Верхня панель з назвою програми та кнопками управління вікном  -->
+        <Border Classes="titleBar" DockPanel.Dock="Top">
             <Grid>
-                <TextBlock 
-                    Text="AlgoStart"
-                    Foreground="#FFFFFF"
+                <TextBlock
+                    Margin="15,0,0,0"
+                    VerticalAlignment="Center"
                     FontSize="16"
                     FontWeight="Bold"
-                    VerticalAlignment="Center"
-                    Margin="15,0,0,0"/>
+                    Foreground="#FFFFFF"
+                    Text="AlgoStart" />
                 <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    
-                    <!-- Кнопка мінімізації вікна -->
-                    <Button 
-                        Grid.Column="0"
+
+                    <!--  Кнопка мінімізації вікна  -->
+                    <Button
                         Name="MinimizeButton"
+                        Grid.Column="0"
                         Classes="titleBarButton"
                         Click="MinimizeWindow">
-                        <TextBlock Text="−" FontFamily="Segoe UI" Margin="0,0,0,0"/>
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            FontFamily="Segoe UI"
+                            Text="−" />
                     </Button>
-                    
-                    <!-- Кнопка максимізації вікна -->
-                    <Button 
-                        Grid.Column="1"
+
+                    <!--  Кнопка максимізації вікна  -->
+                    <Button
                         Name="MaximizeButton"
+                        Grid.Column="1"
                         Classes="titleBarButton"
                         Click="MaximizeWindow">
-                        <TextBlock Text="□" FontFamily="Segoe UI" Margin="0,-7,0,0"/>
+                        <TextBlock
+                            Margin="0,-7,0,0"
+                            FontFamily="Segoe UI"
+                            Text="□" />
                     </Button>
-                    
-                    <!-- Кнопка закриття вікна -->
-                    <Button 
-                        Grid.Column="2"
+
+                    <!--  Кнопка закриття вікна  -->
+                    <Button
                         Name="CloseButton"
+                        Grid.Column="2"
                         Classes="titleBarButton closeButton"
                         Click="CloseWindow">
-                        <TextBlock Text="×" FontFamily="Segoe UI" Margin="0,0,0,0"/>
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            FontFamily="Segoe UI"
+                            Text="×" />
                     </Button>
                 </Grid>
             </Grid>
-        </Border>   
+        </Border>
 
-        <!-- Бічне меню навігації -->
+        <!--  Бічне меню навігації  -->
         <Grid Classes="sideMenu" DockPanel.Dock="Left">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -68,38 +75,56 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <!-- Логотип та назва -->
+            <!--  Логотип та назва  -->
             <StackPanel Grid.Row="0" Margin="15,15,0,20">
-                <TextBlock Name="AppTitle" Text="SortProgram" FontWeight="Bold" Foreground="#E0E0E0" FontSize="16" Classes="navText" />
+                <TextBlock
+                    Name="AppTitle"
+                    Classes="navText"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Foreground="#E0E0E0"
+                    Text="SortProgram" />
             </StackPanel>
 
             <StackPanel Grid.Row="1">
-                <!-- Кнопка для переходу на головну сторінку -->
-                <Button Name="HomeButton" Classes="navButton" Click="NavigateToHome">
+                <!--  Кнопка для переходу на головну сторінку  -->
+                <Button
+                    Name="HomeButton"
+                    Classes="navButton"
+                    Click="NavigateToHome">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🏡" />
                         <TextBlock Classes="navText" Text="Home" />
                     </DockPanel>
                 </Button>
 
-                <!-- Кнопка для переходу на сторінку списку таблиць -->
-                <Button Name="SortingButton" Classes="navButton" Click="NavigateToSorting">
+                <!--  Кнопка для переходу на сторінку списку таблиць  -->
+                <Button
+                    Name="SortingButton"
+                    Classes="navButton"
+                    Click="NavigateToSorting">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="📈" />
-                        <TextBlock Classes="navText" Text="Sorting" />
+                        <TextBlock Classes="navText" Text="Sorting Algorithms" />
                     </DockPanel>
                 </Button>
 
-                <!-- Кнопка для переходу на сторінку статистики -->
-                <Button Name="StatisticsButton" Classes="navButton" Click="NavigateToStaticks">
+                <!--  Кнопка для переходу на сторінку статистики  -->
+                <Button
+                    Name="StatisticsButton"
+                    Classes="navButton"
+                    Click="NavigateToStaticks">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="📊" />
                         <TextBlock Classes="navText" Text="Statistics" />
                     </DockPanel>
                 </Button>
 
-                <!-- Кнопка для переходу на сторінку налаштувань -->
-                <Button Name="SettingsButton" Classes="navButton" Click="NavigateToSettings">
+                <!--  Кнопка для переходу на сторінку налаштувань  -->
+                <Button
+                    Name="SettingsButton"
+                    Classes="navButton"
+                    Click="NavigateToSettings">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🔧" />
                         <TextBlock Classes="navText" Text="Settings" />
@@ -107,17 +132,26 @@
                 </Button>
             </StackPanel>
 
-            <!-- Нижні кнопки -->
+            <!--  Нижні кнопки  -->
             <StackPanel Grid.Row="2" Margin="0,0,0,10">
-                <!-- Кнопка перемикання теми -->
-                <Button Name="ThemeButton" Classes="navButton" Click="ToggleTheme">
+                <!--  Кнопка перемикання теми  -->
+                <Button
+                    Name="ThemeButton"
+                    Classes="navButton"
+                    Click="ToggleTheme">
                     <DockPanel LastChildFill="True">
-                        <TextBlock Name="ThemeIcon" Classes="navIcon" Text="☀️" />
-                        <TextBlock Name="ThemeText" Classes="navText" Text="Light Theme" />
+                        <TextBlock
+                            Name="ThemeIcon"
+                            Classes="navIcon"
+                            Text="☀️" />
+                        <TextBlock
+                            Name="ThemeText"
+                            Classes="navText"
+                            Text="Light Theme" />
                     </DockPanel>
                 </Button>
-                
-                <!-- Кнопка для виходу з програми -->
+
+                <!--  Кнопка для виходу з програми  -->
                 <Button Classes="navButton" Click="ExitButton_Click">
                     <DockPanel LastChildFill="True">
                         <TextBlock Classes="navIcon" Text="🚪" />
@@ -127,8 +161,8 @@
             </StackPanel>
         </Grid>
 
-        <!-- Основний вміст сторінки -->
-        <Grid Name="MainContentGrid" Classes="ThemeLight">
+        <!--  Основний вміст сторінки  -->
+        <Grid Name="MainContentGrid" Classes="ThemeDark">
             <ContentControl Name="PageContent" />
         </Grid>
     </DockPanel>
