@@ -79,7 +79,7 @@
                         FontSize="36"
                         FontWeight="ExtraBold"
                         Foreground="rgba(0,0,0,0.9)"
-                        Text="Sign In" />
+                        Text="Sign Up" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         FontSize="14"
@@ -115,7 +115,7 @@
                         HorizontalAlignment="Stretch"
                         Classes="submitBtn"
                         Click="SignInButton_Click"
-                        Content="Sign In" />
+                        Content="Sign Up" />
                     <TextBlock HorizontalAlignment="Center" FontWeight="Medium">
                         <Run Foreground="rgba(0,0,0,0.8)" Text="Already have an account? " />
                         <Button
@@ -126,7 +126,7 @@
                             <TextBlock
                                 Foreground="{StaticResource prColor}"
                                 Text="Login" 
-                                Margin="0,0,2,0" />
+                                Margin="0,0,10,0" />
                         </Button>
                     </TextBlock>
                 </StackPanel>
