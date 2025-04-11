@@ -12,36 +12,26 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             InitializeComponent();
         }
         
-        // Обробник події для кнопки "Переглянути демо"
-        private void GoToTryIt_Click(object sender, RoutedEventArgs e)
+        private void InitializeComponent()
         {
-            // Отримуємо доступ до головного вікна
-            var mainWindow = this.VisualRoot as SortProgram;
-            
-            // Якщо головне вікно доступне, переходимо до сторінки ArticleViewPage
-            if (mainWindow != null)
-            {
-                // Створюємо новий екземпляр сторінки ArticleViewPage
-                var bubbleSort = new BubbleSort();
-                
-                // Переходимо до цієї сторінки
-                mainWindow.NavigateToPagePublic(bubbleSort);
-            }
+            AvaloniaXamlLoader.Load(this);
         }
-
+        
+        // Обробник події для відкриття інформаційної сторінки про Bubble Sort
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {
-            // Отримуємо доступ до головного вікна
-            var mainWindow = this.VisualRoot as SortProgram;
-            
-            // Якщо головне вікно доступне, переходимо до сторінки ArticleViewPage
-            if (mainWindow != null)
+            if (this.Parent is ContentControl contentControl)
             {
-                // Створюємо новий екземпляр сторінки ArticleViewPage
-                var bubbleSort = new InfoBubbleSort();
-                
-                // Переходимо до цієї сторінки
-                mainWindow.NavigateToPagePublic(bubbleSort);
+                contentControl.Content = new InfoBubbleSort();
+            }
+        }
+        
+        // Обробник події для відкриття інтерактивної візуалізації Bubble Sort
+        private void GoToTryIt_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent is ContentControl contentControl)
+            {
+                contentControl.Content = new BubbleSort();
             }
         }
     }
