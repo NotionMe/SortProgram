@@ -58,7 +58,7 @@
                         BoxShadow="0 2 4 #20000000"
                         ClipToBounds="True"
                         CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/bubble_sort.gif" Stretch="UniformToFill" />
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="UniformToFill" />
                     </Border>
                 </Grid>
             </Border>
@@ -101,7 +101,7 @@
                         BoxShadow="0 2 4 #20000000"
                         ClipToBounds="True"
                         CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/selection_sort.gif" Stretch="UniformToFill" />
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="UniformToFill" />
                     </Border>
                 </Grid>
             </Border>
@@ -144,7 +144,7 @@
                         BoxShadow="0 2 4 #20000000"
                         ClipToBounds="True"
                         CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/quick_sort.gif" Stretch="UniformToFill" />
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="UniformToFill" />
                     </Border>
                 </Grid>
             </Border>

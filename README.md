@@ -1,200 +1,90 @@
-# 🧠 AlgoStart - Інтерактивна навчальна платформа з алгоритмів сортування
+# 📊 SortProgram - Візуалізація алгоритмів сортування
 
 <div align="center">
-  
-  ![AlgoStart Logo](Image/bubble_sort.gif)
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Made with Avalonia](https://img.shields.io/badge/Made%20with-Avalonia-blue)](https://avaloniaui.net/)
-  [![GitHub stars](https://img.shields.io/github/stars/ubohyi/SortProgram?style=social)](https://github.com/ubohyi/SortProgram)
-
+  <img src="Assets/Images/bubble_sort.gif" alt="Bubble Sort Algorithm" width="200" />
+  <img src="Assets/Images/selection_sort.gif" alt="Selection Sort Algorithm" width="200" />
+  <img src="Assets/Images/quick_sort.gif" alt="Quick Sort Algorithm" width="200" />
+  <img src="Assets/Images/insertion_sort.gif" alt="Insertion Sort Algorithm" width="200" />
 </div>
 
----
+## 🚀 Опис проекту
 
-## 📝 Опис проекту
+**SortProgram** - це інтерактивний довідник з алгоритмів сортування, розроблений з використанням Avalonia UI. Програма надає візуальне представлення різних алгоритмів сортування, їх детальний опис, можливість вивчити їх роботу покроково та порівняти їх продуктивність.
 
-AlgoStart - це навчальна платформа, розроблена для вивчення та демонстрації алгоритмів сортування. Проект створено з використанням сучасних технологій інтерфейсу та анімацій для наочного представлення роботи алгоритмів.
+## ✨ Особливості
 
-> 💡 **Головна ідея**: Зробити процес вивчення алгоритмів сортування максимально наочним та інтерактивним
+- **📱 Сучасний інтерфейс користувача** - стильний дизайн з підтримкою світлої та темної теми
+- **🔄 Анімовані візуалізації** - наочні демонстрації роботи алгоритмів
+- **📈 Статистика продуктивності** - порівняння швидкості різних алгоритмів
+- **📖 Детальні описи** - вичерпна інформація про кожен алгоритм
+- **🏁 Режим тестування** - можливість перевірити алгоритми на різних наборах даних
 
-## ✨ Основні функції
+## 🧮 Підтримувані алгоритми
 
-<details>
-<summary>🎬 <b>Інтерактивна візуалізація алгоритмів</b></summary>
-<br>
-Наочні анімації роботи різних алгоритмів сортування, які допомагають зрозуміти принципи їх роботи на практиці.
-</details>
+- **Bubble Sort** - простий алгоритм сортування, що проходить через список, порівнює сусідні елементи і міняє їх місцями
+- **Selection Sort** - алгоритм, що розділяє вхідний список на відсортовану та невідсортовану частини
+- **Quick Sort** - швидкий алгоритм за принципом "розділяй і володарюй"
+- **Insertion Sort** - алгоритм, що будує кінцевий відсортований масив по одному елементу
 
-<details>
-<summary>📚 <b>Детальні статті</b></summary>
-<br>
-Теоретичні матеріали з поясненнями кожного алгоритму, математичні обґрунтування та аналіз складності.
-</details>
+## 🔧 Технології
 
-<details>
-<summary>🌓 <b>Темна та світла теми</b></summary>
-<br>
-Комфортне використання додатку при різному освітленні, налаштування інтерфейсу під особисті вподобання.
-</details>
+- **Avalonia UI** - крос-платформний UI фреймворк
+- **C#** - основна мова програмування
+- **.NET** - програмна платформа
 
-<details>
-<summary>📱 <b>Адаптивний інтерфейс</b></summary>
-<br>
-Зручне використання на різних пристроях завдяки гнучкому та адаптивному дизайну інтерфейсу.
-</details>
+## 📋 Вимоги до системи
 
-<details>
-<summary>📊 <b>Статистика ефективності</b></summary>
-<br>
-Порівняння швидкодії різних алгоритмів сортування з візуалізацією результатів.
-</details>
+- Windows, macOS або Linux
+- .NET SDK 6.0 або новіше
 
-## 🔄 Реалізовані алгоритми
-
-| Алгоритм | Складність (середня) | Просторова складність | Стабільність |
-|----------|:--------------------:|:---------------------:|:------------:|
-| 🫧 **Bubble Sort** | O(n²) | O(1) | ✅ Стабільний |
-| 🔍 **Selection Sort** | O(n²) | O(1) | ❌ Нестабільний |
-| ⚡ **Quick Sort** | O(n log n) | O(log n) | ❌ Нестабільний |
-| 📋 **Merge Sort** | O(n log n) | O(n) | ✅ Стабільний |
-| 🪣 **Bucket Sort** | O(n+k) | O(n+k) | ✅ Стабільний |
-
-## 🛠️ Технології
-
-<div align="center">
-  
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
-  <img src="https://img.shields.io/badge/Avalonia-8B0000?style=for-the-badge&logo=avalonia&logoColor=white" alt="Avalonia" />
-  <img src="https://img.shields.io/badge/XAML-0C54C2?style=for-the-badge&logo=xaml&logoColor=white" alt="XAML" />
-  
-</div>
-
-- 💻 **Мова програмування**: C#
-- 🖼️ **Фреймворк інтерфейсу**: Avalonia UI
-- 🏗️ **Архітектура**: MVVM (Model-View-ViewModel)
-- 🎨 **Графічні ресурси**: XAML та вбудовані анімації
-
-## 💻 Системні вимоги
-
-- 🔷 .NET 6.0 або новіше
-- 🖥️ Windows, macOS або Linux (кросплатформний)
-
-## 🚀 Встановлення та запуск
-
-<details>
-<summary>Розгорнути інструкції з встановлення</summary>
+## 📥 Встановлення
 
 1. Клонуйте репозиторій:
-```bash
-git clone https://github.com/ваш-логін/algostart.git
-```
+   ```
+   git clone https://github.com/username/SortProgram.git
+   ```
 
 2. Відкрийте проект у Visual Studio або JetBrains Rider
 
-3. Відновіть пакети NuGet
+3. Встановіть необхідні пакети NuGet
 
-4. Скомпілюйте та запустіть проект:
-```bash
-dotnet run
-```
+4. Запустіть проект
 
-</details>
+## 📷 Скріншоти
 
-## 📂 Структура проекту
+<div align="center">
+  <img src="Assets/Images/DarkMode.png" alt="Dark Mode" width="400" />
+  <img src="Assets/Images/LightMode.png" alt="Light Mode" width="400" />
+</div>
+
+## 📝 Структура проекту
 
 ```
 SortProgram/
-├── 📁 Pages/                 # Сторінки додатку
-├── 📁 Styles/                # Стилі та теми
-│   ├── 📁 Themes/            # Темна та світла теми
-│   └── 📁 Components/        # Стилі компонентів
-├── 📁 Image/                 # Зображення та анімації
-├── 📁 Fonts/                 # Шрифти
-├── 📄 App.axaml              # Конфігурація додатку
-├── 📄 App.axaml.cs           # Код конфігурації додатку
-├── 📄 MainWindow.axaml       # Головне вікно
-└── 📄 MainWindow.axaml.cs    # Код головного вікна
+├── Assets/                  # Ресурси програми
+│   └── Images/              # Зображення та анімації
+├── Fonts/                   # Шрифти для програми
+├── Pages/                   # Сторінки програми
+├── Styles/                  # Стилі програми
+│   ├── Components/          # Компоненти стилів
+│   ├── Resources/           # Ресурси стилів
+│   └── Themes/              # Теми програми
 ```
 
-## 📱 Використання
+## 📚 Ліцензія
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">🏠</td>
-      <td><b>Головна сторінка</b> - загальна інформація про проект</td>
-    </tr>
-    <tr>
-      <td align="center">📈</td>
-      <td><b>Алгоритми сортування</b> - список доступних алгоритмів з описом</td>
-    </tr>
-    <tr>
-      <td align="center">📖</td>
-      <td><b>Перегляд статті</b> - детальний опис алгоритму з візуалізацією</td>
-    </tr>
-    <tr>
-      <td align="center">📊</td>
-      <td><b>Статистика</b> - порівняльні характеристики алгоритмів</td>
-    </tr>
-    <tr>
-      <td align="center">⚙️</td>
-      <td><b>Налаштування</b> - зміна теми та інші параметри</td>
-    </tr>
-  </table>
-</div>
+Цей проект розповсюджується під ліцензією MIT. Дивіться файл LICENSE для отримання додаткової інформації.
 
-## 🖼️ Скріншоти
+## 👤 Автор
 
-<div align="center">
-  <p><i>Приклади інтерфейсу програми:</i></p>
-  
-  | 🔐 Вхід в систему |
-  |-------------------|
-  | ![Login Menu](ImageProgram/LoginMenu.png) |
-  
-  | 🌞 Світла тема | 🌙 Темна тема |
-  |----------------|---------------|
-  | ![Light Theme](ImageProgram/image.png) | ![Dark Theme](ImageProgram/image%20copy.png) |
-  
-</div>
+- **Станіслав Убогий** - Practika2_OPAM_Ubohyi_Stanislav
 
-## 👨‍💼 Авторство та ліцензія
+## 🤝 Внесок
 
-<div align="center">
-  
-  © 2024 Станіслав Убогий
-  
-  <img src="https://img.shields.io/badge/Developed_for-Educational_Purposes-green" alt="Developed for Educational Purposes" />
-  
-</div>
-
-Проект розроблено в рамках навчальної програми з об'єктно-орієнтованого програмування та аналізу алгоритмів.
-
-## 🔮 Плани розвитку
-
-- [ ] ➕ Додавання нових алгоритмів сортування
-- [ ] 🧩 Реалізація інтерактивних вправ для закріплення знань
-- [ ] 🔄 Додавання можливості змінювати вхідні дані для алгоритмів
-- [ ] 🧪 Розробка модуля для тестування знань користувача
-
-## 🤝 Внесок у проект
-
-Якщо ви бажаєте зробити внесок у проект, будь ласка:
-
-1. Створіть форк проекту
-2. Створіть нову гілку для вашої функції (`git checkout -b feature/AmazingFeature`)
-3. Зробіть коміт ваших змін (`git commit -m 'Add some AmazingFeature'`)
-4. Відправте зміни у вашу гілку (`git push origin feature/AmazingFeature`)
-5. Відкрийте Pull Request
+Вітаються запити на витягування. Для серйозних змін спочатку створіть проблему, щоб обговорити, що ви хотіли б змінити.
 
 ---
 
 <div align="center">
-  
-  *Дякую за використання AlgoStart! Для пропозицій та зауважень створюйте issue або відправляйте pull request.* 🙏
-  
-  <img src="https://img.shields.io/badge/Made%20with-❤️-red" alt="Made with love" />
-  
+  <i>© 2023 SortProgram. Всі права захищені.</i>
 </div>

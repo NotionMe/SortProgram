@@ -11,37 +11,6 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
-    <Window.Styles>
-        <Style Selector="Button.submitBtn">
-            <Setter Property="Background" Value="#FF0000"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Height" Value="45"/>
-            <Setter Property="CornerRadius" Value="20"/>
-            <Setter Property="Transitions">
-                <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
-                </Transitions>
-            </Setter>
-            <Setter Property="RenderTransform" Value="scale(1)"/>
-        </Style>
-        <Style Selector="Button.submitBtn:pointerover">
-            <Setter Property="RenderTransform" Value="scale(0.95)"/>
-        </Style>
-        
-        <!-- Стиль для текстової кнопки Login -->
-        <Style Selector="Button.textBtn">
-            <Setter Property="Transitions">
-                <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
-                </Transitions>
-            </Setter>
-            <Setter Property="RenderTransform" Value="scale(1)"/>
-        </Style>
-        <Style Selector="Button.textBtn:pointerover">
-            <Setter Property="RenderTransform" Value="scale(0.95)"/>
-        </Style>
-    </Window.Styles>
-
     <Border Background="White" CornerRadius="50">
         <Grid Margin="20" ColumnDefinitions="Auto,*">
             <Grid Grid.Column="0" Width="600">
@@ -118,86 +87,10 @@
                         Foreground="rgba(0,0,0,0.8)"
                         Text="Create your account" />
                     <StackPanel Orientation="Vertical" Spacing="10">
-                        <TextBox FontSize="14" Watermark="Username">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                </Style>
-                                <Style Selector="TextBox:focus">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                                <Style Selector="TextBox /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        <TextBox FontSize="14" Watermark="Email">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                </Style>
-                                <Style Selector="TextBox:focus">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                                <Style Selector="TextBox /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        <TextBox PasswordChar="*" Watermark="Password">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                </Style>
-                                <Style Selector="TextBox:focus">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                                <Style Selector="TextBox /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        <TextBox PasswordChar="*" Watermark="Confirm Password">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                </Style>
-                                <Style Selector="TextBox:focus">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                                <Style Selector="TextBox /template/ TextBlock#PART_Watermark">
-                                    <Setter Property="Foreground" Value="Black" />
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                        <TextBox FontSize="14" Watermark="Username" Classes="formInput" />
+                        <TextBox FontSize="14" Watermark="Email" Classes="formInput" />
+                        <TextBox PasswordChar="*" Watermark="Password" Classes="formInput" />
+                        <TextBox PasswordChar="*" Watermark="Confirm Password" Classes="formInput" />
                     </StackPanel>
                     <StackPanel
                         HorizontalAlignment="Center"
@@ -228,7 +121,6 @@
                         <Button
                             Background="Transparent"
                             BorderThickness="0"
-                            Padding="0,0,5,0"
                             Classes="textBtn"
                             Click="LoginButton_Click">
                             <TextBlock

@@ -103,18 +103,35 @@
     <!-- PRIMARY INFO BUTTONS -->
     <!-- ==================== -->
     <Style Selector="Button.primaryInfoButton">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#3498db"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Transitions">
             <Transitions>
                 <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
             </Transitions>
         </Setter>
         <Setter Property="RenderTransform" Value="none"/>
     </Style>
     
     <Style Selector="Button.primaryInfoButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#3498db"/>
         <Setter Property="RenderTransform" Value="scale(0.95)"/>
         <Setter Property="Opacity" Value="0.9"/>
         <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    
+    <Style Selector="Button.primaryInfoButton:pressed">
+        <Setter Property="Background" Value="#1f618d"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#2980b9"/>
     </Style>
     
     <!-- ==================== -->
@@ -196,5 +213,41 @@
         <Setter Property="Background" Value="{StaticResource GreyLight}"/>
         <Setter Property="CornerRadius" Value="6"/>
         <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- LOGIN/SIGNUP BUTTONS -->
+    <!-- ==================== -->
+    <Style Selector="Button.submitBtn">
+        <Setter Property="Background" Value="#FF0000"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+    
+    <Style Selector="Button.submitBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+    
+    <Style Selector="Button.linkBtn">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+    
+    <Style Selector="Button.linkBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
     </Style>
 </Styles>

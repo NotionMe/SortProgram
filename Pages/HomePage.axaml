@@ -39,19 +39,19 @@
                 
                 <!-- Algorithm Visualizations -->
                 <Border Grid.Column="0" Grid.Row="1" Classes="card" CornerRadius="8" Margin="0,15,5,15" Width="220" Height="150">
-                    <Image Name="BubbleSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/bubble_sort.gif" Stretch="Uniform" Margin="5"/>
+                    <Image Name="BubbleSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="Uniform" Margin="5"/>
                 </Border>
                 
                 <Border Grid.Column="1" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,5,15" Width="220" Height="150">
-                    <Image Name="SelectionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/selection_sort.gif" Stretch="Uniform" Margin="5"/>
+                    <Image Name="SelectionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="Uniform" Margin="5"/>
                 </Border>
                 
                 <Border Grid.Column="2" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,5,15" Width="220" Height="150">
-                    <Image Name="QuickSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/quick_sort.gif" Stretch="Uniform" Margin="5"/>
+                    <Image Name="QuickSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="Uniform" Margin="5"/>
                 </Border>
                 
                 <Border Grid.Column="3" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,0,15" Width="220" Height="150">
-                    <Image Name="InsertionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Image/insertion_sort.gif" Stretch="Uniform" Margin="5"/>
+                    <Image Name="InsertionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif" Stretch="Uniform" Margin="5"/>
                 </Border>
 
                 <!-- Algorithm Descriptions -->

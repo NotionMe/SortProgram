@@ -6,19 +6,25 @@
     <!-- ==================== -->
     <Style Selector="Grid.sideMenu">
         <Setter Property="Width" Value="250" />
-        <Setter Property="Background" Value="{StaticResource DarkSideMenuBackground}" /> 
+        <Setter Property="Background" Value="#333333" />
     </Style>
 
     <!-- ==================== -->
     <!-- SIDEBAR TEXT STYLES  -->
     <!-- ==================== -->
     <Style Selector="TextBlock.navText">
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="Foreground" Value="#E0E0E0" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="IsVisible" Value="True" />
         <Setter Property="Margin" Value="15,0,0,0" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navText">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="IsVisible" Value="True" />
         <Setter Property="Opacity" Value="1" />
     </Style>
 
@@ -32,7 +38,12 @@
         <Setter Property="TextAlignment" Value="Left" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Margin" Value="5,0,0,0" />
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="Foreground" Value="#E0E0E0" />
+        <Setter Property="Opacity" Value="1" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navIcon">
+        <Setter Property="Foreground" Value="#FFFFFF" />
         <Setter Property="Opacity" Value="1" />
     </Style>
 

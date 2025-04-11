@@ -8,7 +8,7 @@
         <Setter Property="Height" Value="35"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource GreyMedium}"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
         <Setter Property="Padding" Value="10,5"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Transitions">
@@ -19,22 +19,25 @@
     </Style>
     
     <Style Selector="TextBox.formControl:focus">
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryLightBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#555555"/>
     </Style>
     
     <Style Selector="ComboBox.formControl">
         <Setter Property="Height" Value="35"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource GreyMedium}"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
         <Setter Property="Padding" Value="10,5"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
     </Style>
     
     <Style Selector="ComboBox.formControl:focus">
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryLightBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#555555"/>
     </Style>
     
     <!-- ==================== -->
@@ -88,5 +91,62 @@
         <Setter Property="BorderBrush" Value="{StaticResource GreyMedium}"/>
         <Setter Property="BorderThickness" Value="1,1,0,1"/>
         <Setter Property="CornerRadius" Value="4,0,0,4"/>
+    </Style>
+
+    <!-- Стилі для форм входу та реєстрації -->
+    <Style Selector="Button.submitBtn">
+        <Setter Property="Background" Value="#FF0000"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+
+    <Style Selector="Button.submitBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Стиль для текстових кнопок -->
+    <Style Selector="Button.textBtn">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+
+    <Style Selector="Button.textBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Стиль для всіх полів вводу в формах -->
+    <Style Selector="TextBox.formInput">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:focus">
+        <Setter Property="BorderBrush" Value="Gray"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:pointerover">
+        <Setter Property="BorderBrush" Value="Gray"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:pointerover /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style Selector="TextBox.formInput /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="Black" />
     </Style>
 </Styles> 

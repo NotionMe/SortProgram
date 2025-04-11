@@ -68,27 +68,6 @@
         <Setter Property="Background" Value="{StaticResource DarkTitleBarBackgroundBrush}" />
     </Style>
 
-    <!--  Стилі для кнопок у темній темі  -->
-    <Style Selector="Grid.ThemeDark Button.primaryInfoButton">
-        <Setter Property="Background" Value="{StaticResource InfoBrush}" />
-        <Setter Property="Foreground" Value="White" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark Button.primaryInfoButton:pointerover">
-        <Setter Property="Background" Value="#3498db" />
-        <Setter Property="Foreground" Value="White" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark Button.primaryInfoButton:pressed">
-        <Setter Property="Background" Value="#2980b9" />
-        <Setter Property="Foreground" Value="White" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark Button.successButton">
-        <Setter Property="Background" Value="{StaticResource SuccessBrush}" />
-        <Setter Property="Foreground" Value="White" />
-    </Style>
-
     <!--  Стилі для основного контенту головної сторінки  -->
     <Style Selector="Grid.ThemeDark ContentControl">
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}" />
@@ -101,19 +80,5 @@
 
     <Style Selector="Grid.ThemeDark TextBlock">
         <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
-    </Style>
-
-    <Style Selector="Button.primaryInfoButton">
-        <Setter Property="BorderBrush" Value="#3498db" />
-        <Setter Property="BorderThickness" Value="1" />
-    </Style>
-
-    <Style Selector="Button.primaryInfoButton:pointerover">
-        <Setter Property="BorderBrush" Value="#3498db" />
-        <Setter Property="Background" Value="#2980b9" />
-    </Style>
-
-    <Style Selector="Button.primaryInfoButton:pressed">
-        <Setter Property="BorderBrush" Value="#2980b9" />
     </Style>
 </Styles>
