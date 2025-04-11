@@ -11,6 +11,41 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
+    <Window.Styles>
+        <!-- Main button style (red login button) -->
+        <Style Selector="Button.submitBtn">
+            <Setter Property="Background" Value="#FF0000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+            <Setter Property="RenderTransform" Value="scale(1)"/>
+        </Style>
+        <Style Selector="Button.submitBtn:pointerover">
+            <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        </Style>
+
+        <!-- Text button style (Sign Up link) -->
+        <Style Selector="Button.linkBtn">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+                </Transitions>
+            </Setter>
+            <Setter Property="RenderTransform" Value="scale(1)"/>
+        </Style>
+        <Style Selector="Button.linkBtn:pointerover">
+            <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        </Style>
+    </Window.Styles>
+
     <Border Background="White" CornerRadius="50">
         <Grid Margin="20" ColumnDefinitions="Auto,*">
             <Grid Grid.Column="0" Width="600">
@@ -51,7 +86,8 @@
                                 Content="Sign Up"
                                 CornerRadius="20"
                                 FontSize="12"
-                                Foreground="White" />
+                                Foreground="White"
+                                Click="SignUpButton_Click" />
                             <Button
                                 Width="80"
                                 Height="40"
@@ -59,7 +95,7 @@
                                 VerticalContentAlignment="Center"
                                 Background="Transparent"
                                 BorderBrush="White"
-                                Content="Join Us"
+                                Content="Login"
                                 CornerRadius="20"
                                 FontSize="12"
                                 Foreground="White" />
@@ -156,14 +192,30 @@
                         HorizontalAlignment="Stretch"
                         Classes="submitBtn"
                         Click="LoginButton_Click"
-                        Content="Login" />
+                        Content="Login">
+                        <Button.Styles>
+                            <Style Selector="Button">
+                                <Setter Property="Background" Value="#FF0000"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Height" Value="45"/>
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
                     <TextBlock HorizontalAlignment="Center" FontWeight="Medium">
-                        <Run Foreground="rgba(0,0,0,0.8)" Text="Don't have an account?" />
-                        <Run Foreground="{StaticResource prColor}" Text="Sign up" />
+                        <Run Foreground="rgba(0,0,0,0.8)" Text="Dont have account? " />
+                        <Button
+                            Classes="linkBtn"
+                            Click="SignUpButton_Click">
+                            <TextBlock
+                                Foreground="{StaticResource prColor}"
+                                Text="Sign Up" 
+                                Margin="0,0,5,0" />
+                        </Button>
                     </TextBlock>
                 </StackPanel>
             </Grid>
         </Grid>
     </Border>
 
-</Window>
+</Window> 

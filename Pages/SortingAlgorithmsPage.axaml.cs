@@ -13,7 +13,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         
         // Обробник події для кнопки "Переглянути демо"
-        private void ViewArticleDemo_Click(object sender, RoutedEventArgs e)
+        private void GoToTryIt_Click(object sender, RoutedEventArgs e)
         {
             // Отримуємо доступ до головного вікна
             var mainWindow = this.VisualRoot as SortProgram;
@@ -22,10 +22,26 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             if (mainWindow != null)
             {
                 // Створюємо новий екземпляр сторінки ArticleViewPage
-                var articlePage = new ArticleViewPage();
+                var bubbleSort = new BubbleSort();
                 
                 // Переходимо до цієї сторінки
-                mainWindow.NavigateToPagePublic(articlePage);
+                mainWindow.NavigateToPagePublic(bubbleSort);
+            }
+        }
+
+        private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
+        {
+            // Отримуємо доступ до головного вікна
+            var mainWindow = this.VisualRoot as SortProgram;
+            
+            // Якщо головне вікно доступне, переходимо до сторінки ArticleViewPage
+            if (mainWindow != null)
+            {
+                // Створюємо новий екземпляр сторінки ArticleViewPage
+                var bubbleSort = new InfoBubbleSort();
+                
+                // Переходимо до цієї сторінки
+                mainWindow.NavigateToPagePublic(bubbleSort);
             }
         }
     }

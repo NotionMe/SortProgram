@@ -12,6 +12,7 @@
         <StyleInclude Source="/Styles/Themes/DarkTheme.axaml" />
         <StyleInclude Source="/Styles/Themes/LightTheme.axaml" />
         <StyleInclude Source="/Styles/Resources/Styles.axaml"/>
+        <StyleInclude Source="/Styles/Components/ButtonStyles.axaml"/>
 
         
         <!-- Пріоритетні стилі для всіх TextBox в додатку -->

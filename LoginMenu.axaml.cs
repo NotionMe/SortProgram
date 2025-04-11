@@ -20,5 +20,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             mainWindow.Show();
             this.Close();
         }
+
+        private void SignUpButton_Click(object? sender, RoutedEventArgs e)
+        {
+            SignInMenu signInMenu = new SignInMenu();
+            signInMenu.Show();
+            this.Close();
+        }
     }
 }

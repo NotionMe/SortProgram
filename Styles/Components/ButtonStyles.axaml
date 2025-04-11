@@ -78,16 +78,43 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
     </Style>
     
     <Style Selector="Button.infoButton:pointerover">
         <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        <Setter Property="Opacity" Value="0.9"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
     
     <Style Selector="Button.infoButton:pressed">
         <Setter Property="Background" Value="#1f618d"/>
         <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- PRIMARY INFO BUTTONS -->
+    <!-- ==================== -->
+    <Style Selector="Button.primaryInfoButton">
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.primaryInfoButton:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        <Setter Property="Opacity" Value="0.9"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
     
     <!-- ==================== -->
@@ -99,10 +126,19 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
     </Style>
     
     <Style Selector="Button.successButton:pointerover">
         <Setter Property="Background" Value="{StaticResource SuccessDarkColor}"/>
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+        <Setter Property="Opacity" Value="0.9"/>
+        <Setter Property="Cursor" Value="Hand"/>
     </Style>
     
     <Style Selector="Button.successButton:pressed">
@@ -161,4 +197,4 @@
         <Setter Property="CornerRadius" Value="6"/>
         <Setter Property="Opacity" Value="1"/>
     </Style>
-</Styles> 
+</Styles>
