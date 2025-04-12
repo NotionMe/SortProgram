@@ -1,0 +1,153 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SettingsPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel Margin="20">
+            <!-- Заголовок із градієнтом -->
+            <Border Width="1060" Height="100"
+                    CornerRadius="15"
+                    Margin="0,0,0,20">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#0C294B" Offset="0"/>
+                        <GradientStop Color="#0078D4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock Text="Settings"
+                           FontSize="40"
+                           FontFamily="{StaticResource OswaldFont}"
+                           FontWeight="Bold"
+                           Foreground="#FFFFFF"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextAlignment="Center"/>
+                <Border.Effect>
+                    <DropShadowEffect Color="#40000000" BlurRadius="14" OffsetX="0" OffsetY="4"/>
+                </Border.Effect>
+            </Border>
+
+            <!-- Основна картка з налаштуваннями -->
+            <Border Classes="card"
+                    CornerRadius="15"
+                    Padding="30"
+                    BoxShadow="0 4 8 #40000000">
+                <StackPanel Spacing="25">
+                    <!-- Секція 1: Кількість елементів для сортування -->
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Text="📏"
+                                   FontSize="24"
+                                   Margin="0,0,15,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Classes="formGroup">
+                            <TextBlock Text="Number of Elements to Sort"
+                                       FontSize="18"
+                                       FontFamily="Inter"
+                                       FontWeight="Bold"
+                                       FontStyle="Italic"
+                                       Classes="formLabel"/>
+                            <ComboBox Name="ElementCountComboBox"
+                                      Width="200"
+                                      Margin="0,5,0,0"
+                                      Classes="formControl">
+                                <ComboBoxItem Content="10 elements"/>
+                                <ComboBoxItem Content="25 elements"/>
+                                <ComboBoxItem Content="50 elements"/>
+                                <ComboBoxItem Content="100 elements"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <!-- Секція 2: Колір стовпчиків у візуалізації -->
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Text="🎨"
+                                   FontSize="24"
+                                   Margin="0,0,15,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Classes="formGroup">
+                            <TextBlock Text="Visualization Color Palette"
+                                       FontSize="18"
+                                       FontFamily="Inter"
+                                       FontWeight="Bold"
+                                       FontStyle="Italic"
+                                       Classes="formLabel"/>
+                            <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,5,0,0">
+                                <RadioButton Name="PaletteDefault"
+                                             GroupName="ColorPalette"
+                                             IsChecked="True">
+                                    <Border Width="30" Height="30" CornerRadius="5" Background="#0C294B"/>
+                                </RadioButton>
+                                <RadioButton Name="PaletteWarm"
+                                             GroupName="ColorPalette">
+                                    <Border Width="30" Height="30" CornerRadius="5" Background="#FF5733"/>
+                                </RadioButton>
+                                <RadioButton Name="PaletteCool"
+                                             GroupName="ColorPalette">
+                                    <Border Width="30" Height="30" CornerRadius="5" Background="#33B5FF"/>
+                                </RadioButton>
+                            </StackPanel>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <!-- Секція 3: Швидкість анімації -->
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Text="⏩"
+                                   FontSize="24"
+                                   Margin="0,0,15,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Classes="formGroup">
+                            <TextBlock Text="Animation Speed"
+                                       FontSize="18"
+                                       FontFamily="Inter"
+                                       FontWeight="Bold"
+                                       FontStyle="Italic"
+                                       Classes="formLabel"/>
+                            <Slider Name="AnimationSpeedSlider"
+                                    Minimum="1"
+                                    Maximum="10"
+                                    Value="5"
+                                    Width="300"
+                                    Margin="0,5,0,0"
+                                    Classes="formControl"/>
+                            <TextBlock Text="{Binding #AnimationSpeedSlider.Value, StringFormat='Speed: {0}'}"
+                                       FontSize="14"
+                                       FontFamily="Inter"
+                                       Classes="formHint"/>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <!-- Секція 4: Скидання прогресу -->
+                    <DockPanel LastChildFill="True">
+                        <TextBlock Text="🗑️"
+                                   FontSize="24"
+                                   Margin="0,0,15,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Classes="formGroup">
+                            <TextBlock Text="Reset Progress"
+                                       FontSize="18"
+                                       FontFamily="Inter"
+                                       FontWeight="Bold"
+                                       FontStyle="Italic"
+                                       Classes="formLabel"/>
+                            <Button Name="ResetProgressButton"
+                                    Content="Reset Progress"
+                                    Classes="blueButton"
+                                    Width="200"
+                                    Height="40"
+                                    Margin="0,5,0,0"
+                                    CornerRadius="20"
+                                    FontFamily="{StaticResource AnonymousPro}"
+                                    FontWeight="Regular"
+                                    FontSize="16"
+                                    HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

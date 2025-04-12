@@ -1,0 +1,61 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Practika2_OPAM_Ubohyi_Stanislav.App"
+             RequestedThemeVariant="Dark">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="/Styles/Colors.axaml" />
+        <StyleInclude Source="/Styles/GlobalStyles.axaml" />
+        <StyleInclude Source="/Styles/Components/NavigationStyles.axaml" />
+        <StyleInclude Source="/Styles/Components/FormStyles.axaml" />
+        <StyleInclude Source="/Styles/Themes/DarkTheme.axaml" />
+        <StyleInclude Source="/Styles/Themes/LightTheme.axaml" />
+        <StyleInclude Source="/Styles/Resources/Styles.axaml"/>
+        <StyleInclude Source="/Styles/Components/ButtonStyles.axaml"/>
+        
+        <!-- Спрощені стилі для анімацій -->
+        <Style Selector=":is(Control).animatedReveal">
+            <Setter Property="Opacity" Value="0" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <!-- Стиль для завантаження -->
+        <Style Selector=":is(Control).loaded">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+    </Application.Styles>
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Login menu colors -->
+            <SolidColorBrush x:Key="prColor" Color="#FF0000"/>
+            <FontFamily x:Key="OswaldFont">avares://Practika2_OPAM_Ubohyi_Stanislav/Fonts/Oswald-VariableFont_wght.ttf#Oswald</FontFamily>
+            <FontFamily x:Key="AnonymousPro">avares://Practika2_OPAM_Ubohyi_Stanislav/Fonts/AnonymousPro-Regular.ttf#Anonymous Pro</FontFamily>
+            <ResourceDictionary.ThemeDictionaries>
+                <!-- Light theme resources -->
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SystemAccentColor">#555555</Color>
+                    <SolidColorBrush x:Key="SystemControlBackgroundAccentBrush" Color="#555555"/>
+                    <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#555555"/>
+                </ResourceDictionary>
+                
+                <!-- Dark theme resources -->
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SystemAccentColor">#555555</Color>
+                    <SolidColorBrush x:Key="SystemControlBackgroundAccentBrush" Color="#555555"/>
+                    <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#555555"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+        
+        <!-- Додаткові ресурси для анімацій -->
+        <x:Double x:Key="SidebarDefaultWidth">250</x:Double>
+        <x:Double x:Key="SidebarExpandedWidth">270</x:Double>
+    </Application.Resources>
+</Application>

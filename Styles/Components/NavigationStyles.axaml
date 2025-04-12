@@ -1,0 +1,128 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:effects="using:Avalonia.Media">
+
+    <!-- ==================== -->
+    <!-- SIDEBAR STYLES       -->
+    <!-- ==================== -->
+    <Style Selector="Grid.sideMenu">
+        <Setter Property="Width" Value="60" />
+        <Setter Property="Background" Value="#333333" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Width" Duration="0:0:0.3" Easing="CubicEaseOut"/>
+                <BrushTransition Property="Background" Duration="0:0:0.3"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <!-- Стиль для бічної панелі при наведенні курсору -->
+    <Style Selector="Grid.sideMenu:pointerover">
+        <Setter Property="Width" Value="250" />
+        <Setter Property="Background" Value="#2c2c2c" />
+        <Setter Property="Effect">
+            <effects:DropShadowEffect OffsetX="3" OffsetY="0" Opacity="0.1" BlurRadius="8" />
+        </Setter>
+    </Style>
+
+    <!-- Стиль для бічної панелі при наведенні курсору (програмно) -->
+    <Style Selector="Grid.sideMenu.hover">
+        <Setter Property="Width" Value="250" />
+        <Setter Property="Background" Value="#2c2c2c" />
+        <Setter Property="Effect">
+            <effects:DropShadowEffect OffsetX="3" OffsetY="0" Opacity="0.1" BlurRadius="8" />
+        </Setter>
+    </Style>
+
+    <!-- ==================== -->
+    <!-- SIDEBAR TEXT STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.navText">
+        <Setter Property="Foreground" Value="#CCCCCC" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="IsVisible" Value="False" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.3" Delay="0:0:0.1" />
+                <ThicknessTransition Property="Margin" Duration="0:0:0.3" />
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Grid.sideMenu:pointerover TextBlock.navText">
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="Margin" Value="12,0,0,0" />
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+    
+    <Style Selector="Grid.sideMenu.hover TextBlock.navText">
+        <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="Margin" Value="12,0,0,0" />
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navText">
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- SIDEBAR ICON STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.navIcon">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="Foreground" Value="#CCCCCC" />
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="FontSize" Duration="0:0:0.3" />
+                <ThicknessTransition Property="Margin" Duration="0:0:0.3" />
+                <DoubleTransition Property="Opacity" Duration="0:0:0.3" />
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Grid.sideMenu:pointerover TextBlock.navIcon">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+    
+    <Style Selector="Grid.sideMenu.hover TextBlock.navIcon">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Margin" Value="15,0,0,0" />
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+
+    <Style Selector="Button.navButton.selected TextBlock.navIcon">
+        <Setter Property="Foreground" Value="#CCCCCC" />
+    </Style>
+
+    <!-- ==================== -->
+    <!-- TITLE BAR STYLES     -->
+    <!-- ==================== -->
+    <Style Selector="Border.titleBar">
+        <Setter Property="Background" Value="{StaticResource DarkTitleBarBackground}" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Padding" Value="15,0" />
+    </Style>
+    
+    <Style Selector="TextBlock.titleText">
+        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</Styles> 

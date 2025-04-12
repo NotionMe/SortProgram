@@ -1,0 +1,152 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ==================== -->
+    <!-- FORM CONTROL STYLES  -->
+    <!-- ==================== -->
+    <Style Selector="TextBox.formControl">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="TextBox.formControl:focus">
+        <Setter Property="BorderBrush" Value="#555555"/>
+    </Style>
+    
+    <Style Selector="ComboBox.formControl">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#ced4da"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="ComboBox.formControl:focus">
+        <Setter Property="BorderBrush" Value="#555555"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- OTHER FORM CONTROLS  -->
+    <!-- ==================== -->
+    <Style Selector="CheckBox.formControl">
+        <Setter Property="Margin" Value="0,5"/>
+    </Style>
+    
+    <Style Selector="Slider.formControl">
+        <Setter Property="Margin" Value="0,10"/>
+    </Style>
+    
+    <Style Selector="ToggleSwitch">
+        <Setter Property="Margin" Value="0,5"/>
+        <Setter Property="OnContent" Value=""/>
+        <Setter Property="OffContent" Value=""/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- FORM LAYOUT STYLES   -->
+    <!-- ==================== -->
+    <Style Selector="TextBlock.formLabel">
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    
+    <Style Selector="TextBlock.formHint">
+        <Setter Property="Foreground" Value="{StaticResource GreyDark}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+    </Style>
+    
+    <Style Selector="TextBlock.formError">
+        <Setter Property="Foreground" Value="{StaticResource DangerBrush}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+    </Style>
+    
+    <Style Selector="StackPanel.formGroup">
+        <Setter Property="Margin" Value="0,0,0,15"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- INPUT ICON STYLES    -->
+    <!-- ==================== -->
+    <Style Selector="Border.IconContainer">
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Background" Value="{StaticResource GreyLight}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GreyMedium}"/>
+        <Setter Property="BorderThickness" Value="1,1,0,1"/>
+        <Setter Property="CornerRadius" Value="4,0,0,4"/>
+    </Style>
+
+    <!-- Стилі для форм входу та реєстрації -->
+    <Style Selector="Button.submitBtn">
+        <Setter Property="Background" Value="#FF0000"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+
+    <Style Selector="Button.submitBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Стиль для текстових кнопок -->
+    <Style Selector="Button.textBtn">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+
+    <Style Selector="Button.textBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Стиль для всіх полів вводу в формах -->
+    <Style Selector="TextBox.formInput">
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:focus">
+        <Setter Property="BorderBrush" Value="Gray"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:pointerover">
+        <Setter Property="BorderBrush" Value="Gray"/>
+    </Style>
+
+    <Style Selector="TextBox.formInput:pointerover /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style Selector="TextBox.formInput /template/ TextBlock#PART_Watermark">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+</Styles> 

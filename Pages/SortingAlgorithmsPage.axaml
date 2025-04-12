@@ -1,0 +1,153 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Margin="30">
+            <!--  Article 1  -->
+            <Border
+                Margin="0,10,0,20"
+                BoxShadow="0 4 8 #20000000"
+                Classes="fluentCard"
+                CornerRadius="10">
+                <Grid ColumnDefinitions="*, Auto">
+                    <!--  Текст статті  -->
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="20,15,10,15"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontFamily="{StaticResource OswaldFont}"
+                            FontSize="36"
+                            FontWeight="SemiBold"
+                            Text="Bubble Sort" />
+                        <TextBlock Margin="0,0,0,10" TextWrapping="Wrap">Бульбашкове сортування - це простий алгоритм сортування, який неодноразово переглядає список, порівнює сусідні елементи і міняє їх місцями, якщо вони в неправильному порядку.</TextBlock>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <Button
+                                Width="120"
+                                Margin="0,10,0,0"
+                                Padding="12,8"
+                                HorizontalAlignment="Left"
+                                Classes="blueButton"
+                                Click="InfoBubbleSort_Click"
+                                Content="Learn More"
+                                CornerRadius="5" />
+                            <Button
+                                Width="170"
+                                Margin="0,10,0,0"
+                                Padding="12,8"
+                                HorizontalAlignment="Left"
+                                Classes="successButton"
+                                Content="Go to try it"
+                                Click="GoToTryIt_Click"
+                                CornerRadius="5" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!--  Зображення статті  -->
+                    <Border
+                        Grid.Column="1"
+                        Width="200"
+                        Height="150"
+                        Margin="10,15,20,15"
+                        BoxShadow="0 2 4 #20000000"
+                        ClipToBounds="True"
+                        CornerRadius="5">
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="UniformToFill" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!--  Article 2  -->
+            <Border
+                Margin="0,10,0,20"
+                BoxShadow="0 4 8 #20000000"
+                Classes="fluentCard"
+                CornerRadius="10">
+                <Grid ColumnDefinitions="*, Auto">
+                    <!--  Текст статті  -->
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="20,15,10,15"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontFamily="{StaticResource OswaldFont}"
+                            FontSize="36"
+                            FontWeight="SemiBold"
+                            Text="Selection Sort" />
+                        <TextBlock Margin="0,0,0,10" TextWrapping="Wrap">Сортування вибором - це алгоритм сортування порівнянням, який розділяє вхідний список на дві частини: відсортований підсписок і невідсортований підсписок. Знаходить найменший елемент і переміщує його на початок.</TextBlock>
+                        <Button
+                            Width="120"
+                            Margin="0,10,0,0"
+                            Padding="12,8"
+                            HorizontalAlignment="Left"
+                            Classes="blueButton"
+                            Content="Learn More"
+                            CornerRadius="5" />
+                    </StackPanel>
+
+                    <!--  Зображення статті  -->
+                    <Border
+                        Grid.Column="1"
+                        Width="200"
+                        Height="150"
+                        Margin="10,15,20,15"
+                        BoxShadow="0 2 4 #20000000"
+                        ClipToBounds="True"
+                        CornerRadius="5">
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="UniformToFill" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!--  Article 3  -->
+            <Border
+                Margin="0,10,0,20"
+                BoxShadow="0 4 8 #20000000"
+                Classes="fluentCard"
+                CornerRadius="10">
+                <Grid ColumnDefinitions="*, Auto">
+                    <!--  Текст статті  -->
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="20,15,10,15"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Margin="0,0,0,10"
+                            FontFamily="{StaticResource OswaldFont}"
+                            FontSize="36"
+                            FontWeight="SemiBold"
+                            Text="Quick Sort" />
+                        <TextBlock Margin="0,0,0,10" TextWrapping="Wrap">Швидке сортування - це алгоритм "розділяй і володарюй", який працює шляхом вибору опорного елемента і поділу масиву навколо нього так, щоб елементи, менші за опорний, були зліва, а більші - справа.</TextBlock>
+                        <Button
+                            Width="120"
+                            Margin="0,10,0,0"
+                            Padding="12,8"
+                            HorizontalAlignment="Left"
+                            Classes="blueButton"
+                            Content="Learn More"
+                            CornerRadius="5" />
+                    </StackPanel>
+
+                    <!--  Зображення статті  -->
+                    <Border
+                        Grid.Column="1"
+                        Width="200"
+                        Height="150"
+                        Margin="10,15,20,15"
+                        BoxShadow="0 2 4 #20000000"
+                        ClipToBounds="True"
+                        CornerRadius="5">
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="UniformToFill" />
+                    </Border>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

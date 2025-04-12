@@ -1,0 +1,92 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ==================== -->
+    <!-- CARD STYLES          -->
+    <!-- ==================== -->
+    <Style Selector="Border.card">
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="BorderBrush" Value="#DDDDDD"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="15"/>
+        <Setter Property="Margin" Value="0,0,0,15"/>
+        <Setter Property="BoxShadow" Value="0 2 4 #20000000"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- FLUENT DESIGN STYLES -->
+    <!-- ==================== -->
+    <Style Selector="Border.fluentCard">
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="BorderBrush" Value="#EEEEEE"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+        <Setter Property="BoxShadow" Value="0 2 8 #10000000"/>
+    </Style>
+    
+    <Style Selector=".ThemeDark Border.fluentCard">
+        <Setter Property="Background" Value="#3A3A3A"/>
+        <Setter Property="BorderBrush" Value="#444444"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- TABLE STYLES         -->
+    <!-- ==================== -->
+    <Style Selector="DataGrid.dataTable">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#dee2e6"/>
+        <Setter Property="GridLinesVisibility" Value="All"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="#dee2e6"/>
+        <Setter Property="VerticalGridLinesBrush" Value="#dee2e6"/>
+    </Style>
+    
+    <Style Selector="DataGridColumnHeader">
+        <Setter Property="Background" Value="#f8f9fa"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    
+    <Style Selector="DataGridRow">
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    
+    <Style Selector="DataGridCell">
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- HEADING STYLES       -->
+    <!-- ==================== -->
+    <Style Selector="Border.header">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+    </Style>
+    
+    <Style Selector="TextBlock.algorithm-title">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <Style Selector="TextBlock.description-title">
+        <Setter Property="Foreground" Value="{StaticResource InfoBrush}"/>
+    </Style>
+    
+    <Style Selector="TextBlock.sectionTitle">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,10,0,10"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- PANELS STYLES        -->
+    <!-- ==================== -->
+    <Style Selector="Border.panel">
+        <Setter Property="Background" Value="{StaticResource LightCardBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
+</Styles> 

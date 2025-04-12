@@ -1,0 +1,262 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ==================== -->
+    <!-- BUTTON BASE STYLES   -->
+    <!-- ==================== -->
+    <Style Selector="Button.baseButton">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- PRIMARY BUTTONS      -->
+    <!-- ==================== -->
+    <Style Selector="Button.primaryButton">
+        <Setter Property="Background" Value="{StaticResource GreyDarker}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.primaryButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource GreyDarker}"/>
+    </Style>
+    
+    <Style Selector="Button.primaryButton:pressed">
+        <Setter Property="Background" Value="#777777"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- SECONDARY BUTTONS    -->
+    <!-- ==================== -->
+    <Style Selector="Button.secondaryButton">
+        <Setter Property="Background" Value="{StaticResource GreyDark}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.secondaryButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource GreyDark}"/>
+    </Style>
+    
+    <Style Selector="Button.secondaryButton:pressed">
+        <Setter Property="Background" Value="#4e555b"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- BLUE BUTTONS         -->
+    <!-- ==================== -->
+    <Style Selector="Button.blueButton">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.blueButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    
+    <Style Selector="Button.blueButton:pressed">
+        <Setter Property="Background" Value="#1f618d"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- PRIMARY BLUE BUTTONS -->
+    <!-- ==================== -->
+    <Style Selector="Button.primaryBlueButton">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#3498db"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.primaryBlueButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource InfoDarkColor}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#2980b9"/>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    
+    <Style Selector="Button.primaryBlueButton:pressed">
+        <Setter Property="Background" Value="#1f618d"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#2980b9"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- SUCCESS BUTTONS      -->
+    <!-- ==================== -->
+    <Style Selector="Button.successButton">
+        <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="15,8"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    
+    <Style Selector="Button.successButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource SuccessBrush}"/>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    
+    <Style Selector="Button.successButton:pressed">
+        <Setter Property="Background" Value="#1e8449"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- NAVIGATION BUTTONS   -->
+    <!-- ==================== -->
+    <Style Selector="Button.navButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0,2"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.navButton:pointerover">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#CCCCCC"/>
+    </Style>
+    
+    <Style Selector="Button.navButton.selected">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#CCCCCC"/>
+        <Setter Property="BorderThickness" Value="3,0,0,0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+    </Style>
+    
+    <Style Selector="Button.navButton.selected:pointerover">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#CCCCCC"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- UTILITY BUTTONS      -->
+    <!-- ==================== -->
+    <Style Selector="Button.eyeButton">
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <Style Selector="Button.eyeButton:pointerover">
+        <Setter Property="Background" Value="{StaticResource GreyLight}"/>
+        <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+    
+    <!-- ==================== -->
+    <!-- LOGIN/SIGNUP BUTTONS -->
+    <!-- ==================== -->
+    <Style Selector="Button.submitBtn">
+        <Setter Property="Background" Value="#FF0000"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+    
+    <Style Selector="Button.submitBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+    
+    <Style Selector="Button.linkBtn">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
+    </Style>
+    
+    <Style Selector="Button.linkBtn:pointerover">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+</Styles>

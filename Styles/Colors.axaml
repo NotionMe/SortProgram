@@ -1,0 +1,99 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ==================== -->
+    <!-- COLOR PALETTE        -->
+    <!-- ==================== -->
+    <Styles.Resources>
+        <!-- Основні кольори -->
+        <Color x:Key="PrimaryColor">#0078D4</Color>
+        <Color x:Key="PrimaryLightColor">#80bdff</Color>
+        <Color x:Key="PrimaryDarkColor">#005a9e</Color>
+        
+        <!-- Акцентні кольори -->
+        <Color x:Key="AccentColor">#5a65ba</Color>
+        <Color x:Key="AccentLightColor">#7a85da</Color>
+        <Color x:Key="AccentDarkColor">#4a55aa</Color>
+        
+        <!-- Інформаційні кольори -->
+        <Color x:Key="InfoColor">#3498db</Color>
+        <Color x:Key="InfoLightColor">#5faee3</Color>
+        <Color x:Key="InfoDarkColor">#2980b9</Color>
+        
+        <!-- Успіх, попередження та помилки -->
+        <Color x:Key="SuccessColor">#2ecc71</Color>
+        <Color x:Key="SuccessDarkColor">#27ae60</Color>
+        <Color x:Key="WarningColor">#f39c12</Color>
+        <Color x:Key="DangerColor">#dc3545</Color>
+        
+        <!-- Нейтральні кольори -->
+        <Color x:Key="GreyLight">#f8f9fa</Color>
+        <Color x:Key="GreyMediumLight">#e9ecef</Color>
+        <Color x:Key="GreyMedium">#ced4da</Color>
+        <Color x:Key="GreyDark">#6c757d</Color>
+        <Color x:Key="GreyDarker">#555555</Color>
+        
+        <!-- Кольори тем -->
+        <Color x:Key="LightBackground">#FFFFFF</Color>
+        <Color x:Key="LightCardBackground">#FFFFFF</Color>
+        <Color x:Key="LightTextColor">#333333</Color>
+        <Color x:Key="LightBorderColor">#DDDDDD</Color>
+        <Color x:Key="LightPageNumberColor">#DDDDDD</Color>
+        
+        <Color x:Key="DarkBackground">#333333</Color>
+        <Color x:Key="DarkCardBackground">#2D2D2D</Color>
+        <Color x:Key="DarkTextColor">#E0E0E0</Color>
+        <Color x:Key="DarkBorderColor">#555555</Color>
+        <Color x:Key="DarkSideMenuBackground">#333333</Color>
+        <Color x:Key="DarkTitleBarBackground">#333333</Color>
+        <Color x:Key="DarkPageNumberColor">#555555</Color>
+
+        <!-- SolidColorBrush ресурси для зручного використання -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+        <SolidColorBrush x:Key="InfoBrush" Color="{StaticResource InfoColor}"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+        <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
+        
+        <SolidColorBrush x:Key="LightBackgroundBrush" Color="{StaticResource LightBackground}"/>
+        <SolidColorBrush x:Key="DarkBackgroundBrush" Color="{StaticResource DarkBackground}"/>
+        <SolidColorBrush x:Key="LightTextBrush" Color="{StaticResource LightTextColor}"/>
+        <SolidColorBrush x:Key="DarkTextBrush" Color="{StaticResource DarkTextColor}"/>
+        <SolidColorBrush x:Key="DarkSideMenuBackgroundBrush" Color="{StaticResource DarkSideMenuBackground}"/>
+        <SolidColorBrush x:Key="DarkTitleBarBackgroundBrush" Color="{StaticResource DarkTitleBarBackground}"/>
+        <SolidColorBrush x:Key="DarkCardBackgroundBrush" Color="{StaticResource DarkCardBackground}"/>
+        <SolidColorBrush x:Key="DarkBorderColorBrush" Color="{StaticResource DarkBorderColor}"/>
+        <SolidColorBrush x:Key="LightCardBackgroundBrush" Color="{StaticResource LightCardBackground}"/>
+        <SolidColorBrush x:Key="LightBorderColorBrush" Color="{StaticResource LightBorderColor}"/>
+        <SolidColorBrush x:Key="LightPageNumberBrush" Color="{StaticResource LightPageNumberColor}"/>
+        <SolidColorBrush x:Key="DarkPageNumberBrush" Color="{StaticResource DarkPageNumberColor}"/>
+        
+        <!-- Динамічні ресурси, що змінюються залежно від теми -->
+        <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{StaticResource LightBackground}"/>
+        <SolidColorBrush x:Key="ThemeForegroundBrush" Color="{StaticResource LightTextColor}"/>
+        <SolidColorBrush x:Key="ThemeCardBackgroundBrush" Color="{StaticResource LightCardBackground}"/>
+        <SolidColorBrush x:Key="ThemeBorderBrush" Color="{StaticResource LightBorderColor}"/>
+        <SolidColorBrush x:Key="ThemePageNumberBrush" Color="{StaticResource LightPageNumberColor}"/>
+
+        <!-- Кольори для кнопок в алгоритмах сортування -->
+        <Color x:Key="ButtonBackgroundHoverColor">#406af5</Color>
+        <Color x:Key="ButtonBackgroundPressedColor">#294bc0</Color>
+        
+        <!-- Кольори для алгоритму сортування -->
+        <Color x:Key="DefaultArrayElementColor">#78909C</Color>    <!-- Більш насичений сірий -->
+        <Color x:Key="ComparedElementColor">#FFD600</Color>        <!-- Яскравіший жовтий -->
+        <Color x:Key="SwappedElementColor">#FF3D00</Color>         <!-- Яскравіший оранжевий -->
+        <Color x:Key="SortedElementColor">#00C853</Color>          <!-- Яскравіший зелений -->
+        <Color x:Key="ButtonSeparatorColor">#BBBBBB</Color>        <!-- Колір для розділювача кнопок -->
+        
+        <SolidColorBrush x:Key="ButtonBackgroundHover" Color="{StaticResource ButtonBackgroundHoverColor}" />
+        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{StaticResource ButtonBackgroundPressedColor}" />
+        <SolidColorBrush x:Key="DefaultArrayElementBrush" Color="{StaticResource DefaultArrayElementColor}" />
+        <SolidColorBrush x:Key="ComparedElementBrush" Color="{StaticResource ComparedElementColor}" />
+        <SolidColorBrush x:Key="SwappedElementBrush" Color="{StaticResource SwappedElementColor}" />
+        <SolidColorBrush x:Key="SortedElementBrush" Color="{StaticResource SortedElementColor}" />
+        <SolidColorBrush x:Key="ButtonSeparatorBrush" Color="{StaticResource ButtonSeparatorColor}" />
+    </Styles.Resources>
+</Styles> 
