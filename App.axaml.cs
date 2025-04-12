@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 

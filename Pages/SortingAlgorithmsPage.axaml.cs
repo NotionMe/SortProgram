@@ -2,6 +2,8 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
 using Avalonia;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -29,7 +31,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         // Обробник події для відкриття інтерактивної візуалізації Bubble Sort
         private void GoToTryIt_Click(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("hello");
+            if (this.Parent is ContentControl contentControl)
+            {
+                contentControl.Content = new BubbleSort();
+            }
         }
     }
 }

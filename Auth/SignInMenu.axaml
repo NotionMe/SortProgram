@@ -1,0 +1,136 @@
+<Window
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Auth.SignInMenu"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Sign In"
+    Width="1140"
+    Height="720"
+    Background="Transparent"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <Border Background="White" CornerRadius="50">
+        <Grid Margin="20" ColumnDefinitions="Auto,*">
+            <Grid Grid.Column="0" Width="600">
+                <Border>
+                    <Border.Clip>
+                        <PathGeometry>
+                            M0 25C0 11.1929 11.1929 0 25 0H570.822C586.157 0 597.878 13.6792 595.527 28.8328L497.784 658.833C495.894 671.014 485.407 680 473.08 680H25C11.1929 680 0 668.807 0 655V25Z
+                        </PathGeometry>
+                    </Border.Clip>
+                    <Image
+                        Margin="0,0,-500,0"
+                        Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/bg.jpg"
+                        Stretch="UniformToFill" />
+                </Border>
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <Grid
+                        Grid.Row="0"
+                        Margin="35"
+                        ColumnDefinitions="*,*">
+                        <TextBlock
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Foreground="rgba(255,255,255,0.9)"
+                            Text=" " />
+                        <StackPanel
+                            Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Spacing="15">
+                            <Button
+                                Width="80"
+                                Height="40"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                Content="Login"
+                                CornerRadius="20"
+                                FontSize="12"
+                                Foreground="White"
+                                Click="LoginButton_Click" />
+                            <Button
+                                Width="80"
+                                Height="40"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                BorderBrush="White"
+                                Content="Sign Up"
+                                CornerRadius="20"
+                                FontSize="12"
+                                Foreground="White" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1" Margin="100,0,100,0">
+                <StackPanel
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Orientation="Vertical"
+                    Spacing="20">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="36"
+                        FontWeight="ExtraBold"
+                        Foreground="rgba(0,0,0,0.9)"
+                        Text="Sign Up" />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Foreground="rgba(0,0,0,0.8)"
+                        Text="Create your account" />
+                    <StackPanel Orientation="Vertical" Spacing="10">
+                        <TextBox FontSize="14" Watermark="Username" Classes="formInput" />
+                        <TextBox FontSize="14" Watermark="Email" Classes="formInput" />
+                        <TextBox PasswordChar="*" Watermark="Password" Classes="formInput" />
+                        <TextBox PasswordChar="*" Watermark="Confirm Password" Classes="formInput" />
+                    </StackPanel>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        Spacing="15">
+                        <Rectangle
+                            Width="50"
+                            Height="2"
+                            Fill="rgba(0,0,0,0.3)" />
+                        <TextBlock
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="rgba(0,0,0,0.8)"
+                            Text="or" />
+                        <Rectangle
+                            Width="50"
+                            Height="2"
+                            Fill="rgba(0,0,0,0.3)" />
+                    </StackPanel>
+                    <Button HorizontalAlignment="Stretch" Classes="googleBtn" />
+                    <Button
+                        HorizontalAlignment="Stretch"
+                        Classes="submitBtn"
+                        Click="SignInButton_Click"
+                        Content="Sign Up" />
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Medium">
+                        <Run Foreground="rgba(0,0,0,0.8)" Text="Already have an account? " />
+                        <Button
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Classes="textBtn"
+                            Click="LoginButton_Click">
+                            <TextBlock
+                                Foreground="{StaticResource prColor}"
+                                Text="Login" 
+                                Margin="0,0,10,0" />
+                        </Button>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

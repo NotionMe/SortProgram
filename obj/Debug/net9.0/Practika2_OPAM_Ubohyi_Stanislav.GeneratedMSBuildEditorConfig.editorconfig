@@ -24,7 +24,10 @@ build_property.EnableCodeStyleSeverity =
 [/home/linux/Repos/Praktika/SortProgram/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/linux/Repos/Praktika/SortProgram/LoginMenu.axaml]
+[/home/linux/Repos/Praktika/SortProgram/Auth/LoginMenu.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Auth/SignInMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/MainWindow.axaml]
@@ -33,7 +36,10 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Pages/HomePage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/linux/Repos/Praktika/SortProgram/Pages/InfoBubbleSort.axaml]
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/ComparisonPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoBubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/Pages/SettingsPage.axaml]
@@ -45,7 +51,7 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Pages/StatisticsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/linux/Repos/Praktika/SortProgram/SignInMenu.axaml]
+[/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/BubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/Styles/Colors.axaml]
