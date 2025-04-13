@@ -33,6 +33,16 @@
         <Color x:Key="GreyDark">#6c757d</Color>
         <Color x:Key="GreyDarker">#555555</Color>
         
+        <!-- Кольори для сайдбару -->
+        <Color x:Key="RichBlackColor">#001A23</Color>
+        <Color x:Key="AliceBlueColor">#F0F8FF</Color>
+        <Color x:Key="CeladonColor">#B3EFB2</Color>
+        <Color x:Key="CambridgeBlueColor">#7A9E7E</Color>
+        <Color x:Key="BrunswickGreenColor">#31493C</Color>
+
+        <!-- Колір для основного фону -->
+        <Color x:Key="PrimaryBackgroundColor">#F0F8FF</Color>
+        
         <!-- Кольори тем -->
         <Color x:Key="LightBackground">#FFFFFF</Color>
         <Color x:Key="LightCardBackground">#FFFFFF</Color>
@@ -57,6 +67,16 @@
         <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
         <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}"/>
         
+        <!-- Пензлі для сайдбару -->
+        <SolidColorBrush x:Key="RichBlackBrush" Color="{StaticResource RichBlackColor}"/>
+        <SolidColorBrush x:Key="AliceBlueBrush" Color="{StaticResource AliceBlueColor}"/>
+        <SolidColorBrush x:Key="CeladonBrush" Color="{StaticResource CeladonColor}"/>
+        <SolidColorBrush x:Key="CambridgeBlueBrush" Color="{StaticResource CambridgeBlueColor}"/>
+        <SolidColorBrush x:Key="BrunswickGreenBrush" Color="{StaticResource BrunswickGreenColor}"/>
+        
+        <!-- Пензель для основного фону -->
+        <SolidColorBrush x:Key="PrimaryBackgroundBrush" Color="{StaticResource PrimaryBackgroundColor}"/>
+        
         <SolidColorBrush x:Key="LightBackgroundBrush" Color="{StaticResource LightBackground}"/>
         <SolidColorBrush x:Key="DarkBackgroundBrush" Color="{StaticResource DarkBackground}"/>
         <SolidColorBrush x:Key="LightTextBrush" Color="{StaticResource LightTextColor}"/>
@@ -76,6 +96,11 @@
         <SolidColorBrush x:Key="ThemeCardBackgroundBrush" Color="{StaticResource LightCardBackground}"/>
         <SolidColorBrush x:Key="ThemeBorderBrush" Color="{StaticResource LightBorderColor}"/>
         <SolidColorBrush x:Key="ThemePageNumberBrush" Color="{StaticResource LightPageNumberColor}"/>
+        
+        <!-- Themable Brushes (з GlobalStyle) -->
+        <SolidColorBrush x:Key="ThemeSecondaryBackgroundBrush" Color="{StaticResource CeladonColor}"/>
+        <SolidColorBrush x:Key="ThemeAccentBrush" Color="{StaticResource CambridgeBlueColor}"/>
+        <SolidColorBrush x:Key="ThemeSecondaryForegroundBrush" Color="{StaticResource RichBlackColor}"/>
 
         <!-- Кольори для кнопок в алгоритмах сортування -->
         <Color x:Key="ButtonBackgroundHoverColor">#406af5</Color>

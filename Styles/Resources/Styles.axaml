@@ -61,6 +61,57 @@
 		</Style>
 	</Style>
 
+	<Style Selector="TextBox.formInput">
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="BorderBrush" Value="rgba(0,0,0,0.3)"/>
+		<Setter Property="CornerRadius" Value="12"/>
+		<Setter Property="Foreground" Value="rgba(0,0,0,0.3)"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+			</Transitions>
+		</Setter>
+		<Style Selector="^ /template/ TextBlock#PART_Watermark">
+			<Setter Property="FontSize" Value="12"/>
+			<Setter Property="Foreground" Value="rgba(0,0,0,0.3)"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ Border#PART_BorderElement">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="BorderBrush" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource prColor}"/>
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Watermark">
+				<Setter Property="Foreground" Value="rgba(0,0,0,0.6)"/>
+			</Style>
+		</Style>
+		<Style Selector="^:focus">
+			<Setter Property="Foreground" Value="{DynamicResource prColor}"/>
+			<Style Selector="^ /template/ Border#PART_BorderElement">
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource prColor}"/>
+			</Style>
+		</Style>
+	</Style>
+
 	<Style Selector="Button.googleBtn">
 		<Setter Property="Height" Value="50"/>
 		<Setter Property="Template">
@@ -132,7 +183,64 @@
 			<Setter Property="Background" Value="{DynamicResource prColor}"/>
 			<Setter Property="Foreground" Value="White"/>
 		</Style>
+	</Style>
 
+	<Style Selector="Button.textBtn">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Cursor" Value="Hand"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+				<DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
+		<Setter Property="RenderTransform" Value="none"/>
 	</Style>
 	
+	<Style Selector="Button.textBtn:pointerover">
+		<Setter Property="Opacity" Value="0.75"/>
+		<Setter Property="RenderTransform" Value="scale(1.05)"/>
+	</Style>
+	
+	<Style Selector="Button.textBtn:pressed">
+		<Setter Property="Opacity" Value="0.5"/>
+		<Setter Property="RenderTransform" Value="scale(0.95)"/>
+	</Style>
+
+	<!-- Стиль для кнопок у верхній частині екрану -->
+	<Style Selector="Button.headerButton">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="CornerRadius" Value="20"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+				<DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
+		<Setter Property="RenderTransform" Value="none"/>
+	</Style>
+	
+	<Style Selector="Button.headerButton:pointerover">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="RenderTransform" Value="scale(1.1)"/>
+		<Setter Property="Opacity" Value="0.9"/>
+	</Style>
+	
+	<Style Selector="Button.headerButton:pressed">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="RenderTransform" Value="scale(0.9)"/>
+		<Setter Property="Opacity" Value="0.8"/>
+	</Style>
+	
+	<Style Selector="Button.headerButton.bordered">
+		<Setter Property="BorderBrush" Value="White"/>
+		<Setter Property="BorderThickness" Value="1.5"/>
+	</Style>
 </Styles>

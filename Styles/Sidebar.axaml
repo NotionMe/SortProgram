@@ -1,0 +1,254 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Design.PreviewWith>
+        <Border Padding="0">
+            <StackPanel Width="60" Height="400">
+                <Border Classes="SidebarButton" IsEnabled="False">
+                    <TextBlock Text="А" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <Border Classes="SidebarButton Selected">
+                    <Image Source="/Assets/logo.png" Width="24" Height="24"/>
+                </Border>
+                <Border Classes="SidebarButton">
+                    <PathIcon Data="M0,0 L10,10 M10,0 L0,10" Width="16" Height="16"/>
+                </Border>
+                <Border Classes="SidebarButton">
+                    <PathIcon Data="M0,5 L10,5 M5,0 L5,10" Width="16" Height="16"/>
+                </Border>
+                <Border Classes="SidebarButton">
+                    <PathIcon Data="M2,1 L8,1 L8,8 L2,8 Z" Width="16" Height="16"/>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Sidebar Background -->
+    <Style Selector="Grid.Sidebar">
+        <Setter Property="Background" Value="{StaticResource RichBlackColor}"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="ClipToBounds" Value="False"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Width" Duration="0:0:0.25" Easing="CubicEaseOut"/>
+                <BrushTransition Property="Background" Duration="0:0:0.25"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <!-- Sidebar Expanded Style -->
+    <Style Selector="Grid.Sidebar.Expanded">
+        <Setter Property="Width" Value="220"/>
+    </Style>
+    
+    <!-- Старий стиль для зворотної сумісності -->
+    <Style Selector="StackPanel.Sidebar">
+        <Setter Property="Background" Value="{StaticResource RichBlackColor}"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="ClipToBounds" Value="False"/>
+    </Style>
+
+    <!-- Прибираємо обрізання в батьківських елементах -->
+    <Style Selector="StackPanel">
+        <Setter Property="ClipToBounds" Value="False"/>
+    </Style>
+
+    <!-- Sidebar Button Base Style -->
+    <Style Selector="Border.SidebarButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="52"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ClipToBounds" Value="False"/>
+        <Setter Property="Margin" Value="0,2"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+                <DoubleTransition Property="Width" Duration="0:0:0.25"/>
+                <BoxShadowsTransition Property="BoxShadow" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+    </Style>
+    
+    <!-- Стиль для фону іконок -->
+    <Style Selector="Border.ButtonIconBackground">
+        <Setter Property="Width" Value="36"/>
+        <Setter Property="Height" Value="36"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="ClipToBounds" Value="False"/>
+        <Setter Property="BoxShadow" Value="0 0 0 0 #00000000"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.2"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+                <BoxShadowsTransition Property="BoxShadow" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+    </Style>
+    
+    <!-- Sidebar Button in Expanded Sidebar Style -->
+    <Style Selector="Grid.Sidebar.Expanded Border.SidebarButton">
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5,2"/>
+    </Style>
+    
+    <!-- Показуємо текст тільки при розгорнутому меню -->
+    <Style Selector="Grid.Sidebar.Expanded Border.SidebarButton Grid TextBlock.ButtonLabel">
+        <Setter Property="IsVisible" Value="True"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    
+    <!-- Приховуємо текст коли sidebar не розгорнутий -->
+    <Style Selector="Grid.Sidebar:not(.Expanded) Border.SidebarButton Grid TextBlock.ButtonLabel">
+        <Setter Property="IsVisible" Value="False"/>
+        <Setter Property="Opacity" Value="0"/>
+    </Style>
+
+    <!-- Sidebar Button Hover Style -->
+    <Style Selector="Border.SidebarButton:pointerover">
+        <Setter Property="Background" Value="#20FFFFFF"/>
+        <Setter Property="RenderTransform" Value="scale(1.02)"/>
+        <Setter Property="ZIndex" Value="10"/>
+        <Setter Property="BoxShadow" Value="0 2 6 0 #20000000"/>
+    </Style>
+    
+    <Style Selector="Border.SidebarButton:pointerover Border.ButtonIconBackground">
+        <Setter Property="Background" Value="#40FFFFFF"/>
+        <Setter Property="RenderTransform" Value="scale(1.05) rotate(3deg)"/>
+        <Setter Property="BoxShadow" Value="0 2 8 0 #30000000"/>
+    </Style>
+
+    <!-- Sidebar Button Selected Style -->
+    <Style Selector="Border.SidebarButton.Selected">
+        <Setter Property="Background" Value="#25FFFFFF"/>
+    </Style>
+    
+    <Style Selector="Border.SidebarButton.Selected Border.ButtonIconBackground">
+        <Setter Property="Background" Value="#3090FF"/>
+        <Setter Property="BoxShadow" Value="0 2 8 2 #3090FF40"/>
+    </Style>
+
+    <!-- Sidebar Button Selected Hover Style -->
+    <Style Selector="Border.SidebarButton.Selected:pointerover">
+        <Setter Property="Background" Value="#35FFFFFF"/>
+        <Setter Property="RenderTransform" Value="scale(1.02)"/>
+        <Setter Property="BoxShadow" Value="0 2 10 0 #30000000"/>
+    </Style>
+    
+    <Style Selector="Border.SidebarButton.Selected:pointerover Border.ButtonIconBackground">
+        <Setter Property="Background" Value="#4090FF"/>
+        <Setter Property="RenderTransform" Value="scale(1.05) rotate(3deg)"/>
+        <Setter Property="BoxShadow" Value="0 2 10 3 #4090FF60"/>
+    </Style>
+
+    <!-- Sidebar Button Pressed Style -->
+    <Style Selector="Border.SidebarButton:pressed">
+        <Setter Property="Background" Value="#40FFFFFF"/>
+        <Setter Property="RenderTransform" Value="scale(0.97)"/>
+        <Setter Property="BoxShadow" Value="0 0 2 0 #40000000"/>
+    </Style>
+    
+    <Style Selector="Border.SidebarButton:pressed Border.ButtonIconBackground">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Sidebar Button Disabled Style -->
+    <Style Selector="Border.SidebarButton:disabled">
+        <Setter Property="Opacity" Value="0.5"/>
+    </Style>
+
+    <!-- Icon and Text Styles within Sidebar -->
+    <Style Selector="Border.SidebarButton > PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource AliceBlueColor}"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pointerover > PathIcon">
+        <Setter Property="RenderTransform" Value="scale(1.15)"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pressed > PathIcon">
+        <Setter Property="RenderTransform" Value="scale(0.9)"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource AliceBlueColor}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style Selector="Border.ButtonIconBackground > TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton Grid TextBlock">
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pointerover Border.ButtonIconBackground TextBlock">
+        <Setter Property="RenderTransform" Value="scale(1.05)"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pressed Border.ButtonIconBackground TextBlock">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <!-- Styles for Grid inside buttons -->
+    <Style Selector="Border.SidebarButton > Grid">
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none"/>
+        <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton > Grid > Border">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pointerover > Grid">
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+
+    <Style Selector="Border.SidebarButton:pressed > Grid">
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+</Styles> 

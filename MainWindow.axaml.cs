@@ -8,163 +8,160 @@ using Avalonia;
 using System.Diagnostics;
 using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 using Avalonia.Input;
+using System.Linq;
+using Avalonia.VisualTree;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
     public partial class SortProgram : Window
     {
-        private Button? currentSelectedButton;
+        private Border? currentSelectedButton;
         // Використовуємо ThemeManager для керування темою
         public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
         public SortProgram()
         {
             InitializeComponent();
+            
             // Встановлюємо початкову сторінку та вибраний пункт меню
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
             
-            // Початкова ініціалізація темної теми замість світлої
-            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
-            if (mainContentGrid != null)
+            // Встановлюємо обробники подій для кнопок
+            SetupEventHandlers();
+            
+            // Оновлюємо тему за замовчуванням
+            var mainGrid = this.FindControl<Grid>("MainGrid");
+            if (mainGrid != null)
             {
-                // Використовуємо темну тему за замовчуванням
-                ThemeManager.SetLightTheme(mainContentGrid);
+                ThemeManager.SetLightTheme(mainGrid);
             }
             UpdateThemeUI();
-            
-            // Підключаємо події наведення миші для sidebar
-            var sidebar = this.FindControl<Grid>("SidebarMenu");
-            if (sidebar != null)
-            {
-                sidebar.PointerEntered += Sidebar_PointerEntered;
-                sidebar.PointerExited += Sidebar_PointerExited;
-            }
         }
         
-        // Обробка наведення курсору на sidebar
-        private void Sidebar_PointerEntered(object? sender, PointerEventArgs e)
+        private void SetupEventHandlers()
+        {
+            // Головні кнопки навігації
+            HomeButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(HomeButton);
+                NavigateToPage(new HomePage());
+            };
+            
+            SearchButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(SearchButton);
+                NavigateToPage(new SortingAlgorithmsPage());
+            };
+            
+            StatisticsButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(StatisticsButton);
+                NavigateToPage(new StatisticsPage());
+            };
+            
+            SettingsButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(SettingsButton);
+                NavigateToPage(new SettingsPage());
+            };
+            
+            // Додаткові кнопки
+            ThemeButton.PointerPressed += (s, e) => {
+                ToggleTheme();
+            };
+            
+            ExitButton.PointerPressed += (s, e) => {
+                Environment.Exit(0);
+            };
+        }
+        
+        // Обробка наведення курсору на sidebar - розширення
+        private void Sidebar_PointerEnter(object? sender, PointerEventArgs e)
         {
             Debug.WriteLine("Sidebar: Pointer entered");
             if (sender is Grid grid)
             {
-                grid.Classes.Add("hover");
+                grid.Classes.Add("Expanded");
             }
         }
         
-        // Обробка виходу курсору з sidebar
-        private void Sidebar_PointerExited(object? sender, PointerEventArgs e)
+        // Обробка виходу курсору з sidebar - згортання
+        private void Sidebar_PointerLeave(object? sender, PointerEventArgs e)
         {
             Debug.WriteLine("Sidebar: Pointer exited");
             if (sender is Grid grid)
             {
-                grid.Classes.Remove("hover");
+                grid.Classes.Remove("Expanded");
             }
         }
 
-        private void UpdateSelectedButton(Button? newSelectedButton)
+        private void UpdateSelectedButton(Border? newSelectedButton)
         {
             if (newSelectedButton == null) return;
 
-            currentSelectedButton?.Classes.Remove("selected");
-            newSelectedButton.Classes.Add("selected");
+            if (currentSelectedButton != null)
+                currentSelectedButton.Classes.Remove("Selected");
+                
+            newSelectedButton.Classes.Add("Selected");
             currentSelectedButton = newSelectedButton;
         }
 
         private void NavigateToPage(Control page)
         {
-            var pageContent = this.FindControl<ContentControl>("PageContent");
-            if (pageContent != null)
+            var contentBorder = this.FindControl<Border>("ContentBorder");
+            if (contentBorder != null)
             {
-                pageContent.Content = page;
+                contentBorder.Child = page;
             }
         }
-
-        private void MinimizeWindow(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
-
-        private void MaximizeWindow(object? sender, RoutedEventArgs e) => 
-            WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-
-        private void CloseWindow(object? sender, RoutedEventArgs e) => Environment.Exit(0);
-
-        private void NavigateToHome(object? sender, RoutedEventArgs e)
+        
+        // Публічний метод для навігації, який використовується іншими класами
+        public void NavigateToPagePublic(Control page)
         {
-            if (sender is Button button)
-            {
-                UpdateSelectedButton(button);
-                NavigateToPage(new HomePage());
-            }
+            NavigateToPage(page);
         }
 
-        private void NavigateToSorting(object? sender, RoutedEventArgs e)
+        private void ToggleTheme()
         {
-            if (sender is Button button)
+            var mainGrid = this.FindControl<Grid>("MainGrid");
+            if (mainGrid != null)
             {
-                UpdateSelectedButton(button);
-                NavigateToPage(new SortingAlgorithmsPage());
-            }
-        }
-
-        private void NavigateToStaticks(object? sender, RoutedEventArgs e)
-        {
-            if (sender is Button button)
-            {
-                UpdateSelectedButton(button);
-                NavigateToPage(new StatisticsPage());
-            }
-        }
-
-        private void NavigateToSettings(object? sender, RoutedEventArgs e)
-        {
-            if (sender is Button button)
-            {
-                UpdateSelectedButton(button);
-                NavigateToPage(new SettingsPage());
-            }
-        }
-
-        public void ExitButton_Click(object? sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void ToggleTheme(object? sender, RoutedEventArgs e)
-        {
-            var mainContentGrid = this.FindControl<Grid>("MainContentGrid");
-            if (mainContentGrid != null)
-            {
-                ThemeManager.ToggleTheme(mainContentGrid);
+                ThemeManager.ToggleTheme(mainGrid);
             }
             UpdateThemeUI();
         }
 
         private void UpdateThemeUI()
         {
-            // Оновлюємо іконку та текст кнопки теми
-            var themeIcon = this.FindControl<TextBlock>("ThemeIcon");
-            var themeText = this.FindControl<TextBlock>("ThemeText");
-            
-            if (themeIcon != null && themeText != null)
+            // Оновлюємо тему та іконку на кнопці теми
+            var themeButton = this.FindControl<Border>("ThemeButton");
+            if (themeButton != null)
             {
-                if (ThemeManager.IsDarkTheme)
+                // Знаходимо іконку
+                var iconContainer = themeButton.GetVisualDescendants()
+                    .OfType<Border>()
+                    .FirstOrDefault(b => b.Classes.Contains("ButtonIconBackground"));
+                
+                var iconTextBlock = iconContainer?.Child as TextBlock;
+                
+                // Знаходимо текст
+                var labelTextBlock = themeButton.GetVisualDescendants()
+                    .OfType<TextBlock>()
+                    .FirstOrDefault(t => t.Classes.Contains("ButtonLabel"));
+                
+                if (iconTextBlock != null && labelTextBlock != null)
                 {
-                    themeIcon.Text = "🌙";
-                    themeText.Text = "Dark Theme";
-                }
-                else
-                {
-                    themeIcon.Text = "☀️";
-                    themeText.Text = "Light Theme";
+                    if (ThemeManager.IsDarkTheme)
+                    {
+                        iconTextBlock.Text = "☀️";
+                        labelTextBlock.Text = "Light Theme";
+                    }
+                    else
+                    {
+                        iconTextBlock.Text = "🌙";
+                        labelTextBlock.Text = "Dark Theme";
+                    }
                 }
             }
 
             Debug.WriteLine($"Theme changed to {(ThemeManager.IsDarkTheme ? "Dark" : "Light")}");
-        }
-
-        // Публічний метод для навігації, який можна викликати з інших класів
-        public void NavigateToPagePublic(Control page)
-        {
-            NavigateToPage(page);
         }
     }
 }

@@ -6,178 +6,181 @@
     xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
     xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
     Title="AlgoStart"
-    Width="1260"
-    Height="900"
+    Width="1360"
+    Height="1000"
     WindowStartupLocation="CenterScreen">
 
-    <DockPanel>
-        <!--  Верхня панель з назвою програми та кнопками управління вікном  -->
-        <Border Classes="titleBar" DockPanel.Dock="Top">
-            <Grid>
-                <TextBlock
-                    Margin="15,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="16"
-                    FontWeight="Bold"
-                    Foreground="#FFFFFF"
-                    Text="AlgoStart" />
-                <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <!--  Кнопка мінімізації вікна  -->
-                    <Button
-                        Name="MinimizeButton"
-                        Grid.Column="0"
-                        Classes="titleBarButton"
-                        Click="MinimizeWindow">
-                        <TextBlock
-                            Margin="0,0,0,0"
-                            FontFamily="Segoe UI"
-                            Text="−" />
-                    </Button>
-
-                    <!--  Кнопка максимізації вікна  -->
-                    <Button
-                        Name="MaximizeButton"
-                        Grid.Column="1"
-                        Classes="titleBarButton"
-                        Click="MaximizeWindow">
-                        <TextBlock
-                            Margin="0,-7,0,0"
-                            FontFamily="Segoe UI"
-                            Text="□" />
-                    </Button>
-
-                    <!--  Кнопка закриття вікна  -->
-                    <Button
-                        Name="CloseButton"
-                        Grid.Column="2"
-                        Classes="titleBarButton closeButton"
-                        Click="CloseWindow">
-                        <TextBlock
-                            Margin="0,0,0,0"
-                            FontFamily="Segoe UI"
-                            Text="×" />
-                    </Button>
-                </Grid>
-            </Grid>
-        </Border>
-
-        <!--  Бічне меню навігації  -->
-        <Grid Classes="sideMenu" DockPanel.Dock="Left" ZIndex="10" Name="SidebarMenu" Background="#333333">
+    <Grid ClipToBounds="False" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Бічна панель -->
+        <Grid Name="Sidebar" Grid.Column="0" Classes="Sidebar" ClipToBounds="False" Margin="0,0,0,0"
+              PointerEntered="Sidebar_PointerEnter" PointerExited="Sidebar_PointerLeave">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-
-            <!--  Логотип та назва  -->
-            <StackPanel Grid.Row="0" Margin="0,20,0,15">
-                <TextBlock
-                    Name="AppTitle"
-                    Classes="navIcon"
-                    FontSize="22"
-                    FontWeight="Bold"
-                    Foreground="#E0E0E0"
-                    Text="📊"
-                    HorizontalAlignment="Center" />
-                <TextBlock
-                    Classes="navText"
-                    Margin="15,8,0,0"
-                    FontSize="16"
-                    FontWeight="Bold"
-                    Foreground="#E0E0E0"
-                    Text="SortProgram" />
-                <TextBlock
-                    Classes="navText"
-                    Margin="15,3,0,0"
-                    FontSize="11"
-                    Foreground="#AAAAAA"
-                    Text="Візуалізація алгоритмів сортування" />
+            
+            <!-- Верхні кнопки -->
+            <StackPanel Grid.Row="1" ClipToBounds="False">
+                <!-- Головна сторінка -->
+                <Border Classes="SidebarButton Selected" Name="HomeButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="#1E90FF" Grid.Column="0" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="🏠" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Home" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Кнопка пошуку алгоритмів -->
+                <Border Classes="SidebarButton" Name="SearchButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="🔍" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Sorting Algorithms" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Кнопка статистики -->
+                <Border Classes="SidebarButton" Name="StatisticsButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="📊" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Statistics" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Кнопка налаштувань -->
+                <Border Classes="SidebarButton" Name="SettingsButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="🔧" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Settings" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
             </StackPanel>
-
-            <StackPanel Grid.Row="1">
-                <!--  Кнопка для переходу на головну сторінку  -->
-                <Button
-                    Name="HomeButton"
-                    Classes="navButton"
-                    Click="NavigateToHome">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Classes="navIcon" Text="🏡" />
-                        <TextBlock Classes="navText" Text="Home" />
-                    </DockPanel>
-                </Button>
-
-                <!--  Кнопка для переходу на сторінку списку таблиць  -->
-                <Button
-                    Name="SortingButton"
-                    Classes="navButton"
-                    Click="NavigateToSorting">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Classes="navIcon" Text="📈" />
-                        <TextBlock Classes="navText" Text="Sorting Algorithms" />
-                    </DockPanel>
-                </Button>
-
-                <!--  Кнопка для переходу на сторінку статистики  -->
-                <Button
-                    Name="StatisticsButton"
-                    Classes="navButton"
-                    Click="NavigateToStaticks">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Classes="navIcon" Text="📊" />
-                        <TextBlock Classes="navText" Text="Statistics" />
-                    </DockPanel>
-                </Button>
-
-                <!--  Кнопка для переходу на сторінку налаштувань  -->
-                <Button
-                    Name="SettingsButton"
-                    Classes="navButton"
-                    Click="NavigateToSettings">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Classes="navIcon" Text="🔧" />
-                        <TextBlock Classes="navText" Text="Settings" />
-                    </DockPanel>
-                </Button>
-            </StackPanel>
-
-            <!--  Нижні кнопки  -->
-            <StackPanel Grid.Row="2" Margin="0,0,0,10">
-                <!--  Кнопка перемикання теми  -->
-                <Button
-                    Name="ThemeButton"
-                    Classes="navButton"
-                    Click="ToggleTheme">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock
-                            Name="ThemeIcon"
-                            Classes="navIcon"
-                            Text="☀️" />
-                        <TextBlock
-                            Name="ThemeText"
-                            Classes="navText"
-                            Text="Light Theme" />
-                    </DockPanel>
-                </Button>
-
-                <!--  Кнопка для виходу з програми  -->
-                <Button Classes="navButton" Click="ExitButton_Click">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Classes="navIcon" Text="🚪" />
-                        <TextBlock Classes="navText" Text="Exit" />
-                    </DockPanel>
-                </Button>
+            
+            <!-- Нижні кнопки -->
+            <StackPanel Grid.Row="3" ClipToBounds="False">
+                <!-- Кнопка зміни теми -->
+                <Border Classes="SidebarButton" Name="ThemeButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="🌙" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Theme" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Кнопка виходу -->
+                <Border Classes="SidebarButton" Name="ExitButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="🚪" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Exit" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
             </StackPanel>
         </Grid>
-
-        <!--  Основний вміст сторінки  -->
-        <Grid Name="MainContentGrid" Classes="ThemeDark">
-            <ContentControl Name="PageContent" />
-        </Grid>
-    </DockPanel>
+        
+        <!-- Основний контент -->
+        <Border Name="ContentBorder" Grid.Column="1" Background="{StaticResource PrimaryBackgroundBrush}" Padding="25" CornerRadius="16" Margin="10,10,10,10">
+            <!-- Вміст за замовчуванням буде замінено на сторінки -->
+        </Border>
+    </Grid>
 </Window>

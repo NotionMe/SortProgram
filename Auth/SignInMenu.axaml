@@ -36,7 +36,7 @@
                             FontSize="16"
                             FontWeight="Bold"
                             Foreground="rgba(255,255,255,0.9)"
-                            Text=" " />
+                            Text="Basics algorithms" />
                         <StackPanel
                             Grid.Column="1"
                             HorizontalAlignment="Right"
@@ -47,23 +47,18 @@
                                 Height="40"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
-                                Background="Transparent"
                                 Content="Login"
-                                CornerRadius="20"
                                 FontSize="12"
-                                Foreground="White"
+                                Classes="headerButton"
                                 Click="LoginButton_Click" />
                             <Button
                                 Width="80"
                                 Height="40"
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
-                                Background="Transparent"
-                                BorderBrush="White"
                                 Content="Sign Up"
-                                CornerRadius="20"
                                 FontSize="12"
-                                Foreground="White" />
+                                Classes="headerButton bordered" />
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -116,19 +111,20 @@
                         Classes="submitBtn"
                         Click="SignInButton_Click"
                         Content="Sign Up" />
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Medium">
-                        <Run Foreground="rgba(0,0,0,0.8)" Text="Already have an account? " />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5">
+                        <TextBlock FontWeight="Medium" Foreground="rgba(0,0,0,0.8)" Text="Already have an account?" VerticalAlignment="Center" />
                         <Button
+                            Classes="textBtn"
                             Background="Transparent"
                             BorderThickness="0"
-                            Classes="textBtn"
+                            Padding="0"
                             Click="LoginButton_Click">
                             <TextBlock
                                 Foreground="{StaticResource prColor}"
                                 Text="Login" 
-                                Margin="0,0,10,0" />
+                                FontWeight="Medium" />
                         </Button>
-                    </TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
