@@ -179,7 +179,7 @@
         </Grid>
         
         <!-- Основний контент -->
-        <Border Name="ContentBorder" Grid.Column="1" Background="{StaticResource PrimaryBackgroundBrush}" Padding="25" CornerRadius="16" Margin="10,10,10,10">
+        <Border Name="ContentBorder" Grid.Column="1" Background="{DynamicResource ThemeBackgroundBrush}" Padding="25" CornerRadius="16" Margin="10,10,10,10">
             <!-- Вміст за замовчуванням буде замінено на сторінки -->
         </Border>
     </Grid>

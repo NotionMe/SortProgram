@@ -10,6 +10,7 @@
     
     <!-- Імпорт стилів компонентів -->
     <StyleInclude Source="/Styles/Components/ButtonStyles.axaml"/>
+    <StyleInclude Source="/Styles/Components/CustomButtonStyles.axaml"/>
     <StyleInclude Source="/Styles/Components/CardStyles.axaml"/>
     <StyleInclude Source="/Styles/Components/FormStyles.axaml"/>
     <StyleInclude Source="/Styles/Components/NavigationStyles.axaml"/>

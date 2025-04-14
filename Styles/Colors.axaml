@@ -50,14 +50,27 @@
         <Color x:Key="LightBorderColor">#DDDDDD</Color>
         <Color x:Key="LightPageNumberColor">#DDDDDD</Color>
         
-        <Color x:Key="DarkBackground">#333333</Color>
-        <Color x:Key="DarkCardBackground">#2D2D2D</Color>
-        <Color x:Key="DarkTextColor">#E0E0E0</Color>
-        <Color x:Key="DarkBorderColor">#555555</Color>
-        <Color x:Key="DarkSideMenuBackground">#333333</Color>
-        <Color x:Key="DarkTitleBarBackground">#333333</Color>
-        <Color x:Key="DarkPageNumberColor">#555555</Color>
-
+        <Color x:Key="DarkBackground">#121212</Color>
+        <Color x:Key="DarkCardBackground">#1E1E1E</Color>
+        <Color x:Key="DarkTextColor">#FFFFFF</Color>
+        <Color x:Key="DarkBorderColor">#333333</Color>
+        <Color x:Key="DarkPageNumberColor">#333333</Color>
+        
+        <!-- Кольори для сайдбару -->
+        <Color x:Key="LightSidebarBackground">#F0F0F0</Color>
+        <Color x:Key="LightSidebarHoverBackground">#E0E0E0</Color>
+        <Color x:Key="LightSidebarText">#333333</Color>
+        <Color x:Key="LightSidebarIcon">#333333</Color>
+        
+        <Color x:Key="DarkSidebarBackground">#1E1E2F</Color>
+        <Color x:Key="DarkSidebarHoverBackground">#2C2C3F</Color>
+        <Color x:Key="DarkSidebarText">#FFFFFF</Color>
+        <Color x:Key="DarkSidebarIcon">#FFFFFF</Color>
+        
+        <!-- Кольори для бічного меню -->
+        <Color x:Key="DarkSideMenuBackground">#1E1E2F</Color>
+        <Color x:Key="DarkTitleBarBackground">#1E1E2F</Color>
+        
         <!-- SolidColorBrush ресурси для зручного використання -->
         <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
         <SolidColorBrush x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}"/>
@@ -90,12 +103,34 @@
         <SolidColorBrush x:Key="LightPageNumberBrush" Color="{StaticResource LightPageNumberColor}"/>
         <SolidColorBrush x:Key="DarkPageNumberBrush" Color="{StaticResource DarkPageNumberColor}"/>
         
+        <SolidColorBrush x:Key="LightSidebarBackgroundBrush" Color="{StaticResource LightSidebarBackground}"/>
+        <SolidColorBrush x:Key="LightSidebarHoverBackgroundBrush" Color="{StaticResource LightSidebarHoverBackground}"/>
+        <SolidColorBrush x:Key="LightSidebarTextBrush" Color="{StaticResource LightSidebarText}"/>
+        <SolidColorBrush x:Key="LightSidebarIconBrush" Color="{StaticResource LightSidebarIcon}"/>
+        
+        <SolidColorBrush x:Key="DarkSidebarBackgroundBrush" Color="{StaticResource DarkSidebarBackground}"/>
+        <SolidColorBrush x:Key="DarkSidebarHoverBackgroundBrush" Color="{StaticResource DarkSidebarHoverBackground}"/>
+        <SolidColorBrush x:Key="DarkSidebarTextBrush" Color="{StaticResource DarkSidebarText}"/>
+        <SolidColorBrush x:Key="DarkSidebarIconBrush" Color="{StaticResource DarkSidebarIcon}"/>
+        
         <!-- Динамічні ресурси, що змінюються залежно від теми -->
         <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{StaticResource LightBackground}"/>
         <SolidColorBrush x:Key="ThemeForegroundBrush" Color="{StaticResource LightTextColor}"/>
         <SolidColorBrush x:Key="ThemeCardBackgroundBrush" Color="{StaticResource LightCardBackground}"/>
         <SolidColorBrush x:Key="ThemeBorderBrush" Color="{StaticResource LightBorderColor}"/>
         <SolidColorBrush x:Key="ThemePageNumberBrush" Color="{StaticResource LightPageNumberColor}"/>
+        
+        <!-- Динамічні ресурси для сайдбару -->
+        <SolidColorBrush x:Key="ThemeSidebarBackgroundBrush" Color="{StaticResource LightSidebarBackground}"/>
+        <SolidColorBrush x:Key="ThemeSidebarHoverBackgroundBrush" Color="{StaticResource LightSidebarHoverBackground}"/>
+        <SolidColorBrush x:Key="ThemeSidebarTextBrush" Color="{StaticResource LightSidebarText}"/>
+        <SolidColorBrush x:Key="ThemeSidebarIconBrush" Color="{StaticResource LightSidebarIcon}"/>
+        
+        <!-- Динамічні ресурси для заголовків та інформаційних елементів -->
+        <SolidColorBrush x:Key="ThemeHeaderBackgroundBrush" Color="{StaticResource InfoColor}"/>
+        <SolidColorBrush x:Key="ThemeInfoBrush" Color="{StaticResource InfoColor}"/>
+        <SolidColorBrush x:Key="ThemeLightCardBackgroundBrush" Color="{StaticResource LightCardBackground}"/>
+        <SolidColorBrush x:Key="ThemeLightBorderColor" Color="{StaticResource LightBorderColor}"/>
         
         <!-- Themable Brushes (з GlobalStyle) -->
         <SolidColorBrush x:Key="ThemeSecondaryBackgroundBrush" Color="{StaticResource CeladonColor}"/>
@@ -105,6 +140,14 @@
         <!-- Кольори для кнопок в алгоритмах сортування -->
         <Color x:Key="ButtonBackgroundHoverColor">#406af5</Color>
         <Color x:Key="ButtonBackgroundPressedColor">#294bc0</Color>
+        
+        <!-- Кисті для стилів кнопок -->
+        <SolidColorBrush x:Key="PrimaryButtonBrush" Color="{StaticResource PrimaryColor}" />
+        <SolidColorBrush x:Key="PrimaryDarkButtonBrush" Color="{StaticResource PrimaryDarkColor}" />
+        <SolidColorBrush x:Key="SuccessButtonBrush" Color="{StaticResource SuccessColor}" />
+        <SolidColorBrush x:Key="SuccessDarkButtonBrush" Color="{StaticResource SuccessDarkColor}" />
+        <SolidColorBrush x:Key="WarningButtonBrush" Color="{StaticResource WarningColor}" />
+        <SolidColorBrush x:Key="DangerButtonBrush" Color="{StaticResource DangerColor}" />
         
         <!-- Кольори для алгоритму сортування -->
         <Color x:Key="DefaultArrayElementColor">#78909C</Color>    <!-- Більш насичений сірий -->

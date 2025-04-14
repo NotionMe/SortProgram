@@ -16,21 +16,17 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
     public partial class SortProgram : Window
     {
         private Border? currentSelectedButton;
-        // Використовуємо ThemeManager для керування темою
         public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
         public SortProgram()
         {
             InitializeComponent();
             
-            // Встановлюємо початкову сторінку та вибраний пункт меню
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
             
-            // Встановлюємо обробники подій для кнопок
             SetupEventHandlers();
             
-            // Оновлюємо тему за замовчуванням
             var mainGrid = this.FindControl<Grid>("MainGrid");
             if (mainGrid != null)
             {
@@ -62,7 +58,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 NavigateToPage(new SettingsPage());
             };
             
-            // Додаткові кнопки
             ThemeButton.PointerPressed += (s, e) => {
                 ToggleTheme();
             };
@@ -75,7 +70,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         // Обробка наведення курсору на sidebar - розширення
         private void Sidebar_PointerEnter(object? sender, PointerEventArgs e)
         {
-            Debug.WriteLine("Sidebar: Pointer entered");
             if (sender is Grid grid)
             {
                 grid.Classes.Add("Expanded");

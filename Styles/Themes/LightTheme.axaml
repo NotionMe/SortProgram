@@ -1,40 +1,33 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- ==================== -->
-    <!-- LIGHT THEME STYLES   -->
-    <!-- ==================== -->
-    
-    <!-- Загальні стилі для світлої теми -->
+    <!--  ====================  -->
+    <!--  LIGHT THEME STYLES  -->
+    <!--  ====================  -->
+
+    <Styles.Resources>
+        <!-- Кольори для кнопок в алгоритмах сортування -->
+        <SolidColorBrush x:Key="ButtonBackgroundHover">#3e62e5</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonBackgroundPressed">#2a4cd6</SolidColorBrush>
+    </Styles.Resources>
+
+    <!--  Загальні стилі для світлої теми  -->
     <Style Selector="Grid.ThemeLight">
-        <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+        <Setter Property="Background" Value="#FFFFFF" />
     </Style>
-    
-    <!-- Стилі для елементів у світлій темі -->
+
+    <!--  Стилі для елементів у світлій темі  -->
     <Style Selector="Grid.ThemeLight TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource LightTextBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource LightTextBrush}" />
     </Style>
-    
+
     <Style Selector="Grid.ThemeLight Border">
-        <Setter Property="Background" Value="{StaticResource LightCardBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColorBrush}"/>
+        <Setter Property="Background" Value="{StaticResource LightCardBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColorBrush}" />
     </Style>
-    
-    <!-- Стилі для карток у світлій темі -->
-    <Style Selector="Grid.ThemeLight Border.card">
-        <Setter Property="Background" Value="{StaticResource LightCardBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColorBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="CornerRadius" Value="4"/>
-        <Setter Property="BoxShadow" Value="0 2 4 #20000000"/>
+
+    <Style Selector="Grid.ThemeLight Button">
+        <Setter Property="Foreground" Value="{StaticResource LightTextBrush}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
     </Style>
-    
-    <!-- Стилі для заголовків у світлій темі -->
-    <Style Selector="Grid.ThemeLight Border.header">
-        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
-    </Style>
-    
-    <Style Selector="Grid.ThemeLight TextBlock.description-title">
-        <Setter Property="Foreground" Value="{StaticResource InfoBrush}"/>
-    </Style>
-</Styles> 
+
+</Styles>

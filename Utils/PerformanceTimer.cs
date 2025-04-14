@@ -1,5 +1,4 @@
-
-            using System;
+using System;
 using System.Diagnostics;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Utils
@@ -22,6 +21,27 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Utils
         public void Stop()
         {
             stopwatch.Stop();
+        }
+        
+        public void Pause()
+        {
+            if (stopwatch.IsRunning)
+            {
+                stopwatch.Stop();
+            }
+        }
+        
+        public void Resume()
+        {
+            if (!stopwatch.IsRunning)
+            {
+                stopwatch.Start();
+            }
+        }
+        
+        public void Reset()
+        {
+            stopwatch.Reset();
         }
         
         public TimeSpan ElapsedTime => stopwatch.Elapsed;

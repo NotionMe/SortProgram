@@ -72,6 +72,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Styles
                 resources["ThemeCardBackgroundBrush"] = resources["DarkCardBackgroundBrush"];
                 resources["ThemeBorderBrush"] = resources["DarkBorderColorBrush"];
                 resources["ThemePageNumberBrush"] = resources["DarkPageNumberBrush"];
+                
+                // Ресурси для сайдбару
+                resources["ThemeSidebarBackgroundBrush"] = resources["DarkSidebarBackgroundBrush"];
+                resources["ThemeSidebarHoverBackgroundBrush"] = resources["DarkSidebarHoverBackgroundBrush"];
+                resources["ThemeSidebarTextBrush"] = resources["DarkSidebarTextBrush"];
+                resources["ThemeSidebarIconBrush"] = resources["DarkSidebarIconBrush"];
+                
+                // Ресурси для заголовків та інформаційних елементів
+                resources["ThemeHeaderBackgroundBrush"] = resources["InfoDarkBrush"];
+                resources["ThemeInfoBrush"] = resources["InfoDarkBrush"];
+                resources["ThemeLightCardBackgroundBrush"] = resources["DarkCardBackgroundBrush"];
+                resources["ThemeLightBorderColor"] = resources["DarkBorderColorBrush"];
             }
             else
             {
@@ -80,6 +92,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Styles
                 resources["ThemeCardBackgroundBrush"] = resources["LightCardBackgroundBrush"];
                 resources["ThemeBorderBrush"] = resources["LightBorderColorBrush"];
                 resources["ThemePageNumberBrush"] = resources["LightPageNumberBrush"];
+                
+                // Ресурси для сайдбару
+                resources["ThemeSidebarBackgroundBrush"] = resources["LightSidebarBackgroundBrush"];
+                resources["ThemeSidebarHoverBackgroundBrush"] = resources["LightSidebarHoverBackgroundBrush"];
+                resources["ThemeSidebarTextBrush"] = resources["LightSidebarTextBrush"];
+                resources["ThemeSidebarIconBrush"] = resources["LightSidebarIconBrush"];
+                
+                // Ресурси для заголовків та інформаційних елементів
+                resources["ThemeHeaderBackgroundBrush"] = resources["InfoBrush"];
+                resources["ThemeInfoBrush"] = resources["InfoBrush"];
+                resources["ThemeLightCardBackgroundBrush"] = resources["LightCardBackgroundBrush"];
+                resources["ThemeLightBorderColor"] = resources["LightBorderColorBrush"];
             }
         }
     }

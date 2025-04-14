@@ -11,7 +11,7 @@
 	WindowStartupLocation="CenterScreen"
 	mc:Ignorable="d">
 
-	<Border Background="White" CornerRadius="50">
+	<Border Background="White" CornerRadius="5">
 		<Grid Margin="20" ColumnDefinitions="Auto,*">
 			<Grid Grid.Column="0" Width="600">
 				<Border>

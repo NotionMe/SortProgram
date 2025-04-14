@@ -13,82 +13,121 @@
                 HorizontalAlignment="Center"
                 FontSize="32"
                 FontWeight="Bold"
+                Foreground="{DynamicResource ThemeForegroundBrush}"
                 Text="Бульбашкове сортування: Візуалізація" />
 
             <!-- Панель керування анімацією -->
             <Border
                 Margin="0,0,0,20"
                 Padding="15"
-                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
                 CornerRadius="8">
                 <StackPanel>
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="18"
                         FontWeight="SemiBold"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
                         Text="Налаштування" />
 
-                    <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="5,10,5,5">
                         <!-- Розмір масиву -->
-                        <TextBlock
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Margin="0,0,15,0"
-                            VerticalAlignment="Center"
-                            Text="Розмір масиву:" />
-                        <Slider
-                            Name="ArraySizeSlider"
+                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8EC;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Розмір масиву:" />
+                        </StackPanel>
+                        <ComboBox
+                            Name="ArraySizeComboBox"
                             Grid.Row="0"
                             Grid.Column="1"
-                            Margin="0,0,15,0"
-                            Maximum="50"
-                            Minimum="5"
-                            Value="20" />
-                        <TextBlock
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            Width="30"
-                            VerticalAlignment="Center"
-                            Text="{Binding #ArraySizeSlider.Value, StringFormat=\{0:0\}}" />
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="3"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="4"
+                            Height="35">
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="15" />
+                            <ComboBoxItem Content="20" />
+                            <ComboBoxItem Content="25" />
+                            <ComboBoxItem Content="30" />
+                            <ComboBoxItem Content="40" />
+                            <ComboBoxItem Content="50" />
+                        </ComboBox>
 
                         <!-- Швидкість анімації -->
-                        <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Margin="0,10,15,0"
-                            VerticalAlignment="Center"
-                            Text="Швидкість:" />
-                        <Slider
-                            Name="SpeedSlider"
+                        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xEC4A;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Швидкість:" />
+                        </StackPanel>
+                        <ComboBox
+                            Name="SpeedComboBox"
                             Grid.Row="1"
                             Grid.Column="1"
-                            Margin="0,10,15,0"
-                            Maximum="10"
-                            Minimum="1"
-                            Value="5" />
-                        <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            Width="30"
-                            Margin="0,10,0,0"
-                            VerticalAlignment="Center"
-                            Text="{Binding #SpeedSlider.Value, StringFormat=\{0:0\}}" />
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="2"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="4"
+                            Height="35">
+                            <ComboBoxItem Content="Дуже повільно" />
+                            <ComboBoxItem Content="Повільно" />
+                            <ComboBoxItem Content="Середньо" />
+                            <ComboBoxItem Content="Швидко" />
+                            <ComboBoxItem Content="Дуже швидко" />
+                        </ComboBox>
 
                         <!-- Тип генерації масиву -->
-                        <TextBlock
-                            Grid.Row="2"
-                            Grid.Column="0"
-                            Margin="0,10,15,0"
-                            VerticalAlignment="Center"
-                            Text="Тип масиву:" />
+                        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8B7;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Тип масиву:" />
+                        </StackPanel>
                         <ComboBox
                             Name="ArrayTypeComboBox"
                             Grid.Row="2"
                             Grid.Column="1"
-                            Grid.ColumnSpan="2"
-                            Margin="0,10,0,0"
+                            Margin="0,15,0,0"
                             HorizontalAlignment="Stretch"
-                            SelectedIndex="0">
+                            SelectedIndex="0"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="4"
+                            Height="35">
                             <ComboBoxItem Content="Випадковий" />
                             <ComboBoxItem Content="Майже відсортований" />
                             <ComboBoxItem Content="Зворотній порядок" />
@@ -99,36 +138,81 @@
                         <StackPanel
                             Grid.Row="3"
                             Grid.Column="0"
-                            Grid.ColumnSpan="3"
-                            Margin="0,15,0,0"
+                            Grid.ColumnSpan="2"
+                            Margin="0,20,0,0"
                             HorizontalAlignment="Center"
                             Orientation="Horizontal"
-                            Spacing="10">
+                            Spacing="12">
                             <Button
                                 Name="GenerateButton"
                                 Padding="12,8"
-                                Content="Згенерувати"
-                                Click="GenerateButton_Click" />
+                                Classes="blueButton"
+                                CornerRadius="5"
+                                Click="GenerateButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE8FB;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Згенерувати" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                             <Button
                                 Name="StartButton"
                                 Padding="12,8"
-                                Content="Почати"
-                                Click="StartButton_Click" />
+                                Classes="successButton"
+                                CornerRadius="5"
+                                Click="StartButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE768;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Почати" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                             <Button
                                 Name="PauseButton"
                                 Padding="12,8"
-                                Content="Пауза"
-                                Click="PauseButton_Click" />
+                                Classes="warningButton"
+                                CornerRadius="5"
+                                Click="PauseButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE769;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Пауза" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                             <Button
                                 Name="StepButton"
                                 Padding="12,8"
-                                Content="Крок"
-                                Click="StepButton_Click" />
+                                Classes="blueButton"
+                                CornerRadius="5"
+                                Click="StepButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE893;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Крок" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                             <Button
                                 Name="ResetButton"
                                 Padding="12,8"
-                                Content="Скинути"
-                                Click="ResetButton_Click" />
+                                Classes="dangerButton"
+                                CornerRadius="5"
+                                Click="ResetButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE777;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Скинути" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
@@ -138,7 +222,9 @@
             <Border
                 Height="300"
                 Margin="0,0,0,20"
-                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
                 CornerRadius="8">
                 <Grid Name="VisualizationGrid" Margin="10" />
             </Border>
@@ -147,55 +233,56 @@
             <Border
                 Margin="0,0,0,20"
                 Padding="15"
-                Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
                 CornerRadius="8">
                 <Grid ColumnDefinitions="*,*,*">
                     <StackPanel Grid.Column="0" HorizontalAlignment="Center">
                         <TextBlock
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
                             Text="Порівняння" />
-                        <TextBlock Name="ComparisonsTextBlock" Text="0" />
+                        <TextBlock Name="ComparisonsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                         <TextBlock
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
                             Text="Обміни" />
-                        <TextBlock Name="SwapsTextBlock" Text="0" />
+                        <TextBlock Name="SwapsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" HorizontalAlignment="Center">
                         <TextBlock
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
                             Text="Час виконання" />
-                        <TextBlock Name="TimeTextBlock" Text="0 мс" />
+                        <TextBlock Name="TimeTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0 мс" />
                     </StackPanel>
                 </Grid>
             </Border>
 
-            <!-- Повернення назад -->
+            <!-- Кнопка "Назад" -->
             <Button
-                Width="65"
-                Height="65"
-                Margin="0,10,0,0"
+                Margin="0,0,0,20"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Background="{DynamicResource PrimaryBrush}"
-                BorderThickness="0"
-                Click="BackButton_Click"
-                CornerRadius="32"
-                Cursor="Hand">
-                <TextBlock
-                    Margin="0,0,0,5"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontSize="32"
-                    Foreground="White"
-                    Text="←" />
+                Classes="blueButton"
+                CornerRadius="5"
+                Padding="12,8"
+                Click="BackButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        Text="&#xE72B;"
+                        VerticalAlignment="Center" />
+                    <TextBlock Text="Назад до списку алгоритмів" VerticalAlignment="Center" />
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>
-</UserControl> 
+</UserControl>

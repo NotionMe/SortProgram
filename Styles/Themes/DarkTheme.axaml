@@ -12,7 +12,7 @@
 
     <!--  Загальні стилі для темної теми  -->
     <Style Selector="Grid.ThemeDark">
-        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}" />
+        <Setter Property="Background" Value="#121212" />
     </Style>
 
     <!--  Стилі для елементів у темній темі  -->
@@ -37,54 +37,4 @@
         <Setter Property="BoxShadow" Value="0 2 8 #40000000" />
     </Style>
 
-    <!--  Стилі для заголовків у темній темі  -->
-    <Style Selector="Grid.ThemeDark Border.header">
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark TextBlock.algorithm-title">
-        <Setter Property="Foreground" Value="White" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark TextBlock.description-title">
-        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
-    </Style>
-
-    <!--  Стилі для тексту та Run елементів  -->
-    <Style Selector="Grid.ThemeDark Run">
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
-    </Style>
-
-    <!--  Стилі для інформаційних карток  -->
-    <Style Selector="Grid.ThemeDark TextBlock TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
-    </Style>
-
-    <!--  Стилі для бічного меню у темній темі  -->
-    <Style Selector="Grid.ThemeDark Grid.sideMenu">
-        <Setter Property="Background" Value="{StaticResource DarkSideMenuBackgroundBrush}" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark TextBlock.navText">
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
-    </Style>
-
-    <!--  Стилі для верхньої панелі у темній темі  -->
-    <Style Selector="Grid.ThemeDark Border.titleBar">
-        <Setter Property="Background" Value="{StaticResource DarkTitleBarBackgroundBrush}" />
-    </Style>
-
-    <!--  Стилі для основного контенту головної сторінки  -->
-    <Style Selector="Grid.ThemeDark ContentControl">
-        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}" />
-    </Style>
-
-    <!--  Стилі для сторінки статті  -->
-    <Style Selector="Grid.ThemeDark Border">
-        <Setter Property="Background" Value="{StaticResource DarkCardBackgroundBrush}" />
-    </Style>
-
-    <Style Selector="Grid.ThemeDark TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource DarkTextBrush}" />
-    </Style>
 </Styles>

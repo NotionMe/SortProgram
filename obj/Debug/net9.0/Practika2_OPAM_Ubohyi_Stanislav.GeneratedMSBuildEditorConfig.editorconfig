@@ -63,6 +63,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Styles/Components/CardStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/linux/Repos/Praktika/SortProgram/Styles/Components/CustomButtonStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/linux/Repos/Praktika/SortProgram/Styles/Components/FormStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

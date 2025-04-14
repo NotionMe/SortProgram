@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
+using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -22,19 +23,26 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         // Обробник події для відкриття інформаційної сторінки про Bubble Sort
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Parent is ContentControl contentControl)
+            // Отримуємо доступ до головного вікна
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
             {
-                contentControl.Content = new InfoBubbleSort();
+                mainWindow.NavigateToPagePublic(new InfoBubbleSort());
             }
         }
-        
+
+
         // Обробник події для відкриття інтерактивної візуалізації Bubble Sort
         private void GoToTryIt_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Parent is ContentControl contentControl)
+            // Отримуємо доступ до головного вікна
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
             {
-                contentControl.Content = new BubbleSort();
+                mainWindow.NavigateToPagePublic(new BubbleSort());
             }
         }
+
+        
     }
 }

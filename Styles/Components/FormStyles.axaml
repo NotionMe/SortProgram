@@ -138,14 +138,6 @@
         <Setter Property="BorderBrush" Value="Gray"/>
     </Style>
 
-    <Style Selector="TextBox.formInput:pointerover">
-        <Setter Property="BorderBrush" Value="Gray"/>
-    </Style>
-
-    <Style Selector="TextBox.formInput:pointerover /template/ TextBlock#PART_Watermark">
-        <Setter Property="Foreground" Value="Black" />
-    </Style>
-
     <Style Selector="TextBox.formInput /template/ TextBlock#PART_Watermark">
         <Setter Property="Foreground" Value="Black" />
     </Style>

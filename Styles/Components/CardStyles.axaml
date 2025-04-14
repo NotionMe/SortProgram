@@ -5,8 +5,8 @@
     <!-- CARD STYLES          -->
     <!-- ==================== -->
     <Style Selector="Border.card">
-        <Setter Property="Background" Value="#FFFFFF"/>
-        <Setter Property="BorderBrush" Value="#DDDDDD"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeCardBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="Padding" Value="15"/>
@@ -18,8 +18,8 @@
     <!-- FLUENT DESIGN STYLES -->
     <!-- ==================== -->
     <Style Selector="Border.fluentCard">
-        <Setter Property="Background" Value="#FFFFFF"/>
-        <Setter Property="BorderBrush" Value="#EEEEEE"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeCardBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="8"/>
         <Setter Property="Padding" Value="20"/>
@@ -61,7 +61,7 @@
     <!-- HEADING STYLES       -->
     <!-- ==================== -->
     <Style Selector="Border.header">
-        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeHeaderBackgroundBrush}"/>
     </Style>
     
     <Style Selector="TextBlock.algorithm-title">
@@ -69,7 +69,7 @@
     </Style>
     
     <Style Selector="TextBlock.description-title">
-        <Setter Property="Foreground" Value="{StaticResource InfoBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeInfoBrush}"/>
     </Style>
     
     <Style Selector="TextBlock.sectionTitle">
@@ -82,8 +82,8 @@
     <!-- PANELS STYLES        -->
     <!-- ==================== -->
     <Style Selector="Border.panel">
-        <Setter Property="Background" Value="{StaticResource LightCardBackground}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource LightBorderColor}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeLightCardBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeLightBorderColor}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="Padding" Value="10"/>

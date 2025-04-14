@@ -1,0 +1,169 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Базовий стиль для всіх кнопок -->
+    <Style Selector="Button">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" />
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none" />
+    </Style>
+
+    <!-- Стиль для синіх кнопок -->
+    <Style Selector="Button.blueButton">
+        <Setter Property="Background" Value="{DynamicResource PrimaryButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style Selector="Button.blueButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryDarkButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style Selector="Button.blueButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryDarkButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+    </Style>
+
+    <!-- Стиль для зелених кнопок (успіх) -->
+    <Style Selector="Button.successButton">
+        <Setter Property="Background" Value="{DynamicResource SuccessButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style Selector="Button.successButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SuccessDarkButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style Selector="Button.successButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SuccessDarkButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+    </Style>
+
+    <!-- Стиль для жовтих кнопок (попередження) -->
+    <Style Selector="Button.warningButton">
+        <Setter Property="Background" Value="{DynamicResource WarningButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style Selector="Button.warningButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource WarningButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style Selector="Button.warningButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource WarningButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+    </Style>
+
+    <!-- Стиль для червоних кнопок (небезпека) -->
+    <Style Selector="Button.dangerButton">
+        <Setter Property="Background" Value="{DynamicResource DangerButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style Selector="Button.dangerButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource DangerButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <Style Selector="Button.dangerButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource DangerButtonBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Opacity" Value="0.8" />
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+    </Style>
+
+    <!-- Стиль для текстових кнопок (без фону) -->
+    <Style Selector="Button.textBtn">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" />
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none" />
+    </Style>
+    
+    <Style Selector="Button.textBtn:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="RenderTransform" Value="scale(1.05)" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+    
+    <Style Selector="Button.textBtn:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="RenderTransform" Value="scale(0.95)" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    
+    <!-- Стиль для кнопок у верхній частині екрану -->
+    <Style Selector="Button.headerButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" />
+                <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+            </Transitions>
+        </Setter>
+        <Setter Property="RenderTransform" Value="none" />
+    </Style>
+    
+    <Style Selector="Button.headerButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    
+    <Style Selector="Button.headerButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    
+    <Style Selector="Button.headerButton:pointerover">
+        <Setter Property="RenderTransform" Value="scale(1.1)" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+    
+    <Style Selector="Button.headerButton:pressed">
+        <Setter Property="RenderTransform" Value="scale(0.9)" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    
+    <Style Selector="Button.headerButton.bordered">
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="1.5" />
+    </Style>
+</Styles>
