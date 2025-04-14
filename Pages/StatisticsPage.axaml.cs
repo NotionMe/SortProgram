@@ -9,5 +9,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
     }
 }

@@ -1,5 +1,4 @@
-<UserControl
-    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SettingsPage"
+<UserControl x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SettingsPage"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,23 +7,33 @@
 
     <Grid>
         <StackPanel Margin="20">
+            <!-- Header Section -->
             <Border Width="1060" Height="100"
                     CornerRadius="15"
-                    Margin="0,0,0,20">
+                    Margin="0,0,0,30">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-                        <GradientStop Color="#0C294B" Offset="0"/>
-                        <GradientStop Color="#0078D4" Offset="1"/>
+                        <GradientStop Color="#1E3A8A" Offset="0"/>
+                        <GradientStop Color="#3B82F6" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock Text="Settings"
-                           FontSize="40"
-                           FontFamily="{StaticResource OswaldFont}"
-                           FontWeight="Bold"
-                           Foreground="#FFFFFF"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           TextAlignment="Center"/>
+                <Grid>
+                    <TextBlock Text="Settings"
+                               FontSize="42"
+                               FontFamily="{StaticResource OswaldFont}"
+                               FontWeight="Bold"
+                               Foreground="#FFFFFF"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"/>
+                    <Canvas>
+                        <!-- Decorative elements -->
+                        <Ellipse Canvas.Left="50" Canvas.Top="20" Width="15" Height="15" Fill="#FFFFFF" Opacity="0.2"/>
+                        <Ellipse Canvas.Left="80" Canvas.Top="60" Width="10" Height="10" Fill="#FFFFFF" Opacity="0.15"/>
+                        <Ellipse Canvas.Right="70" Canvas.Top="30" Width="12" Height="12" Fill="#FFFFFF" Opacity="0.2"/>
+                        <Ellipse Canvas.Right="40" Canvas.Top="70" Width="8" Height="8" Fill="#FFFFFF" Opacity="0.15"/>
+                    </Canvas>
+                </Grid>
                 <Border.Effect>
                     <DropShadowEffect Color="#40000000" BlurRadius="14" OffsetX="0" OffsetY="4"/>
                 </Border.Effect>
@@ -32,114 +41,34 @@
 
             <Border Classes="card"
                     CornerRadius="15"
-                    Padding="30"
+                    Padding="25"
+                    Margin="0,0,0,20"
                     BoxShadow="0 4 8 #40000000">
-                <StackPanel Spacing="25">
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Text="📏"
-                                   FontSize="24"
-                                   Margin="0,0,15,0"
-                                   VerticalAlignment="Center"/>
-                        <StackPanel Classes="formGroup">
-                            <TextBlock Text="Number of Elements to Sort"
-                                       FontSize="18"
-                                       FontFamily="Inter"
-                                       FontWeight="Bold"
-                                       FontStyle="Italic"
-                                       Classes="formLabel"/>
-                            <ComboBox Name="ElementCountComboBox"
-                                      Width="200"
-                                      Margin="0,5,0,0"
-                                      Classes="formControl">
-                                <ComboBoxItem Content="10 elements"/>
-                                <ComboBoxItem Content="25 elements"/>
-                                <ComboBoxItem Content="50 elements"/>
-                                <ComboBoxItem Content="100 elements"/>
-                            </ComboBox>
-                        </StackPanel>
-                    </DockPanel>
-
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Text="🎨"
-                                   FontSize="24"
-                                   Margin="0,0,15,0"
-                                   VerticalAlignment="Center"/>
-                        <StackPanel Classes="formGroup">
-                            <TextBlock Text="Visualization Color Palette"
-                                       FontSize="18"
-                                       FontFamily="Inter"
-                                       FontWeight="Bold"
-                                       FontStyle="Italic"
-                                       Classes="formLabel"/>
-                            <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,5,0,0">
-                                <RadioButton Name="PaletteDefault"
-                                             GroupName="ColorPalette"
-                                             IsChecked="True">
-                                    <Border Width="30" Height="30" CornerRadius="5" Background="#0C294B"/>
-                                </RadioButton>
-                                <RadioButton Name="PaletteWarm"
-                                             GroupName="ColorPalette">
-                                    <Border Width="30" Height="30" CornerRadius="5" Background="#FF5733"/>
-                                </RadioButton>
-                                <RadioButton Name="PaletteCool"
-                                             GroupName="ColorPalette">
-                                    <Border Width="30" Height="30" CornerRadius="5" Background="#33B5FF"/>
-                                </RadioButton>
-                            </StackPanel>
-                        </StackPanel>
-                    </DockPanel>
-
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Text="⏩"
-                                   FontSize="24"
-                                   Margin="0,0,15,0"
-                                   VerticalAlignment="Center"/>
-                        <StackPanel Classes="formGroup">
-                            <TextBlock Text="Animation Speed"
-                                       FontSize="18"
-                                       FontFamily="Inter"
-                                       FontWeight="Bold"
-                                       FontStyle="Italic"
-                                       Classes="formLabel"/>
-                            <Slider Name="AnimationSpeedSlider"
-                                    Minimum="1"
-                                    Maximum="10"
-                                    Value="5"
-                                    Width="300"
-                                    Margin="0,5,0,0"
-                                    Classes="formControl"/>
-                            <TextBlock Text="{Binding #AnimationSpeedSlider.Value, StringFormat='Speed: {0}'}"
-                                       FontSize="14"
-                                       FontFamily="Inter"
-                                       Classes="formHint"/>
-                        </StackPanel>
-                    </DockPanel>
-
-                    <DockPanel LastChildFill="True">
-                        <TextBlock Text="🗑️"
-                                   FontSize="24"
-                                   Margin="0,0,15,0"
-                                   VerticalAlignment="Center"/>
-                        <StackPanel Classes="formGroup">
-                            <TextBlock Text="Reset Progress"
-                                       FontSize="18"
-                                       FontFamily="Inter"
-                                       FontWeight="Bold"
-                                       FontStyle="Italic"
-                                       Classes="formLabel"/>
-                            <Button Name="ResetProgressButton"
-                                    Content="Reset Progress"
-                                    Classes="blueButton"
-                                    Width="200"
-                                    Height="40"
-                                    Margin="0,5,0,0"
-                                    CornerRadius="20"
-                                    FontFamily="{StaticResource AnonymousPro}"
-                                    FontWeight="Regular"
-                                    FontSize="16"
-                                    HorizontalContentAlignment="Center"/>
-                        </StackPanel>
-                    </DockPanel>
+                
+                <StackPanel Spacing="20">
+                    <!-- Language Settings Section -->
+                    <TextBlock Text="Language Settings" 
+                               FontSize="24" 
+                               FontWeight="Bold" 
+                               Margin="0,0,0,10"
+                               Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                    
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" Margin="10,0">
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Text="Interface Language:" 
+                                   FontSize="16" 
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,20,0"
+                                   Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                        
+                        <ComboBox Grid.Row="0" Grid.Column="1" 
+                                  Name="LanguageSelector"
+                                  Width="200"
+                                  HorizontalAlignment="Left">
+                            <ComboBoxItem Content="English" />
+                            <ComboBoxItem Content="Українська" />
+                        </ComboBox>
+                    </Grid>
                 </StackPanel>
             </Border>
         </StackPanel>

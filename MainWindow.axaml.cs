@@ -124,18 +124,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         private void UpdateThemeUI()
         {
-            // Оновлюємо тему та іконку на кнопці теми
             var themeButton = this.FindControl<Border>("ThemeButton");
             if (themeButton != null)
             {
-                // Знаходимо іконку
                 var iconContainer = themeButton.GetVisualDescendants()
                     .OfType<Border>()
                     .FirstOrDefault(b => b.Classes.Contains("ButtonIconBackground"));
                 
                 var iconTextBlock = iconContainer?.Child as TextBlock;
                 
-                // Знаходимо текст
                 var labelTextBlock = themeButton.GetVisualDescendants()
                     .OfType<TextBlock>()
                     .FirstOrDefault(t => t.Classes.Contains("ButtonLabel"));

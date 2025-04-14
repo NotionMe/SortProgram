@@ -7,8 +7,251 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock Text="Statistics Page" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"/>
+        <StackPanel Margin="20">
+            <!-- Header Section -->
+            <Border Width="1060" Height="100"
+                    CornerRadius="15"
+                    Margin="0,0,0,30">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#1E3A8A" Offset="0"/>
+                        <GradientStop Color="#3B82F6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <TextBlock Text="Algorithm Statistics"
+                               FontSize="42"
+                               FontFamily="{StaticResource OswaldFont}"
+                               FontWeight="Bold"
+                               Foreground="#FFFFFF"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"/>
+                    <Canvas>
+                        <!-- Decorative elements -->
+                        <Ellipse Canvas.Left="50" Canvas.Top="20" Width="15" Height="15" Fill="#FFFFFF" Opacity="0.2"/>
+                        <Ellipse Canvas.Left="80" Canvas.Top="60" Width="10" Height="10" Fill="#FFFFFF" Opacity="0.15"/>
+                        <Ellipse Canvas.Right="70" Canvas.Top="30" Width="12" Height="12" Fill="#FFFFFF" Opacity="0.2"/>
+                        <Ellipse Canvas.Right="40" Canvas.Top="70" Width="8" Height="8" Fill="#FFFFFF" Opacity="0.15"/>
+                    </Canvas>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect Color="#40000000" BlurRadius="14" OffsetX="0" OffsetY="4"/>
+                </Border.Effect>
+            </Border>
+
+            <!-- Main Content Grid -->
+            <Grid ColumnDefinitions="*,*" Margin="0,0,0,20">
+                <!-- Left Column: Chart -->
+                <Border Grid.Column="0" Classes="card"
+                        CornerRadius="15"
+                        Padding="25"
+                        Margin="0,0,10,0"
+                        BoxShadow="0 4 8 #40000000">
+                    <StackPanel>
+                        <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                            <TextBlock Grid.Column="0" Text="Algorithm Performance"
+                                       FontSize="22"
+                                       FontFamily="Inter"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                            <Border Grid.Column="1" Background="#F0F4F8" CornerRadius="12" Padding="8,4">
+                                <TextBlock Text="100 elements" FontSize="14" Foreground="#1E3A8A" FontWeight="SemiBold"/>
+                            </Border>
+                        </Grid>
+                        
+                        <!-- Chart -->
+                        <Border Height="360" Background="#F8FAFC" CornerRadius="12" Padding="15">
+                            <Canvas>
+                                <!-- Grid lines -->
+                                <Line StartPoint="60,30" EndPoint="60,300" Stroke="#CBD5E1" StrokeThickness="1.5"/>
+                                <Line StartPoint="60,300" EndPoint="470,300" Stroke="#CBD5E1" StrokeThickness="1.5"/>
+                                <Line StartPoint="60,120" EndPoint="470,120" Stroke="#E2E8F0" StrokeThickness="1" StrokeDashArray="4,4"/>
+                                <Line StartPoint="60,210" EndPoint="470,210" Stroke="#E2E8F0" StrokeThickness="1" StrokeDashArray="4,4"/>
+                                
+                                <!-- Y-axis labels -->
+                                <TextBlock Canvas.Left="10" Canvas.Top="25" Text="300ms" FontSize="12" Foreground="#64748B"/>
+                                <TextBlock Canvas.Left="10" Canvas.Top="115" Text="200ms" FontSize="12" Foreground="#64748B"/>
+                                <TextBlock Canvas.Left="10" Canvas.Top="205" Text="100ms" FontSize="12" Foreground="#64748B"/>
+                                <TextBlock Canvas.Left="10" Canvas.Top="295" Text="0ms" FontSize="12" Foreground="#64748B"/>
+                                
+                                <!-- Bars with gradient fill -->
+                                <Rectangle Canvas.Left="100" Canvas.Top="60" Width="60" Height="240" RadiusX="6" RadiusY="6">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                            <GradientStop Color="#3B82F6" Offset="0"/>
+                                            <GradientStop Color="#60A5FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Color="#40000000" BlurRadius="4" OffsetX="0" OffsetY="2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                
+                                <Rectangle Canvas.Left="200" Canvas.Top="90" Width="60" Height="210" RadiusX="6" RadiusY="6">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                            <GradientStop Color="#3B82F6" Offset="0"/>
+                                            <GradientStop Color="#60A5FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Color="#40000000" BlurRadius="4" OffsetX="0" OffsetY="2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                
+                                <Rectangle Canvas.Left="300" Canvas.Top="270" Width="60" Height="30" RadiusX="6" RadiusY="6">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                            <GradientStop Color="#3B82F6" Offset="0"/>
+                                            <GradientStop Color="#60A5FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Color="#40000000" BlurRadius="4" OffsetX="0" OffsetY="2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                
+                                <Rectangle Canvas.Left="400" Canvas.Top="120" Width="60" Height="180" RadiusX="6" RadiusY="6">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                            <GradientStop Color="#3B82F6" Offset="0"/>
+                                            <GradientStop Color="#60A5FA" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect Color="#40000000" BlurRadius="4" OffsetX="0" OffsetY="2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                
+                                <!-- Time labels on bars -->
+                                <Border Canvas.Left="105" Canvas.Top="35" Background="#1E3A8A" CornerRadius="10" Padding="8,4">
+                                    <TextBlock Text="320ms" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                </Border>
+                                
+                                <Border Canvas.Left="205" Canvas.Top="65" Background="#1E3A8A" CornerRadius="10" Padding="8,4">
+                                    <TextBlock Text="285ms" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                </Border>
+                                
+                                <Border Canvas.Left="305" Canvas.Top="245" Background="#1E3A8A" CornerRadius="10" Padding="8,4">
+                                    <TextBlock Text="33ms" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                </Border>
+                                
+                                <Border Canvas.Left="405" Canvas.Top="95" Background="#1E3A8A" CornerRadius="10" Padding="8,4">
+                                    <TextBlock Text="226ms" FontSize="12" FontWeight="Bold" Foreground="White"/>
+                                </Border>
+                                
+                                <!-- X-axis labels -->
+                                <TextBlock Canvas.Left="100" Canvas.Top="310" Text="Bubble Sort" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" Width="60" TextAlignment="Center"/>
+                                <TextBlock Canvas.Left="200" Canvas.Top="310" Text="Selection Sort" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" Width="60" TextAlignment="Center"/>
+                                <TextBlock Canvas.Left="300" Canvas.Top="310" Text="Quick Sort" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" Width="60" TextAlignment="Center"/>
+                                <TextBlock Canvas.Left="400" Canvas.Top="310" Text="Insertion Sort" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" Width="60" TextAlignment="Center"/>
+                            </Canvas>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Right Column: Algorithm Complexity -->
+                <Border Grid.Column="1" Classes="card"
+                        CornerRadius="15"
+                        Padding="25"
+                        Margin="10,0,0,0"
+                        BoxShadow="0 4 8 #40000000">
+                    <StackPanel>
+                        <TextBlock Text="Algorithm Complexity"
+                                   FontSize="22"
+                                   FontFamily="Inter"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,15"
+                                   Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                        
+                        <Border Background="#F8FAFC" CornerRadius="12" Padding="15">
+                            <StackPanel Spacing="15">
+                                <!-- Algorithm Cards -->
+                                <Border Background="#FFFFFF" CornerRadius="10" Padding="15" BoxShadow="0 2 4 #20000000">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" Width="40" Height="40" CornerRadius="8" Background="#EFF6FF" Margin="0,0,15,0">
+                                            <TextBlock Text="BS" FontSize="18" FontWeight="Bold" Foreground="#1E3A8A" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Text="Bubble Sort" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                                            <TextBlock Text="Simple but inefficient for large datasets" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4" Margin="0,0,0,4">
+                                                <TextBlock Text="Time: O(n²)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4">
+                                                <TextBlock Text="Space: O(1)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                
+                                <Border Background="#FFFFFF" CornerRadius="10" Padding="15" BoxShadow="0 2 4 #20000000">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" Width="40" Height="40" CornerRadius="8" Background="#EFF6FF" Margin="0,0,15,0">
+                                            <TextBlock Text="SS" FontSize="18" FontWeight="Bold" Foreground="#1E3A8A" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Text="Selection Sort" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                                            <TextBlock Text="Finds smallest element in each pass" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4" Margin="0,0,0,4">
+                                                <TextBlock Text="Time: O(n²)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4">
+                                                <TextBlock Text="Space: O(1)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                
+                                <Border Background="#FFFFFF" CornerRadius="10" Padding="15" BoxShadow="0 2 4 #20000000">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" Width="40" Height="40" CornerRadius="8" Background="#DBEAFE" Margin="0,0,15,0">
+                                            <TextBlock Text="QS" FontSize="18" FontWeight="Bold" Foreground="#1E40AF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Text="Quick Sort" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                                            <TextBlock Text="Fastest algorithm for most cases" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                            <Border Background="#DBEAFE" CornerRadius="6" Padding="8,4" Margin="0,0,0,4">
+                                                <TextBlock Text="Time: O(n log n)" FontSize="12" Foreground="#1E40AF"/>
+                                            </Border>
+                                            <Border Background="#DBEAFE" CornerRadius="6" Padding="8,4">
+                                                <TextBlock Text="Space: O(log n)" FontSize="12" Foreground="#1E40AF"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                
+                                <Border Background="#FFFFFF" CornerRadius="10" Padding="15" BoxShadow="0 2 4 #20000000">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" Width="40" Height="40" CornerRadius="8" Background="#EFF6FF" Margin="0,0,15,0">
+                                            <TextBlock Text="IS" FontSize="18" FontWeight="Bold" Foreground="#1E3A8A" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock Text="Insertion Sort" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                                            <TextBlock Text="Efficient for small or nearly sorted data" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Margin="10,0,0,0">
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4" Margin="0,0,0,4">
+                                                <TextBlock Text="Time: O(n²)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                            <Border Background="#F1F5F9" CornerRadius="6" Padding="8,4">
+                                                <TextBlock Text="Space: O(1)" FontSize="12" Foreground="#334155"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

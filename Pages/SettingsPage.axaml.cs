@@ -1,6 +1,9 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
+using System;
+using Avalonia.Media;
+using Avalonia;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -11,18 +14,5 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-
-            var elementCountComboBox = this.FindControl<ComboBox>("ElementCountComboBox");
-            elementCountComboBox!.SelectedIndex = 0 ; // За замовчуванням 10 елементів
-        }
-
-        private void ResetProgress(object sender, RoutedEventArgs e)
-        {
-            // Логіка для скидання прогресу
-            // Наприклад, очищення файлу прогресу або даних у пам’яті
-        }
     }
 }
