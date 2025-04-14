@@ -16,7 +16,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             InitializeComponent();
         }
         
-        // Обробники подій для кнопок сортування
         
     }
 }

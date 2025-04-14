@@ -20,10 +20,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             AvaloniaXamlLoader.Load(this);
         }
         
-        // Обробник події для відкриття інформаційної сторінки про Bubble Sort
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {
-            // Отримуємо доступ до головного вікна
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
@@ -31,11 +29,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             }
         }
 
-
-        // Обробник події для відкриття інтерактивної візуалізації Bubble Sort
-        private void GoToTryIt_Click(object sender, RoutedEventArgs e)
+        private void BubbleSortPage_Click(object sender, RoutedEventArgs e)
         {
-            // Отримуємо доступ до головного вікна
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
@@ -43,6 +38,59 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             }
         }
 
-        
+        private void SelectionSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.SelectionSort());
+            }
+        }
+
+        private void QuickSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoQuickSort());
+            }
+        }
+
+        private void InfoSelectionSort_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new InfoSelectionSort());
+            }
+        }
+
+        private void InfoQuickSort_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoQuickSort());
+            }
+        }
+
+        private void InfoInsertionSort_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new InfoInsertionSort());
+            }
+        }
+
+        private void InsertionSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Тимчасово перенаправляємо на інформаційну сторінку, поки не реалізована візуалізація
+                mainWindow.NavigateToPagePublic(new InfoInsertionSort());
+            }
+        }
     }
 }

@@ -29,7 +29,6 @@
                     <TextBlock Text="Insertion Sort" FontFamily="Inter" FontWeight="Bold" FontStyle="Italic" FontSize="20" 
                                Foreground="White" Margin="10,5" HorizontalAlignment="Center" />
                 </Border>
-                <!-- Algorithm Visualizations -->
                 <Border Grid.Column="0" Grid.Row="1" Classes="card" CornerRadius="8" Margin="0,15,5,15" Width="220" Height="150">
                     <Image Name="BubbleSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="Uniform" Margin="5" />
                 </Border>

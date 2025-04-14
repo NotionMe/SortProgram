@@ -1,0 +1,105 @@
+<UserControl x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoQuickSort"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Width="1050"
+             Height="800"
+             mc:Ignorable="d">
+    <Grid>
+        <Border Margin="20"
+                Background="{DynamicResource ThemeBackgroundBrush}"
+                BoxShadow="0 3 10 #40000000"
+                CornerRadius="8">
+            <Grid Margin="30,30,30,20"
+                  RowDefinitions="Auto,*">
+                <TextBlock Grid.Row="0"
+                           Margin="0,10,0,20"
+                           HorizontalAlignment="Center"
+                           FontSize="42"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource ThemeForegroundBrush}"
+                           Text="Quick Sort" />
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*, Auto"
+                      RowDefinitions="*,Auto">
+                    <Border Grid.Row="0"
+                            Grid.Column="0"
+                            Width="727"
+                            Height="520"
+                            Margin="0,0,20,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <TextBlock Margin="0"
+                                   FontSize="24"
+                                   Foreground="{DynamicResource ThemeForegroundBrush}"
+                                   LineHeight="24"
+                                   TextAlignment="Justify"
+                                   TextWrapping="Wrap">                            
+                            Quick sort is a divide-and-conquer algorithm that works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.
+
+                            The algorithm starts by selecting the pivot from the array. It then partitions the array into two sub-arrays, one with elements that are less than the pivot and one with elements that are greater than the pivot. The algorithm then recursively sorts the two sub-arrays until the array is sorted.
+                        </TextBlock>
+                    </Border>
+                    <Border Grid.Row="0"
+                            Grid.Column="1"
+                            Width="220"
+                            Height="180"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Top"
+                            ClipToBounds="True"
+                            CornerRadius="5">
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif"
+                               Stretch="UniformToFill" />
+                    </Border>
+                    <Grid Grid.Row="1"
+                          Grid.ColumnSpan="2"
+                          Margin="0,15,0,0">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="5,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource PrimaryBrush}"
+                                BorderThickness="0"
+                                Click="BackButton_Click"
+                                CornerRadius="32"
+                                Cursor="Hand">
+                            <TextBlock Margin="0,0,0,5"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="32"
+                                       Foreground="White"
+                                       Text="←" />
+                        </Button>
+                        <TextBlock Margin="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="100"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource ThemePageNumberBrush}"
+                                   Opacity="0.5"
+                                   Text="03" />
+                        <Button Width="65"
+                                Height="65"
+                                Margin="0,0,20,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource PrimaryBrush}"
+                                BorderThickness="0"
+                                Click="NextButton_Click"
+                                CornerRadius="32"
+                                Cursor="Hand">
+                            <TextBlock Margin="0,0,0,5"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="32"
+                                       Foreground="White"
+                                       Text="→" />
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

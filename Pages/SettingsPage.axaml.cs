@@ -15,7 +15,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         {
             AvaloniaXamlLoader.Load(this);
 
-            // Ініціалізація значень за замовчуванням
             var elementCountComboBox = this.FindControl<ComboBox>("ElementCountComboBox");
             elementCountComboBox!.SelectedIndex = 0 ; // За замовчуванням 10 елементів
         }

@@ -1,0 +1,90 @@
+<UserControl x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoInsertionSort"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Width="1050"
+             Height="800"
+             mc:Ignorable="d">
+    <Grid>
+        <Border Margin="20"
+                Background="{DynamicResource ThemeBackgroundBrush}"
+                BoxShadow="0 3 10 #40000000"
+                CornerRadius="8">
+            <Grid Margin="30,30,30,20"
+                  RowDefinitions="Auto,*">
+                <TextBlock Grid.Row="0"
+                           Margin="0,10,0,20"
+                           HorizontalAlignment="Center"
+                           FontSize="42"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource ThemeForegroundBrush}"
+                           Text="Insertion Sort" />
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="*, Auto"
+                      RowDefinitions="*,Auto">
+                    <Border Grid.Row="0"
+                            Grid.Column="0"
+                            Width="727"
+                            Height="520"
+                            Margin="0,0,20,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <TextBlock Margin="0"
+                                   FontSize="24"
+                                   Foreground="{DynamicResource ThemeForegroundBrush}"
+                                   LineHeight="24"
+                                   TextAlignment="Justify"
+                                   TextWrapping="Wrap">                            
+                            Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, it has some advantages over other sorting algorithms.
+
+                            The algorithm starts at the beginning of the data set, comparing the first two elements and swapping them if they are in the wrong order. It then moves to the next pair of elements, comparing and swapping them if required. This process is continued until the end of the data set is reached. At this point, the largest element in the data set should be at the end of the data set. The algorithm then repeats the process until the data set is sorted.
+
+                            Insertion sort is one of the simplest sorting algorithms to understand and implement.
+                        </TextBlock>
+                    </Border>
+                    <Border Grid.Row="0"
+                            Grid.Column="1"
+                            Width="220"
+                            Height="180"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Top"
+                            ClipToBounds="True"
+                            CornerRadius="5">
+                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif"
+                               Stretch="UniformToFill" />
+                    </Border>
+                    <Grid Grid.Row="1"
+                          Grid.ColumnSpan="2"
+                          Margin="0,15,0,0">
+                        <Button Width="65"
+                                Height="65"
+                                Margin="5,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource PrimaryBrush}"
+                                BorderThickness="0"
+                                Click="BackButton_Click"
+                                CornerRadius="32"
+                                Cursor="Hand">
+                            <TextBlock Margin="0,0,0,5"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="32"
+                                       Foreground="White"
+                                       Text="←" />
+                        </Button>
+                        <TextBlock Margin="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="100"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource ThemePageNumberBrush}"
+                                   Opacity="0.5"
+                                   Text="04" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

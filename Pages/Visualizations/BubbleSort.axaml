@@ -14,9 +14,8 @@
                 FontSize="32"
                 FontWeight="Bold"
                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                Text="Бульбашкове сортування: Візуалізація" />
+                Text="Bubble Sort: Visualization" />
 
-            <!-- Панель керування анімацією -->
             <Border
                 Margin="0,0,0,20"
                 Padding="15"
@@ -30,10 +29,9 @@
                         FontSize="18"
                         FontWeight="SemiBold"
                         Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="Налаштування" />
+                        Text="Settings" />
 
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="5,10,5,5">
-                        <!-- Розмір масиву -->
                         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,15,0">
                             <TextBlock
                                 FontFamily="Segoe MDL2 Assets"
@@ -45,7 +43,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Розмір масиву:" />
+                                Text="Array Size:" />
                         </StackPanel>
                         <ComboBox
                             Name="ArraySizeComboBox"
@@ -69,7 +67,6 @@
                             <ComboBoxItem Content="50" />
                         </ComboBox>
 
-                        <!-- Швидкість анімації -->
                         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
                             <TextBlock
                                 FontFamily="Segoe MDL2 Assets"
@@ -81,7 +78,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Швидкість:" />
+                                Text="Speed:" />
                         </StackPanel>
                         <ComboBox
                             Name="SpeedComboBox"
@@ -95,14 +92,13 @@
                             Foreground="{DynamicResource ThemeForegroundBrush}"
                             CornerRadius="4"
                             Height="35">
-                            <ComboBoxItem Content="Дуже повільно" />
-                            <ComboBoxItem Content="Повільно" />
-                            <ComboBoxItem Content="Середньо" />
-                            <ComboBoxItem Content="Швидко" />
-                            <ComboBoxItem Content="Дуже швидко" />
+                            <ComboBoxItem Content="Very Slow" />
+                            <ComboBoxItem Content="Slow" />
+                            <ComboBoxItem Content="Medium" />
+                            <ComboBoxItem Content="Fast" />
+                            <ComboBoxItem Content="Very Fast" />
                         </ComboBox>
 
-                        <!-- Тип генерації масиву -->
                         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
                             <TextBlock
                                 FontFamily="Segoe MDL2 Assets"
@@ -114,7 +110,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Тип масиву:" />
+                                Text="Array Type:" />
                         </StackPanel>
                         <ComboBox
                             Name="ArrayTypeComboBox"
@@ -128,13 +124,12 @@
                             Foreground="{DynamicResource ThemeForegroundBrush}"
                             CornerRadius="4"
                             Height="35">
-                            <ComboBoxItem Content="Випадковий" />
-                            <ComboBoxItem Content="Майже відсортований" />
-                            <ComboBoxItem Content="Зворотній порядок" />
-                            <ComboBoxItem Content="Мало унікальних елементів" />
+                            <ComboBoxItem Content="Random" />
+                            <ComboBoxItem Content="Almost sorted" />
+                            <ComboBoxItem Content="Reversed order" />
+                            <ComboBoxItem Content="Few unique elements" />
                         </ComboBox>
 
-                        <!-- Кнопки керування -->
                         <StackPanel
                             Grid.Row="3"
                             Grid.Column="0"
@@ -154,7 +149,7 @@
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE8FB;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Згенерувати" VerticalAlignment="Center" />
+                                    <TextBlock Text="Generate" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
@@ -168,7 +163,7 @@
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE768;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Почати" VerticalAlignment="Center" />
+                                    <TextBlock Text="Start" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
@@ -182,7 +177,7 @@
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE769;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Пауза" VerticalAlignment="Center" />
+                                    <TextBlock Text="Pause" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
@@ -196,7 +191,7 @@
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE893;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Крок" VerticalAlignment="Center" />
+                                    <TextBlock Text="Step" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
@@ -210,7 +205,7 @@
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE777;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Скинути" VerticalAlignment="Center" />
+                                    <TextBlock Text="Reset" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -218,7 +213,6 @@
                 </StackPanel>
             </Border>
 
-            <!-- Візуалізація масиву -->
             <Border
                 Height="300"
                 Margin="0,0,0,20"
@@ -229,7 +223,6 @@
                 <Grid Name="VisualizationGrid" Margin="10" />
             </Border>
 
-            <!-- Статистика -->
             <Border
                 Margin="0,0,0,20"
                 Padding="15"
@@ -243,7 +236,7 @@
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            Text="Порівняння" />
+                            Text="Comparisons" />
                         <TextBlock Name="ComparisonsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
                     </StackPanel>
 
@@ -252,7 +245,7 @@
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            Text="Обміни" />
+                            Text="Swaps" />
                         <TextBlock Name="SwapsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
                     </StackPanel>
 
@@ -261,13 +254,12 @@
                             HorizontalAlignment="Center"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            Text="Час виконання" />
-                        <TextBlock Name="TimeTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0 мс" />
+                            Text="Execution Time" />
+                        <TextBlock Name="TimeTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0 ms" />
                     </StackPanel>
                 </Grid>
             </Border>
 
-            <!-- Кнопка "Назад" -->
             <Button
                 Margin="0,0,0,20"
                 HorizontalAlignment="Left"
@@ -280,7 +272,7 @@
                         FontFamily="Segoe MDL2 Assets"
                         Text="&#xE72B;"
                         VerticalAlignment="Center" />
-                    <TextBlock Text="Назад до списку алгоритмів" VerticalAlignment="Center" />
+                    <TextBlock Text="Back to Algorithms List" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
         </StackPanel>

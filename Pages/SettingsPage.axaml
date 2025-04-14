@@ -8,7 +8,6 @@
 
     <Grid>
         <StackPanel Margin="20">
-            <!-- Заголовок із градієнтом -->
             <Border Width="1060" Height="100"
                     CornerRadius="15"
                     Margin="0,0,0,20">
@@ -31,13 +30,11 @@
                 </Border.Effect>
             </Border>
 
-            <!-- Основна картка з налаштуваннями -->
             <Border Classes="card"
                     CornerRadius="15"
                     Padding="30"
                     BoxShadow="0 4 8 #40000000">
                 <StackPanel Spacing="25">
-                    <!-- Секція 1: Кількість елементів для сортування -->
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="📏"
                                    FontSize="24"
@@ -62,7 +59,6 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <!-- Секція 2: Колір стовпчиків у візуалізації -->
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="🎨"
                                    FontSize="24"
@@ -93,7 +89,6 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <!-- Секція 3: Швидкість анімації -->
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="⏩"
                                    FontSize="24"
@@ -120,7 +115,6 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <!-- Секція 4: Скидання прогресу -->
                     <DockPanel LastChildFill="True">
                         <TextBlock Text="🗑️"
                                    FontSize="24"

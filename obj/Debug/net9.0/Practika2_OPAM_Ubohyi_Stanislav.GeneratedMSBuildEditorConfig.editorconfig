@@ -36,10 +36,16 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Pages/HomePage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/linux/Repos/Praktika/SortProgram/Pages/Info/ComparisonPage.axaml]
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoBubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoBubbleSort.axaml]
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoInsertionSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoQuickSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Pages/Info/InfoSelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/Pages/SettingsPage.axaml]
@@ -52,6 +58,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/BubbleSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/SelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/linux/Repos/Praktika/SortProgram/Styles/Colors.axaml]
