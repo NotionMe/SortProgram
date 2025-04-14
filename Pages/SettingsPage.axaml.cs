@@ -1,9 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Avalonia.Interactivity;
-using System;
-using Avalonia.Media;
-using Avalonia;
+using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -12,7 +9,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         public SettingsPage()
         {
             InitializeComponent();
+            DataContext = new SettingsViewModel();
         }
 
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
     }
 }

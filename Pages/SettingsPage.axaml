@@ -3,7 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+    x:DataType="vm:SettingsViewModel"
     mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:SettingsViewModel/>
+    </Design.DataContext>
 
     <Grid>
         <StackPanel Margin="20">
@@ -18,7 +24,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
-                    <TextBlock Text="Settings"
+                    <TextBlock Text="{Binding LanguageManager[SettingsPage_Title]}"
                                FontSize="42"
                                FontFamily="{StaticResource OswaldFont}"
                                FontWeight="Bold"
@@ -47,26 +53,30 @@
                 
                 <StackPanel Spacing="20">
                     <!-- Language Settings Section -->
-                    <TextBlock Text="Language Settings" 
+                    <TextBlock Text="{Binding LanguageManager[LanguageSettings_Section]}" 
                                FontSize="24" 
                                FontWeight="Bold" 
                                Margin="0,0,0,10"
                                Foreground="{DynamicResource ThemeForegroundBrush}"/>
                     
-                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" Margin="10,0">
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto" Margin="10,0">
                         <TextBlock Grid.Row="0" Grid.Column="0"
-                                   Text="Interface Language:" 
+                                   Text="{Binding LanguageManager[InterfaceLanguage_Label]}" 
                                    FontSize="16" 
                                    VerticalAlignment="Center"
                                    Margin="0,0,20,0"
                                    Foreground="{DynamicResource ThemeForegroundBrush}"/>
                         
                         <ComboBox Grid.Row="0" Grid.Column="1" 
-                                  Name="LanguageSelector"
+                                  ItemsSource="{Binding AvailableLanguages}"
+                                  SelectedItem="{Binding SelectedLanguage}"
                                   Width="200"
                                   HorizontalAlignment="Left">
-                            <ComboBoxItem Content="English" />
-                            <ComboBoxItem Content="Українська" />
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </Grid>
                 </StackPanel>
