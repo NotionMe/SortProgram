@@ -1,23 +1,16 @@
-using ReactiveUI;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
+using ReactiveUI;
+using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
-    public class HomePageViewModel : ReactiveObject
+    public class HomePageViewModel : ViewModelBase
     {
-        // Expose the LanguageManager to the view for binding
         public LanguageManager LanguageManager => LanguageManager.Instance;
         
         public HomePageViewModel()
         {
-            // Підписуємося на подію зміни мови, щоб оновити інтерфейс
-            LanguageManager.Instance.PropertyChanged += (sender, args) => 
-            {
-                if (args.PropertyName == nameof(LanguageManager.CurrentLanguage))
-                {
-                    this.RaisePropertyChanged(nameof(LanguageManager));
-                }
-            };
+            LanguageManager.Instance.LanguageChanged += (s, e) => this.RaisePropertyChanged(nameof(LanguageManager));
         }
     }
 }

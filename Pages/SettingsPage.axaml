@@ -1,4 +1,5 @@
-<UserControl x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SettingsPage"
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SettingsPage"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,70 +9,110 @@
     mc:Ignorable="d">
 
     <Design.DataContext>
-        <vm:SettingsViewModel/>
+        <vm:SettingsViewModel />
     </Design.DataContext>
 
     <Grid>
         <StackPanel Margin="20">
-            <!-- Header Section -->
-            <Border Width="1060" Height="100"
-                    CornerRadius="15"
-                    Margin="0,0,0,30">
+            <!--  Header Section  -->
+            <Border
+                Width="1060"
+                Height="100"
+                Margin="0,0,0,30"
+                CornerRadius="15">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-                        <GradientStop Color="#1E3A8A" Offset="0"/>
-                        <GradientStop Color="#3B82F6" Offset="1"/>
+                        <GradientStop Offset="0" Color="#1E3A8A" />
+                        <GradientStop Offset="1" Color="#3B82F6" />
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
-                    <TextBlock Text="{Binding LanguageManager[SettingsPage_Title]}"
-                               FontSize="42"
-                               FontFamily="{StaticResource OswaldFont}"
-                               FontWeight="Bold"
-                               Foreground="#FFFFFF"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center"/>
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource OswaldFont}"
+                        FontSize="42"
+                        FontWeight="Bold"
+                        Foreground="#FFFFFF"
+                        Text="{Binding LanguageManager[SettingsPage_Title]}"
+                        TextAlignment="Center" />
                     <Canvas>
-                        <!-- Decorative elements -->
-                        <Ellipse Canvas.Left="50" Canvas.Top="20" Width="15" Height="15" Fill="#FFFFFF" Opacity="0.2"/>
-                        <Ellipse Canvas.Left="80" Canvas.Top="60" Width="10" Height="10" Fill="#FFFFFF" Opacity="0.15"/>
-                        <Ellipse Canvas.Right="70" Canvas.Top="30" Width="12" Height="12" Fill="#FFFFFF" Opacity="0.2"/>
-                        <Ellipse Canvas.Right="40" Canvas.Top="70" Width="8" Height="8" Fill="#FFFFFF" Opacity="0.15"/>
+                        <!--  Decorative elements  -->
+                        <Ellipse
+                            Canvas.Left="50"
+                            Canvas.Top="20"
+                            Width="15"
+                            Height="15"
+                            Fill="#FFFFFF"
+                            Opacity="0.2" />
+                        <Ellipse
+                            Canvas.Left="80"
+                            Canvas.Top="60"
+                            Width="10"
+                            Height="10"
+                            Fill="#FFFFFF"
+                            Opacity="0.15" />
+                        <Ellipse
+                            Canvas.Top="30"
+                            Canvas.Right="70"
+                            Width="12"
+                            Height="12"
+                            Fill="#FFFFFF"
+                            Opacity="0.2" />
+                        <Ellipse
+                            Canvas.Top="70"
+                            Canvas.Right="40"
+                            Width="8"
+                            Height="8"
+                            Fill="#FFFFFF"
+                            Opacity="0.15" />
                     </Canvas>
                 </Grid>
                 <Border.Effect>
-                    <DropShadowEffect Color="#40000000" BlurRadius="14" OffsetX="0" OffsetY="4"/>
+                    <DropShadowEffect
+                        BlurRadius="14"
+                        OffsetX="0"
+                        OffsetY="4"
+                        Color="#40000000" />
                 </Border.Effect>
             </Border>
 
-            <Border Classes="card"
-                    CornerRadius="15"
-                    Padding="25"
-                    Margin="0,0,0,20"
-                    BoxShadow="0 4 8 #40000000">
-                
+            <Border
+                Margin="0,0,0,20"
+                Padding="25"
+                BoxShadow="0 4 8 #40000000"
+                Classes="card"
+                CornerRadius="15">
+
                 <StackPanel Spacing="20">
-                    <!-- Language Settings Section -->
-                    <TextBlock Text="{Binding LanguageManager[LanguageSettings_Section]}" 
-                               FontSize="24" 
-                               FontWeight="Bold" 
-                               Margin="0,0,0,10"
-                               Foreground="{DynamicResource ThemeForegroundBrush}"/>
-                    
-                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto" Margin="10,0">
-                        <TextBlock Grid.Row="0" Grid.Column="0"
-                                   Text="{Binding LanguageManager[InterfaceLanguage_Label]}" 
-                                   FontSize="16" 
-                                   VerticalAlignment="Center"
-                                   Margin="0,0,20,0"
-                                   Foreground="{DynamicResource ThemeForegroundBrush}"/>
-                        
-                        <ComboBox Grid.Row="0" Grid.Column="1" 
-                                  ItemsSource="{Binding AvailableLanguages}"
-                                  SelectedItem="{Binding SelectedLanguage}"
-                                  Width="200"
-                                  HorizontalAlignment="Left">
+                    <!--  Language Settings Section  -->
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
+                        Text="{Binding LanguageManager[LanguageSettings_Section]}" />
+
+                    <Grid
+                        Margin="10,0"
+                        ColumnDefinitions="Auto,*"
+                        RowDefinitions="Auto">
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="0,0,20,0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{Binding LanguageManager[InterfaceLanguage_Label]}" />
+
+                        <ComboBox
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            ItemsSource="{Binding AvailableLanguages}"
+                            SelectedItem="{Binding SelectedLanguage}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Name}" />

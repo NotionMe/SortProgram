@@ -10,6 +10,7 @@ using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 using Avalonia.Input;
 using System.Linq;
 using Avalonia.VisualTree;
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
@@ -22,6 +23,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         {
             InitializeComponent();
             
+            // Initialize the language manager with default language
+            // You can get system language or use saved user preference
+            LanguageManager.Instance.LoadLanguage("en");
+
             NavigateToPage(new HomePage());
             UpdateSelectedButton(HomeButton);
             

@@ -9,7 +9,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
 {
     public partial class SelectionSort : UserControl
     {
-        private Canvas? _visualizationGrid;
+        private Grid? _visualizationGrid;
         private TextBlock? _comparisonsTextBlock;
         private TextBlock? _swapsTextBlock;
         private TextBlock? _timeTextBlock;
@@ -25,7 +25,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
             this.AttachedToVisualTree += (s, e) =>
             {
                 // Ініціалізація елементів після завантаження UI
-                _visualizationGrid = this.FindControl<Canvas>("VisualizationGrid");
+                _visualizationGrid = this.FindControl<Grid>("VisualizationGrid");
                 _comparisonsTextBlock = this.FindControl<TextBlock>("ComparisonsTextBlock");
                 _swapsTextBlock = this.FindControl<TextBlock>("SwapsTextBlock");
                 _timeTextBlock = this.FindControl<TextBlock>("TimeTextBlock");

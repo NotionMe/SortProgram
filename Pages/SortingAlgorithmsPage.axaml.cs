@@ -43,7 +43,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.SelectionSort());
+                mainWindow.NavigateToPagePublic(new SelectionSort());
             }
         }
 
@@ -52,7 +52,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoQuickSort());
+                mainWindow.NavigateToPagePublic(new QuickSort());
             }
         }
 
@@ -70,7 +70,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.InfoQuickSort());
+                mainWindow.NavigateToPagePublic(new InfoQuickSort());
             }
         }
 
@@ -88,8 +88,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             var mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                // Тимчасово перенаправляємо на інформаційну сторінку, поки не реалізована візуалізація
-                mainWindow.NavigateToPagePublic(new InfoInsertionSort());
+                mainWindow.NavigateToPagePublic(new InsertionSort());
             }
         }
     }

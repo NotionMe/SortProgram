@@ -1,4 +1,5 @@
 using System;
+using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
 {
@@ -33,4 +34,75 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
             return result;
         }
     }
-} 
+
+    public class SelectionSortStrategy : ISortingStrategy
+    {
+        private int _i = 0, _j = 0, _minIndex = 0;
+
+        public void Initialize(int[] array)
+        {
+            _i = 0;
+            _j = 1; // Починаємо з 1-го елемента (після i)
+            _minIndex = 0;
+        }
+
+        public bool PerformStep(int[] array, ref int comparisons, ref int swaps)
+        {
+            if (_i >= array.Length - 1)
+            {
+                // Сортування завершено
+                return true;
+            }
+
+            // Алгоритм сортування вибором
+            if (_j == _i + 1)
+            {
+                // Початок нової ітерації зовнішнього циклу
+                _minIndex = _i;
+            }
+
+            if (_j < array.Length)
+            {
+                // Порівнюємо поточний елемент з мінімальним
+                comparisons++;
+
+                if (array[_j] < array[_minIndex])
+                {
+                    // Знайдено новий мінімум
+                    _minIndex = _j;
+                }
+
+                _j++; // Переходимо до наступного елемента
+            }
+            else
+            {
+                // Завершення внутрішнього циклу, міняємо місцями елементи
+                if (_minIndex != _i)
+                {
+                    // Обмін елементів
+                    swaps++;
+                    int temp = array[_i];
+                    array[_i] = array[_minIndex];
+                    array[_minIndex] = temp;
+                }
+
+                // Переходимо до наступної ітерації зовнішнього циклу
+                _i++;
+                _j = _i + 1;
+                
+                // Перевіряємо, чи завершено сортування
+                if (_i >= array.Length - 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public (int, int, int) GetHighlightIndices()
+        {
+            return (_i, _j, _minIndex); // Поточний індекс, індекс порівняння, індекс мінімуму
+        }
+    }
+}

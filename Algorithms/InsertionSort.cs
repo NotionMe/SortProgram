@@ -1,4 +1,5 @@
 using System;
+using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
 {
@@ -27,4 +28,80 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
             return result;
         }
     }
-} 
+
+    public class InsertionSortStrategy : ISortingStrategy
+    {
+        private int _i = 1;
+        private int _j;
+        private int _key;
+        private bool _innerLoopStarted = false;
+        private bool _keyInserted = true;
+
+        public void Initialize(int[] array)
+        {
+            _i = 1;
+            _j = 0;
+            _innerLoopStarted = false;
+            _keyInserted = true;
+        }
+
+        public bool PerformStep(int[] array, ref int comparisons, ref int swaps)
+        {
+            // Перевірка завершення сортування
+            if (_i >= array.Length)
+            {
+                return true;
+            }
+
+            // Підготовка до нової ітерації зовнішнього циклу
+            if (_keyInserted)
+            {
+                _key = array[_i];
+                _j = _i - 1;
+                _innerLoopStarted = false;
+                _keyInserted = false;
+            }
+
+            // Внутрішній цикл - зсув елементів
+            if (!_innerLoopStarted || (_j >= 0 && array[_j] > _key))
+            {
+                _innerLoopStarted = true;
+                if (_j >= 0)
+                {
+                    comparisons++;
+                    if (array[_j] > _key)
+                    {
+                        array[_j + 1] = array[_j];
+                        swaps++;
+                        _j--;
+                    }
+                    else
+                    {
+                        array[_j + 1] = _key;
+                        _keyInserted = true;
+                        _i++;
+                    }
+                }
+                else
+                {
+                    array[0] = _key;
+                    _keyInserted = true;
+                    _i++;
+                }
+            }
+            else
+            {
+                array[_j + 1] = _key;
+                _keyInserted = true;
+                _i++;
+            }
+
+            return false;
+        }
+
+        public (int, int, int) GetHighlightIndices()
+        {
+            return (_i, _j >= 0 ? _j : 0, -1);
+        }
+    }
+}

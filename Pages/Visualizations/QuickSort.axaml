@@ -1,0 +1,283 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.QuickSort"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                FontWeight="Bold"
+                Foreground="{DynamicResource ThemeForegroundBrush}"
+                Text="Quick Sort: Visualization" />
+
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="18"
+                        FontWeight="SemiBold"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
+                        Text="Settings" />
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="5,10,5,5">
+                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8EC;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Array Size:" />
+                        </StackPanel>
+                        <ComboBox
+                            Name="ArraySizeComboBox"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="3"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="15" />
+                            <ComboBoxItem Content="20" />
+                            <ComboBoxItem Content="25" />
+                            <ComboBoxItem Content="30" />
+                            <ComboBoxItem Content="40" />
+                            <ComboBoxItem Content="50" />
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xEC4A;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Speed:" />
+                        </StackPanel>
+                        <ComboBox
+                            Name="SpeedComboBox"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="2"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="Very Slow" />
+                            <ComboBoxItem Content="Slow" />
+                            <ComboBoxItem Content="Medium" />
+                            <ComboBoxItem Content="Fast" />
+                            <ComboBoxItem Content="Very Fast" />
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8B7;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="Array Type:" />
+                        </StackPanel>
+                        <ComboBox
+                            Name="ArrayTypeComboBox"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="0"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="Random" />
+                            <ComboBoxItem Content="Almost sorted" />
+                            <ComboBoxItem Content="Reversed order" />
+                            <ComboBoxItem Content="Few unique elements" />
+                        </ComboBox>
+
+                        <StackPanel
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal"
+                            Spacing="12">
+                            <Button
+                                Name="GenerateButton"
+                                Padding="12,8"
+                                Classes="blueButton"
+                                CornerRadius="10"
+                                Click="GenerateButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE8FB;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Generate" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Name="StartButton"
+                                Padding="12,8"
+                                Classes="successButton"
+                                CornerRadius="10"
+                                Click="StartButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE768;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Start" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Name="PauseButton"
+                                Padding="12,8"
+                                Classes="warningButton"
+                                CornerRadius="10"
+                                Click="PauseButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE769;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Pause" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Name="StepButton"
+                                Padding="12,8"
+                                Classes="blueButton"
+                                CornerRadius="10"
+                                Click="StepButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE893;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Step" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Name="ResetButton"
+                                Padding="12,8"
+                                Classes="dangerButton"
+                                CornerRadius="10"
+                                Click="ResetButton_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE777;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="Reset" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Border
+                Height="300"
+                Margin="0,0,0,20"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid Name="VisualizationGrid" Margin="10" />
+            </Border>
+
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid ColumnDefinitions="*,*,*">
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="Comparisons" />
+                        <TextBlock Name="ComparisonsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="Swaps" />
+                        <TextBlock Name="SwapsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="Execution Time" />
+                        <TextBlock Name="TimeTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0 ms" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Button
+                Margin="0,0,0,20"
+                HorizontalAlignment="Left"
+                Classes="blueButton"
+                CornerRadius="10"
+                Padding="12,8"
+                Click="BackButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        Text="&#xE72B;"
+                        VerticalAlignment="Center" />
+                    <TextBlock Text="Back to Algorithms List" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

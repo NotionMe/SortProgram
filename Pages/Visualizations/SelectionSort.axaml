@@ -14,7 +14,7 @@
                 FontSize="32"
                 FontWeight="Bold"
                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                Text="Selection Sort: Visualization" />
+                Text="{DynamicResource SelectionSort_Visualization_Title}" />
 
             <Border
                 Margin="0,0,0,20"
@@ -22,14 +22,15 @@
                 Background="{DynamicResource ThemeCardBackgroundBrush}"
                 BorderBrush="{DynamicResource ThemeBorderBrush}"
                 BorderThickness="1"
-                CornerRadius="8">
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
                 <StackPanel>
                     <TextBlock
                         Margin="0,0,0,10"
                         FontSize="18"
                         FontWeight="SemiBold"
                         Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="Settings" />
+                        Text="{DynamicResource VisualizationPage_Settings}" />
 
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="5,10,5,5">
                         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,15,0">
@@ -43,7 +44,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Array Size:" />
+                                Text="{DynamicResource VisualizationPage_ArraySize}" />
                         </StackPanel>
                         <ComboBox
                             Name="ArraySizeComboBox"
@@ -55,7 +56,7 @@
                             BorderBrush="{DynamicResource ThemeBorderBrush}"
                             Background="{DynamicResource ThemeCardBackgroundBrush}"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            CornerRadius="4"
+                            CornerRadius="8"
                             Height="35">
                             <ComboBoxItem Content="5" />
                             <ComboBoxItem Content="10" />
@@ -78,7 +79,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Speed:" />
+                                Text="{DynamicResource VisualizationPage_Speed}" />
                         </StackPanel>
                         <ComboBox
                             Name="SpeedComboBox"
@@ -90,13 +91,13 @@
                             BorderBrush="{DynamicResource ThemeBorderBrush}"
                             Background="{DynamicResource ThemeCardBackgroundBrush}"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            CornerRadius="4"
+                            CornerRadius="8"
                             Height="35">
-                            <ComboBoxItem Content="Very Slow" />
-                            <ComboBoxItem Content="Slow" />
-                            <ComboBoxItem Content="Medium" />
-                            <ComboBoxItem Content="Fast" />
-                            <ComboBoxItem Content="Very Fast" />
+                            <ComboBoxItem Content="{DynamicResource Speed_VerySlow}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Slow}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Medium}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Fast}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_VeryFast}" />
                         </ComboBox>
 
                         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
@@ -110,7 +111,7 @@
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ThemeForegroundBrush}"
                                 FontWeight="SemiBold"
-                                Text="Array Type:" />
+                                Text="{DynamicResource VisualizationPage_ArrayType}" />
                         </StackPanel>
                         <ComboBox
                             Name="ArrayTypeComboBox"
@@ -122,12 +123,12 @@
                             BorderBrush="{DynamicResource ThemeBorderBrush}"
                             Background="{DynamicResource ThemeCardBackgroundBrush}"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            CornerRadius="4"
+                            CornerRadius="8"
                             Height="35">
-                            <ComboBoxItem Content="Random" />
-                            <ComboBoxItem Content="Almost sorted" />
-                            <ComboBoxItem Content="Reversed order" />
-                            <ComboBoxItem Content="Few unique elements" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_Random}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_AlmostSorted}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_ReverseOrder}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_FewUnique}" />
                         </ComboBox>
 
                         <StackPanel
@@ -142,70 +143,70 @@
                                 Name="GenerateButton"
                                 Padding="12,8"
                                 Classes="blueButton"
-                                CornerRadius="5"
+                                CornerRadius="10"
                                 Click="GenerateButton_Click">
                                 <StackPanel Orientation="Horizontal" Spacing="5">
                                     <TextBlock
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE8FB;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Generate" VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Generate}" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
                                 Name="StartButton"
                                 Padding="12,8"
                                 Classes="successButton"
-                                CornerRadius="5"
+                                CornerRadius="10"
                                 Click="StartButton_Click">
                                 <StackPanel Orientation="Horizontal" Spacing="5">
                                     <TextBlock
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE768;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Start" VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Start}" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
                                 Name="PauseButton"
                                 Padding="12,8"
                                 Classes="warningButton"
-                                CornerRadius="5"
+                                CornerRadius="10"
                                 Click="PauseButton_Click">
                                 <StackPanel Orientation="Horizontal" Spacing="5">
                                     <TextBlock
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE769;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Pause" VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Pause}" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
                                 Name="StepButton"
                                 Padding="12,8"
                                 Classes="blueButton"
-                                CornerRadius="5"
+                                CornerRadius="10"
                                 Click="StepButton_Click">
                                 <StackPanel Orientation="Horizontal" Spacing="5">
                                     <TextBlock
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE893;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Step" VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Step}" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                             <Button
                                 Name="ResetButton"
                                 Padding="12,8"
                                 Classes="dangerButton"
-                                CornerRadius="5"
+                                CornerRadius="10"
                                 Click="ResetButton_Click">
                                 <StackPanel Orientation="Horizontal" Spacing="5">
                                     <TextBlock
                                         FontFamily="Segoe MDL2 Assets"
                                         Text="&#xE777;"
                                         VerticalAlignment="Center" />
-                                    <TextBlock Text="Reset" VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Reset}" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -219,8 +220,9 @@
                 Background="{DynamicResource ThemeCardBackgroundBrush}"
                 BorderBrush="{DynamicResource ThemeBorderBrush}"
                 BorderThickness="1"
-                CornerRadius="8">
-                <Canvas Name="VisualizationGrid" />
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid Name="VisualizationGrid" Margin="10" />
             </Border>
 
             <Border
@@ -229,75 +231,52 @@
                 Background="{DynamicResource ThemeCardBackgroundBrush}"
                 BorderBrush="{DynamicResource ThemeBorderBrush}"
                 BorderThickness="1"
-                CornerRadius="8">
-                <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Margin="0,0,0,5"
-                        FontSize="16"
-                        FontWeight="SemiBold"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="Comparisons:" />
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Margin="0,0,0,5"
-                        FontSize="16"
-                        FontWeight="SemiBold"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="Swaps:" />
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        Margin="0,0,0,5"
-                        FontSize="16"
-                        FontWeight="SemiBold"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="Execution Time:" />
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid ColumnDefinitions="*,*,*">
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Comparisons}" />
+                        <TextBlock Name="ComparisonsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
+                    </StackPanel>
 
-                    <TextBlock
-                        Name="ComparisonsTextBlock"
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        FontSize="16"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="0" />
-                    <TextBlock
-                        Name="SwapsTextBlock"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        FontSize="16"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="0" />
-                    <TextBlock
-                        Name="TimeTextBlock"
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        FontSize="16"
-                        Foreground="{DynamicResource ThemeForegroundBrush}"
-                        Text="0 ms" />
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Swaps}" />
+                        <TextBlock Name="SwapsTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_ExecutionTime}" />
+                        <TextBlock Name="TimeTextBlock" Foreground="{DynamicResource ThemeForegroundBrush}" Text="0 ms" />
+                    </StackPanel>
                 </Grid>
             </Border>
 
             <Button
-                Width="65"
-                Height="65"
                 Margin="0,0,0,20"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Background="{DynamicResource PrimaryBrush}"
-                BorderThickness="0"
-                Click="BackButton_Click"
-                CornerRadius="32"
-                Cursor="Hand">
-                <TextBlock
-                    Margin="0,0,0,5"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontSize="32"
-                    Foreground="White"
-                    Text="←" />
+                Classes="blueButton"
+                CornerRadius="10"
+                Padding="12,8"
+                Click="BackButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        Text="&#xE72B;"
+                        VerticalAlignment="Center" />
+                    <TextBlock Text="{DynamicResource Button_Back}" VerticalAlignment="Center" />
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>

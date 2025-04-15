@@ -5,10 +5,21 @@
     xmlns:conv="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Converters"
     xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
     xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
+    xmlns:vm="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+    xmlns:services="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Services"
+    x:DataType="vm:ViewModelBase"
     Title="AlgoStart"
-    Width="1360"
-    Height="1000"
+    Width="1460"
+    Height="900"
     WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <conv:LanguageConverter x:Key="LanguageConverter"/>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:ViewModelBase/>
+    </Window.DataContext>
 
     <Grid ClipToBounds="False" Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -43,7 +54,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Home" 
+                                  Text="{Binding LanguageManager[Home]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -67,7 +78,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Sorting Algorithms" 
+                                  Text="{Binding LanguageManager[Algorithms]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -91,7 +102,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Statistics" 
+                                  Text="{Binding LanguageManager[Statistics]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -115,7 +126,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Settings" 
+                                  Text="{Binding LanguageManager[Settings]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -142,7 +153,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Theme" 
+                                  Text="{Binding LanguageManager[DarkTheme]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -166,7 +177,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Exit" 
+                                  Text="{Binding LanguageManager[Exit]}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"

@@ -60,6 +60,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/BubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/InsertionSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/QuickSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/linux/Repos/Praktika/SortProgram/Pages/Visualizations/SelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

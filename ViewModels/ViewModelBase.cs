@@ -1,17 +1,24 @@
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Reactive.Disposables;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
-    public class ViewModelBase : ReactiveObject, IDisposable
+    // Інтерфейс для стратегії сортування
+    public interface ISortingStrategy
     {
-        protected CompositeDisposable Disposables { get; } = new CompositeDisposable();
+        // Ініціалізація сортування
+        void Initialize(int[] array);
+        
+        // Виконання одного кроку сортування
+        bool PerformStep(int[] array, ref int comparisons, ref int swaps);
+        
+        // Отримання індексів елементів для візуалізації кольорів
+        (int, int, int) GetHighlightIndices();
+    }
 
-        public virtual void Dispose()
-        {
-            Disposables?.Dispose();
-        }
+    public class ViewModelBase : ReactiveObject
+    {
+        // Add a property to access LanguageManager from the view
+        public LanguageManager LanguageManager => LanguageManager.Instance;
     }
 }

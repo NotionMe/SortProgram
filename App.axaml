@@ -20,7 +20,6 @@
                 </Transitions>
             </Setter>
         </Style>
-
         
         <!-- Стиль для завантаження -->
         <Style Selector=":is(Control).loaded">

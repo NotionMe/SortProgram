@@ -19,7 +19,7 @@
                            FontSize="42"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ThemeForegroundBrush}"
-                           Text="Insertion Sort" />
+                           Text="{DynamicResource InfoPage_InsertionSort_Title}" />
                 <Grid Grid.Row="1"
                       ColumnDefinitions="*, Auto"
                       RowDefinitions="*,Auto">
@@ -35,13 +35,9 @@
                                    Foreground="{DynamicResource ThemeForegroundBrush}"
                                    LineHeight="24"
                                    TextAlignment="Justify"
-                                   TextWrapping="Wrap">                            
-                            Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, it has some advantages over other sorting algorithms.
-
-                            The algorithm starts at the beginning of the data set, comparing the first two elements and swapping them if they are in the wrong order. It then moves to the next pair of elements, comparing and swapping them if required. This process is continued until the end of the data set is reached. At this point, the largest element in the data set should be at the end of the data set. The algorithm then repeats the process until the data set is sorted.
-
-                            Insertion sort is one of the simplest sorting algorithms to understand and implement.
-                        </TextBlock>
+                                   TextWrapping="Wrap"> 
+                            <Run Text="{DynamicResource InsertionSort_InfoDescription}" />                           
+                            </TextBlock>
                     </Border>
                     <Border Grid.Row="0"
                             Grid.Column="1"

@@ -19,7 +19,7 @@
                            FontSize="42"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ThemeForegroundBrush}"
-                           Text="Quick Sort" />
+                           Text="{DynamicResource InfoPage_QuickSort_Title}" />
                 <Grid Grid.Row="1"
                       ColumnDefinitions="*, Auto"
                       RowDefinitions="*,Auto">
@@ -35,11 +35,11 @@
                                    Foreground="{DynamicResource ThemeForegroundBrush}"
                                    LineHeight="24"
                                    TextAlignment="Justify"
-                                   TextWrapping="Wrap">                            
-                            Quick sort is a divide-and-conquer algorithm that works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.
+                                   TextWrapping="Wrap">    
+                                   
+                            <Run Text="{DynamicResource QuickSort_InfoDescription}" />                        
+                            </TextBlock>
 
-                            The algorithm starts by selecting the pivot from the array. It then partitions the array into two sub-arrays, one with elements that are less than the pivot and one with elements that are greater than the pivot. The algorithm then recursively sorts the two sub-arrays until the array is sorted.
-                        </TextBlock>
                     </Border>
                     <Border Grid.Row="0"
                             Grid.Column="1"

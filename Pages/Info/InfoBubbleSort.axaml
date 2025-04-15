@@ -19,7 +19,7 @@
                            FontSize="42"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ThemeForegroundBrush}"
-                           Text="Bubble Sort" />
+                           Text="{DynamicResource InfoPage_BubbleSort_Title}" />
                 <Grid Grid.Row="1"
                       ColumnDefinitions="*, Auto"
                       RowDefinitions="*,Auto">
@@ -35,10 +35,8 @@
                                    Foreground="{DynamicResource ThemeForegroundBrush}"
                                    LineHeight="24"
                                    TextAlignment="Justify"
-                                   TextWrapping="Wrap">                            
-                            Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
-                            The algorithm starts at the beginning of the data set, comparing the first two elements and swapping them if required. It then moves to the next pair of elements, comparing and swapping them if required. This process is continued until the end of the data set is reached. At this point, the largest element in the data set should be at the end of the data set. The algorithm then repeats the process until the data set is sorted.
-                            The algorithm gets its name from the way smaller elements &quot;bubble&quot; to the top of the list. It is one of the simplest sorting algorithms to understand and implement.
+                                   TextWrapping="Wrap"> 
+                            <Run Text="{DynamicResource BubbleSort_InfoDescription}" />                          
                         </TextBlock>
                     </Border>
                     <Border Grid.Row="0"

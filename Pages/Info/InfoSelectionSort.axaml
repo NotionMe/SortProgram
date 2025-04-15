@@ -19,7 +19,7 @@
                            FontSize="42"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ThemeForegroundBrush}"
-                           Text="Selection Sort" />
+                           Text="{DynamicResource InfoPage_SelectionSort_Title}" />
                 <Grid Grid.Row="1"
                       ColumnDefinitions="*, Auto"
                       RowDefinitions="*,Auto">
@@ -36,10 +36,8 @@
                                    LineHeight="24"
                                    TextAlignment="Justify"
                                    TextWrapping="Wrap">                            
-                            Selection sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
-                            The algorithm starts at the beginning of the data set, comparing the first two elements and swapping them if required. It then moves to the next pair of elements, comparing and swapping them if required. This process is continued until the end of the data set is reached. At this point, the largest element in the data set should be at the end of the data set. The algorithm then repeats the process until the data set is sorted.
-                            Selection sort is one of the simplest sorting algorithms to understand and implement.
-                        </TextBlock>
+                            <Run Text="{DynamicResource SelectionSort_InfoDescription}" />
+                                </TextBlock>
                     </Border>
                     <Border Grid.Row="0"
                             Grid.Column="1"
