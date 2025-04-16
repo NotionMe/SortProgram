@@ -15,6 +15,7 @@
           "Avalonia.ReactiveUI": "11.2.7",
           "Avalonia.Svg.Skia": "11.2.0.2",
           "Avalonia.Themes.Fluent": "11.2.6",
+          "BCrypt.Net-Next": "4.0.3",
           "ReactiveUI": "20.2.45"
         },
         "runtime": {
@@ -284,6 +285,14 @@
           "lib/net8.0/Avalonia.X11.dll": {
             "assemblyVersion": "11.2.6.0",
             "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
           }
         }
       },
@@ -684,6 +693,13 @@
       "sha512": "sha512-wWPkfrRARRkwvd4lE2wm7drK+L3vuITleYs6LPsG8e/eeiDKaxRegUkcyzulXxQgqq/h6D44aWiHpWQOPiSnWw==",
       "path": "avalonia.x11/11.2.6",
       "hashPath": "avalonia.x11.11.2.6.nupkg.sha512"
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
     "DynamicData/9.1.2": {
       "type": "package",

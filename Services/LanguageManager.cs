@@ -122,7 +122,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             List<string> possiblePaths = new List<string>();
 
             // Базові шляхи, які будемо комбінувати
-            string[] baseLocalizationDirs = {
+            List<string> baseLocalizationDirs = new List<string> {
                 Path.Combine("Assets", "Localization"),
                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization"),
                 Path.Combine(currentDirectory, "Assets", "Localization"),
@@ -130,53 +130,78 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             };
 
             // Додаємо шляхи відносно виконуваного файлу
-            string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly()?.Location);
-            if (!string.IsNullOrEmpty(executablePath))
+            try
             {
-                baseLocalizationDirs = baseLocalizationDirs.Concat(new[] { 
-                    Path.Combine(executablePath, "Assets", "Localization")
-                }).ToArray();
-            }
-
-            // Перевіряємо кожен базовий шлях
-            foreach (string baseDir in baseLocalizationDirs)
-            {
-                string filePath = Path.Combine(baseDir, $"{languageCode}.json");
-                possiblePaths.Add(filePath);
-                
-                // Додаємо альтернативні варіанти для Windows з різними стилями шляху
-                if (Path.DirectorySeparatorChar != '/')
+                string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly()?.Location);
+                if (!string.IsNullOrEmpty(executablePath))
                 {
-                    // Альтернативний варіант шляху для Windows
-                    possiblePaths.Add(baseDir + Path.DirectorySeparatorChar + $"{languageCode}.json");
+                    baseLocalizationDirs.Add(Path.Combine(executablePath, "Assets", "Localization"));
                 }
-            }
-
-            // Спеціально для Windows - додаємо пошук в каталозі з виконуваним файлом
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-            {
-                string? exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                if (!string.IsNullOrEmpty(exePath))
+                
+                // Для Windows також додаємо шляхи з кореневої директорії і батьківських каталогів
+                if (Environment.OSVersion.Platform == PlatformID.Win32NT)
                 {
-                    string? exeDir = Path.GetDirectoryName(exePath);
-                    if (!string.IsNullOrEmpty(exeDir))
+                    string? exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    if (!string.IsNullOrEmpty(exePath))
                     {
-                        possiblePaths.Add(Path.Combine(exeDir, "Assets", "Localization", $"{languageCode}.json"));
-                        // Перевіряємо також каталоги відносно батьківського каталогу 
-                        // (для випадків коли виконуваний файл в Debug/Release підкаталозі)
-                        string? parentDir = Directory.GetParent(exeDir)?.FullName;
-                        if (!string.IsNullOrEmpty(parentDir))
+                        string? exeDir = Path.GetDirectoryName(exePath);
+                        if (!string.IsNullOrEmpty(exeDir))
                         {
-                            possiblePaths.Add(Path.Combine(parentDir, "Assets", "Localization", $"{languageCode}.json"));
+                            baseLocalizationDirs.Add(Path.Combine(exeDir, "Assets", "Localization"));
                             
-                            // Ще один рівень вгору (для Debug/Release/net9.0)
-                            string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
-                            if (!string.IsNullOrEmpty(grandParentDir))
+                            // Перевіряємо також каталоги відносно батьківського каталогу 
+                            string? parentDir = Directory.GetParent(exeDir)?.FullName;
+                            if (!string.IsNullOrEmpty(parentDir))
                             {
-                                possiblePaths.Add(Path.Combine(grandParentDir, "Assets", "Localization", $"{languageCode}.json"));
+                                baseLocalizationDirs.Add(Path.Combine(parentDir, "Assets", "Localization"));
+                                
+                                // Ще один рівень вгору (для Debug/Release/net9.0)
+                                string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                                if (!string.IsNullOrEmpty(grandParentDir))
+                                {
+                                    baseLocalizationDirs.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
+                                }
                             }
                         }
                     }
+                    
+                    // Додаємо Windows-специфічні шляхи з зворотними слешами
+                    string winPath = currentDirectory + "\\Assets\\Localization";
+                    baseLocalizationDirs.Add(winPath);
+                    
+                    string exeDirWin = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+                    baseLocalizationDirs.Add(exeDirWin + "\\Assets\\Localization");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error getting assembly paths: {ex.Message}");
+            }
+
+            // Перевіряємо кожен базовий шлях
+            foreach (string baseDir in baseLocalizationDirs.Distinct())
+            {
+                // Переконуємося, що директорія існує перед перевіркою файлу
+                if (Directory.Exists(baseDir))
+                {
+                    string filePath = Path.Combine(baseDir, $"{languageCode}.json");
+                    possiblePaths.Add(filePath);
+                    
+                    // Логуємо знайдені директорії
+                    Debug.WriteLine($"Found directory: {baseDir}");
+                    try
+                    {
+                        string[] files = Directory.GetFiles(baseDir, "*.json");
+                        Debug.WriteLine($"Available language files in {baseDir}: {string.Join(", ", files)}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"Error listing files in {baseDir}: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine($"Directory does not exist: {baseDir}");
                 }
             }
 
@@ -194,8 +219,65 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 }
             }
 
+            // Спеціальний код для Windows - спроба створити директорії та файли локалізації, якщо їх немає
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT && string.IsNullOrEmpty(_cachedLocalizationPath))
+            {
+                try
+                {
+                    string exeDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+                    string localizationDir = Path.Combine(exeDir, "Assets", "Localization");
+                    
+                    // Створюємо директорію, якщо її немає
+                    if (!Directory.Exists(localizationDir))
+                    {
+                        Directory.CreateDirectory(localizationDir);
+                        Debug.WriteLine($"Created directory: {localizationDir}");
+                    }
+                    
+                    // Створюємо порожній файл локалізації, щоб знати шлях для наступного разу
+                    string tempFilePath = Path.Combine(localizationDir, $"{languageCode}.json");
+                    
+                    // Копіюємо вбудований файл локалізації, якщо він існує в ресурсах
+                    if (CopyEmbeddedResource(languageCode, tempFilePath))
+                    {
+                        Debug.WriteLine($"Created localization file from embedded resource: {tempFilePath}");
+                        _cachedLocalizationPath = tempFilePath;
+                        return tempFilePath;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error creating localization directory/file: {ex.Message}");
+                }
+            }
+
             Debug.WriteLine($"No localization file found for language: {languageCode}");
             return string.Empty;
+        }
+
+        private bool CopyEmbeddedResource(string languageCode, string targetPath)
+        {
+            try
+            {
+                // Шукаємо ресурс Avalonia з локалізацією
+                var resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{languageCode}.json";
+                var uri = new Uri(resourceKey);
+                
+                if (Avalonia.Platform.AssetLoader.Exists(uri))
+                {
+                    using (var stream = Avalonia.Platform.AssetLoader.Open(uri))
+                    using (var fileStream = File.Create(targetPath))
+                    {
+                        stream.CopyTo(fileStream);
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error copying embedded resource: {ex.Message}");
+            }
+            return false;
         }
 
         public string GetString(string key)

@@ -72,6 +72,10 @@
               "target": "Package",
               "version": "[11.2.6, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "ReactiveUI": {
               "target": "Package",
               "version": "[20.2.45, )"

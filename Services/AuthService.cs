@@ -48,8 +48,11 @@ public class AuthService
             return false;
         }
 
-        // Create and save new user
-        var newUser = new User(username, email, password);
+        // Хешуємо пароль перед збереженням
+        string hashedPassword = PasswordHasher.HashPassword(password);
+        
+        // Create and save new user with hashed password
+        var newUser = new User(username, email, hashedPassword);
         _userRepository.SaveUser(newUser);
         
         // Set as current user
@@ -60,9 +63,15 @@ public class AuthService
 
     public bool LoginUser(string usernameOrEmail, string password)
     {
-        var user = _userRepository.GetUserByCredentials(usernameOrEmail, password);
+        var user = _userRepository.GetUserByUsernameOrEmail(usernameOrEmail);
         
         if (user == null)
+        {
+            return false;
+        }
+        
+        // Перевіряємо хешований пароль
+        if (!PasswordHasher.VerifyPassword(password, user.Password))
         {
             return false;
         }

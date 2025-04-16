@@ -31,7 +31,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             // Check initial state
             if (_emailTextBox != null)
             {
-                ValidateEmail(_emailTextBox.Text);
+                ValidateEmailOrUsername(_emailTextBox.Text);
             }
             
             if (_passwordTextBox != null)
@@ -44,7 +44,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         {
             if (e.Property == TextBox.TextProperty && sender is TextBox textBox)
             {
-                ValidateEmail(textBox.Text);
+                ValidateEmailOrUsername(textBox.Text);
             }
         }
         
@@ -56,18 +56,22 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             }
         }
         
-        private void ValidateEmail(string? email)
+        private void ValidateEmailOrUsername(string? input)
         {
             if (_emailValidationText != null)
             {
-                bool isEmpty = string.IsNullOrWhiteSpace(email);
+                bool isEmpty = string.IsNullOrWhiteSpace(input);
                 _emailValidationText.IsVisible = isEmpty;
                 
                 if (isEmpty)
                 {
-                    _emailValidationText.Text = "Email cannot be empty";
+                    _emailValidationText.Text = "Email or username cannot be empty";
                 }
-                
+                else
+                {
+                    // Accept either a valid email format or a username (no validation needed)
+                    _emailValidationText.IsVisible = false;
+                }
             }
         }
         
@@ -96,15 +100,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             // Validate all fields before proceeding
             bool isValid = true;
             
-            if (_emailTextBox != null && string.IsNullOrWhiteSpace(_emailTextBox.Text))
+            if (string.IsNullOrWhiteSpace(_emailTextBox?.Text))
             {
-                ValidateEmail(_emailTextBox.Text);
+                ValidateEmailOrUsername(_emailTextBox?.Text);
                 isValid = false;
             }
             
-            if (_passwordTextBox != null && string.IsNullOrWhiteSpace(_passwordTextBox.Text))
+            if (string.IsNullOrWhiteSpace(_passwordTextBox?.Text) || !IsValidPassword(_passwordTextBox?.Text))
             {
-                ValidatePassword(_passwordTextBox.Text);
+                ValidatePassword(_passwordTextBox?.Text);
                 isValid = false;
             }
             

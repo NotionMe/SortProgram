@@ -24,6 +24,7 @@
 /home/linux/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Vulkan.dll
 /home/linux/.nuget/packages/avalonia.win32/11.2.6/lib/net8.0/Avalonia.Win32.dll
 /home/linux/.nuget/packages/avalonia.x11/11.2.6/lib/net8.0/Avalonia.X11.dll
+/home/linux/.nuget/packages/bcrypt.net-next/4.0.3/lib/net6.0/BCrypt.Net-Next.dll
 /home/linux/.nuget/packages/dynamicdata/9.1.2/lib/net8.0/DynamicData.dll
 /home/linux/.nuget/packages/excss/4.2.3/lib/net7.0/ExCSS.dll
 /home/linux/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll

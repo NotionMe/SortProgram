@@ -158,3 +158,4 @@
 /home/linux/Test/AlgoritmSort/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
 /home/linux/Repos/Praktika/SortProgram/bin/Debug/net9.0/Assets/Localization/en.json
 /home/linux/Repos/Praktika/SortProgram/bin/Debug/net9.0/Assets/Localization/uk.json
+/home/linux/Repos/Praktika/SortProgram/bin/Debug/net9.0/BCrypt.Net-Next.dll

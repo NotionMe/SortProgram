@@ -63,6 +63,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             if (e.Property == TextBox.TextProperty && sender is TextBox textBox)
             {
                 ValidateField(textBox.Text, _passwordValidationText);
+                
+                // Also validate confirm password field when password changes
+                if (_confirmPasswordTextBox != null)
+                {
+                    ValidateField(_confirmPasswordTextBox.Text, _confirmPasswordValidationText);
+                }
             }
         }
         
@@ -83,7 +89,13 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                 
                 if (!isEmpty)
                 {
-                    if (validationText == _emailValidationText)
+                    if (validationText == _usernameValidationText)
+                    {
+                        bool isValidLength = value != null && value.Length >= 3;
+                        validationText.IsVisible = !isValidLength;
+                        validationText.Text = isValidLength ? "" : "Username must be at least 3 characters long";
+                    }
+                    else if (validationText == _emailValidationText)
                     {
                         bool isValidFormat = IsValidEmail(value!);
                         validationText.IsVisible = !isValidFormat;
@@ -120,25 +132,33 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         {
             bool isValid = true;
             
-            if (string.IsNullOrWhiteSpace(_usernameTextBox?.Text))
+            // Validate username
+            if (string.IsNullOrWhiteSpace(_usernameTextBox?.Text) || 
+                (_usernameTextBox?.Text?.Length ?? 0) < 3)
             {
                 ValidateField(_usernameTextBox?.Text, _usernameValidationText);
                 isValid = false;
             }
             
-            if (string.IsNullOrWhiteSpace(_emailTextBox?.Text))
+            // Validate email
+            if (string.IsNullOrWhiteSpace(_emailTextBox?.Text) || 
+                !IsValidEmail(_emailTextBox?.Text ?? string.Empty))
             {
                 ValidateField(_emailTextBox?.Text, _emailValidationText);
                 isValid = false;
             }
             
-            if (string.IsNullOrWhiteSpace(_passwordTextBox?.Text))
+            // Validate password
+            if (string.IsNullOrWhiteSpace(_passwordTextBox?.Text) || 
+                (_passwordTextBox?.Text?.Length ?? 0) < 6)
             {
                 ValidateField(_passwordTextBox?.Text, _passwordValidationText);
                 isValid = false;
             }
             
-            if (string.IsNullOrWhiteSpace(_confirmPasswordTextBox?.Text))
+            // Validate password confirmation
+            if (string.IsNullOrWhiteSpace(_confirmPasswordTextBox?.Text) ||
+                _confirmPasswordTextBox?.Text != _passwordTextBox?.Text)
             {
                 ValidateField(_confirmPasswordTextBox?.Text, _confirmPasswordValidationText);
                 isValid = false;

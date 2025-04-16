@@ -2,6 +2,7 @@
 using System;
 using System.Globalization; // Додаємо для роботи з CultureInfo
 using System.Threading;    // Додаємо для доступу до Thread
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
@@ -16,10 +17,29 @@ class Program
         // Установлюємо мову за замовчуванням на en-US
         Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
         Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+        
+        // Конвертуємо паролі у файлі users.json з відкритого тексту на хеші
+        ConvertExistingPasswordsToHashed();
 
         // Запускаємо Avalonia-додаток
         BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
+    }
+
+    // Метод для конвертації існуючих паролів в хешовані
+    private static void ConvertExistingPasswordsToHashed()
+    {
+        try
+        {
+            Console.WriteLine("Checking for passwords that need to be hashed...");
+            var userRepository = new UserRepository();
+            userRepository.UpdatePasswordsToHashed();
+            Console.WriteLine("Password migration completed successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error during password migration: {ex.Message}");
+        }
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.

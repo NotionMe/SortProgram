@@ -25,6 +25,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             SaveAllUsers(users);
         }
 
+        // Новий метод для отримання користувача тільки за логіном або email
+        public User? GetUserByUsernameOrEmail(string usernameOrEmail)
+        {
+            List<User> users = GetAllUsers();
+            return users.FirstOrDefault(u => u.Username == usernameOrEmail || u.Email == usernameOrEmail);
+        }
+
+        // Старий метод збережений для сумісності
         public User? GetUserByCredentials(string usernameOrEmail, string password)
         {
             List<User> users = GetAllUsers();
@@ -60,6 +68,29 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             
             string json = JsonSerializer.Serialize(users, options);
             File.WriteAllText(_filePath, json);
+        }
+        
+        // Метод для оновлення паролів існуючих користувачів на хешовані
+        public void UpdatePasswordsToHashed()
+        {
+            var users = GetAllUsers();
+            bool changed = false;
+            
+            foreach (var user in users)
+            {
+                // Перевіряємо, чи пароль вже хешований
+                // Хеші BCrypt завжди починаються з $2a$, $2b$ або $2y$
+                if (!user.Password.StartsWith("$2"))
+                {
+                    user.Password = PasswordHasher.HashPassword(user.Password);
+                    changed = true;
+                }
+            }
+            
+            if (changed)
+            {
+                SaveAllUsers(users);
+            }
         }
     }
 }

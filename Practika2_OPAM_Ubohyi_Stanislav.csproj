@@ -20,6 +20,7 @@
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="ReactiveUI" Version="20.2.45" />
   </ItemGroup>
 
@@ -29,10 +30,11 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
-  <!-- Add ItemGroup for localization files to ensure they're copied to output -->
+  <!-- Модифицируем копирование файлов локализации для Windows -->
   <ItemGroup>
-    <None Update="Assets\Localization\*.json">
+    <ContentWithTargetPath Include="Assets\Localization\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+      <TargetPath>Assets\Localization\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
   </ItemGroup>
 </Project>
