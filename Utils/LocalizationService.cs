@@ -9,6 +9,8 @@ using Avalonia.Controls;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Utils;
 
@@ -107,17 +109,42 @@ public static class LocalizationService
         {
             string currentDir = Directory.GetCurrentDirectory();
             Debug.WriteLine($"Current directory: {currentDir}");
+            Debug.WriteLine($"OS Platform: {Environment.OSVersion.Platform}");
             
             // Перевіряємо базові папки
-            string[] basePaths = new[]
+            var basePaths = new List<string>
             {
-                "Assets/Localization",
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets/Localization"),
-                Path.Combine(currentDir, "Assets/Localization"),
-                Path.Combine(AppContext.BaseDirectory, "Assets/Localization")
+                Path.Combine("Assets", "Localization"),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization"),
+                Path.Combine(currentDir, "Assets", "Localization"),
+                Path.Combine(AppContext.BaseDirectory, "Assets", "Localization")
             };
             
-            foreach (string path in basePaths)
+            // Для Windows додаємо специфічні шляхи
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                if (!string.IsNullOrEmpty(executablePath))
+                {
+                    basePaths.Add(Path.Combine(executablePath, "Assets", "Localization"));
+                    
+                    // Також перевіримо батьківські каталоги (для Debug/Release структури)
+                    string? parentDir = Directory.GetParent(executablePath)?.FullName;
+                    if (!string.IsNullOrEmpty(parentDir))
+                    {
+                        basePaths.Add(Path.Combine(parentDir, "Assets", "Localization"));
+                        
+                        // Ще один рівень вгору
+                        string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                        if (!string.IsNullOrEmpty(grandParentDir))
+                        {
+                            basePaths.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
+                        }
+                    }
+                }
+            }
+            
+            foreach (string path in basePaths.Distinct())
             {
                 Debug.WriteLine($"Checking directory: {path}");
                 if (Directory.Exists(path))
@@ -125,16 +152,42 @@ public static class LocalizationService
                     Debug.WriteLine($"Directory exists: {path}");
                     var files = Directory.GetFiles(path, "*.json");
                     Debug.WriteLine($"Found files: {string.Join(", ", files)}");
+                    
+                    // Перевіряємо конкретні файли локалізації
+                    if (File.Exists(Path.Combine(path, "en.json")))
+                        Debug.WriteLine("en.json exists!");
+                    if (File.Exists(Path.Combine(path, "uk.json")))
+                        Debug.WriteLine("uk.json exists!");
                 }
                 else
                 {
                     Debug.WriteLine($"Directory does NOT exist: {path}");
+                    
+                    // Спробуємо створити директорію, якщо це можливо
+                    try 
+                    {
+                        // Перевіряємо, чи існує батьківський каталог
+                        string? parentDir = Path.GetDirectoryName(path);
+                        if (!string.IsNullOrEmpty(parentDir) && Directory.Exists(parentDir)) 
+                        {
+                            Debug.WriteLine($"Creating directory: {path}");
+                            Directory.CreateDirectory(path);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine($"Couldn't create directory: {ex.Message}");
+                    }
                 }
             }
+            
+            // Перевіряємо вміст завантаженої поточної мови
+            Debug.WriteLine($"Current language from LanguageManager: {LanguageManager.Instance.CurrentLanguage}");
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"Error diagnosing localization files: {ex.Message}");
+            Debug.WriteLine($"Stack trace: {ex.StackTrace}");
         }
     }
 }

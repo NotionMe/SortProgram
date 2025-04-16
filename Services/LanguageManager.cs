@@ -119,21 +119,69 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             }
             
             // Можливі шляхи до файлів локалізації у порядку пріоритету
-            List<string> possiblePaths = new List<string>
-            {
-                Path.Combine("Assets", "Localization", $"{languageCode}.json"),
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization", $"{languageCode}.json"),
-                // Додаткові шляхи для Windows
-                Path.Combine(currentDirectory, "Assets", "Localization", $"{languageCode}.json"),
-                Path.Combine(AppContext.BaseDirectory, "Assets", "Localization", $"{languageCode}.json")
+            List<string> possiblePaths = new List<string>();
+
+            // Базові шляхи, які будемо комбінувати
+            string[] baseLocalizationDirs = {
+                Path.Combine("Assets", "Localization"),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization"),
+                Path.Combine(currentDirectory, "Assets", "Localization"),
+                Path.Combine(AppContext.BaseDirectory, "Assets", "Localization")
             };
 
             // Додаємо шляхи відносно виконуваного файлу
             string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly()?.Location);
             if (!string.IsNullOrEmpty(executablePath))
             {
-                possiblePaths.Add(Path.Combine(executablePath, "Assets", "Localization", $"{languageCode}.json"));
+                baseLocalizationDirs = baseLocalizationDirs.Concat(new[] { 
+                    Path.Combine(executablePath, "Assets", "Localization")
+                }).ToArray();
             }
+
+            // Перевіряємо кожен базовий шлях
+            foreach (string baseDir in baseLocalizationDirs)
+            {
+                string filePath = Path.Combine(baseDir, $"{languageCode}.json");
+                possiblePaths.Add(filePath);
+                
+                // Додаємо альтернативні варіанти для Windows з різними стилями шляху
+                if (Path.DirectorySeparatorChar != '/')
+                {
+                    // Альтернативний варіант шляху для Windows
+                    possiblePaths.Add(baseDir + Path.DirectorySeparatorChar + $"{languageCode}.json");
+                }
+            }
+
+            // Спеціально для Windows - додаємо пошук в каталозі з виконуваним файлом
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                string? exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                if (!string.IsNullOrEmpty(exePath))
+                {
+                    string? exeDir = Path.GetDirectoryName(exePath);
+                    if (!string.IsNullOrEmpty(exeDir))
+                    {
+                        possiblePaths.Add(Path.Combine(exeDir, "Assets", "Localization", $"{languageCode}.json"));
+                        // Перевіряємо також каталоги відносно батьківського каталогу 
+                        // (для випадків коли виконуваний файл в Debug/Release підкаталозі)
+                        string? parentDir = Directory.GetParent(exeDir)?.FullName;
+                        if (!string.IsNullOrEmpty(parentDir))
+                        {
+                            possiblePaths.Add(Path.Combine(parentDir, "Assets", "Localization", $"{languageCode}.json"));
+                            
+                            // Ще один рівень вгору (для Debug/Release/net9.0)
+                            string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                            if (!string.IsNullOrEmpty(grandParentDir))
+                            {
+                                possiblePaths.Add(Path.Combine(grandParentDir, "Assets", "Localization", $"{languageCode}.json"));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Видаляємо дублікати
+            possiblePaths = possiblePaths.Distinct().ToList();
 
             foreach (string path in possiblePaths)
             {
