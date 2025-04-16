@@ -9,6 +9,7 @@
 	Height="720"
 	Background="Transparent"
 	WindowStartupLocation="CenterScreen"
+	ExtendClientAreaToDecorationsHint="True"
 	mc:Ignorable="d">
 
 	<Border Background="White" CornerRadius="5">
@@ -85,11 +86,39 @@
 						Foreground="rgba(0,0,0,0.8)"
 						Text="Welcome to Basics algorithms" />
 					<StackPanel Orientation="Vertical" Spacing="10">
-						<TextBox Classes="formInput" Watermark="Email" />
-						<TextBox
-							Classes="formInput"
-							PasswordChar="*"
-							Watermark="Password" />
+						<Grid>
+							<StackPanel>
+									<TextBlock
+										Margin="5,0,0,3"
+										FontSize="12"
+										FontWeight="Medium"
+										Foreground="rgba(0,0,0,0.7)"
+										Text="Email or Username" />
+								<TextBox x:Name="EmailTextBox" Classes="formInput" Watermark="Email" 
+										PropertyChanged="EmailTextBox_PropertyChanged" />
+								<TextBlock x:Name="EmailValidationText" 
+										Foreground="Red" 
+										FontSize="12" 
+										Margin="5,2,0,0"
+										Text="Email cannot be empty" 
+										IsVisible="False" />
+							</StackPanel>
+						</Grid>
+						<Grid>
+							<StackPanel>
+								<TextBox x:Name="PasswordTextBox"
+									Classes="formInput"
+									PasswordChar="*"
+									PropertyChanged="PasswordTextBox_PropertyChanged"
+									Watermark="Password" />
+								<TextBlock x:Name="PasswordValidationText" 
+										Foreground="Red" 
+										FontSize="12" 
+										Margin="5,2,0,0"
+										Text="Password cannot be empty" 
+										IsVisible="False" />
+							</StackPanel>
+						</Grid>
 					</StackPanel>
 					<TextBlock
 						HorizontalAlignment="Right"

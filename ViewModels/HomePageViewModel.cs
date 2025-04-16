@@ -6,7 +6,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
     public class HomePageViewModel : ViewModelBase
     {
-        public LanguageManager LanguageManager => LanguageManager.Instance;
+        public new LanguageManager LanguageManager => LanguageManager.Instance;
         
         public HomePageViewModel()
         {

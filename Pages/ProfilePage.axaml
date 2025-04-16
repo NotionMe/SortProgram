@@ -1,0 +1,218 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.ProfilePage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+    x:DataType="vm:ProfileViewModel">
+
+    <UserControl.Styles>
+        <Style Selector="Button.accent">
+            <Setter Property="Background" Value="#4F8EF7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderBrush" Value="#4F8EF7"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                    <BrushTransition Property="Background" Duration="0.2"/>
+                </Transitions>
+            </Setter>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="10"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="Button.accent:pointerover">
+            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+        <Style Selector="Button.danger">
+            <Setter Property="Background" Value="#F87171"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderBrush" Value="#F87171"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                    <BrushTransition Property="Background" Duration="0.2"/>
+                </Transitions>
+            </Setter>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="10"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="Button.danger:pointerover">
+            <Setter Property="Background" Value="#DC2626"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+        
+        <Style Selector="Border.profileContainer">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BoxShadowsTransition Property="BoxShadow" Duration="0.3"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Border.profileContainer:pointerover">
+            <Setter Property="BoxShadow" Value="0 8 20 0.15 #000000"/>
+        </Style>
+        
+        <Style Selector="Border.avatar">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.3"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Border.avatar:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+    </UserControl.Styles>
+
+    <UserControl.DataContext>
+        <vm:ProfileViewModel />
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ThemeBackground}"/>
+        </Grid.Background>
+        
+        <Grid RowDefinitions="Auto,*" Margin="0,20,0,0">
+            <!-- Верхня частина з аватаром -->
+            <Border Grid.Row="0"
+                    Width="200"
+                    Height="200"
+                    Classes="avatar"
+                    CornerRadius="100"
+                    Margin="0,20,0,30"
+                    BoxShadow="0 4 15 0.3 #4F8EF7"
+                    HorizontalAlignment="Center">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Offset="0" Color="#4F8EF7"/>
+                        <GradientStop Offset="1" Color="#3F78E0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Ellipse Width="190" Height="190" Fill="{DynamicResource ThemeCardBackgroundBrush}" />
+                    <TextBlock Text="👤"
+                             FontSize="100"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Нижня частина з даними користувача -->
+            <Border Grid.Row="1"
+                    Classes="profileContainer"
+                    Background="{DynamicResource ThemeCardBackgroundBrush}"
+                    BoxShadow="0 4 15 0.08 #000000"
+                    CornerRadius="30"
+                    Margin="40,0,40,40"
+                    Padding="30">
+                <StackPanel Spacing="25">
+                    <!-- Ім'я користувача -->
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="👤" FontSize="18" VerticalAlignment="Center"/>
+                            <TextBlock Text="Ім'я користувача"
+                                     FontSize="16"
+                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                     Margin="0,0,0,2"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding UserName}"
+                                 FontSize="28"
+                                 FontWeight="Bold"
+                                 Foreground="{DynamicResource ThemeForegroundBrush}"
+                                 Margin="0,5,0,0"/>
+                        <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
+                    </StackPanel>
+
+                    <!-- Email -->
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="✉️" FontSize="18" VerticalAlignment="Center"/>
+                            <TextBlock Text="Email"
+                                     FontSize="16"
+                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                     Margin="0,0,0,2"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Email}"
+                                 FontSize="22"
+                                 FontWeight="SemiBold"
+                                 Foreground="{DynamicResource ThemeForegroundBrush}"
+                                 Margin="0,5,0,0"/>
+                        <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
+                    </StackPanel>
+
+                    <!-- Дата регистрации -->
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="📅" FontSize="18" VerticalAlignment="Center"/>
+                            <TextBlock Text="Дата реєстрації"
+                                     FontSize="16"
+                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                     Margin="0,0,0,2"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding RegistrationDate, StringFormat=\{0:dd.MM.yyyy\}}"
+                                 FontSize="22"
+                                 FontWeight="SemiBold"
+                                 Foreground="{DynamicResource ThemeForegroundBrush}"
+                                 Margin="0,5,0,0"/>
+                    </StackPanel>
+
+                    <!-- Кнопки -->
+                    <StackPanel Orientation="Horizontal"
+                              Spacing="20"
+                              HorizontalAlignment="Center"
+                              Margin="0,25,0,0">
+                        <Button Classes="accent"
+                                Width="180"
+                                Height="50"
+                                FontSize="17"
+                                Command="{Binding EditProfileCommand}">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="✏️" FontSize="20"/>
+                                <TextBlock Text="Редагувати" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Classes="danger"
+                                Width="180"
+                                Height="50"
+                                FontSize="17"
+                                Command="{Binding LogoutCommand}">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="🚪" FontSize="20"/>
+                                <TextBlock Text="Вийти" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

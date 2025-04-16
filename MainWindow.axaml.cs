@@ -70,6 +70,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             ExitButton.PointerPressed += (s, e) => {
                 Environment.Exit(0);
             };
+
+            ProfileButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(ProfileButton);
+                NavigateToPage(new ProfilePage());
+            };
         }
         
         // Обробка наведення курсору на sidebar - розширення
@@ -157,7 +162,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 }
             }
 
-            Debug.WriteLine($"Theme changed to {(ThemeManager.IsDarkTheme ? "Dark" : "Light")}");
+        }
+        
+        // Метод для навігації до сторінки входу при виході з системи
+        public void NavigateToLogin()
+        {
+            NavigateToPage(new Auth.LoginMenu());
         }
     }
 }

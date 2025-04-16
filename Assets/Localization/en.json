@@ -11,6 +11,8 @@
   "SettingsPage_Title": "Settings",
   "LanguageSettings_Section": "Language Settings",
   "InterfaceLanguage_Label": "Interface Language",
+  "AccountSettings_Section": "Account Settings", 
+  "Logout_Button": "Logout",
   "VisualizationPage_Settings": "Settings",
   "VisualizationPage_ArraySize": "Array Size:",
   "VisualizationPage_Speed": "Speed:",
@@ -64,5 +66,10 @@
   "AlgorithmComplexity_QuickSortSpace": "Space O(log n)",
   "AlgorithmComplexity_InsertionSortDescription": "Efficient for small or nearly sorted data.",
   "AlgorithmComplexity_InsertionSortTime": "Time O(n²)",
-  "AlgorithmComplexity_InsertionSortSpace": "Space O(1)"
+  "AlgorithmComplexity_InsertionSortSpace": "Space O(1)",
+  "Profile_Title": "User Profile",
+  "Profile_UserName": "Name:",
+  "Profile_Email": "Email:",
+  "Profile_Edit": "Edit",
+  "Profile_Logout": "Logout"
 }

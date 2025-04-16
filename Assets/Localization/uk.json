@@ -12,6 +12,8 @@
   "SettingsPage_Title": "Налаштування",
   "LanguageSettings_Section": "Налаштування мови",
   "InterfaceLanguage_Label": "Мова інтерфейсу",
+  "AccountSettings_Section": "Налаштування облікового запису",
+  "Logout_Button": "Вийти",
 
   "VisualizationPage_Settings": "Налаштування",
   "VisualizationPage_ArraySize": "Розмір масиву:",
@@ -73,5 +75,11 @@
   "AlgorithmComplexity_QuickSortSpace": "Пам'ять: O(log n)",
   "AlgorithmComplexity_InsertionSortDescription": "Ефективний для малих або майже відсортованих даних.",
   "AlgorithmComplexity_InsertionSortTime": "Час: O(n²)",
-  "AlgorithmComplexity_InsertionSortSpace": "Пам'ять: O(1)"
+  "AlgorithmComplexity_InsertionSortSpace": "Пам'ять: O(1)",
+
+  "Profile_Title": "Профіль користувача",
+  "Profile_UserName": "Ім'я:",
+  "Profile_Email": "Пошта:",
+  "Profile_Edit": "Редагувати",
+  "Profile_Logout": "Вийти"
 }

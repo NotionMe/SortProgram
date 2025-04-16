@@ -9,6 +9,7 @@
     Height="720"
     Background="Transparent"
     WindowStartupLocation="CenterScreen"
+    ExtendClientAreaToDecorationsHint="True"
     mc:Ignorable="d">
 
     <Border Background="White" CornerRadius="5">
@@ -82,10 +83,62 @@
                         Foreground="rgba(0,0,0,0.8)"
                         Text="Create your account" />
                     <StackPanel Orientation="Vertical" Spacing="10">
-                        <TextBox FontSize="14" Watermark="Username" Classes="formInput" />
-                        <TextBox FontSize="14" Watermark="Email" Classes="formInput" />
-                        <TextBox PasswordChar="*" Watermark="Password" Classes="formInput" />
-                        <TextBox PasswordChar="*" Watermark="Confirm Password" Classes="formInput" />
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="UsernameTextBox" FontSize="14" Watermark="Username" Classes="formInput"
+                                         PropertyChanged="UsernameTextBox_PropertyChanged" />
+                                <TextBlock x:Name="UsernameValidationText" 
+                                           Foreground="Red" 
+                                           FontSize="12" 
+                                           Margin="5,2,0,0"
+                                           Text="Username cannot be empty" 
+                                           IsVisible="False" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="EmailTextBox" FontSize="14" Watermark="Email" Classes="formInput" 
+                                         PropertyChanged="EmailTextBox_PropertyChanged" />
+                                <TextBlock x:Name="EmailValidationText" 
+                                           Foreground="Red" 
+                                           FontSize="12" 
+                                           Margin="5,2,0,0"
+                                           Text="Email cannot be empty" 
+                                           IsVisible="False" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="PasswordTextBox"
+                                       FontSize="14"
+                                       PasswordChar="*" 
+                                       Watermark="Password" 
+                                       Classes="formInput" 
+                                       PropertyChanged="PasswordTextBox_PropertyChanged" />
+                                <TextBlock x:Name="PasswordValidationText" 
+                                           Foreground="Red" 
+                                           FontSize="12" 
+                                           Margin="5,2,0,0"
+                                           Text="Password cannot be empty" 
+                                           IsVisible="False" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="ConfirmPasswordTextBox"
+                                       FontSize="14"
+                                       PasswordChar="*" 
+                                       Watermark="Confirm Password" 
+                                       Classes="formInput" 
+                                       PropertyChanged="ConfirmPasswordTextBox_PropertyChanged" />
+                                <TextBlock x:Name="ConfirmPasswordValidationText" 
+                                           Foreground="Red" 
+                                           FontSize="12" 
+                                           Margin="5,2,0,0"
+                                           Text="Confirm Password cannot be empty" 
+                                           IsVisible="False" />
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
                     <StackPanel
                         HorizontalAlignment="Center"

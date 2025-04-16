@@ -8,12 +8,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Avalonia.Controls;
 using Practika2_OPAM_Ubohyi_Stanislav.Styles;
+using System.Windows.Input;
+using Avalonia;
+using Practika2_OPAM_Ubohyi_Stanislav.Auth;
+using Avalonia.Controls.ApplicationLifetimes;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
     public class SettingsViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public new event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -33,7 +38,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
         private readonly LanguageManager _languageManager;
         private bool _isDarkTheme;
-        private Grid _mainContentGrid;
+        private Grid? _mainContentGrid;
         private Language _selectedLanguage;
 
         public SettingsViewModel()
@@ -47,12 +52,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 new Language("uk", "Українська")
             };
 
-            // Set the selected language based on the current language
             _selectedLanguage = AvailableLanguages.FirstOrDefault(
                 l => l.Code == LanguageManager.CurrentLanguage) ?? AvailableLanguages[0];
         }
 
-        public LanguageManager LanguageManager => _languageManager;
+        public new LanguageManager LanguageManager => _languageManager;
 
         public bool IsDarkTheme
         {
@@ -77,8 +81,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 }
             }
         }
-
-        
 
         public void Initialize(Grid mainContentGrid)
         {
