@@ -211,6 +211,30 @@
                                   Foreground="White"/>
                     </Grid>
                 </Border>
+                
+                <!-- Кнопка Logout -->
+                <Border Classes="SidebarButton" Name="LogoutButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="👤" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Logout" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
             </StackPanel>
         </Grid>
         

@@ -11,6 +11,7 @@ using Avalonia.Input;
 using System.Linq;
 using Avalonia.VisualTree;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
+using DynamicData.Binding;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
@@ -63,6 +64,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 NavigateToPage(new SettingsPage());
             };
             
+            ProfileButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(ProfileButton);
+                NavigateToPage(new ProfilePage());
+            };
+            
             ThemeButton.PointerPressed += (s, e) => {
                 ToggleTheme();
             };
@@ -70,10 +76,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             ExitButton.PointerPressed += (s, e) => {
                 Environment.Exit(0);
             };
-
-            ProfileButton.PointerPressed += (s, e) => {
-                UpdateSelectedButton(ProfileButton);
-                NavigateToPage(new ProfilePage());
+            
+            LogoutButton.PointerPressed += (s, e) => {
+                AuthService.Instance.Logout();
+                NavigateToLogin();
             };
         }
         
@@ -167,7 +173,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         // Метод для навігації до сторінки входу при виході з системи
         public void NavigateToLogin()
         {
-            NavigateToPage(new Auth.LoginMenu());
+            // Create and show a new LoginMenu window
+            var loginWindow = new Auth.LoginMenu();
+            loginWindow.Show();
+            
+            // Close the current window
+            this.Close();
         }
     }
 }
