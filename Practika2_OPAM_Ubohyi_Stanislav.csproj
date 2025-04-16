@@ -29,16 +29,10 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
+  <!-- Add ItemGroup for localization files to ensure they're copied to output -->
   <ItemGroup>
-    <EmbeddedResource Update="Strings\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Strings\en-US\Resources-US.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Strings\uk-UA\Resources-UA.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <None Update="Assets\Localization\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

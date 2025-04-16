@@ -156,3 +156,5 @@
 /home/linux/Test/AlgoritmSort/obj/Debug/net9.0/Practika.FCEDA048.Up2Date
 /home/linux/Test/AlgoritmSort/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/linux/Test/AlgoritmSort/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
+/home/linux/Repos/Praktika/SortProgram/bin/Debug/net9.0/Assets/Localization/en.json
+/home/linux/Repos/Praktika/SortProgram/bin/Debug/net9.0/Assets/Localization/uk.json
