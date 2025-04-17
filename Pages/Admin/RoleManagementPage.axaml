@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
              xmlns:auth="using:Practika2_OPAM_Ubohyi_Stanislav.Auth"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="450"
              x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin.RoleManagementPage">
 
     <UserControl.Styles>

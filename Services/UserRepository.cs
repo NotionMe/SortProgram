@@ -73,15 +73,23 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         // Метод для оновлення користувача
         public bool UpdateUser(User updatedUser)
         {
-            List<User> users = GetAllUsers();
-            int index = users.FindIndex(u => u.Username == updatedUser.Username);
-            
-            if (index == -1)
-                return false;
-                
-            users[index] = updatedUser;
-            SaveAllUsers(users);
-            return true;
+            var users = GetAllUsers();
+            var existingUser = users.FirstOrDefault(u => u.Username == updatedUser.Username || u.Email == updatedUser.Email);
+            if (existingUser != null)
+            {
+                // Update the user's properties
+                existingUser.Username = updatedUser.Username;
+                existingUser.Email = updatedUser.Email;
+                existingUser.Avatar = updatedUser.Avatar;
+                existingUser.Role = updatedUser.Role;
+                existingUser.RegistrationDate = updatedUser.RegistrationDate;
+                existingUser.Password = updatedUser.Password; // Preserve the password
+
+                // Save changes
+                SaveAllUsers(users);
+                return true;
+            }
+            return false;
         }
         
         // Метод для оновлення паролів існуючих користувачів на хешовані

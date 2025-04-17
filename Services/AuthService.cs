@@ -32,6 +32,13 @@ public class AuthService
         return _currentUser;
     }
 
+    public void UpdateCurrentUser(User user)
+    {
+        _currentUser = user;
+        var userRepo = new UserRepository();
+        userRepo.UpdateUser(user);
+    }
+
     public void SetCurrentUser(User user)
     {
         _currentUser = user;
@@ -72,7 +79,7 @@ public class AuthService
     private string GetRandomAvatarPath()
     {
         
-        int avatarNumber = _random.Next(1, 5); 
+        int avatarNumber = _random.Next(1, 8); 
         return $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar{avatarNumber}.png";
     }
 

@@ -11,28 +11,34 @@
         <Style Selector="Button.accent">
             <Setter Property="Background" Value="#4F8EF7"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="CornerRadius" Value="12"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderBrush" Value="#4F8EF7"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="24"/>
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
             <Setter Property="Transitions">
                 <Transitions>
                     <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
                     <BrushTransition Property="Background" Duration="0.2"/>
                 </Transitions>
             </Setter>
-            <Setter Property="Template">
-                <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="10"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter>
         </Style>
+        
         <Style Selector="Button.accent:pointerover">
             <Setter Property="Background" Value="#2563EB"/>
             <Setter Property="RenderTransform" Value="scale(1.05)"/>
@@ -90,6 +96,13 @@
         <Style Selector="Border.avatar:pointerover">
             <Setter Property="RenderTransform" Value="scale(1.05)"/>
         </Style>
+
+        <Style Selector="Button.transparent">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
     </UserControl.Styles>
 
     <UserControl.DataContext>
@@ -123,6 +136,7 @@
                 
                 <Border Width="190" 
                        Height="190" 
+                       Classes="avatar"
                        ClipToBounds="True"
                        CornerRadius="95"
                        VerticalAlignment="Center" 
@@ -150,12 +164,29 @@
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
+                            <Button Classes="accent"
+                                    Command="{Binding ToggleUsernameEditCommand}">
+                                    <TextBlock Text="✏️" FontSize="14" VerticalAlignment="Center"/>
+                                </Button>
                         </StackPanel>
-                        <TextBlock Text="{Binding UserName}"
-                                 FontSize="28"
-                                 FontWeight="Bold"
-                                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                                 Margin="0,5,0,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding UserName}"
+                                     FontSize="28"
+                                     FontWeight="Bold"
+                                     Foreground="{DynamicResource ThemeForegroundBrush}"
+                                     Margin="0,5,0,0"
+                                     IsVisible="{Binding !IsEditingUsername}"/>
+                            <TextBox Text="{Binding UserName}"
+                                    FontSize="28"
+                                    FontWeight="Bold"
+                                    Margin="0,5,0,0"
+                                    IsVisible="{Binding IsEditingUsername}">
+                                <TextBox.KeyBindings>
+                                    <KeyBinding Gesture="Enter" Command="{Binding SaveUsernameCommand}"/>
+                                    <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
+                                </TextBox.KeyBindings>
+                            </TextBox>
+                        </Grid>
                         <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
                     </StackPanel>
 
@@ -167,12 +198,29 @@
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
+                            <Button Classes="accent"
+                                    Command="{Binding ToggleEmailEditCommand}">
+                                <TextBlock Text="✏️" FontSize="14" VerticalAlignment="Center"/>
+                            </Button>
                         </StackPanel>
-                        <TextBlock Text="{Binding Email}"
-                                 FontSize="22"
-                                 FontWeight="SemiBold"
-                                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                                 Margin="0,5,0,0"/>
+                        <Grid>
+                            <TextBlock Text="{Binding Email}"
+                                     FontSize="22"
+                                     FontWeight="SemiBold"
+                                     Foreground="{DynamicResource ThemeForegroundBrush}"
+                                     Margin="0,5,0,0"
+                                     IsVisible="{Binding !IsEditingEmail}"/>
+                            <TextBox Text="{Binding Email}"
+                                    FontSize="22"
+                                    FontWeight="SemiBold"
+                                    Margin="0,5,0,0"
+                                    IsVisible="{Binding IsEditingEmail}">
+                                <TextBox.KeyBindings>
+                                    <KeyBinding Gesture="Enter" Command="{Binding SaveEmailCommand}"/>
+                                    <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
+                                </TextBox.KeyBindings>
+                            </TextBox>
+                        </Grid>
                         <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
                     </StackPanel>
 
@@ -207,24 +255,6 @@
                                  FontWeight="SemiBold"
                                  Foreground="{DynamicResource ThemeForegroundBrush}"
                                  Margin="0,5,0,0"/>
-                    </StackPanel>
-
-                    <!-- Кнопки -->
-                    <StackPanel Orientation="Horizontal"
-                              Spacing="20"
-                              HorizontalAlignment="Center"
-                              Margin="0,25,0,0">
-                        <Button Classes="accent"
-                                Width="180"
-                                Height="50"
-                                FontSize="17"
-                                Command="{Binding EditProfileCommand}"
-                                IsVisible="True">
-                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <TextBlock Text="✏️" FontSize="20"/>
-                                <TextBlock Text="Редагувати профіль" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Border>
