@@ -22,7 +22,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InfoBubbleSort());
@@ -31,7 +31,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void BubbleSortPage_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new BubbleSort());
@@ -40,7 +40,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void SelectionSortPage_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new SelectionSort());
@@ -49,7 +49,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void QuickSortPage_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new QuickSort());
@@ -58,7 +58,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InfoSelectionSort_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InfoSelectionSort());
@@ -67,7 +67,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InfoQuickSort_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InfoQuickSort());
@@ -76,7 +76,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InfoInsertionSort_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InfoInsertionSort());
@@ -85,7 +85,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InsertionSortPage_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InsertionSort());

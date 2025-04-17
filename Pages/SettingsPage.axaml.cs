@@ -19,10 +19,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             // Find the main content grid when the control is loaded
             this.AttachedToVisualTree += (sender, e) => 
             {
-                var window = this.VisualRoot as Window;
+                Window? window = this.VisualRoot as Window;
                 if (window != null)
                 {
-                    var mainGrid = window.FindControl<Grid>("MainGrid");
+                    Grid? mainGrid = window.FindControl<Grid>("MainGrid");
                     if (mainGrid != null)
                     {
                         _viewModel.Initialize(mainGrid);

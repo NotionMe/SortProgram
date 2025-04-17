@@ -32,8 +32,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             UpdateSelectedButton(HomeButton);
             
             SetupEventHandlers();
-            
-            var mainGrid = this.FindControl<Grid>("MainGrid");
+
+            Grid? mainGrid = this.FindControl<Grid>("MainGrid");
             if (mainGrid != null)
             {
                 ThemeManager.SetLightTheme(mainGrid);
@@ -121,7 +121,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         private void NavigateToPage(Control page)
         {
-            var contentBorder = this.FindControl<Border>("ContentBorder");
+            Border? contentBorder = this.FindControl<Border>("ContentBorder");
             if (contentBorder != null)
             {
                 contentBorder.Child = page;
@@ -136,7 +136,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         private void ToggleTheme()
         {
-            var mainGrid = this.FindControl<Grid>("MainGrid");
+            Grid? mainGrid = this.FindControl<Grid>("MainGrid");
             if (mainGrid != null)
             {
                 ThemeManager.ToggleTheme(mainGrid);
@@ -146,16 +146,16 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
 
         private void UpdateThemeUI()
         {
-            var themeButton = this.FindControl<Border>("ThemeButton");
+            Border? themeButton = this.FindControl<Border>("ThemeButton");
             if (themeButton != null)
             {
-                var iconContainer = themeButton.GetVisualDescendants()
+                Border? iconContainer = themeButton.GetVisualDescendants()
                     .OfType<Border>()
                     .FirstOrDefault(b => b.Classes.Contains("ButtonIconBackground"));
-                
-                var iconTextBlock = iconContainer?.Child as TextBlock;
-                
-                var labelTextBlock = themeButton.GetVisualDescendants()
+
+                TextBlock? iconTextBlock = iconContainer?.Child as TextBlock;
+
+                TextBlock? labelTextBlock = themeButton.GetVisualDescendants()
                     .OfType<TextBlock>()
                     .FirstOrDefault(t => t.Classes.Contains("ButtonLabel"));
                 
@@ -180,7 +180,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         public void NavigateToLogin()
         {
             // Create and show a new LoginMenu window
-            var loginWindow = new Auth.LoginMenu();
+            Auth.LoginMenu loginWindow = new Auth.LoginMenu();
             loginWindow.Show();
             
             // Close the current window

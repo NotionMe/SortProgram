@@ -155,9 +155,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                     ShowErrorMessage("Login failed", "Invalid email/username or password");
                     return;
                 }
-                
+
                 // Вхід успішний, відкриваємо головне вікно
-                var mainWindow = new SortProgram();
+                SortProgram mainWindow = new SortProgram();
                 mainWindow.Show();
                 this.Close();
             }
@@ -205,7 +205,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         /// </summary>
         private void ShowErrorMessage(string title, string message)
         {
-            var messageBox = new MessageBox
+            MessageBox messageBox = new MessageBox
             {
                 MessageTitle = title,
                 Message = message

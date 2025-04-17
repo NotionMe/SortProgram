@@ -53,10 +53,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Utils
         // Вимірювання часу виконання алгоритму сортування
         public static PerformanceResult MeasureSortingAlgorithm<T>(Func<T[], T[]> sortingMethod, T[] array)
         {
-            var timer = new PerformanceTimer();
+            PerformanceTimer timer = new PerformanceTimer();
             timer.Start();
-            
-            var result = sortingMethod(array);
+
+            T[] result = sortingMethod(array);
             
             timer.Stop();
             

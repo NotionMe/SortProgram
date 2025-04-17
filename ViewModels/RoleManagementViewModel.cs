@@ -23,7 +23,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         {
             _authService = AuthService.Instance;
             _userRepository = new UserRepository();
-            var users = _userRepository.GetAllUsers();
+            List<User> users = _userRepository.GetAllUsers();
             _userViewModels = new ObservableCollection<UserViewModel>(
                 users.Select(u => new UserViewModel(u)));
             _availableRoles = _userRepository.GetAvailableRoles();
@@ -100,12 +100,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
         private void RefreshUsers()
         {
-            var users = _userRepository.GetAllUsers();
+            List<User> users = _userRepository.GetAllUsers();
             
             Dispatcher.UIThread.InvokeAsync(() =>
             {
                 _userViewModels.Clear();
-                foreach (var user in users)
+                foreach (User user in users)
                 {
                     _userViewModels.Add(new UserViewModel(user));
                 }

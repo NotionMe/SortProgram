@@ -4,6 +4,47 @@
     "Email": "admin@gmail.com",
     "Password": "$2a$12$ATR1VB.I40/gG/pAnw7uUOJgVdGUODDQLsXl2ikYSd7v4c9q1WL8y",
     "Role": "Admin",
-    "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00"
+    "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
+    "Avatar": ""
+  },
+  {
+    "Username": "NotionMe",
+    "Email": "NotionMe@gmail.com",
+    "Password": "$2a$12$E1So5FXC3DkaHM3nvCX16.9l3Xs0VyMtBE476aJHBPoHPBewmbgbe",
+    "Role": "User",
+    "RegistrationDate": "2025-04-17T19:55:25.391327+03:00",
+    "Avatar": ""
+  },
+  {
+    "Username": "123",
+    "Email": "123@gmail.com",
+    "Password": "$2a$12$HIGQD.SSD3YcGDVltyN5POkXC1RE1JTj0k.d8iZqEJFa7t8brwEoa",
+    "Role": "User",
+    "RegistrationDate": "2025-04-17T20:03:40.7239768+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
+  },
+  {
+    "Username": "123123",
+    "Email": "123123@g.c",
+    "Password": "$2a$12$O7BeELJ1Bbz6Ks0S9fO0QuDqZskO9TqqkWYyrypyXBHaQztHg0/yC",
+    "Role": "User",
+    "RegistrationDate": "2025-04-17T20:13:46.4107257+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
+  },
+  {
+    "Username": "zxc",
+    "Email": "zxc@.g.c",
+    "Password": "$2a$12$sbEvtM7zODKBQG.43SI6KumJb.xvIUSISKEmP/2CJnN3Q8lPZd55G",
+    "Role": "User",
+    "RegistrationDate": "2025-04-17T20:16:01.0494883+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
+  },
+  {
+    "Username": "ASD",
+    "Email": "ASD@gmail.com",
+    "Password": "$2a$12$U29VAzt1x/3JSB7eH.b.xewOi8wQfHF9Bwzx7mhazMC7lUcJaAQ6S",
+    "Role": "User",
+    "RegistrationDate": "2025-04-17T20:28:34.3399267+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png"
   }
 ]

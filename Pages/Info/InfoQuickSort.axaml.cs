@@ -18,11 +18,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
         
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             
             if (mainWindow != null)
             {
-                var algorithmsPage = new SortingAlgorithmsPage();
+                SortingAlgorithmsPage algorithmsPage = new SortingAlgorithmsPage();
                 mainWindow.NavigateToPagePublic(algorithmsPage);
             }
             else
@@ -36,7 +36,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
         
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as SortProgram;
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InfoInsertionSort());

@@ -183,9 +183,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                     ShowErrorMessage("Registration error", "Username or email already exists!");
                     return;
                 }
-                
+
                 // Open main window
-                var mainWindow = new SortProgram();
+                SortProgram mainWindow = new SortProgram();
                 mainWindow.Show();
                 this.Close();
             }
@@ -218,7 +218,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
 
         private void ShowErrorMessage(string title, string message)
         {
-            var messageBox = new MessageBox
+            MessageBox messageBox = new MessageBox
             {
                 MessageTitle = title,
                 Message = message

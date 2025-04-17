@@ -32,7 +32,7 @@ class Program
         try
         {
             Console.WriteLine("Checking for passwords that need to be hashed...");
-            var userRepository = new UserRepository();
+            UserRepository userRepository = new UserRepository();
             userRepository.UpdatePasswordsToHashed();
             Console.WriteLine("Password migration completed successfully.");
         }

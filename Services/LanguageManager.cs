@@ -73,10 +73,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                     // Add localization strings to Avalonia resources
                     if (_currentLanguageStrings != null)
                     {
-                        var resources = Application.Current?.Resources;
+                        Avalonia.Controls.IResourceDictionary? resources = Application.Current?.Resources;
                         if (resources != null)
                         {
-                            foreach (var kvp in _currentLanguageStrings)
+                            foreach (KeyValuePair<string, string> kvp in _currentLanguageStrings)
                             {
                                 resources[kvp.Key] = kvp.Value;
                             }
@@ -260,13 +260,13 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             try
             {
                 // Шукаємо ресурс Avalonia з локалізацією
-                var resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{languageCode}.json";
-                var uri = new Uri(resourceKey);
+                string resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{languageCode}.json";
+                Uri uri = new Uri(resourceKey);
                 
                 if (Avalonia.Platform.AssetLoader.Exists(uri))
                 {
-                    using (var stream = Avalonia.Platform.AssetLoader.Open(uri))
-                    using (var fileStream = File.Create(targetPath))
+                    using (Stream stream = Avalonia.Platform.AssetLoader.Open(uri))
+                    using (FileStream fileStream = File.Create(targetPath))
                     {
                         stream.CopyTo(fileStream);
                     }
@@ -307,10 +307,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             // Додаткова перевірка, що ресурси оновлені в Avalonia Resources
             if (_currentLanguageStrings != null)
             {
-                var resources = Application.Current?.Resources;
+                Avalonia.Controls.IResourceDictionary? resources = Application.Current?.Resources;
                 if (resources != null)
                 {
-                    foreach (var kvp in _currentLanguageStrings)
+                    foreach (KeyValuePair<string, string> kvp in _currentLanguageStrings)
                     {
                         resources[kvp.Key] = kvp.Value;
                     }
@@ -332,7 +332,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
                 {
                     Debug.WriteLine($"Looking for language files in directory: {directory}");
-                    var langFiles = Directory.GetFiles(directory, "*.json")
+                    List<string> langFiles = Directory.GetFiles(directory, "*.json")
                         .Select(Path.GetFileNameWithoutExtension)
                         .Where(name => name != null)
                         .Cast<string>()

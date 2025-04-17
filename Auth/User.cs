@@ -9,6 +9,7 @@ public class User
     public string Password { get; set; }
     public string Role { get; set; } = "User"; // Default role
     public DateTime RegistrationDate { get; set; }
+    public string Avatar { get; set; } // Path to user's avatar image
 
     public User()
     {
@@ -17,6 +18,7 @@ public class User
         Password = string.Empty;
         Role = "User";
         RegistrationDate = DateTime.Now;
+        Avatar = string.Empty;
     }
 
     public User(string username, string email, string password, string role = "User")
@@ -26,6 +28,7 @@ public class User
         Password = password;
         Role = role;
         RegistrationDate = DateTime.Now;
+        Avatar = string.Empty;
     }
     
 }

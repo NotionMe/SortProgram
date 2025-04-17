@@ -34,13 +34,13 @@ public static class LocalizationService
             if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 Debug.WriteLine($"MainWindow type: {desktop.MainWindow?.GetType().FullName}");
-                
+
                 // Універсальне оновлення вікна незалежно від його типу
-                var mainWindow = desktop.MainWindow;
+                Window? mainWindow = desktop.MainWindow;
                 if (mainWindow != null)
                 {
                     // Спочатку шукаємо ContentBorder
-                    var contentBorder = mainWindow.FindControl<Border>("ContentBorder");
+                    Border? contentBorder = mainWindow.FindControl<Border>("ContentBorder");
                     Debug.WriteLine($"ContentBorder found: {contentBorder != null}");
                     
                     if (contentBorder?.Child is Control existingPage)
@@ -110,9 +110,9 @@ public static class LocalizationService
             string currentDir = Directory.GetCurrentDirectory();
             Debug.WriteLine($"Current directory: {currentDir}");
             Debug.WriteLine($"OS Platform: {Environment.OSVersion.Platform}");
-            
+
             // Перевіряємо базові папки
-            var basePaths = new List<string>
+            List<string> basePaths = new List<string>
             {
                 Path.Combine("Assets", "Localization"),
                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization"),
@@ -150,7 +150,7 @@ public static class LocalizationService
                 if (Directory.Exists(path))
                 {
                     Debug.WriteLine($"Directory exists: {path}");
-                    var files = Directory.GetFiles(path, "*.json");
+                    string[] files = Directory.GetFiles(path, "*.json");
                     Debug.WriteLine($"Found files: {string.Join(", ", files)}");
                     
                     // Перевіряємо конкретні файли локалізації

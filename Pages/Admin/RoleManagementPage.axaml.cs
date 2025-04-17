@@ -43,7 +43,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
         {
             if (Application.Current != null)
             {
-                if (Application.Current.TryFindResource(resourceKey, out var resource) && resource is IBrush brush)
+                if (Application.Current.TryFindResource(resourceKey, out object? resource) && resource is IBrush brush)
                 {
                     return brush;
                 }
@@ -57,10 +57,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
             
             _userPanel.Children.Clear();
             
-            foreach (var userViewModel in _viewModel.UserViewModels)
+            foreach (UserViewModel userViewModel in _viewModel.UserViewModels)
             {
                 // Create card border
-                var border = new Border
+                Border border = new Border
                 {
                     Background = new SolidColorBrush(Color.Parse("#424B54")),
                     CornerRadius = new CornerRadius(8),
@@ -77,17 +77,17 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                     }
                 };
 
-                var grid = (Grid)border.Child;
-                
+                Grid grid = (Grid)border.Child;
+
                 // Header
-                var headerPanel = new StackPanel
+                StackPanel headerPanel = new StackPanel
                 {
                     Orientation = Orientation.Horizontal,
                     Spacing = 10
                 };
-                
+
                 // User icon
-                var viewbox = new Viewbox
+                Viewbox viewbox = new Viewbox
                 {
                     Width = 36,
                     Height = 36,
@@ -107,8 +107,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                 };
                 
                 headerPanel.Children.Add(viewbox);
-                
-                var headerText = new TextBlock
+
+                TextBlock headerText = new TextBlock
                 {
                     Text = "Info",
                     VerticalAlignment = VerticalAlignment.Center,
@@ -121,9 +121,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                 
                 Grid.SetRow(headerPanel, 0);
                 grid.Children.Add(headerPanel);
-                
+
                 // Content panel
-                var contentPanel = new StackPanel
+                StackPanel contentPanel = new StackPanel
                 {
                     Margin = new Thickness(0, 10, 0, 0)
                 };
@@ -135,8 +135,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                     FontSize = 14, 
                     Margin = new Thickness(0, 5, 0, 2) 
                 });
-                
-                var nameTextBox = new TextBox
+
+                TextBox nameTextBox = new TextBox
                 {
                     Text = userViewModel.Username,
                     IsReadOnly = true,
@@ -156,8 +156,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                     FontSize = 14, 
                     Margin = new Thickness(0, 5, 0, 2) 
                 });
-                
-                var emailTextBox = new TextBox
+
+                TextBox emailTextBox = new TextBox
                 {
                     Text = userViewModel.Email,
                     IsReadOnly = true,
@@ -177,8 +177,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                     FontSize = 14, 
                     Margin = new Thickness(0, 5, 0, 2) 
                 });
-                
-                var passwordTextBox = new TextBox
+
+                TextBox passwordTextBox = new TextBox
                 {
                     Text = "••••••••••",
                     IsReadOnly = true,
@@ -198,8 +198,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                     FontSize = 14, 
                     Margin = new Thickness(0, 5, 0, 2) 
                 });
-                
-                var roleComboBox = new ComboBox
+
+                ComboBox roleComboBox = new ComboBox
                 {
                     Width = 150,
                     HorizontalAlignment = HorizontalAlignment.Left,
@@ -212,7 +212,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                 };
                 
                 // Add roles from the view model
-                foreach (var role in _viewModel.AvailableRoles)
+                foreach (string role in _viewModel.AvailableRoles)
                 {
                     roleComboBox.Items.Add(role);
                 }
@@ -221,9 +221,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
                 roleComboBox.SelectedItem = userViewModel.Role;
                 
                 contentPanel.Children.Add(roleComboBox);
-                
+
                 // Update button
-                var updateButton = new Button
+                Button updateButton = new Button
                 {
                     Content = "Update Role",
                     Background = new SolidColorBrush(Color.Parse("#2E8BC0")),

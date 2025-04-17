@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ddd631c13aee7d4dbb166696ec44fd6f92aa0de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+879859058b19a03b3ccad2999ec978d8d3524ece")]
 [assembly: System.Reflection.AssemblyProductAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

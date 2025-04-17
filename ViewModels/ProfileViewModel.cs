@@ -5,6 +5,9 @@ using System.Windows.Input;
 using Avalonia.Controls;
 using System;
 using Avalonia;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using System.IO;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages;
@@ -17,13 +20,13 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private string _email = string.Empty;
         private DateTime _registrationDate;
         private string _userRole = string.Empty;
+        private string _avatarPath = string.Empty;
+        private Bitmap? _avatarImage;
         private readonly AuthService _authService;
 
         public new LanguageManager LanguageManager => LanguageManager.Instance;
 
-        // Команди для кнопок
         public ICommand EditProfileCommand { get; }
-        public ICommand LogoutCommand { get; }
 
         public ProfileViewModel()
         {
@@ -31,9 +34,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             UpdateUserInfo();
             LanguageManager.Instance.LanguageChanged += (s, e) => this.RaisePropertyChanged(nameof(LanguageManager));
 
-            // Ініціалізація команд
             EditProfileCommand = ReactiveCommand.Create(EditProfile);
-            LogoutCommand = ReactiveCommand.Create(Logout);
+        }
+
+        private void EditProfile()
+        {
+            // Тут буде логіка редагування профілю
+            // Наприклад, відкриття діалогового вікна для редагування
+            Console.WriteLine("Редагування профілю");
         }
 
         private void UpdateUserInfo()
@@ -42,6 +50,34 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             UserName = currentUser.Username ?? "Ім'я користувача";
             Email = currentUser.Email ?? "user@email.com";
             UserRole = currentUser.Role;
+
+            // Set avatar path
+            string avatarPath = string.IsNullOrEmpty(currentUser.Avatar) ?
+                "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png" :
+                currentUser.Avatar;
+
+            AvatarPath = avatarPath;
+
+            try
+            {
+                // Load the avatar image
+                AvatarImage = LoadFromResource(avatarPath);
+                Console.WriteLine($"Avatar loaded successfully from {avatarPath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to load avatar: {ex.Message}");
+                // Try to load a fallback image
+                try
+                {
+                    AvatarImage = LoadFromResource("avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png");
+                }
+                catch
+                {
+                    // If even the fallback fails, leave it null
+                    Console.WriteLine("Failed to load fallback avatar as well");
+                }
+            }
 
             // Отримуємо дату реєстрації або встановлюємо поточну, якщо вона не встановлена
             if (currentUser.RegistrationDate != default)
@@ -57,81 +93,44 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             }
         }
 
-        // Метод для редагування профілю
-        private void EditProfile()
+        private Bitmap? LoadFromResource(string uri)
         {
-            // Створюємо вікно для редагування профілю
-            var window = new Window
-            {
-                Title = "Редагування профілю",
-                Width = 400,
-                Height = 300,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
+            if (string.IsNullOrEmpty(uri))
+                return null;
 
-            var stackPanel = new StackPanel
+            try
             {
-                Spacing = 10,
-                Margin = new Thickness(20)
-            };
+                // Use AssetLoader as a static class
+                using var stream = AssetLoader.Open(new Uri(uri));
+                return new Bitmap(stream);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading image from {uri}: {ex.Message}");
 
-            var usernameTextBox = new TextBox
-            {
-                Watermark = "Ім'я користувача",
-                Text = UserName
-            };
-
-            var emailTextBox = new TextBox
-            {
-                Watermark = "Email",
-                Text = Email
-            };
-
-            var saveButton = new Button
-            {
-                Content = "Зберегти",
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-                Width = 100,
-                Height = 40
-            };
-
-            saveButton.Click += (s, e) =>
-            {
-                if (!string.IsNullOrWhiteSpace(usernameTextBox.Text) && !string.IsNullOrWhiteSpace(emailTextBox.Text))
+                // Fallback to file-based loading
+                try
                 {
-                    // Оновлення даних користувача
-                    var currentUser = _authService.GetCurrentUser();
-                    currentUser.Username = usernameTextBox.Text;
-                    currentUser.Email = emailTextBox.Text;
-                    _authService.SetCurrentUser(currentUser);
+                    if (uri.StartsWith("avares://"))
+                    {
+                        string filePath = uri.Replace("avares://Practika2_OPAM_Ubohyi_Stanislav/", "");
+                        string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
 
-                    // Оновлюємо відображення
-                    UpdateUserInfo();
-                    window.Close();
+                        if (File.Exists(fullPath))
+                        {
+                            using var fileStream = File.OpenRead(fullPath);
+                            return new Bitmap(fileStream);
+                        }
+                    }
                 }
-            };
-
-            stackPanel.Children.Add(new TextBlock { Text = "Редагування профілю", FontSize = 20, FontWeight = Avalonia.Media.FontWeight.Bold });
-            stackPanel.Children.Add(usernameTextBox);
-            stackPanel.Children.Add(emailTextBox);
-            stackPanel.Children.Add(saveButton);
-
-            window.Content = stackPanel;
-            window.Show();
+                catch (Exception fileEx)
+                {
+                    Console.WriteLine($"Error loading image from file: {fileEx.Message}");
+                }
+            }
+            return null;
         }
 
-        // Метод для виходу з системи
-        private void Logout()
-        {
-            // Очистити інформацію про користувача
-            _authService.Logout();
-            
-            // Перенаправити на сторінку входу
-            var mainWindow = Avalonia.Application.Current?.ApplicationLifetime as Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime;
-            var window = mainWindow?.MainWindow as SortProgram;
-            window?.NavigateToLogin();
-        }
-        
         public string UserName
         {
             get => _userName;
@@ -143,7 +142,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             get => _email;
             set => this.RaiseAndSetIfChanged(ref _email, value);
         }
-        
+
         public DateTime RegistrationDate
         {
             get => _registrationDate;
@@ -154,6 +153,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         {
             get => _userRole;
             set => this.RaiseAndSetIfChanged(ref _userRole, value);
+        }
+
+        public string AvatarPath
+        {
+            get => _avatarPath;
+            set => this.RaiseAndSetIfChanged(ref _avatarPath, value);
+        }
+
+        public Bitmap? AvatarImage
+        {
+            get => _avatarImage;
+            set => this.RaiseAndSetIfChanged(ref _avatarImage, value);
         }
     }
 }

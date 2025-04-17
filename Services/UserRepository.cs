@@ -61,7 +61,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 
         private void SaveAllUsers(List<User> users)
         {
-            var options = new JsonSerializerOptions
+            JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true
             };
@@ -70,13 +70,27 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             File.WriteAllText(_filePath, json);
         }
         
+        // Метод для оновлення користувача
+        public bool UpdateUser(User updatedUser)
+        {
+            List<User> users = GetAllUsers();
+            int index = users.FindIndex(u => u.Username == updatedUser.Username);
+            
+            if (index == -1)
+                return false;
+                
+            users[index] = updatedUser;
+            SaveAllUsers(users);
+            return true;
+        }
+        
         // Метод для оновлення паролів існуючих користувачів на хешовані
         public void UpdatePasswordsToHashed()
         {
-            var users = GetAllUsers();
+            List<User> users = GetAllUsers();
             bool changed = false;
             
-            foreach (var user in users)
+            foreach (User user in users)
             {
                 // Перевіряємо, чи пароль вже хешований
                 // Хеші BCrypt завжди починаються з $2a$, $2b$ або $2y$

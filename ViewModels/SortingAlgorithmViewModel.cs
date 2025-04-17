@@ -286,7 +286,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             bool completed = _sortingStrategy.PerformStep(_array, ref _comparisons, ref _swaps);
             
             // Отримання індексів елементів для візуалізації
-            var (index1, index2, minIndex) = _sortingStrategy.GetHighlightIndices();
+            (int index1, int index2, int minIndex) = _sortingStrategy.GetHighlightIndices();
             
             // Оновлення відображення на основі поточного стану
             UpdateVisualization(index1, index2, minIndex);

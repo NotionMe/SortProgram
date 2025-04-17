@@ -70,8 +70,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             for (int i = 0; i < _array.Length; i++)
             {
                 double barHeight = Math.Max((_array[i] / (double)maxValue) * _visualizationGrid.Bounds.Height * 0.9, 1);
-                
-                var bar = new Border
+
+                Border bar = new Border
                 {
                     Width = barWidth,
                     Height = barHeight,

@@ -73,16 +73,16 @@ public partial class App : Application
             
             foreach (string lang in languages)
             {
-                var resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{lang}.json";
-                var uri = new Uri(resourceKey);
+                string resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{lang}.json";
+                Uri uri = new Uri(resourceKey);
                 
                 if (Avalonia.Platform.AssetLoader.Exists(uri))
                 {
                     string targetPath = Path.Combine(localizationDir, $"{lang}.json");
                     System.Diagnostics.Debug.WriteLine($"Copying localization file {lang}.json to {targetPath}");
                     
-                    using (var stream = Avalonia.Platform.AssetLoader.Open(uri))
-                    using (var fileStream = File.Create(targetPath))
+                    using (Stream stream = Avalonia.Platform.AssetLoader.Open(uri))
+                    using (FileStream fileStream = File.Create(targetPath))
                     {
                         stream.CopyTo(fileStream);
                     }

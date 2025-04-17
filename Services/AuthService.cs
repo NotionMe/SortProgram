@@ -1,6 +1,8 @@
 namespace Practika2_OPAM_Ubohyi_Stanislav.Services;
 
+using System;
 using System.Collections.Generic;
+using System.IO;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 
 public class AuthService
@@ -8,6 +10,7 @@ public class AuthService
     private static AuthService? _instance;
     private User _currentUser;
     private readonly UserRepository _userRepository;
+    private readonly Random _random = new Random();
 
     public static AuthService Instance
     {
@@ -50,9 +53,14 @@ public class AuthService
 
         // Хешуємо пароль перед збереженням
         string hashedPassword = PasswordHasher.HashPassword(password);
+
+        // Create new user with hashed password
+        User newUser = new User(username, email, hashedPassword, role);
         
-        // Create and save new user with hashed password
-        var newUser = new User(username, email, hashedPassword, role);
+        // Assign random avatar to the user
+        newUser.Avatar = GetRandomAvatarPath();
+        
+        // Save the user
         _userRepository.SaveUser(newUser);
         
         // Set as current user
@@ -60,10 +68,17 @@ public class AuthService
         
         return true;
     }
+    
+    private string GetRandomAvatarPath()
+    {
+        
+        int avatarNumber = _random.Next(1, 5); 
+        return $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar{avatarNumber}.png";
+    }
 
     public bool LoginUser(string usernameOrEmail, string password)
     {
-        var user = _userRepository.GetUserByUsernameOrEmail(usernameOrEmail);
+        User? user = _userRepository.GetUserByUsernameOrEmail(usernameOrEmail);
         
         if (user == null)
         {
@@ -74,6 +89,13 @@ public class AuthService
         if (!PasswordHasher.VerifyPassword(password, user.Password))
         {
             return false;
+        }
+        
+        // If user doesn't have an avatar (for backward compatibility), assign one
+        if (string.IsNullOrEmpty(user.Avatar))
+        {
+            user.Avatar = GetRandomAvatarPath();
+            _userRepository.UpdateUser(user);
         }
         
         SetCurrentUser(user);

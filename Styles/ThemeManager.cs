@@ -59,10 +59,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Styles
         // Оновлення динамічних ресурсів
         private static void UpdateDynamicResources(bool isDark)
         {
-            var application = Application.Current;
+            Application? application = Application.Current;
             if (application == null) return;
-            
-            var resources = application.Resources;
+
+            IResourceDictionary resources = application.Resources;
             if (resources == null) return;
             
             if (isDark)
