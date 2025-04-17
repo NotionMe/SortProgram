@@ -16,6 +16,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private string _userName = string.Empty;
         private string _email = string.Empty;
         private DateTime _registrationDate;
+        private string _userRole = string.Empty;
         private readonly AuthService _authService;
 
         public new LanguageManager LanguageManager => LanguageManager.Instance;
@@ -40,7 +41,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             var currentUser = _authService.GetCurrentUser();
             UserName = currentUser.Username ?? "Ім'я користувача";
             Email = currentUser.Email ?? "user@email.com";
-            
+            UserRole = currentUser.Role;
+
             // Отримуємо дату реєстрації або встановлюємо поточну, якщо вона не встановлена
             if (currentUser.RegistrationDate != default)
             {
@@ -126,7 +128,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             
             // Перенаправити на сторінку входу
             var mainWindow = Avalonia.Application.Current?.ApplicationLifetime as Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime;
-            var window = mainWindow?.MainWindow as Practika2_OPAM_Ubohyi_Stanislav.SortProgram;
+            var window = mainWindow?.MainWindow as SortProgram;
             window?.NavigateToLogin();
         }
         
@@ -146,6 +148,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         {
             get => _registrationDate;
             set => this.RaiseAndSetIfChanged(ref _registrationDate, value);
+        }
+
+        public string UserRole
+        {
+            get => _userRole;
+            set => this.RaiseAndSetIfChanged(ref _userRole, value);
         }
     }
 }

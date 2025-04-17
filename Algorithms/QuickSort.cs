@@ -8,7 +8,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
     {
         public static int[] Sort(int[] array)
         {
-            int[] result = (int[])array.Clone(); // Копіюємо масив, щоб не змінювати оригінал
+            int[] result = (int[])array.Clone();
             QuickSortRecursive(result, 0, result.Length - 1);
             return result;
         }

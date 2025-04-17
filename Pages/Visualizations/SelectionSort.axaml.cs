@@ -128,9 +128,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
         private void BackButton_Click(object? sender, RoutedEventArgs e)
         {
             // Повернення до списку алгоритмів
-            if (this.VisualRoot is Practika2_OPAM_Ubohyi_Stanislav.SortProgram mainWindow)
+            if (this.VisualRoot is SortProgram mainWindow)
             {
-                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage());
+                mainWindow.NavigateToPagePublic(new SortingAlgorithmsPage());
             }
         }
     }

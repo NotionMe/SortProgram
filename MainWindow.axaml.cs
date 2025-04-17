@@ -69,6 +69,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 NavigateToPage(new ProfilePage());
             };
             
+            // Обробка натискання кнопки Admin
+            AdminButton.PointerPressed += (s, e) => {
+                UpdateSelectedButton(AdminButton);
+                NavigateToPage(new Pages.Admin.RoleManagementPage());
+            };
+            
             ThemeButton.PointerPressed += (s, e) => {
                 ToggleTheme();
             };

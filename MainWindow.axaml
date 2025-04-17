@@ -137,6 +137,30 @@
                     </Grid>
                 </Border>
                 
+                <!-- Кнопка адмін панелі (видима лише для адміністраторів) -->
+                <Border Classes="SidebarButton" Name="AdminButton" IsVisible="{Binding IsAdminVisible}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="#8B0000" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="👑" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="Admin Panel" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
                 <!-- Кнопка налаштувань -->
                 <Border Classes="SidebarButton" Name="SettingsButton">
                     <Grid>

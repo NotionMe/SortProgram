@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+             xmlns:auth="using:Practika2_OPAM_Ubohyi_Stanislav.Auth"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin.RoleManagementPage">
+
+    <UserControl.Styles>
+        <!-- Style for user cards -->
+        <Style Selector="Border.userCard">
+            <Setter Property="Background" Value="#424B54"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Width" Value="320"/>
+        </Style>
+        
+        <!-- Style for info section labels -->
+        <Style Selector="TextBlock.label">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,5,0,2"/>
+        </Style>
+        
+        <!-- Style for info section values -->
+        <Style Selector="TextBox.value">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Background" Value="#525D66"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+        
+        <!-- Style for dropdown -->
+        <Style Selector="ComboBox.roleSelector">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Background" Value="#525D66"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="8,6"/>
+        </Style>
+        
+        <!-- Style for save button -->
+        <Style Selector="Button.saveButton">
+            <Setter Property="Background" Value="#2E8BC0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+        </Style>
+        
+        <!-- Style for header -->
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10,10,10,20"/>
+            <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <TextBlock Grid.Row="0" Text="User Management" Classes="header"/>
+        
+        <!-- ScrollViewer for the user cards -->
+        <ScrollViewer Grid.Row="1">
+            <WrapPanel Name="UserPanel">
+                <!-- User cards will be generated in code-behind -->
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

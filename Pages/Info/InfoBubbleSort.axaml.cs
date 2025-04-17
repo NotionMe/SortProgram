@@ -20,18 +20,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
         
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.VisualRoot as Practika2_OPAM_Ubohyi_Stanislav.SortProgram;
+            var mainWindow = this.VisualRoot as SortProgram;
             
             if (mainWindow != null)
             {
-                var algorithmsPage = new Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage();
+                var algorithmsPage = new SortingAlgorithmsPage();
                 mainWindow.NavigateToPagePublic(algorithmsPage);
             }
             else
             {
                 if (this.Parent is ContentControl contentControl)
                 {
-                    contentControl.Content = new Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage();
+                    contentControl.Content = new SortingAlgorithmsPage();
                 }
             }
         }

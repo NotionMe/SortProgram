@@ -92,5 +92,30 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 SaveAllUsers(users);
             }
         }
+
+        public List<User> GetUsersByRole(string role)
+        {
+            List<User> users = GetAllUsers();
+            return users.Where(u => u.Role == role).ToList();
+        }
+
+        public bool UpdateUserRole(string username, string newRole)
+        {
+            List<User> users = GetAllUsers();
+            User? userToUpdate = users.FirstOrDefault(u => u.Username == username);
+            
+            if (userToUpdate == null)
+                return false;
+                
+            userToUpdate.Role = newRole;
+            SaveAllUsers(users);
+            return true;
+        }
+
+        public List<string> GetAvailableRoles()
+        {
+            // List of predefined roles in the system
+            return new List<string> { "User", "Admin"};
+        }
     }
 }

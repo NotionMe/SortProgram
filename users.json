@@ -1,20 +1,9 @@
 [
   {
-    "Username": "Stas",
-    "Email": "stas@gmail.com",
-    "Password": "$2a$12$LgL1SfnWmWF7hjvIZKrnSeu04HglTZv8wZT7FH8uijcPhBLIZd0g2",
-    "RegistrationDate": "2025-04-16T20:33:04.4121467+03:00"
-  },
-  {
-    "Username": "stas2",
-    "Email": "stas2@gmail.com",
-    "Password": "$2a$12$Zcv9CCUa6/bxEzVPdJEUBunBkWGcoyo0NHu.v7d6NfYQr793P9L8m",
-    "RegistrationDate": "2025-04-16T20:38:30.9958695+03:00"
-  },
-  {
-    "Username": "123",
-    "Email": "123@gmail.com",
-    "Password": "$2a$12$qGOowkAUQlItfRwRdmgZWutirct7vIW9gItrVEQadFjy43.b/2WuG",
-    "RegistrationDate": "2025-04-17T00:13:09.7512812+03:00"
+    "Username": "admin",
+    "Email": "admin@gmail.com",
+    "Password": "$2a$12$ATR1VB.I40/gG/pAnw7uUOJgVdGUODDQLsXl2ikYSd7v4c9q1WL8y",
+    "Role": "Admin",
+    "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00"
   }
 ]

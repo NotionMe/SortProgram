@@ -11,7 +11,7 @@
   "SettingsPage_Title": "Settings",
   "LanguageSettings_Section": "Language Settings",
   "InterfaceLanguage_Label": "Interface Language",
-  "AccountSettings_Section": "Account Settings", 
+  "AccountSettings_Section": "Account Settings",
   "Logout_Button": "Logout",
   "VisualizationPage_Settings": "Settings",
   "VisualizationPage_ArraySize": "Array Size:",
@@ -50,7 +50,6 @@
   "SelectionSort_InfoDescription": "Selection sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm starts at the beginning of the data set, comparing the first two elements and swapping them if required. It then moves to the next pair of elements, comparing and swapping them if required. This process is continued until the end of the data set is reached. At this point, the largest element in the data set should be at the end of the data set. The algorithm then repeats the process until the data set is sorted. Selection sort is one of the simplest sorting algorithms to understand and implement.",
   "InsertionSort_InfoDescription": "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It works by taking elements from the unsorted part and inserting them at their correct position in the sorted part. The algorithm virtually splits the array into a sorted and an unsorted part. Values from the unsorted part are picked and placed in the correct position in the sorted part. It's efficient for small data sets and is often used as part of more sophisticated algorithms. Insertion sort works the way many people sort playing cards in their hands - pick up one card at a time and insert it into the correct position in the sorted section.",
   "QuickSort_InfoDescription": "Quicksort is an efficient sorting algorithm that uses divide-and-conquer technique to sort elements. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. The algorithm then recursively sorts the sub-arrays. Quicksort can be implemented in-place, requiring small additional amounts of memory to perform the sorting. It is quite efficient for large datasets and is widely used in practice. Its average time complexity is O(n log n), with worst-case O(n²) when poorly implemented. Its efficiency and relatively simple implementation make it a popular choice among sorting algorithms.",
-
   "AlgorithmStatistics_Title": "Algorithm Statistics",
   "AlgorithmPerformance_Title": "Algorithm Performance",
   "100-elemnts_Title": "100 elements",

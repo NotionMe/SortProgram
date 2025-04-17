@@ -8,7 +8,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms
         public static int[] Sort(int[] array)
         {
             int n = array.Length;
-            int[] result = (int[])array.Clone(); // Копіюємо масив, щоб не змінювати оригінал
+            int[] result = (int[])array.Clone(); 
             
             for (int i = 0; i < n - 1; i++)
             {

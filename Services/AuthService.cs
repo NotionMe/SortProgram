@@ -40,7 +40,7 @@ public class AuthService
         _currentUser = new User();
     }
 
-    public bool RegisterUser(string username, string email, string password)
+    public bool RegisterUser(string username, string email, string password, string role = "User")
     {
         // Check if user already exists
         if (_userRepository.UserExists(username, email))
@@ -52,7 +52,7 @@ public class AuthService
         string hashedPassword = PasswordHasher.HashPassword(password);
         
         // Create and save new user with hashed password
-        var newUser = new User(username, email, hashedPassword);
+        var newUser = new User(username, email, hashedPassword, role);
         _userRepository.SaveUser(newUser);
         
         // Set as current user
@@ -78,5 +78,36 @@ public class AuthService
         
         SetCurrentUser(user);
         return true;
+    }
+
+    // Role-related methods
+    public bool IsUserInRole(string role)
+    {
+        return _currentUser != null && _currentUser.Role == role;
+    }
+
+    public bool IsAdmin()
+    {
+        return IsUserInRole("Admin");
+    }
+    public List<User> GetUsersByRole(string role)
+    {
+        return _userRepository.GetUsersByRole(role);
+    }
+
+    public bool ChangeUserRole(string username, string newRole)
+    {
+        // Only admins can change roles
+        if (!IsAdmin())
+        {
+            return false;
+        }
+
+        return _userRepository.UpdateUserRole(username, newRole);
+    }
+
+    public List<string> GetAvailableRoles()
+    {
+        return _userRepository.GetAvailableRoles();
     }
 }

@@ -18,7 +18,19 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
     public class ViewModelBase : ReactiveObject
     {
+        private readonly AuthService _authService;
+        private bool _isAdminVisible;
+
+        public ViewModelBase()
+        {
+            _authService = AuthService.Instance;
+            _isAdminVisible = _authService.IsAdmin();
+        }
+
         // Add a property to access LanguageManager from the view
         public LanguageManager LanguageManager => LanguageManager.Instance;
+        
+        // Property to control visibility of admin button
+        public bool IsAdminVisible => _isAdminVisible;
     }
 }

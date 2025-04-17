@@ -185,7 +185,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                 }
                 
                 // Open main window
-                var mainWindow = new Practika2_OPAM_Ubohyi_Stanislav.SortProgram();
+                var mainWindow = new SortProgram();
                 mainWindow.Show();
                 this.Close();
             }

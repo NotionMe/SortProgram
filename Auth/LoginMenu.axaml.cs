@@ -8,6 +8,10 @@ using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
 {
+    /// <summary>
+    /// Вікно входу, що забезпечує автентифікацію користувача через електронну пошту/ім'я користувача та пароль.
+    /// Надає функції валідації введення та автентифікації.
+    /// </summary>
     public partial class LoginMenu : Window
     {
         private TextBox? _emailTextBox;
@@ -16,6 +20,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         private TextBlock? _passwordValidationText;
         private readonly AuthService _authService;
         
+        /// <summary>
+        /// Ініціалізує форму входу та налаштовує валідацію полів введення
+        /// </summary>
         public LoginMenu()
         {
             InitializeComponent();
@@ -25,10 +32,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             _passwordTextBox = this.FindControl<TextBox>("PasswordTextBox");
             _passwordValidationText = this.FindControl<TextBlock>("PasswordValidationText");
             
-            // Get AuthService instance
+            // Отримуємо екземпляр AuthService
             _authService = AuthService.Instance;
             
-            // Check initial state
+            // Перевіряємо початковий стан
             if (_emailTextBox != null)
             {
                 ValidateEmailOrUsername(_emailTextBox.Text);
@@ -40,6 +47,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             }
         }
 
+        /// <summary>
+        /// Обробник події зміни поля електронної пошти/імені користувача, що запускає валідацію
+        /// </summary>
         private void EmailTextBox_PropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
         {
             if (e.Property == TextBox.TextProperty && sender is TextBox textBox)
@@ -48,6 +58,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             }
         }
         
+        /// <summary>
+        /// Обробник події зміни поля пароля, що запускає валідацію
+        /// </summary>
         private void PasswordTextBox_PropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
         {
             if (e.Property == TextBox.TextProperty && sender is TextBox textBox)
@@ -56,6 +69,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             }
         }
         
+        /// <summary>
+        /// Валідує поле електронної пошти або імені користувача
+        /// Приймає або валідний формат електронної пошти, або будь-яке непорожнє ім'я користувача
+        /// </summary>
         private void ValidateEmailOrUsername(string? input)
         {
             if (_emailValidationText != null)
@@ -65,16 +82,20 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                 
                 if (isEmpty)
                 {
-                    _emailValidationText.Text = "Email or username cannot be empty";
+                    _emailValidationText.Text = "Email/Username not be empty";
                 }
                 else
                 {
-                    // Accept either a valid email format or a username (no validation needed)
+                    // Приймаємо або валідний формат електронної пошти, або ім'я користувача (без додаткової валідації)
                     _emailValidationText.IsVisible = false;
                 }
             }
         }
         
+        /// <summary>
+        /// Валідує поле введення пароля
+        /// Відображає повідомлення про помилку для порожніх паролів або тих, що мають недостатню довжину
+        /// </summary>
         private void ValidatePassword(string? password)
         {
             if (_passwordValidationText != null)
@@ -84,7 +105,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                 
                 if (isEmpty)
                 {
-                    _passwordValidationText.Text = "Password cannot be empty";
+                    _passwordValidationText.Text = "Password not be empty";
                 }
                 else
                 {
@@ -95,9 +116,13 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             }
         }
 
+        /// <summary>
+        /// Обробляє спробу входу при натисканні кнопки входу
+        /// Валідує всі введені дані, намагається здійснити автентифікацію та керує відгуком інтерфейсу
+        /// </summary>
         private void LoginButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Validate all fields before proceeding
+            // Валідуємо всі поля перед продовженням
             bool isValid = true;
             
             if (string.IsNullOrWhiteSpace(_emailTextBox?.Text))
@@ -119,7 +144,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
 
             try
             {
-                // Use the AuthService to attempt login
+                // Автентифікуємо користувача з наданими обліковими даними
                 bool loginSuccess = _authService.LoginUser(
                     _emailTextBox?.Text ?? string.Empty,
                     _passwordTextBox?.Text ?? string.Empty
@@ -131,17 +156,22 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                     return;
                 }
                 
-                // Login successful, open main window
-                var mainWindow = new Practika2_OPAM_Ubohyi_Stanislav.SortProgram();
+                // Вхід успішний, відкриваємо головне вікно
+                var mainWindow = new SortProgram();
                 mainWindow.Show();
                 this.Close();
             }
             catch (Exception ex)
             {
+                // Обробка помилок автентифікації
                 ShowErrorMessage("Login error", $"An error occurred: {ex.Message}");
             }
         }
 
+        /// <summary>
+        /// Перевіряє формат електронної пошти за допомогою регулярного виразу
+        /// </summary>
+        /// <returns>True, якщо формат електронної пошти валідний</returns>
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -151,11 +181,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             return System.Text.RegularExpressions.Regex.IsMatch(email, pattern);
         }
 
+        /// <summary>
+        /// Перевіряє вимоги до пароля (мінімум 6 символів)
+        /// </summary>
+        /// <returns>True, якщо пароль відповідає мінімальним вимогам</returns>
         private bool IsValidPassword(string? password)
         {
             return !string.IsNullOrWhiteSpace(password) && password.Length >= 6;
         }
 
+        /// <summary>
+        /// Перенаправляє до екрану реєстрації при натисканні кнопки реєстрації
+        /// </summary>
         private void SignUpButton_Click(object? sender, RoutedEventArgs e)
         {
             SignInMenu signInMenu = new SignInMenu();
@@ -163,6 +200,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             this.Close();
         }
 
+        /// <summary>
+        /// Відображає повідомлення про помилки користувачу за допомогою спеціального діалогу MessageBox
+        /// </summary>
         private void ShowErrorMessage(string title, string message)
         {
             var messageBox = new MessageBox
