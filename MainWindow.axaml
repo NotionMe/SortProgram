@@ -55,7 +55,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Home]}" 
+                                  Text="{DynamicResource SideBar_Home}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -79,7 +79,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Profile]}" 
+                                  Text="{DynamicResource SideBar_Profile}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -103,7 +103,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Algorithms]}" 
+                                  Text="{DynamicResource SideBar_Algorithms}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -127,7 +127,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Statistics]}" 
+                                  Text="{DynamicResource SideBar_Statistics}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -151,7 +151,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Admin Panel" 
+                                  Text="{DynamicResource SideBar_Admin} " 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -175,7 +175,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Settings]}" 
+                                  Text="{DynamicResource SideBar_Settings}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -202,7 +202,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[DarkTheme]}" 
+                                  Text="{DynamicResource SideBar_Theme}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -226,7 +226,7 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="{Binding LanguageManager[Exit]}" 
+                                  Text="{DynamicResource SideBar_Exit}" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"
@@ -250,7 +250,31 @@
                         </Border>
                         
                         <TextBlock Grid.Column="1" 
-                                  Text="Logout" 
+                                  Text="{DynamicResource SideBar_Logout}" 
+                                  Classes="ButtonLabel"
+                                  Margin="5,0,0,0"
+                                  VerticalAlignment="Center"
+                                  FontSize="14"
+                                  FontWeight="SemiBold"
+                                  Foreground="White"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Кнопка GitHub -->
+                <Border Classes="SidebarButton" Name="GitHubButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="/Assets/Images/Logo_Github-512.png" Width="24" Height="24"/>
+                        </Border>
+                        
+                        <TextBlock Grid.Column="1" 
+                                  Text="GitHub" 
                                   Classes="ButtonLabel"
                                   Margin="5,0,0,0"
                                   VerticalAlignment="Center"

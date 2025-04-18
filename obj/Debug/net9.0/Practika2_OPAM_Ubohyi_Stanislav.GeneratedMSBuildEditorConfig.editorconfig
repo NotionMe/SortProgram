@@ -15,98 +15,98 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Practika2_OPAM_Ubohyi_Stanislav
-build_property.ProjectDir = /home/notionme/SortProgram/
+build_property.ProjectDir = /home/notionme/Documents/Repos/SortProgram/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/home/notionme/SortProgram/App.axaml]
+[/home/notionme/Documents/Repos/SortProgram/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Auth/LoginMenu.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Auth/LoginMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Auth/MessageBox.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Auth/MessageBox.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Auth/SignInMenu.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Auth/SignInMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/MainWindow.axaml]
+[/home/notionme/Documents/Repos/SortProgram/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Admin/RoleManagementPage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Admin/RoleManagementPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/HomePage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/HomePage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Info/InfoBubbleSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Info/InfoBubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Info/InfoInsertionSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Info/InfoInsertionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Info/InfoQuickSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Info/InfoQuickSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Info/InfoSelectionSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Info/InfoSelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/ProfilePage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/ProfilePage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/SettingsPage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/SettingsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/SortingAlgorithmsPage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/SortingAlgorithmsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/StatisticsPage.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/StatisticsPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Visualizations/BubbleSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Visualizations/BubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Visualizations/InsertionSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Visualizations/InsertionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Visualizations/QuickSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Visualizations/QuickSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Pages/Visualizations/SelectionSort.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Pages/Visualizations/SelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Colors.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Colors.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Components/ButtonStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Components/ButtonStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Components/CardStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Components/CardStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Components/CustomButtonStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Components/CustomButtonStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Components/FormStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Components/FormStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Components/NavigationStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Components/NavigationStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/GlobalStyles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/GlobalStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Resources/Styles.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Resources/Styles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Sidebar.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Sidebar.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Themes/DarkTheme.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Themes/DarkTheme.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/notionme/SortProgram/Styles/Themes/LightTheme.axaml]
+[/home/notionme/Documents/Repos/SortProgram/Styles/Themes/LightTheme.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

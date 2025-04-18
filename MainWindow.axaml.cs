@@ -87,6 +87,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 AuthService.Instance.Logout();
                 NavigateToLogin();
             };
+            
+            // Обробка натискання кнопки GitHub
+            GitHubButton.PointerPressed += (s, e) => {
+                OpenGitHubRepo();
+            };
         }
         
         // Обробка наведення курсору на sidebar - розширення
@@ -185,6 +190,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             
             // Close the current window
             this.Close();
+        }
+
+        private void OpenGitHubRepo()
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/NotionMe",
+                UseShellExecute = true
+            });
         }
     }
 }

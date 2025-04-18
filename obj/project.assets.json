@@ -2110,11 +2110,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/notionme/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "projectUniqueName": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
       "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-      "projectPath": "/home/notionme/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "projectPath": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
       "packagesPath": "/home/notionme/.nuget/packages/",
-      "outputPath": "/home/notionme/SortProgram/obj/",
+      "outputPath": "/home/notionme/Documents/Repos/SortProgram/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/notionme/.nuget/NuGet/NuGet.Config"

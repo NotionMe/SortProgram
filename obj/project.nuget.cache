@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D3vlID2cDyc=",
+  "dgSpecHash": "ulJyIqxbWhk=",
   "success": true,
-  "projectFilePath": "/home/notionme/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+  "projectFilePath": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
   "expectedPackageFiles": [
     "/home/notionme/.nuget/packages/avalonia/11.2.7/avalonia.11.2.7.nupkg.sha512",
     "/home/notionme/.nuget/packages/avalonia.angle.windows.natives/2.1.22045.20230930/avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",

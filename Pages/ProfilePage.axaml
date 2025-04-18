@@ -268,7 +268,7 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="👤" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="Ім'я користувача"
+                            <TextBlock Text="{DynamicResource UserNameLabel}"
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
@@ -301,14 +301,14 @@
                                        Command="{Binding SaveUsernameCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✓" FontSize="14"/>
-                                        <TextBlock Text="Сохранить" FontSize="14"/>
+                                        <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="cancel"
                                        Command="{Binding CancelEditCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✕" FontSize="14"/>
-                                        <TextBlock Text="Отмена" FontSize="14"/>
+                                        <TextBlock Text="{DynamicResource CancelButton}" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
@@ -320,7 +320,7 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="✉️" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="Email"
+                            <TextBlock Text="{DynamicResource EmailLabel}"
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
@@ -353,14 +353,14 @@
                                        Command="{Binding SaveEmailCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✓" FontSize="14"/>
-                                        <TextBlock Text="Сохранить" FontSize="14"/>
+                                        <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="cancel"
                                        Command="{Binding CancelEditCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✕" FontSize="14"/>
-                                        <TextBlock Text="Отмена" FontSize="14"/>
+                                        <TextBlock Text="{DynamicResource CancelButton}" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
@@ -372,7 +372,7 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="📅" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="Дата реєстрації"
+                            <TextBlock Text="{DynamicResource RegistrationDateLabel}"
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
@@ -389,7 +389,7 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Text="🔑" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="Роль користувача"
+                            <TextBlock Text="{DynamicResource UserRoleLabel}"
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>

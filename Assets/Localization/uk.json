@@ -1,4 +1,21 @@
 {
+  "SideBar_Home": "Головна",
+  "SideBar_Profile": "Профіль",
+  "SideBar_Algorithms": "Алгоритми",
+  "SideBar_Statistics": "Статистика",
+  "SideBar_Admin": "Адмін-панель",
+  "SideBar_Settings": "Налаштування",
+  "SideBar_Theme": "Тема",
+  "SideBar_Exit": "Вихід",
+  "SideBar_Logout": "Вийти",
+
+  "UserNameLabel": "Ім'я користувача",
+  "SaveButton": "Зберегти",
+  "CancelButton": "Скасувати",
+  "EmailLabel": "Електронна пошта",
+  "RegistrationDateLabel": "Дата реєстрації",
+  "UserRoleLabel": "Роль користувача",
+
   "HomePage_Title": "Візуалізація алгоритмів сортування",
   "BubbleSort_Name": "Бульбашкове сортування",
   "SelectionSort_Name": "Сортування вибором",
