@@ -10,7 +10,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 {
     public class UserRepository
     {
-        private readonly string _filePath = "users.json";
+        private readonly string _filePath = "Auth/users.json";
 
         public bool UserExists(string username, string email)
         {

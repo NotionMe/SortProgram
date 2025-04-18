@@ -62,5 +62,13 @@
     "Role": "User",
     "RegistrationDate": "2025-04-17T22:48:02.6206746+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
+  },
+  {
+    "Username": "12311",
+    "Email": "1231231@gmail.com",
+    "Password": "$2a$12$vQk3mIBqUQV8FOiNFKd7ye5OVKItpFEKMRZQ4pjug7BQkZ0WV0luu",
+    "Role": "User",
+    "RegistrationDate": "2025-04-18T10:29:11.7059138+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png"
   }
 ]

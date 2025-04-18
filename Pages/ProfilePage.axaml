@@ -11,14 +11,14 @@
         <Style Selector="Button.accent">
             <Setter Property="Background" Value="#4F8EF7"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderBrush" Value="#4F8EF7"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Width" Value="24"/>
-            <Setter Property="Height" Value="24"/>
-            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Padding" Value="6"/>
             <Setter Property="Template">
                 <ControlTemplate>
                     <Border Background="{TemplateBinding Background}"
@@ -103,6 +103,114 @@
             <Setter Property="Padding" Value="10"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
+
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="CaretBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
+        </Style>
+        
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="#4F8EF7"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        
+        <Style Selector="Button.save">
+            <Setter Property="Background" Value="#22C55E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="8,8,0,0"/>
+        </Style>
+        
+        <Style Selector="Button.save:pointerover">
+            <Setter Property="Background" Value="#16A34A"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+        
+        <Style Selector="Button.cancel">
+            <Setter Property="Background" Value="#6B7280"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="8,8,0,0"/>
+        </Style>
+        
+        <Style Selector="Button.cancel:pointerover">
+            <Setter Property="Background" Value="#4B5563"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+
+        <Style Selector="Button.editButton">
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                    <BrushTransition Property="Background" Duration="0.2"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Button.editButton:pointerover">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+        
+        <Style Selector="Button.editButton > TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.actionButton">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="4,8,0,0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
+                    <BrushTransition Property="Background" Duration="0.2"/>
+                </Transitions>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Button.actionButton:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+        </Style>
+        
+        <Style Selector="Button.save">
+            <Setter Property="Background" Value="{DynamicResource SuccessBrush}"/>
+        </Style>
+        
+        <Style Selector="Button.save:pointerover">
+            <Setter Property="Background" Value="{DynamicResource SuccessDarkButtonBrush}"/>
+        </Style>
+        
+        <Style Selector="Button.cancel">
+            <Setter Property="Background" Value="{DynamicResource GreyDarkBrush}"/>
+        </Style>
+        
+        <Style Selector="Button.cancel:pointerover">
+            <Setter Property="Background" Value="{DynamicResource GreyDarkerBrush}"/>
+        </Style>
     </UserControl.Styles>
 
     <UserControl.DataContext>
@@ -164,10 +272,10 @@
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
-                            <Button Classes="accent"
+                            <Button Classes="editButton"
                                     Command="{Binding ToggleUsernameEditCommand}">
-                                    <TextBlock Text="✏️" FontSize="14" VerticalAlignment="Center"/>
-                                </Button>
+                                <TextBlock Text="✏️" FontSize="16" VerticalAlignment="Center"/>
+                            </Button>
                         </StackPanel>
                         <Grid>
                             <TextBlock Text="{Binding UserName}"
@@ -186,6 +294,24 @@
                                     <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
                                 </TextBox.KeyBindings>
                             </TextBox>
+                            <StackPanel Orientation="Horizontal" 
+                                       IsVisible="{Binding IsEditingUsername}"
+                                       HorizontalAlignment="Right">
+                                <Button Classes="save"
+                                       Command="{Binding SaveUsernameCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="5">
+                                        <TextBlock Text="✓" FontSize="14"/>
+                                        <TextBlock Text="Сохранить" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Classes="cancel"
+                                       Command="{Binding CancelEditCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="5">
+                                        <TextBlock Text="✕" FontSize="14"/>
+                                        <TextBlock Text="Отмена" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
                         </Grid>
                         <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
                     </StackPanel>
@@ -198,9 +324,9 @@
                                      FontSize="16"
                                      Foreground="{DynamicResource ThemeSidebarTextBrush}"
                                      Margin="0,0,0,2"/>
-                            <Button Classes="accent"
+                            <Button Classes="editButton"
                                     Command="{Binding ToggleEmailEditCommand}">
-                                <TextBlock Text="✏️" FontSize="14" VerticalAlignment="Center"/>
+                                <TextBlock Text="✏️" FontSize="16" VerticalAlignment="Center"/>
                             </Button>
                         </StackPanel>
                         <Grid>
@@ -220,6 +346,24 @@
                                     <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
                                 </TextBox.KeyBindings>
                             </TextBox>
+                            <StackPanel Orientation="Horizontal" 
+                                       IsVisible="{Binding IsEditingEmail}"
+                                       HorizontalAlignment="Right">
+                                <Button Classes="save"
+                                       Command="{Binding SaveEmailCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="5">
+                                        <TextBlock Text="✓" FontSize="14"/>
+                                        <TextBlock Text="Сохранить" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Classes="cancel"
+                                       Command="{Binding CancelEditCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="5">
+                                        <TextBlock Text="✕" FontSize="14"/>
+                                        <TextBlock Text="Отмена" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
                         </Grid>
                         <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
                     </StackPanel>
