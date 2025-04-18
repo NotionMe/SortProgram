@@ -2105,19 +2105,19 @@
     ]
   },
   "packageFolders": {
-    "/home/linux/.nuget/packages/": {}
+    "/home/notionme/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "projectUniqueName": "/home/notionme/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
       "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-      "projectPath": "/home/linux/Repos/Praktika/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
-      "packagesPath": "/home/linux/.nuget/packages/",
-      "outputPath": "/home/linux/Repos/Praktika/SortProgram/obj/",
+      "projectPath": "/home/notionme/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "packagesPath": "/home/notionme/.nuget/packages/",
+      "outputPath": "/home/notionme/SortProgram/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/linux/.nuget/NuGet/NuGet.Config"
+        "/home/notionme/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
