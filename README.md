@@ -8,7 +8,7 @@
 </div>
 
 ## 📑 Зміст
-- [� SortProgram - Візуалізація алгоритмів сортування](#-sortprogram---візуалізація-алгоритмів-сортування)
+- [📊 SortProgram - Візуалізація алгоритмів сортування](#-sortprogram---візуалізація-алгоритмів-сортування)
   - [📑 Зміст](#-зміст)
   - [🚀 Опис проекту](#-опис-проекту)
   - [✨ Особливості](#-особливості)
@@ -55,7 +55,7 @@
 ## 🔍 Інтерактивна візуалізація
 
 <div align="center">
-  <img src="Assets/Images/BubbleSort_Screenshot.png" alt="Bubble Sort Visualization" width="600" />
+  <img src="Assets/Images/bubble_sort.gif" alt="Bubble Sort Visualization" width="600" />
 </div>
 
 Програма пропонує інтерактивну візуалізацію алгоритмів сортування зі наступними можливостями:
