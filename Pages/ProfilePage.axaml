@@ -253,6 +253,19 @@
                     <Image Source="{Binding AvatarImage}" 
                            Stretch="UniformToFill"/>
                 </Border>
+                
+                <!-- Кнопка зміни аватару -->
+                <Button HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Width="40"
+                        Height="40"
+                        Margin="0,0,10,10"
+                        CornerRadius="20"
+                        Background="{DynamicResource ThemeAccentBrush}"
+                        Foreground="White"
+                        Command="{Binding ChangeAvatarCommand}">
+                    <TextBlock Text="📷" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
             </Grid>
 
             <!-- Нижня частина з даними користувача -->
@@ -294,11 +307,17 @@
                                     <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
                                 </TextBox.KeyBindings>
                             </TextBox>
+                            <TextBlock Text="{Binding UsernameValidationMessage}"
+                                     Foreground="#DC2626"
+                                     FontSize="12"
+                                     Margin="0,5,0,0"
+                                     IsVisible="{Binding !IsUsernameValid}"/>
                             <StackPanel Orientation="Horizontal" 
                                        IsVisible="{Binding IsEditingUsername}"
                                        HorizontalAlignment="Right">
                                 <Button Classes="save"
-                                       Command="{Binding SaveUsernameCommand}">
+                                       Command="{Binding SaveUsernameCommand}"
+                                       IsEnabled="{Binding IsUsernameValid}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✓" FontSize="14"/>
                                         <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>
@@ -346,11 +365,17 @@
                                     <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
                                 </TextBox.KeyBindings>
                             </TextBox>
+                            <TextBlock Text="{Binding EmailValidationMessage}"
+                                     Foreground="#DC2626"
+                                     FontSize="12"
+                                     Margin="0,5,0,0"
+                                     IsVisible="{Binding !IsEmailValid}"/>
                             <StackPanel Orientation="Horizontal" 
                                        IsVisible="{Binding IsEditingEmail}"
                                        HorizontalAlignment="Right">
                                 <Button Classes="save"
-                                       Command="{Binding SaveEmailCommand}">
+                                       Command="{Binding SaveEmailCommand}"
+                                       IsEnabled="{Binding IsEmailValid}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
                                         <TextBlock Text="✓" FontSize="14"/>
                                         <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>

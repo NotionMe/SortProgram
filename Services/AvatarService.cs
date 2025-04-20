@@ -1,5 +1,6 @@
 // filepath: /home/notionme/Document/Repos/SortProgram/Services/AvatarService.cs
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
@@ -10,7 +11,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
     {
         private readonly Random _random = new Random();
         private readonly string _avatarBaseDir = "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/";
-        private readonly int _totalAvatars = 7; // Кількість доступних аватарів
+        private readonly int _totalAvatars = 8; // Кількість доступних аватарів
 
         public string GetRandomAvatarPath()
         {
@@ -89,6 +90,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 }
             }
             return null;
+        }
+        
+        public List<string> GetAllAvatarPaths()
+        {
+            List<string> avatarPaths = new List<string>();
+            
+            for (int i = 1; i <= _totalAvatars; i++)
+            {
+                avatarPaths.Add($"{_avatarBaseDir}Avatar{ i}.png");
+            }
+            
+            return avatarPaths;
         }
     }
 }

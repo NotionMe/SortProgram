@@ -1,5 +1,6 @@
 // filepath: /home/notionme/Document/Repos/SortProgram/Services/IAvatarService.cs
 using Avalonia.Media.Imaging;
+using System.Collections.Generic;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 {
@@ -9,5 +10,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         string GetDefaultAvatarPath();
         bool IsValidAvatarPath(string path);
         Bitmap? LoadAvatar(string path);
+        List<string> GetAllAvatarPaths();
     }
 }

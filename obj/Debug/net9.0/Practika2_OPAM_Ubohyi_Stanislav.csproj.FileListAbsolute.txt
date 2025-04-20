@@ -426,3 +426,4 @@
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/WhiteMode.png
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar8.png

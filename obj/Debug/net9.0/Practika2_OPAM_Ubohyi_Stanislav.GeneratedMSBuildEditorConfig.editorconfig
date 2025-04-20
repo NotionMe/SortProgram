@@ -24,6 +24,9 @@ build_property.EnableCodeStyleSeverity =
 [/home/notionme/Document/Repos/SortProgram/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notionme/Document/Repos/SortProgram/Auth/AvatarPickerDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notionme/Document/Repos/SortProgram/Auth/LoginMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

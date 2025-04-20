@@ -1,24 +1,16 @@
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using ReactiveUI;
 using System.Windows.Input;
 using Avalonia.Controls;
 using System;
 using Avalonia;
 using Avalonia.Media.Imaging;
-using Avalonia.Platform;
-using System.IO;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
-using Practika2_OPAM_Ubohyi_Stanislav.Pages;
-using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Avalonia.Threading;
 using Avalonia.ReactiveUI;
 using System.Text.RegularExpressions;
 using System.Linq;
-using System.Collections.Generic;
-using Avalonia.Platform.Storage;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
@@ -87,6 +79,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         public ICommand SaveUsernameCommand { get; }
         public ICommand SaveEmailCommand { get; }
         public ICommand CancelEditCommand { get; }
+        public ICommand ChangeAvatarCommand { get; }
 
         public ProfileViewModel()
         {
@@ -122,6 +115,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             SaveUsernameCommand = ReactiveCommand.Create(SaveUsername, outputScheduler: AvaloniaScheduler.Instance);
             SaveEmailCommand = ReactiveCommand.Create(SaveEmail, outputScheduler: AvaloniaScheduler.Instance);
             CancelEditCommand = ReactiveCommand.Create(CancelEdit, outputScheduler: AvaloniaScheduler.Instance);
+            ChangeAvatarCommand = ReactiveCommand.CreateFromTask(ChangeAvatarAsync, outputScheduler: AvaloniaScheduler.Instance);
         }
 
         // Validation methods
@@ -260,6 +254,87 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 IsEmailValid = true;
                 EmailValidationMessage = string.Empty;
                 IsEditingEmail = false;
+            }
+        }
+
+        private async System.Threading.Tasks.Task ChangeAvatarAsync()
+        {
+            try
+            {
+                var dialog = new AvatarPickerDialog();
+                
+                // Set initial selected avatar if user already has one
+                var user = _authService.GetCurrentUser();
+                if (!string.IsNullOrEmpty(user.Avatar))
+                {
+                    // Pre-select the current avatar
+                    dialog.PreSelectAvatar(user.Avatar);
+                }
+                
+                // Використовуємо інший підхід до отримання батьківського вікна
+                Window? parentWindow = null;
+                
+                // Виконуємо пошук батьківського вікна на UI потоці
+                await Dispatcher.UIThread.InvokeAsync(() =>
+                {
+                    // Шукаємо активне вікно серед відкритих вікон додатку
+                    if (Application.Current?.ApplicationLifetime is Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)
+                    {
+                        foreach (Window window in desktop.Windows)
+                        {
+                            if (window.IsActive)
+                            {
+                                parentWindow = window;
+                                break;
+                            }
+                        }
+                        
+                        // Якщо активне вікно не знайдено, використовуємо перше з відкритих вікон
+                        if (parentWindow == null && desktop.Windows.Count > 0)
+                        {
+                            parentWindow = desktop.Windows[0];
+                        }
+                    }
+                });
+                
+                if (parentWindow == null)
+                {
+                    Console.WriteLine("Failed to find valid parent window for avatar dialog");
+                    return;
+                }
+                
+                // Перевіряємо, чи дійсне батьківське вікно, перш ніж показувати діалог
+                if (!parentWindow.IsVisible)
+                {
+                    Console.WriteLine("Parent window is not visible, cannot show dialog");
+                    return;
+                }
+                
+                var result = await dialog.ShowDialog<bool?>(parentWindow);
+                
+                if (result == true)
+                {
+                    string newAvatarPath = dialog.SelectedAvatarPath;
+                    
+                    // Make sure we have a valid path
+                    if (string.IsNullOrEmpty(newAvatarPath))
+                    {
+                        Console.WriteLine("No avatar selected");
+                        return;
+                    }
+                    
+                    // Update user avatar
+                    user.Avatar = newAvatarPath;
+                    _authService.UpdateCurrentUser(user);
+                    
+                    // Update UI
+                    AvatarPath = newAvatarPath;
+                    AvatarImage = _avatarService.LoadAvatar(newAvatarPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error changing avatar: {ex.Message}");
             }
         }
 

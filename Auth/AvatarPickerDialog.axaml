@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Auth"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        Width="450" Height="450"
+        x:Class="Practika2_OPAM_Ubohyi_Stanislav.Auth.AvatarPickerDialog"
+        x:DataType="local:AvatarPickerDialog"
+        Title="Виберіть аватар"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+    
+    <Window.Styles>
+        <Style Selector="Button.avatarButton">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Panel>
+                        <Border CornerRadius="50"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="3">
+                            <ContentPresenter Content="{TemplateBinding Content}" 
+                                              HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </Panel>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Border.selected">
+            <Setter Property="BorderBrush" Value="#4F8EF7"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="BoxShadow" Value="0 0 10 2 #4F8EF7"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="*,Auto">
+        <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                BorderBrush="{DynamicResource ThemeBorderMidBrush}" 
+                BorderThickness="1"
+                CornerRadius="8"
+                Margin="10">
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding Avatars}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel HorizontalAlignment="Center"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type local:AvatarItem}">
+                            <Button Classes="avatarButton"
+                                    Click="AvatarItem_Clicked">
+                                <Panel>
+                                    <Border ClipToBounds="True"
+                                            CornerRadius="50"
+                                            Classes.selected="{Binding IsSelected}">
+                                        <Image Source="{Binding Image}" 
+                                               Width="100" 
+                                               Height="100"
+                                               Stretch="UniformToFill"/>
+                                    </Border>
+                                </Panel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+        
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="10,0,10,10">
+            <Button Content="Скасувати" 
+                    Margin="10,0,0,0" 
+                    Click="CancelButton_Click"/>
+            <Button Content="ОК" 
+                    Background="{DynamicResource ThemeAccentBrush}"
+                    Foreground="White"
+                    Margin="10,0,0,0" 
+                    Click="OkButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

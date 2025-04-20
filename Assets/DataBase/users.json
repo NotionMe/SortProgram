@@ -5,6 +5,14 @@
     "Password": "$2a$12$ATR1VB.I40/gG/pAnw7uUOJgVdGUODDQLsXl2ikYSd7v4c9q1WL8y",
     "Role": "Admin",
     "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png"
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png"
+  },
+  {
+    "Username": "NotionMe",
+    "Email": "hagami16@gmail.com",
+    "Password": "$2a$12$zjeVdpcnnbQxLUFfqQY6lu0JrrkK9AXyh54JyWSXzTv8iZ47v4D.W",
+    "Role": "User",
+    "RegistrationDate": "2025-04-20T16:59:44.3470702+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png"
   }
 ]
