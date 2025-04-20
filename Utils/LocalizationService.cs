@@ -123,23 +123,20 @@ public static class LocalizationService
             // Для Windows додаємо специфічні шляхи
             if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                if (!string.IsNullOrEmpty(executablePath))
-                {
-                    basePaths.Add(Path.Combine(executablePath, "Assets", "Localization"));
+                string executablePath = AppContext.BaseDirectory;
+                basePaths.Add(Path.Combine(executablePath, "Assets", "Localization"));
                     
-                    // Також перевіримо батьківські каталоги (для Debug/Release структури)
-                    string? parentDir = Directory.GetParent(executablePath)?.FullName;
-                    if (!string.IsNullOrEmpty(parentDir))
+                // Також перевіримо батьківські каталоги (для Debug/Release структури)
+                string? parentDir = Directory.GetParent(executablePath)?.FullName;
+                if (!string.IsNullOrEmpty(parentDir))
+                {
+                    basePaths.Add(Path.Combine(parentDir, "Assets", "Localization"));
+                    
+                    // Ще один рівень вгору
+                    string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                    if (!string.IsNullOrEmpty(grandParentDir))
                     {
-                        basePaths.Add(Path.Combine(parentDir, "Assets", "Localization"));
-                        
-                        // Ще один рівень вгору
-                        string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
-                        if (!string.IsNullOrEmpty(grandParentDir))
-                        {
-                            basePaths.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
-                        }
+                        basePaths.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
                     }
                 }
             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
+    "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
   },
   "projects": {
-    "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
+    "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "projectUniqueName": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
         "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-        "projectPath": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "projectPath": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
         "packagesPath": "/home/notionme/.nuget/packages/",
-        "outputPath": "/home/notionme/Documents/Repos/SortProgram/obj/",
+        "outputPath": "/home/notionme/Document/Repos/SortProgram/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/notionme/.nuget/NuGet/NuGet.Config"
@@ -45,6 +45,10 @@
           "targetAlias": "net9.0",
           "dependencies": {
             "Avalonia": {
+              "target": "Package",
+              "version": "[11.2.7, )"
+            },
+            "Avalonia.Controls.DataGrid": {
               "target": "Package",
               "version": "[11.2.7, )"
             },

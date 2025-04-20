@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.7" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.7" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.7" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0.2" />
@@ -30,11 +31,27 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
-  <!-- Модифицируем копирование файлов локализации для Windows -->
+  <!-- Копіюємо файли локалізації та інші важливі директорії -->
   <ItemGroup>
     <ContentWithTargetPath Include="Assets\Localization\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>Assets\Localization\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    
+    <ContentWithTargetPath Include="Assets\DataBase\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Assets\DataBase\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    
+    <ContentWithTargetPath Include="Assets\Images\Avatar\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Assets\Images\Avatar\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+
+    <!-- Копіюємо всі файли з директорії Assets у вихідну директорію -->
+    <ContentWithTargetPath Include="Assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Assets\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>
 </Project>

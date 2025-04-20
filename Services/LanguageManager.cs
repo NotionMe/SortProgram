@@ -132,36 +132,26 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             // Додаємо шляхи відносно виконуваного файлу
             try
             {
-                string? executablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly()?.Location);
-                if (!string.IsNullOrEmpty(executablePath))
-                {
-                    baseLocalizationDirs.Add(Path.Combine(executablePath, "Assets", "Localization"));
-                }
+                string executablePath = AppContext.BaseDirectory;
+                baseLocalizationDirs.Add(Path.Combine(executablePath, "Assets", "Localization"));
                 
                 // Для Windows також додаємо шляхи з кореневої директорії і батьківських каталогів
                 if (Environment.OSVersion.Platform == PlatformID.Win32NT)
                 {
-                    string? exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                    if (!string.IsNullOrEmpty(exePath))
+                    string exeDir = AppContext.BaseDirectory;
+                    baseLocalizationDirs.Add(Path.Combine(exeDir, "Assets", "Localization"));
+                    
+                    // Перевіряємо також каталоги відносно батьківського каталогу 
+                    string? parentDir = Directory.GetParent(exeDir)?.FullName;
+                    if (!string.IsNullOrEmpty(parentDir))
                     {
-                        string? exeDir = Path.GetDirectoryName(exePath);
-                        if (!string.IsNullOrEmpty(exeDir))
+                        baseLocalizationDirs.Add(Path.Combine(parentDir, "Assets", "Localization"));
+                        
+                        // Ще один рівень вгору (для Debug/Release/net9.0)
+                        string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                        if (!string.IsNullOrEmpty(grandParentDir))
                         {
-                            baseLocalizationDirs.Add(Path.Combine(exeDir, "Assets", "Localization"));
-                            
-                            // Перевіряємо також каталоги відносно батьківського каталогу 
-                            string? parentDir = Directory.GetParent(exeDir)?.FullName;
-                            if (!string.IsNullOrEmpty(parentDir))
-                            {
-                                baseLocalizationDirs.Add(Path.Combine(parentDir, "Assets", "Localization"));
-                                
-                                // Ще один рівень вгору (для Debug/Release/net9.0)
-                                string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
-                                if (!string.IsNullOrEmpty(grandParentDir))
-                                {
-                                    baseLocalizationDirs.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
-                                }
-                            }
+                            baseLocalizationDirs.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
                         }
                     }
                     
@@ -169,7 +159,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                     string winPath = currentDirectory + "\\Assets\\Localization";
                     baseLocalizationDirs.Add(winPath);
                     
-                    string exeDirWin = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+                    string exeDirWin = AppContext.BaseDirectory;
                     baseLocalizationDirs.Add(exeDirWin + "\\Assets\\Localization");
                 }
             }
@@ -224,7 +214,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             {
                 try
                 {
-                    string exeDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+                    string exeDir = AppContext.BaseDirectory;
                     string localizationDir = Path.Combine(exeDir, "Assets", "Localization");
                     
                     // Створюємо директорію, якщо її немає
@@ -323,31 +313,34 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 
         public List<string> GetAvailableLanguages()
         {
-            // Стандартні мови, які точно існують
-            List<string> languages = new List<string> { "en", "uk" };
+            // Стандартні мови, які завжди доступні
+            List<string> defaultLanguages = new List<string> { "en", "uk" };
+            
+            if (string.IsNullOrEmpty(_cachedLocalizationPath))
+            {
+                return defaultLanguages;
+            }
+            
+            string? directory = Path.GetDirectoryName(_cachedLocalizationPath);
+            if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
+            {
+                return defaultLanguages;
+            }
             
             try
             {
-                string? directory = Path.GetDirectoryName(_cachedLocalizationPath);
-                if (!string.IsNullOrEmpty(directory) && Directory.Exists(directory))
-                {
-                    Debug.WriteLine($"Looking for language files in directory: {directory}");
-                    List<string> langFiles = Directory.GetFiles(directory, "*.json")
-                        .Select(Path.GetFileNameWithoutExtension)
-                        .Where(name => name != null)
-                        .Cast<string>()
-                        .ToList();
-                    
-                    Debug.WriteLine($"Found language files: {string.Join(", ", langFiles)}");
-                    return langFiles;
-                }
+                Debug.WriteLine($"Пошук файлів локалізації в директорії: {directory}");
+                
+                return Directory.GetFiles(directory, "*.json")
+                    .Select(Path.GetFileNameWithoutExtension)
+                    .Where(name => !string.IsNullOrEmpty(name))
+                    .ToList();
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error getting available languages: {ex.Message}");
+                Debug.WriteLine($"Помилка при отриманні доступних мов: {ex.Message}");
+                return defaultLanguages;
             }
-            
-            return languages;
         }
     }
 }

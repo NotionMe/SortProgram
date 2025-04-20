@@ -7,9 +7,9 @@ public class User
     public string Username { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
-    public string Role { get; set; } = "User"; // Default role
+    public string Role { get; set; } = "User"; 
     public DateTime RegistrationDate { get; set; }
-    public string Avatar { get; set; } // Path to user's avatar image
+    public string Avatar { get; set; } 
 
     public User()
     {

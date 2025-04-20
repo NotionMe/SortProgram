@@ -29,7 +29,7 @@ public partial class App : Application
             // Переконуємось, що необхідні директорії існують
             try
             {
-                string exeDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) ?? string.Empty;
+                string exeDir = AppContext.BaseDirectory;
                 string localizationDir = Path.Combine(exeDir, "Assets", "Localization");
                 
                 if (!Directory.Exists(Path.Combine(exeDir, "Assets")))

@@ -5,9 +5,9 @@ using System.Globalization;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Converters
 {
-    public class LanguageConverter : IValueConverter
+    public class LanguageConverter 
     {
-        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        public object? Convert(object? value)
         {
             if (value is string key)
             {
@@ -17,10 +17,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Converters
             return value;
         }
 
-        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            // ConvertBack is not supported for localization
-            throw new NotImplementedException();
-        }
+        
     }
 }

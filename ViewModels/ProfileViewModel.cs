@@ -330,7 +330,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                     if (uri.StartsWith("avares://"))
                     {
                         string filePath = uri.Replace("avares://Practika2_OPAM_Ubohyi_Stanislav/", "");
-                        string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
+                        string fullPath = Path.Combine(AppContext.BaseDirectory, filePath);
 
                         if (File.Exists(fullPath))
                         {

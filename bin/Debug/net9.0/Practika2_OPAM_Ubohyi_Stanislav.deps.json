@@ -9,6 +9,7 @@
       "Practika2_OPAM_Ubohyi_Stanislav/1.0.0": {
         "dependencies": {
           "Avalonia": "11.2.7",
+          "Avalonia.Controls.DataGrid": "11.2.7",
           "Avalonia.Desktop": "11.2.6",
           "Avalonia.Diagnostics": "11.2.6",
           "Avalonia.Fonts.Inter": "11.2.6",
@@ -107,15 +108,15 @@
           }
         }
       },
-      "Avalonia.Controls.DataGrid/11.2.6": {
+      "Avalonia.Controls.DataGrid/11.2.7": {
         "dependencies": {
           "Avalonia": "11.2.7",
           "Avalonia.Remote.Protocol": "11.2.7"
         },
         "runtime": {
           "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
-            "assemblyVersion": "11.2.6.0",
-            "fileVersion": "11.2.6.0"
+            "assemblyVersion": "11.2.7.0",
+            "fileVersion": "11.2.7.0"
           }
         }
       },
@@ -138,7 +139,7 @@
         "dependencies": {
           "Avalonia": "11.2.7",
           "Avalonia.Controls.ColorPicker": "11.2.6",
-          "Avalonia.Controls.DataGrid": "11.2.6",
+          "Avalonia.Controls.DataGrid": "11.2.7",
           "Avalonia.Themes.Simple": "11.2.6"
         },
         "runtime": {
@@ -596,12 +597,12 @@
       "path": "avalonia.controls.colorpicker/11.2.6",
       "hashPath": "avalonia.controls.colorpicker.11.2.6.nupkg.sha512"
     },
-    "Avalonia.Controls.DataGrid/11.2.6": {
+    "Avalonia.Controls.DataGrid/11.2.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0Jj3c9q19ifY1VEXJgtdnH9AcGsuL/8NMrUq5R7H8qR6yRJm+OpnTqR3y3e2hl2EybVZ5mIiaJcmMoenu45ZqQ==",
-      "path": "avalonia.controls.datagrid/11.2.6",
-      "hashPath": "avalonia.controls.datagrid.11.2.6.nupkg.sha512"
+      "sha512": "sha512-uWtLg5fs5XLDVWopssyJssTF/wDvUfjmRFX2mVECeu6wXtcC26qcy1sGzy5WIle3K7tVcly5z3mGU4g3RjPJaA==",
+      "path": "avalonia.controls.datagrid/11.2.7",
+      "hashPath": "avalonia.controls.datagrid.11.2.7.nupkg.sha512"
     },
     "Avalonia.Desktop/11.2.6": {
       "type": "package",

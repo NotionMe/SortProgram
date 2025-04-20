@@ -124,11 +124,11 @@
           }
         }
       },
-      "Avalonia.Controls.DataGrid/11.2.6": {
+      "Avalonia.Controls.DataGrid/11.2.7": {
         "type": "package",
         "dependencies": {
-          "Avalonia": "11.2.6",
-          "Avalonia.Remote.Protocol": "11.2.6"
+          "Avalonia": "11.2.7",
+          "Avalonia.Remote.Protocol": "11.2.7"
         },
         "compile": {
           "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
@@ -1008,15 +1008,15 @@
         "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
       ]
     },
-    "Avalonia.Controls.DataGrid/11.2.6": {
-      "sha512": "0Jj3c9q19ifY1VEXJgtdnH9AcGsuL/8NMrUq5R7H8qR6yRJm+OpnTqR3y3e2hl2EybVZ5mIiaJcmMoenu45ZqQ==",
+    "Avalonia.Controls.DataGrid/11.2.7": {
+      "sha512": "uWtLg5fs5XLDVWopssyJssTF/wDvUfjmRFX2mVECeu6wXtcC26qcy1sGzy5WIle3K7tVcly5z3mGU4g3RjPJaA==",
       "type": "package",
-      "path": "avalonia.controls.datagrid/11.2.6",
+      "path": "avalonia.controls.datagrid/11.2.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "avalonia.controls.datagrid.11.2.6.nupkg.sha512",
+        "avalonia.controls.datagrid.11.2.7.nupkg.sha512",
         "avalonia.controls.datagrid.nuspec",
         "lib/net6.0/Avalonia.Controls.DataGrid.dll",
         "lib/net6.0/Avalonia.Controls.DataGrid.xml",
@@ -2094,6 +2094,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Avalonia >= 11.2.7",
+      "Avalonia.Controls.DataGrid >= 11.2.7",
       "Avalonia.Desktop >= 11.2.6",
       "Avalonia.Diagnostics >= 11.2.6",
       "Avalonia.Fonts.Inter >= 11.2.6",
@@ -2110,11 +2111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "projectUniqueName": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
       "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-      "projectPath": "/home/notionme/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+      "projectPath": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
       "packagesPath": "/home/notionme/.nuget/packages/",
-      "outputPath": "/home/notionme/Documents/Repos/SortProgram/obj/",
+      "outputPath": "/home/notionme/Document/Repos/SortProgram/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/notionme/.nuget/NuGet/NuGet.Config"
@@ -2148,6 +2149,10 @@
         "targetAlias": "net9.0",
         "dependencies": {
           "Avalonia": {
+            "target": "Package",
+            "version": "[11.2.7, )"
+          },
+          "Avalonia.Controls.DataGrid": {
             "target": "Package",
             "version": "[11.2.7, )"
           },
