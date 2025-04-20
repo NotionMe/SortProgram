@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Username": "admin",
     "Email": "admin@gmail.com",
@@ -6,85 +6,5 @@
     "Role": "Admin",
     "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png"
-  },
-  {
-    "Username": "NotionMe",
-    "Email": "NotionMe@gmail.com",
-    "Password": "$2a$12$E1So5FXC3DkaHM3nvCX16.9l3Xs0VyMtBE476aJHBPoHPBewmbgbe",
-    "Role": "User",
-    "RegistrationDate": "2025-04-17T19:55:25.391327+03:00",
-    "Avatar": ""
-  },
-  {
-    "Username": "123",
-    "Email": "123123@gmail.com",
-    "Password": "$2a$12$HIGQD.SSD3YcGDVltyN5POkXC1RE1JTj0k.d8iZqEJFa7t8brwEoa",
-    "Role": "Admin",
-    "RegistrationDate": "2025-04-17T20:03:40.7239768+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
-  },
-  {
-    "Username": "123123",
-    "Email": "123123@g.c",
-    "Password": "$2a$12$O7BeELJ1Bbz6Ks0S9fO0QuDqZskO9TqqkWYyrypyXBHaQztHg0/yC",
-    "Role": "User",
-    "RegistrationDate": "2025-04-17T20:13:46.4107257+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
-  },
-  {
-    "Username": "zxc",
-    "Email": "zxc@.g.c",
-    "Password": "$2a$12$sbEvtM7zODKBQG.43SI6KumJb.xvIUSISKEmP/2CJnN3Q8lPZd55G",
-    "Role": "Admin",
-    "RegistrationDate": "2025-04-17T20:16:01.0494883+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
-  },
-  {
-    "Username": "ASD",
-    "Email": "ASD@gmail.com",
-    "Password": "$2a$12$U29VAzt1x/3JSB7eH.b.xewOi8wQfHF9Bwzx7mhazMC7lUcJaAQ6S",
-    "Role": "User",
-    "RegistrationDate": "2025-04-17T20:28:34.3399267+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png"
-  },
-  {
-    "Username": "Vova",
-    "Email": "Stas@gmail.com",
-    "Password": "$2a$12$wv94M75riY/u29WmqQ904evKqP/B8jkudU2aN5VtGhN51zRVXyCNq",
-    "Role": "User",
-    "RegistrationDate": "2025-04-17T22:46:42.4071294+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar6.png"
-  },
-  {
-    "Username": "VovaPidoras",
-    "Email": "VovaPidoras@gmail.com",
-    "Password": "$2a$12$/gaH/o/0y47o3NX5aMgs/uvTREt5wtvlFQO5cavNY/3bzq4GvQp3y",
-    "Role": "User",
-    "RegistrationDate": "2025-04-17T22:48:02.6206746+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
-  },
-  {
-    "Username": "12311",
-    "Email": "1231231@gmail.com",
-    "Password": "$2a$12$vQk3mIBqUQV8FOiNFKd7ye5OVKItpFEKMRZQ4pjug7BQkZ0WV0luu",
-    "Role": "User",
-    "RegistrationDate": "2025-04-18T10:29:11.7059138+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png"
-  },
-  {
-    "Username": "qwerty@gmail.com",
-    "Email": "qwerty@gmail.com",
-    "Password": "$2a$12$L0Cui1YWC5Bz.1UDzPXWKeDewYsnj8/CUKqlEGLk4PllS8Yi9AeYG",
-    "Role": "User",
-    "RegistrationDate": "2025-04-20T04:19:13.1747882+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
-  },
-  {
-    "Username": "Danya",
-    "Email": "c.danya.batko@student.uzhnu.edu.ua",
-    "Password": "$2a$12$ZYjjs1koAOQdOrXf5zcoB.90lINxacVDtrz0XbWjwBeOj/IDyxTsO",
-    "Role": "User",
-    "RegistrationDate": "2025-04-20T05:00:24.6305309+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar3.png"
   }
 ]

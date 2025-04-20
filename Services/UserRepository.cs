@@ -63,11 +63,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         {
             JsonSerializerOptions options = new JsonSerializerOptions
             {
-                WriteIndented = true
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
             
             string json = JsonSerializer.Serialize(users, options);
-            File.WriteAllText(_filePath, json);
+            File.WriteAllText(_filePath, json, System.Text.Encoding.UTF8);
         }
         
         // Метод для оновлення користувача
