@@ -18,11 +18,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
     public partial class SortProgram : Window
     {
         private Border? currentSelectedButton;
+        private readonly IAuthService _authService;
         public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
         public SortProgram()
         {
             InitializeComponent();
+            
+            // Get auth service through DI
+            _authService = App.GetService<IAuthService>();
             
             // Initialize the language manager with default language
             // You can get system language or use saved user preference
@@ -84,7 +88,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             };
             
             LogoutButton.PointerPressed += (s, e) => {
-                AuthService.Instance.Logout();
+                _authService.Logout();
                 NavigateToLogin();
             };
             

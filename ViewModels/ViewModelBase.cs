@@ -18,12 +18,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
     public class ViewModelBase : ReactiveObject
     {
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
         private bool _isAdminVisible;
 
         public ViewModelBase()
         {
-            _authService = AuthService.Instance;
+            _authService = App.GetService<IAuthService>();
             _isAdminVisible = _authService.IsAdmin();
         }
 

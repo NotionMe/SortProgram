@@ -18,7 +18,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         private TextBlock? _emailValidationText;
         private TextBox? _passwordTextBox;
         private TextBlock? _passwordValidationText;
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
         
         /// <summary>
         /// Ініціалізує форму входу та налаштовує валідацію полів введення
@@ -32,8 +32,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             _passwordTextBox = this.FindControl<TextBox>("PasswordTextBox");
             _passwordValidationText = this.FindControl<TextBlock>("PasswordValidationText");
             
-            // Отримуємо екземпляр AuthService
-            _authService = AuthService.Instance;
+            // Отримуємо сервіс автентифікації через DI
+            _authService = App.GetService<IAuthService>();
             
             // Перевіряємо початковий стан
             if (_emailTextBox != null)

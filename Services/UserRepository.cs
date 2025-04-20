@@ -8,9 +8,24 @@ using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
-        private readonly string _filePath = "Assets/DataBase/users.json";
+        private readonly string _filePath;
+
+        public UserRepository(string filePath = "Assets/DataBase/users.json")
+        {
+            _filePath = filePath;
+            EnsureDirectoryExists();
+        }
+
+        private void EnsureDirectoryExists()
+        {
+            string? directory = Path.GetDirectoryName(_filePath);
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+        }
 
         public bool UserExists(string username, string email)
         {
@@ -25,14 +40,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             SaveAllUsers(users);
         }
 
-        // Новий метод для отримання користувача тільки за логіном або email
         public User? GetUserByUsernameOrEmail(string usernameOrEmail)
         {
             List<User> users = GetAllUsers();
             return users.FirstOrDefault(u => u.Username == usernameOrEmail || u.Email == usernameOrEmail);
         }
 
-        // Старий метод збережений для сумісності
         public User? GetUserByCredentials(string usernameOrEmail, string password)
         {
             List<User> users = GetAllUsers();
@@ -53,25 +66,33 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 string json = File.ReadAllText(_filePath);
                 return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error reading users file: {ex.Message}");
                 return new List<User>();
             }
         }
 
         private void SaveAllUsers(List<User> users)
         {
-            JsonSerializerOptions options = new JsonSerializerOptions
+            try
             {
-                WriteIndented = true,
-                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
-            
-            string json = JsonSerializer.Serialize(users, options);
-            File.WriteAllText(_filePath, json, System.Text.Encoding.UTF8);
+                JsonSerializerOptions options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
+                
+                string json = JsonSerializer.Serialize(users, options);
+                File.WriteAllText(_filePath, json, System.Text.Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving users: {ex.Message}");
+                throw;
+            }
         }
         
-        // Метод для оновлення користувача
         public bool UpdateUser(User updatedUser)
         {
             var users = GetAllUsers();
@@ -93,7 +114,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             return false;
         }
         
-        // Метод для оновлення паролів існуючих користувачів на хешовані
         public void UpdatePasswordsToHashed()
         {
             List<User> users = GetAllUsers();

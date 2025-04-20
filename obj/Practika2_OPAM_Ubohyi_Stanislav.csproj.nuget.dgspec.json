@@ -80,6 +80,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "ReactiveUI": {
               "target": "Package",
               "version": "[20.2.45, )"

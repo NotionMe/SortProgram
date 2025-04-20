@@ -18,7 +18,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
         private TextBlock? _passwordValidationText;
         private TextBox? _confirmPasswordTextBox;
         private TextBlock? _confirmPasswordValidationText;
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
 
         public SignInMenu()
         {
@@ -33,7 +33,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
             _confirmPasswordTextBox = this.FindControl<TextBox>("ConfirmPasswordTextBox");
             _confirmPasswordValidationText = this.FindControl<TextBlock>("ConfirmPasswordValidationText");
             
-            _authService = AuthService.Instance;
+            // Отримуємо сервіс автентифікації через DI
+            _authService = App.GetService<IAuthService>();
             
             // Check initial state for all fields
             ValidateField(_usernameTextBox?.Text, _usernameValidationText);

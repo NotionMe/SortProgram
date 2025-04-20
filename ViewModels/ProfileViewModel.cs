@@ -30,8 +30,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private string _userRole = string.Empty;
         private string _avatarPath = string.Empty;
         private Bitmap? _avatarImage;
-        private readonly AuthService _authService;
-        private readonly UserRepository _userRepository;
+        private readonly IAuthService _authService;
+        private readonly IUserRepository _userRepository;
+        private readonly IAvatarService _avatarService;
         private bool _isEditingUsername;
         private bool _isEditingEmail;
         private string _tempUsername = string.Empty;
@@ -89,26 +90,28 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
         public ProfileViewModel()
         {
-            _authService = AuthService.Instance;
-            _userRepository = new UserRepository();
+            _authService = App.GetService<IAuthService>();
+            _userRepository = App.GetService<IUserRepository>();
+            _avatarService = App.GetService<IAvatarService>();
+
             UpdateUserInfo();
-            LanguageManager.Instance.LanguageChanged += (s, e) => 
+            LanguageManager.Instance.LanguageChanged += (s, e) =>
                 Dispatcher.UIThread.Post(() => this.RaisePropertyChanged(nameof(LanguageManager)));
 
             // Create canExecute observables on the UI thread
             var canToggleUsername = this.WhenAnyValue(x => x.IsEditingEmail)
                 .Select(isEditingEmail => !isEditingEmail)
                 .ObserveOn(AvaloniaScheduler.Instance);
-                
+
             var canToggleEmail = this.WhenAnyValue(x => x.IsEditingUsername)
                 .Select(isEditingUsername => !isEditingUsername)
                 .ObserveOn(AvaloniaScheduler.Instance);
-                
+
             // Observe property changes for validation
             this.WhenAnyValue(x => x.UserName)
                 .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(ValidateUsername);
-                
+
             this.WhenAnyValue(x => x.Email)
                 .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(ValidateEmail);
@@ -130,33 +133,33 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 UsernameValidationMessage = "Ім'я користувача не може бути порожнім";
                 return;
             }
-            
+
             if (username.Length < 3)
             {
                 IsUsernameValid = false;
                 UsernameValidationMessage = "Ім'я користувача повинно мати не менше 3 символів";
                 return;
             }
-            
+
             var currentUser = _authService.GetCurrentUser();
             var users = _userRepository.GetAllUsers();
-            
+
             // Check if username already exists (excluding current user)
-            bool usernameExists = users.Any(u => 
-                u.Username.Equals(username, StringComparison.OrdinalIgnoreCase) && 
+            bool usernameExists = users.Any(u =>
+                u.Username.Equals(username, StringComparison.OrdinalIgnoreCase) &&
                 u.Email != currentUser.Email);
-                
+
             if (usernameExists)
             {
                 IsUsernameValid = false;
                 UsernameValidationMessage = "Це ім'я користувача вже зайнято";
                 return;
             }
-            
+
             IsUsernameValid = true;
             UsernameValidationMessage = string.Empty;
         }
-        
+
         private void ValidateEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -165,7 +168,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 EmailValidationMessage = "Email не може бути порожнім";
                 return;
             }
-            
+
             // Regex for email validation
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             if (!Regex.IsMatch(email, pattern))
@@ -174,22 +177,22 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 EmailValidationMessage = "Неправильний формат email";
                 return;
             }
-            
+
             var currentUser = _authService.GetCurrentUser();
             var users = _userRepository.GetAllUsers();
-            
+
             // Check if email already exists (excluding current user)
-            bool emailExists = users.Any(u => 
-                u.Email.Equals(email, StringComparison.OrdinalIgnoreCase) && 
+            bool emailExists = users.Any(u =>
+                u.Email.Equals(email, StringComparison.OrdinalIgnoreCase) &&
                 u.Username != currentUser.Username);
-                
+
             if (emailExists)
             {
                 IsEmailValid = false;
                 EmailValidationMessage = "Цей email вже використовується";
                 return;
             }
-            
+
             IsEmailValid = true;
             EmailValidationMessage = string.Empty;
         }
@@ -219,7 +222,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private void SaveUsername()
         {
             ValidateUsername(UserName);
-            
+
             var currentUser = _authService.GetCurrentUser();
             if (currentUser != null && !string.IsNullOrWhiteSpace(UserName) && IsUsernameValid)
             {
@@ -232,7 +235,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private void SaveEmail()
         {
             ValidateEmail(Email);
-            
+
             var currentUser = _authService.GetCurrentUser();
             if (currentUser != null && !string.IsNullOrWhiteSpace(Email) && IsEmailValid)
             {
@@ -277,7 +280,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             try
             {
                 // Load the avatar image
-                AvatarImage = LoadFromResource(avatarPath);
+                AvatarImage = _avatarService.LoadAvatar(avatarPath);
                 Console.WriteLine($"Avatar loaded successfully from {avatarPath}");
             }
             catch (Exception ex)
@@ -286,7 +289,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 // Try to load a fallback image
                 try
                 {
-                    AvatarImage = LoadFromResource("avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png");
+                    AvatarImage = _avatarService.LoadAvatar("avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png");
                 }
                 catch
                 {
@@ -307,44 +310,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 currentUser.RegistrationDate = RegistrationDate;
                 _authService.SetCurrentUser(currentUser);
             }
-        }
-
-        private Bitmap? LoadFromResource(string uri)
-        {
-            if (string.IsNullOrEmpty(uri))
-                return null;
-
-            try
-            {
-                // Use AssetLoader as a static class
-                using var stream = AssetLoader.Open(new Uri(uri));
-                return new Bitmap(stream);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error loading image from {uri}: {ex.Message}");
-
-                // Fallback to file-based loading
-                try
-                {
-                    if (uri.StartsWith("avares://"))
-                    {
-                        string filePath = uri.Replace("avares://Practika2_OPAM_Ubohyi_Stanislav/", "");
-                        string fullPath = Path.Combine(AppContext.BaseDirectory, filePath);
-
-                        if (File.Exists(fullPath))
-                        {
-                            using var fileStream = File.OpenRead(fullPath);
-                            return new Bitmap(fileStream);
-                        }
-                    }
-                }
-                catch (Exception fileEx)
-                {
-                    Console.WriteLine($"Error loading image from file: {fileEx.Message}");
-                }
-            }
-            return null;
         }
 
         public string UserName

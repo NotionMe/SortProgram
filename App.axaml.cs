@@ -5,14 +5,20 @@ using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using System;
 using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
 public partial class App : Application
 {
+    public static IServiceProvider ServiceProvider { get; private set; } = null!;
+    
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        
+        // Налаштування сервісів за допомогою DI
+        ConfigureServices();
         
         // Диагностика локализационных файлов перед запуском
         Utils.LocalizationService.DiagnoseLocalizationFiles();
@@ -54,6 +60,20 @@ public partial class App : Application
         }
     }
 
+    private void ConfigureServices()
+    {
+        var services = new ServiceCollection();
+        
+        // Реєстрація сервісів
+        services.AddSingleton<IUserRepository, UserRepository>();
+        services.AddSingleton<IAvatarService, AvatarService>();
+        services.AddSingleton<IAuthService, AuthService>();
+        services.AddSingleton<IRoleService, RoleService>();
+        
+        // Створення провайдера сервісів
+        ServiceProvider = services.BuildServiceProvider();
+    }
+
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -62,6 +82,12 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    // Отримання сервісу через DI
+    public static T GetService<T>() where T : class
+    {
+        return ServiceProvider!.GetService<T>() ?? throw new InvalidOperationException($"Service {typeof(T).Name} not found");
     }
 
     private void CopyLocalizationFilesToOutputDirectory(string localizationDir)

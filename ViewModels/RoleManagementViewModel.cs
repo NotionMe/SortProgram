@@ -12,8 +12,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
     public class RoleManagementViewModel : ViewModelBase
     {
-        private readonly AuthService _authService;
-        private readonly UserRepository _userRepository;
+        private readonly IAuthService _authService;
+        private readonly IUserRepository _userRepository;
+        private readonly IRoleService _roleService;
         private UserViewModel? _selectedUserViewModel;
         private string _selectedRole;
         private ObservableCollection<UserViewModel> _userViewModels;
@@ -21,12 +22,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
         public RoleManagementViewModel()
         {
-            _authService = AuthService.Instance;
-            _userRepository = new UserRepository();
+            _authService = App.GetService<IAuthService>();
+            _userRepository = App.GetService<IUserRepository>();
+            _roleService = App.GetService<IRoleService>();
+            
             List<User> users = _userRepository.GetAllUsers();
             _userViewModels = new ObservableCollection<UserViewModel>(
                 users.Select(u => new UserViewModel(u)));
-            _availableRoles = _userRepository.GetAvailableRoles();
+            _availableRoles = _roleService.GetAvailableRoles();
             _selectedRole = string.Empty;
 
             UpdateRoleCommand = new RelayCommand(UpdateRole, CanUpdateRole);
@@ -88,7 +91,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 return;
             }
                 
-            if (_authService.ChangeUserRole(SelectedUserViewModel.Username, SelectedRole))
+            if (_roleService.ChangeUserRole(SelectedUserViewModel.Username, SelectedRole))
             {
                 // Update the user's role in our local collection
                 SelectedUserViewModel.Role = SelectedRole;

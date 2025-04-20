@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jLbIbA5z7Jk=",
+  "dgSpecHash": "nMdLB3fEhcY=",
   "success": true,
   "projectFilePath": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,8 @@
     "/home/notionme/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0.3/harfbuzzsharp.nativeassets.webassembly.7.3.0.3.nupkg.sha512",
     "/home/notionme/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0.3/harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512",
     "/home/notionme/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/home/notionme/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.4/microsoft.extensions.dependencyinjection.9.0.4.nupkg.sha512",
+    "/home/notionme/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.4/microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512",
     "/home/notionme/.nuget/packages/reactiveui/20.2.45/reactiveui.20.2.45.nupkg.sha512",
     "/home/notionme/.nuget/packages/shimskiasharp/2.0.0.4/shimskiasharp.2.0.0.4.nupkg.sha512",
     "/home/notionme/.nuget/packages/skiasharp/2.88.9/skiasharp.2.88.9.nupkg.sha512",

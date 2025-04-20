@@ -331,10 +331,13 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             {
                 Debug.WriteLine($"Пошук файлів локалізації в директорії: {directory}");
                 
-                return Directory.GetFiles(directory, "*.json")
+                // Виправляємо повернення значення, щоб гарантувати, що немає null-значень в списку
+                var files = Directory.GetFiles(directory, "*.json")
                     .Select(Path.GetFileNameWithoutExtension)
                     .Where(name => !string.IsNullOrEmpty(name))
                     .ToList();
+                    
+                return files.Count > 0 ? files! : defaultLanguages;
             }
             catch (Exception ex)
             {
