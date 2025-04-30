@@ -4,5 +4,258 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm.DataStructure">
-             <TextBlock Text="Date Structure"/>
+    
+    <UserControl.Styles>
+        <Style Selector="Border.header">
+            <Setter Property="Background">
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <GradientStop Offset="0" Color="{DynamicResource AccentColor}"/>
+                    <GradientStop Offset="1" Color="{DynamicResource PrimaryColor}"/>
+                </LinearGradientBrush>
+            </Setter>
+            <Setter Property="BoxShadow" Value="0 2 10 1 #40000000"/>
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+        
+        <Style Selector="Border.fluentCard">
+            <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="0,0,0,20"/>
+            <Setter Property="BoxShadow" Value="0 2 8 0 #30000000"/>
+        </Style>
+        
+        <Style Selector="TextBlock.structure-title">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Effect">
+                <DropShadowEffect BlurRadius="2" Opacity="0.6" OffsetX="1" OffsetY="1"/>
+            </Setter>
+        </Style>
+        
+        <Style Selector="TextBlock.sectionTitle">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource AccentBrush}"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+        </Style>
+        
+        <Style Selector="Border.dataStructureBox">
+            <Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+            <Setter Property="BoxShadow" Value="0 2 5 0 #30000000"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*">
+        <!-- Заголовок сторінки -->
+        <Border Grid.Row="0" 
+                Classes="header"
+                Padding="18" 
+                Margin="0,0,0,20">
+            <TextBlock Text="Структури даних" 
+                       Classes="structure-title"
+                       HorizontalAlignment="Center"/>
+        </Border>
+        
+        <!-- Основний вміст сторінки -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="20" Margin="15">
+                <!-- Основна інформація про структури даних -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Що таке структури даних?"/>
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,10">
+                            <Border Grid.Column="0" 
+                                    Background="{DynamicResource AccentBrush}" 
+                                    Width="5" 
+                                    CornerRadius="2"
+                                    Margin="0,0,10,0"/>
+                            <TextBlock Grid.Column="1" 
+                                       TextWrapping="Wrap" 
+                                       Margin="0,0,0,10">
+                                Структури даних - це спеціальні формати зберігання даних, що дозволяють ефективно використовувати 
+                                їх для обробки. Правильно підібрана структура даних може значно підвищити ефективність алгоритмів і швидкість 
+                                виконання програм. Різні структури даних підходять для різних задач і мають свої переваги та обмеження.
+                            </TextBlock>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Основні структури даних -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Основні структури даних"/>
+                        
+                        <!-- Масиви -->
+                        <Border Classes="dataStructureBox">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="18" Foreground="{DynamicResource PrimaryBrush}" Text="1. Масиви" Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap">
+                                    Масиви - найпростіша структура даних, яка зберігає елементи в послідовних комірках пам'яті. 
+                                    Елементи масиву мають фіксований розмір і доступ до них здійснюється за індексом.
+                                </TextBlock>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                                    <TextBlock Grid.Column="0" Text="Переваги:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Швидкий доступ до елементів за індексом O(1), ефективне використання пам'яті
+                                    </TextBlock>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                    <TextBlock Grid.Column="0" Text="Недоліки:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Фіксований розмір, складність вставки та видалення елементів
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Зв'язані списки -->
+                        <Border Classes="dataStructureBox">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="18" Foreground="{DynamicResource AccentBrush}" Text="2. Зв'язані списки" Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap">
+                                    Зв'язані списки складаються з вузлів, які містять дані та посилання на наступний (і можливо попередній) вузол. 
+                                    Елементи не зберігаються послідовно в пам'яті.
+                                </TextBlock>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                                    <TextBlock Grid.Column="0" Text="Переваги:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Динамічний розмір, ефективна вставка та видалення елементів
+                                    </TextBlock>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                    <TextBlock Grid.Column="0" Text="Недоліки:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Повільний доступ до довільних елементів O(n), додаткова пам'ять для зберігання посилань
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Стеки та черги -->
+                        <Border Classes="dataStructureBox">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="18" Foreground="{DynamicResource InfoBrush}" Text="3. Стеки та черги" Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap">
+                                    Стек (LIFO - Last In, First Out) та черга (FIFO - First In, First Out) - структури даних з обмеженим 
+                                    доступом. Стек дозволяє додавати та видаляти елементи тільки з одного кінця, черга - додавати з одного 
+                                    та видаляти з іншого.
+                                </TextBlock>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                                    <TextBlock Grid.Column="0" Text="Застосування:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Стеки: виклики функцій, обробка виразів, повернення, скасування операцій.
+                                        Черги: планування задач, обробка запитів, буферизація.
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Дерева -->
+                        <Border Classes="dataStructureBox">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="18" Foreground="{DynamicResource SuccessBrush}" Text="4. Дерева" Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap">
+                                    Дерева - ієрархічні структури даних, що складаються з вузлів, з'єднаних направленими ребрами. 
+                                    Включають бінарні дерева пошуку, AVL-дерева, червоно-чорні дерева, B-дерева та інші.
+                                </TextBlock>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                                    <TextBlock Grid.Column="0" Text="Переваги:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Ефективний пошук, вставка та видалення (логарифмічний час для збалансованих дерев), 
+                                        представлення ієрархічних даних
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Хеш-таблиці -->
+                        <Border Classes="dataStructureBox" Margin="0">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="18" Foreground="{DynamicResource WarningBrush}" Text="5. Хеш-таблиці" Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap">
+                                    Хеш-таблиці використовують хеш-функцію для перетворення ключів на індекси масиву, забезпечуючи 
+                                    швидкий доступ до даних. Колізії вирішуються різними методами (ланцюжки, відкрита адресація).
+                                </TextBlock>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+                                    <TextBlock Grid.Column="0" Text="Переваги:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Дуже швидкий пошук, вставка та видалення (в середньому O(1)), ефективне зберігання пар ключ-значення
+                                    </TextBlock>
+                                </Grid>
+                                <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                    <TextBlock Grid.Column="0" Text="Недоліки:" Margin="0,0,10,0" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap">
+                                        Можливі колізії, нерівномірне розподілення даних, відсутність порядку
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Зв'язок алгоритмів та структур даних -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Зв'язок з алгоритмами"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,15">
+                            Вибір правильної структури даних часто визначає ефективність алгоритму:
+                        </TextBlock>
+                        <Grid ColumnDefinitions="*,*" Margin="0,0,0,10">
+                            <Border Grid.Column="0" Classes="dataStructureBox" Margin="0,0,7.5,0">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Сортування" Foreground="{DynamicResource PrimaryBrush}"/>
+                                    <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                                        Масиви необхідні для сортування елементів. 
+                                        Швидке сортування (QuickSort) та сортування злиттям (MergeSort) вимагають ефективного доступу до елементів за індексом.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Grid.Column="1" Classes="dataStructureBox" Margin="7.5,0,0,0">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Пошук" Foreground="{DynamicResource AccentBrush}"/>
+                                    <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+                                        Бінарний пошук у відсортованому масиві, 
+                                        пошук у дереві, хеш-таблиці для швидкого пошуку за ключем.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Кнопки навігації -->
+                <Border Classes="fluentCard" Margin="0,0,0,10">
+                    <Grid ColumnDefinitions="*,*">
+                        <Button Grid.Column="0"
+                                Content="Повернутися на головну"
+                                HorizontalAlignment="Center"
+                                Padding="20,10"
+                                Background="{DynamicResource PrimaryBrush}"
+                                Foreground="White"
+                                CornerRadius="20"
+                                Click="BackToHome_Click"/>
+                        
+                        <Button Grid.Column="1"
+                                Content="Повернутися до інформації про алгоритми"
+                                HorizontalAlignment="Center"
+                                Padding="20,10"
+                                Background="{DynamicResource AccentBrush}"
+                                Foreground="White"
+                                CornerRadius="20"
+                                Click="InfoAlgoritm_Clock"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </UserControl>

@@ -505,6 +505,50 @@
                         </Grid>
                     </StackPanel>
                 </Border>
+                
+                <!-- Навігаційні кнопки та інформаційні посилання -->
+                <Border Classes="fluentCard" Margin="0,20,0,0">
+                    <StackPanel Orientation="Vertical" Spacing="15">
+                        <!-- Інформаційний блок про структури даних -->
+                        <Border Background="{DynamicResource ThemeAccentBrush}" CornerRadius="8" Padding="15" 
+                                BoxShadow="0 2 8 0 #30000000">
+                            <StackPanel>
+                                <TextBlock Text="Що таке структури даних?" 
+                                           FontWeight="Bold" 
+                                           FontSize="20" 
+                                           Foreground="White"
+                                           Margin="0,0,0,10"/>
+                                <TextBlock TextWrapping="Wrap" 
+                                           Foreground="White" 
+                                           Opacity="0.9" 
+                                           Margin="0,0,0,10">
+                                    Хочете дізнатися, як ефективно організувати дані для використання з алгоритмами? 
+                                    Структури даних - це спосіб зберігання та організації даних для ефективного їх використання. 
+                                    Дізнайтеся більше про масиви, списки, дерева та інші важливі структури даних.
+                                </TextBlock>
+                                <Button Content="Дізнатися про структури даних" 
+                                        HorizontalAlignment="Right"
+                                        Padding="15,8"
+                                        Background="White"
+                                        Foreground="{DynamicResource ThemeAccentBrush}"
+                                        CornerRadius="20"
+                                        Click="InfoDateStructureButton_Click"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <!-- Навігаційні кнопки -->
+                        <Grid ColumnDefinitions="*,*" Margin="0,10,0,5">
+                            <Button Grid.Column="0"
+                                    Content="Повернутися на головну"
+                                    HorizontalAlignment="Left"
+                                    Padding="20,10"
+                                    Background="{DynamicResource PrimaryBrush}"
+                                    Foreground="White"
+                                    CornerRadius="20"
+                                    Click="BackToHome_Click"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>
