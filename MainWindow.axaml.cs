@@ -12,6 +12,7 @@ using System.Linq;
 using Avalonia.VisualTree;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using DynamicData.Binding;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
@@ -32,7 +33,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             // You can get system language or use saved user preference
             LanguageManager.Instance.LoadLanguage("en");
 
-            NavigateToPage(new HomePage());
+            NavigateToPage(new Algoritm());
             UpdateSelectedButton(HomeButton);
             
             SetupEventHandlers();

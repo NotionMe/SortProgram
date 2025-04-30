@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
+    "/home/notion/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {}
   },
   "projects": {
-    "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
+    "/home/notion/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "projectUniqueName": "/home/notion/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
         "projectName": "Practika2_OPAM_Ubohyi_Stanislav",
-        "projectPath": "/home/notionme/Document/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
-        "packagesPath": "/home/notionme/.nuget/packages/",
-        "outputPath": "/home/notionme/Document/Repos/SortProgram/obj/",
+        "projectPath": "/home/notion/Documents/Repos/SortProgram/Practika2_OPAM_Ubohyi_Stanislav.csproj",
+        "packagesPath": "/home/notion/.nuget/packages/",
+        "outputPath": "/home/notion/Documents/Repos/SortProgram/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/notionme/.nuget/NuGet/NuGet.Config"
+          "/home/notion/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -103,7 +103,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.3, 9.0.3]"
+              "version": "[9.0.4, 9.0.4]"
             }
           ],
           "frameworkReferences": {
@@ -111,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

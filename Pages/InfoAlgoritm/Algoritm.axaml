@@ -1,0 +1,511 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm.Algoritm">
+    
+    <UserControl.Styles>
+        <Style Selector="Border.header">
+            <Setter Property="Background">
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <GradientStop Offset="0" Color="{DynamicResource PrimaryColor}"/>
+                    <GradientStop Offset="1" Color="{DynamicResource AccentColor}"/>
+                </LinearGradientBrush>
+            </Setter>
+            <Setter Property="BoxShadow" Value="0 2 10 1 #40000000"/>
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+        
+        <Style Selector="Border.fluentCard">
+            <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="BoxShadow" Value="0 2 8 0 #30000000"/>
+        </Style>
+        
+        <Style Selector="Border.fluentCard">
+            <Setter Property="BoxShadow" Value="0 5 15 0 #40000000"/>
+        </Style>
+        
+        <Style Selector="TextBlock.algorithm-title">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Effect">
+                <DropShadowEffect BlurRadius="2" Opacity="0.6" OffsetX="1" OffsetY="1"/>
+            </Setter>
+        </Style>
+        
+        <Style Selector="Border.panel">
+            <Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="BoxShadow" Value="0 1 3 0 #20000000"/>
+        </Style>
+        
+        <Style Selector="Border.panel">
+            <Setter Property="BoxShadow" Value="0 3 6 0 #30000000"/>
+        </Style>
+        
+        <Style Selector="TextBlock.sectionTitle">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*">
+        <!-- Заголовок сторінки -->
+        <Border Grid.Row="0" 
+                Classes="header"
+                Padding="18" 
+                Margin="0,0,0,20">
+            <TextBlock Text="Що таке алгоритми?" 
+                       Classes="algorithm-title"
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Основний вміст сторінки -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="20" Margin="15">
+                <!-- Основна інформація про алгоритми -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Визначення алгоритму"/>
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,10">
+                            <Border Grid.Column="0" 
+                                    Background="{DynamicResource PrimaryBrush}" 
+                                    Width="5" 
+                                    CornerRadius="2"
+                                    Margin="0,0,10,0"/>
+                            <TextBlock Grid.Column="1" 
+                                       TextWrapping="Wrap" 
+                                       Margin="0,0,0,10">
+                                Алгоритм - це скінченна послідовність чітко визначених інструкцій, виконання яких 
+                                призводить до розв'язання задачі за скінченну кількість кроків. Алгоритми є основою 
+                                усіх комп'ютерних програм та важливою частиною комп'ютерних наук.
+                            </TextBlock>
+                        </Grid>
+                        
+                        <Border BorderBrush="{DynamicResource AccentBrush}" 
+                                BorderThickness="0,0,0,1" 
+                                Padding="0,0,0,10" 
+                                Margin="0,0,0,10">
+                            <TextBlock TextWrapping="Wrap" 
+                                       Opacity="0.9" 
+                                       FontStyle="Italic">
+                                Термін «алгоритм» походить від імені перського математика Аль-Хорезмі (780-850), 
+                                який працював у будинку мудрості в Багдаді.
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </Border>
+
+                <!-- Основні властивості алгоритмів -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Основні властивості алгоритмів"/>
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Margin="0,10,0,0">
+                            <!-- Дискретність -->
+                            <Border Grid.Row="0" Grid.Column="0" Margin="0,0,15,20" 
+                                   Background="{DynamicResource PrimaryBrush}"
+                                   CornerRadius="6" Width="10" Height="35"
+                                   BoxShadow="0 1 3 0 #30000000"/>
+                            <Border Grid.Row="0" Grid.Column="1" 
+                                    Classes="panel"
+                                    Background="#05000000"
+                                    Margin="0,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" 
+                                               Foreground="{DynamicResource PrimaryBrush}" 
+                                               Text="Дискретність" 
+                                               Margin="0,0,0,5"/>
+                                    <TextBlock TextWrapping="Wrap">
+                                        Алгоритм повинен представляти процес рішення задачі як послідовне виконання простих кроків.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Детермінованість -->
+                            <Border Grid.Row="1" Grid.Column="0" Margin="0,0,15,20" 
+                                   Background="{DynamicResource AccentBrush}"
+                                   CornerRadius="6" Width="10" Height="35"
+                                   BoxShadow="0 1 3 0 #30000000"/>
+                            <Border Grid.Row="1" Grid.Column="1" 
+                                    Classes="panel"
+                                    Background="#05000000"
+                                    Margin="0,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" 
+                                               Foreground="{DynamicResource AccentBrush}" 
+                                               Text="Детермінованість" 
+                                               Margin="0,0,0,5"/>
+                                    <TextBlock TextWrapping="Wrap">
+                                        Кожен крок алгоритму має бути точно визначений. На кожному етапі однозначно задається, що і як треба виконувати.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Кінцевість -->
+                            <Border Grid.Row="2" Grid.Column="0" Margin="0,0,15,20" 
+                                   Background="{DynamicResource InfoBrush}"
+                                   CornerRadius="6" Width="10" Height="35"
+                                   BoxShadow="0 1 3 0 #30000000"/>
+                            <Border Grid.Row="2" Grid.Column="1" 
+                                    Classes="panel"
+                                    Background="#05000000"
+                                    Margin="0,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" 
+                                               Foreground="{DynamicResource InfoBrush}" 
+                                               Text="Кінцевість" 
+                                               Margin="0,0,0,5"/>
+                                    <TextBlock TextWrapping="Wrap">
+                                        Алгоритм завжди повинен завершуватися після кінцевого числа кроків.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Ефективність -->
+                            <Border Grid.Row="3" Grid.Column="0" Margin="0,0,15,20" 
+                                   Background="{DynamicResource SuccessBrush}"
+                                   CornerRadius="6" Width="10" Height="35"
+                                   BoxShadow="0 1 3 0 #30000000"/>
+                            <Border Grid.Row="3" Grid.Column="1" 
+                                    Classes="panel"
+                                    Background="#05000000"
+                                    Margin="0,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" 
+                                               Foreground="{DynamicResource SuccessBrush}" 
+                                               Text="Ефективність" 
+                                               Margin="0,0,0,5"/>
+                                    <TextBlock TextWrapping="Wrap">
+                                        Кожна інструкція алгоритму повинна бути достатньо проста, щоб її міг виконати виконавець вручну за кінцевий час.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Масовість -->
+                            <Border Grid.Row="4" Grid.Column="0" Margin="0,0,15,0" 
+                                   Background="{DynamicResource WarningBrush}"
+                                   CornerRadius="6" Width="10" Height="35"
+                                   BoxShadow="0 1 3 0 #30000000"/>
+                            <Border Grid.Row="4" Grid.Column="1" 
+                                    Classes="panel"
+                                    Background="#05000000">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" 
+                                               Foreground="{DynamicResource WarningBrush}" 
+                                               Text="Масовість" 
+                                               Margin="0,0,0,5"/>
+                                    <TextBlock TextWrapping="Wrap">
+                                        Алгоритм повинен розв'язувати не одну конкретну задачу, а клас однотипних задач для різних вхідних даних.
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Класи алгоритмів -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Класифікація алгоритмів"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,15">
+                            Алгоритми можна класифікувати за різними критеріями:
+                        </TextBlock>
+
+                        <!-- Панелі з типами алгоритмів -->
+                        <Border BorderBrush="{DynamicResource ThemeBorderMidBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="8" 
+                                Margin="0,0,0,15"
+                                BoxShadow="0 2 8 0 #20000000">
+                            <Grid RowDefinitions="Auto,*">
+                                <Border Grid.Row="0" 
+                                        Background="{DynamicResource PrimaryBrush}"
+                                        CornerRadius="7,7,0,0" 
+                                        Padding="10,8">
+                                    <TextBlock FontWeight="SemiBold" 
+                                               Foreground="White" 
+                                               Text="За способом реалізації:"/>
+                                </Border>
+                                <Border Grid.Row="1" 
+                                        Background="{DynamicResource ThemeControlMidBrush}"
+                                        CornerRadius="0,0,7,7" 
+                                        Padding="15,10">
+                                    <StackPanel>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource InfoBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Рекурсивні" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource InfoBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Ітеративні" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource InfoBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Паралельні" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource InfoBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Розподілені" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        
+                        <Border BorderBrush="{DynamicResource ThemeBorderMidBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="8" 
+                                Margin="0,0,0,15"
+                                BoxShadow="0 2 8 0 #20000000">
+                            <Grid RowDefinitions="Auto,*">
+                                <Border Grid.Row="0" 
+                                        Background="{DynamicResource PrimaryBrush}"
+                                        CornerRadius="7,7,0,0" 
+                                        Padding="10,8">
+                                    <TextBlock FontWeight="SemiBold" 
+                                               Foreground="White" 
+                                               Text="За типом розв'язуваної задачі:"/>
+                                </Border>
+                                <Border Grid.Row="1" 
+                                        Background="{DynamicResource ThemeControlMidBrush}"
+                                        CornerRadius="0,0,7,7" 
+                                        Padding="15,10">
+                                    <StackPanel>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource PrimaryBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Алгоритми сортування" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource PrimaryBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Алгоритми пошуку" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource PrimaryBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Алгоритми шифрування" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource PrimaryBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Графові алгоритми" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource PrimaryBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="Комбінаторні алгоритми" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        
+                        <Border BorderBrush="{DynamicResource ThemeBorderMidBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="8" 
+                                BoxShadow="0 2 8 0 #20000000">
+                            <Grid RowDefinitions="Auto,*">
+                                <Border Grid.Row="0" 
+                                        Background="{DynamicResource AccentBrush}"
+                                        CornerRadius="7,7,0,0" 
+                                        Padding="10,8">
+                                    <TextBlock FontWeight="SemiBold" 
+                                               Foreground="White" 
+                                               Text="За обчислювальною складністю:"/>
+                                </Border>
+                                <Border Grid.Row="1" 
+                                        Background="{DynamicResource ThemeControlMidBrush}"
+                                        CornerRadius="0,0,7,7" 
+                                        Padding="15,10">
+                                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" Margin="0,5,0,5">
+                                        <Grid Grid.Row="0" Grid.Column="0" ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(1) - константна" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="Auto,*" Margin="10,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(log n) - логарифмічна" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1" Grid.Column="0" ColumnDefinitions="Auto,*" Margin="0,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(n) - лінійна" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="Auto,*" Margin="10,5,0,5">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(n log n) - квазілінійна" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2" Grid.Column="0" ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(n²) - квадратична" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="Auto,*" Margin="10,5,0,0">
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource AccentBrush}" 
+                                                    Width="8" Height="8" 
+                                                    CornerRadius="4" 
+                                                    Margin="0,0,10,0"
+                                                    HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="1" Text="O(2ⁿ) - експоненційна" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+
+                <!-- Застосування алгоритмів -->
+                <Border Classes="fluentCard">
+                    <StackPanel>
+                        <TextBlock Classes="sectionTitle" Text="Застосування алгоритмів"/>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,15">
+                            Алгоритми застосовуються практично в усіх сферах людської діяльності:
+                        </TextBlock>
+                        <Grid Margin="0,10,0,0" ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" HorizontalAlignment="Stretch">
+                            <!-- Перший ряд -->
+                            <Border Grid.Row="0" Grid.Column="0" Classes="panel" Margin="0,0,7.5,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Комп'ютерні науки" Foreground="{DynamicResource PrimaryBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource PrimaryBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Основа програмування, баз даних, штучного інтелекту
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Grid.Row="0" Grid.Column="1" Classes="panel" Margin="7.5,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Математика" Foreground="{DynamicResource AccentBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource AccentBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Розв'язання рівнянь, оптимізація, криптографія
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <!-- Другий ряд -->
+                            <Border Grid.Row="1" Grid.Column="0" Classes="panel" Margin="0,0,7.5,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Біологія" Foreground="{DynamicResource SuccessBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource SuccessBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Аналіз ДНК, моделювання біологічних процесів
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Grid.Row="1" Grid.Column="1" Classes="panel" Margin="7.5,0,0,15">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Економіка" Foreground="{DynamicResource WarningBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource WarningBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Аналіз ринків, прогнозування, оптимізація ресурсів
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <!-- Третій ряд -->
+                            <Border Grid.Row="2" Grid.Column="0" Classes="panel" Margin="0,0,7.5,0">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Інженерія" Foreground="{DynamicResource InfoBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource InfoBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Автоматизація, робототехніка, проектування систем
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Grid.Row="2" Grid.Column="1" Classes="panel" Margin="7.5,0,0,0">
+                                <StackPanel>
+                                    <TextBlock FontWeight="Bold" Text="Медицина" Foreground="{DynamicResource PrimaryBrush}"/>
+                                    <Border Margin="0,5,0,5" Height="1" Background="{DynamicResource PrimaryBrush}" Opacity="0.3"/>
+                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                        Діагностика, аналіз медичних зображень, розробка ліків
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

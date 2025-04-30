@@ -14,5 +14,21 @@
     "Role": "User",
     "RegistrationDate": "2025-04-20T16:59:44.3470702+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png"
+  },
+  {
+    "Username": "asdasd",
+    "Email": "asdasdasd@g.g",
+    "Password": "$2a$12$sjnMBq5f5ctuPFtt1rwQ8uO.BqqLZJ/RpmojzCa98DhX3PSVMV8MK",
+    "Role": "User",
+    "RegistrationDate": "2025-04-30T16:59:07.5883538+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
+  },
+  {
+    "Username": "123",
+    "Email": "123123@gmail.com",
+    "Password": "$2a$12$dodp9ylPQw.Nb2UMIe5kFeKVCocUBPCoF0hWnntEWoULxJJZULcXS",
+    "Role": "User",
+    "RegistrationDate": "2025-04-30T17:10:26.3940045+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png"
   }
 ]

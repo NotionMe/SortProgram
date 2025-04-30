@@ -167,20 +167,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
                 ShowErrorMessage("Login error", $"An error occurred: {ex.Message}");
             }
         }
-
-        /// <summary>
-        /// Перевіряє формат електронної пошти за допомогою регулярного виразу
-        /// </summary>
-        /// <returns>True, якщо формат електронної пошти валідний</returns>
-        private bool IsValidEmail(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-                
-            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            return System.Text.RegularExpressions.Regex.IsMatch(email, pattern);
-        }
-
         /// <summary>
         /// Перевіряє вимоги до пароля (мінімум 6 символів)
         /// </summary>
