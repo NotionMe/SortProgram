@@ -1,10 +1,12 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Media;
-using Avalonia.Threading;
-using Practika2_OPAM_Ubohyi_Stanislav.Algorithms;
 using System;
 using System.Linq;
+using Avalonia.Controls;
+using Avalonia.Layout;
+using Avalonia.Media;
+using Avalonia.Threading;
+using Avalonia;
+using Avalonia.Media.Immutable;
+using Practika2_OPAM_Ubohyi_Stanislav.Algorithms;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {

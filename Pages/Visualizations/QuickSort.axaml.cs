@@ -1,9 +1,11 @@
+using System;
+using System.Reactive.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.VisualTree;
 using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
-using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
 {

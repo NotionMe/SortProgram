@@ -1,16 +1,12 @@
 using System;
-using System.Globalization;
-using System.Threading;
-using System.Resources;
-using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia;
-using Avalonia.Controls;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Collections.Generic;
 using System.Linq;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Utils;
 

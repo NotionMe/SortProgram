@@ -1,17 +1,16 @@
 using System;
-using Avalonia.Controls;
-using Avalonia.Interactivity;
-using Practika2_OPAM_Ubohyi_Stanislav.Pages;
-using Avalonia.Styling;
-using Avalonia.Media;
-using Avalonia;
 using System.Diagnostics;
-using Practika2_OPAM_Ubohyi_Stanislav.Styles;
-using Avalonia.Input;
 using System.Linq;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Avalonia.VisualTree;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages;
+using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using DynamicData.Binding;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav

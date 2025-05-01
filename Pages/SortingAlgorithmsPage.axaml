@@ -1,30 +1,62 @@
-<UserControl x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage"
-             xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d">
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.SortingAlgorithmsPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <ScrollViewer>
-        <StackPanel Margin="30">
-            <Border Margin="0,10,0,20"
+        <StackPanel>
+            <!-- Search Box at the top -->
+                <Border
+                x:Name="SearchControl"
+                Width="600"
+                Height="55"
+                Margin="0,10,0,10"
+                HorizontalAlignment="Center"
+                CornerRadius="10"
+                BorderThickness="1"
+                BorderBrush="#555555">
+                <Grid>
+                    <AutoCompleteBox 
+                        Classes="searchBox"
+                        x:Name="Algoritm" 
+                        FilterMode="StartsWith"
+                        Width="590"
+                        Height="50"
+                        Watermark="Search🔍"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        
+                        
+                    />
+                </Grid>
+                </Border>
+
+            <StackPanel Margin="30">
+                <Border
+                    Margin="0,10,0,20"
                     BoxShadow="0 4 8 #20000000"
                     Classes="fluentCard"
                     CornerRadius="10">
-                <Grid ColumnDefinitions="*, Auto">
-                    <StackPanel Grid.Column="0"
-                                Margin="20,15,10,15"
-                                VerticalAlignment="Center">
-                        <TextBlock Margin="0,0,0,10"
-                                   FontFamily="{StaticResource OswaldFont}"
-                                   FontSize="36"
-                                   FontWeight="SemiBold"
-                                   Text="{DynamicResource BubbleSort_Name}" />
-                        <TextBlock Margin="0,0,0,10"
-                                   TextWrapping="Wrap"
-                                   Text="{DynamicResource BubbleSort_Description}" />
-                        <StackPanel Orientation="Horizontal"
-                                    Spacing="10">
-                            <Button Width="120"
+                    <Grid ColumnDefinitions="*, Auto">
+                        <StackPanel
+                            Grid.Column="0"
+                            Margin="20,15,10,15"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                FontFamily="{StaticResource OswaldFont}"
+                                FontSize="36"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource BubbleSort_Name}" />
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                Text="{DynamicResource BubbleSort_Description}"
+                                TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Button
+                                    Width="120"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -32,172 +64,189 @@
                                     Click="InfoBubbleSort_Click"
                                     Content="{DynamicResource Button_LearnMore}"
                                     CornerRadius="5" />
-                            <Button Width="170"
+                                <Button
+                                    Width="170"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="successButton"
-                                    Content="{DynamicResource Button_TryIt}"
                                     Click="BubbleSortPage_Click"
+                                    Content="{DynamicResource Button_TryIt}"
                                     CornerRadius="5" />
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <Border Grid.Column="1"
+                        <Border
+                            Grid.Column="1"
                             Width="200"
                             Height="150"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif"
-                               Stretch="UniformToFill" />
-                    </Border>
-                </Grid>
-            </Border>
-            <Border Margin="0,10,0,20"
+                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="UniformToFill" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border
+                    Margin="0,10,0,20"
                     BoxShadow="0 4 8 #20000000"
                     Classes="fluentCard"
                     CornerRadius="10">
-                <Grid ColumnDefinitions="*, Auto">
-                    <StackPanel Grid.Column="0"
-                                Margin="20,15,10,15"
-                                VerticalAlignment="Center">
-                        <TextBlock Margin="0,0,0,10"
-                                   FontFamily="{StaticResource OswaldFont}"
-                                   FontSize="36"
-                                   FontWeight="SemiBold"
-                                   Text="{DynamicResource SelectionSort_Name}" />
-                        <TextBlock Margin="0,0,0,10"
-                                   TextWrapping="Wrap"
-                                   Text="{DynamicResource SelectionSort_Description}" />
-                        <StackPanel Orientation="Horizontal"
-                                    Spacing="10">
-                            <Button Width="120"
+                    <Grid ColumnDefinitions="*, Auto">
+                        <StackPanel
+                            Grid.Column="0"
+                            Margin="20,15,10,15"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                FontFamily="{StaticResource OswaldFont}"
+                                FontSize="36"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource SelectionSort_Name}" />
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                Text="{DynamicResource SelectionSort_Description}"
+                                TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Button
+                                    Width="120"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="blueButton"
-                                    Content="{DynamicResource Button_LearnMore}"
                                     Click="InfoSelectionSort_Click"
+                                    Content="{DynamicResource Button_LearnMore}"
                                     CornerRadius="5" />
-                            <Button Width="170"
+                                <Button
+                                    Width="170"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="successButton"
-                                    Content="{DynamicResource Button_TryIt}"
                                     Click="SelectionSortPage_Click"
+                                    Content="{DynamicResource Button_TryIt}"
                                     CornerRadius="5" />
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <Border Grid.Column="1"
+                        <Border
+                            Grid.Column="1"
                             Width="200"
                             Height="150"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif"
-                               Stretch="UniformToFill" />
-                    </Border>
-                </Grid>
-            </Border>
-            <Border Margin="0,10,0,20"
+                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="UniformToFill" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border
+                    Margin="0,10,0,20"
                     BoxShadow="0 4 8 #20000000"
                     Classes="fluentCard"
                     CornerRadius="10">
-                <Grid ColumnDefinitions="*, Auto">
-                    <StackPanel Grid.Column="0"
-                                Margin="20,15,10,15"
-                                VerticalAlignment="Center">
-                        <TextBlock Margin="0,0,0,10"
-                                   FontFamily="{StaticResource OswaldFont}"
-                                   FontSize="36"
-                                   FontWeight="SemiBold"
-                                   Text="{DynamicResource QuickSort_Name}" />
-                        <TextBlock Margin="0,0,0,10"
-                                   TextWrapping="Wrap"
-                                   Text="{DynamicResource QuickSort_Description}" />
-                        <StackPanel Orientation="Horizontal"
-                                    Spacing="10">
-                            <Button Width="120"
+                    <Grid ColumnDefinitions="*, Auto">
+                        <StackPanel
+                            Grid.Column="0"
+                            Margin="20,15,10,15"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                FontFamily="{StaticResource OswaldFont}"
+                                FontSize="36"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource QuickSort_Name}" />
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                Text="{DynamicResource QuickSort_Description}"
+                                TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Button
+                                    Width="120"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="blueButton"
-                                    Content="{DynamicResource Button_LearnMore}"
                                     Click="InfoQuickSort_Click"
+                                    Content="{DynamicResource Button_LearnMore}"
                                     CornerRadius="5" />
-                            <Button Width="170"
+                                <Button
+                                    Width="170"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="successButton"
-                                    Content="{DynamicResource Button_TryIt}"
                                     Click="QuickSortPage_Click"
+                                    Content="{DynamicResource Button_TryIt}"
                                     CornerRadius="5" />
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <Border Grid.Column="1"
+                        <Border
+                            Grid.Column="1"
                             Width="200"
                             Height="150"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif"
-                               Stretch="UniformToFill" />
-                    </Border>
-                </Grid>
-            </Border>
-            <Border Margin="0,10,0,20"
+                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="UniformToFill" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border
+                    Margin="0,10,0,20"
                     BoxShadow="0 4 8 #20000000"
                     Classes="fluentCard"
                     CornerRadius="10">
-                <Grid ColumnDefinitions="*, Auto">
-                    <StackPanel Grid.Column="0"
-                                Margin="20,15,10,15"
-                                VerticalAlignment="Center">
-                        <TextBlock Margin="0,0,0,10"
-                                   FontFamily="{StaticResource OswaldFont}"
-                                   FontSize="36"
-                                   FontWeight="SemiBold"
-                                   Text="{DynamicResource InsertionSort_Name}" />
-                        <TextBlock Margin="0,0,0,10"
-                                   TextWrapping="Wrap" 
-                                   Text="{DynamicResource InsertionSort_Description}" />
-                        <StackPanel Orientation="Horizontal"
-                                    Spacing="10">
-                            <Button Width="120"
+                    <Grid ColumnDefinitions="*, Auto">
+                        <StackPanel
+                            Grid.Column="0"
+                            Margin="20,15,10,15"
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                FontFamily="{StaticResource OswaldFont}"
+                                FontSize="36"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource InsertionSort_Name}" />
+                            <TextBlock
+                                Margin="0,0,0,10"
+                                Text="{DynamicResource InsertionSort_Description}"
+                                TextWrapping="Wrap" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Button
+                                    Width="120"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="blueButton"
-                                    Content="{DynamicResource Button_LearnMore}"
                                     Click="InfoInsertionSort_Click"
+                                    Content="{DynamicResource Button_LearnMore}"
                                     CornerRadius="5" />
-                            <Button Width="170"
+                                <Button
+                                    Width="170"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
                                     Classes="successButton"
-                                    Content="{DynamicResource Button_TryIt}"
                                     Click="InsertionSortPage_Click"
+                                    Content="{DynamicResource Button_TryIt}"
                                     CornerRadius="5" />
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <Border Grid.Column="1"
+                        <Border
+                            Grid.Column="1"
                             Width="200"
                             Height="150"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif"
-                               Stretch="UniformToFill" />
-                    </Border>
-                </Grid>
-            </Border>
+                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif" Stretch="UniformToFill" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

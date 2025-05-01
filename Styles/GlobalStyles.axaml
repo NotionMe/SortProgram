@@ -210,4 +210,22 @@
         <Setter Property="Background" Value="#c0392b" />
         <Setter Property="Foreground" Value="White" />
     </Style>
+
+    <Style Selector="Border#SearchControl">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!-- Style for the AutoCompleteBox inside the search control -->
+    <Style Selector="AutoCompleteBox.searchBox">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+
+   
 </Styles>

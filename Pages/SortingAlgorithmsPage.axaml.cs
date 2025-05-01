@@ -5,6 +5,8 @@ using Avalonia;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 using System;
+using System.Linq;
+using Avalonia.Media;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -13,13 +15,28 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         public SortingAlgorithmsPage()
         {
             InitializeComponent();
+
+            Algoritm = this.FindControl<AutoCompleteBox>("Algoritm");
+
+            if (Algoritm != null)
+            {
+                Algoritm.ItemsSource = new string[]
+            {
+                "Bubble Sort",
+                "Selection Sort",
+                "Insertion Sort",
+                "Quick Sort"
+            }
+            .OrderBy(x => x);
+            }
         }
-        
+
+
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
         }
-        
+
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {
             SortProgram? mainWindow = this.VisualRoot as SortProgram;

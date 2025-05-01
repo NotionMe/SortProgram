@@ -1,11 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using System;
-using System.IO;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 

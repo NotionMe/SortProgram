@@ -1,18 +1,12 @@
-using ReactiveUI;
-using System.Collections.ObjectModel;
-using System.Linq;
-using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using Avalonia.Threading;
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using Avalonia.Controls;
+using Avalonia.Threading;
+using ReactiveUI;
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Styles;
-using System.Windows.Input;
-using Avalonia;
-using Practika2_OPAM_Ubohyi_Stanislav.Auth;
-using Avalonia.Controls.ApplicationLifetimes;
-using Practika2_OPAM_Ubohyi_Stanislav.Pages;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {

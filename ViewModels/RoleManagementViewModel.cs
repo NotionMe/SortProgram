@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using Avalonia.Threading;
+using ReactiveUI;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using ReactiveUI;
-using System.Linq;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {

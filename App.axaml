@@ -29,6 +29,7 @@
     
     <Application.Resources>
         <ResourceDictionary>
+            
             <!-- Login menu colors -->
             <SolidColorBrush x:Key="prColor" Color="#FF0000"/>
             <FontFamily x:Key="OswaldFont">avares://Practika2_OPAM_Ubohyi_Stanislav/Fonts/Oswald-VariableFont_wght.ttf#Oswald</FontFamily>

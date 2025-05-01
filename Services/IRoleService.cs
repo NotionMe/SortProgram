@@ -1,4 +1,3 @@
-// filepath: /home/notionme/Document/Repos/SortProgram/Services/IRoleService.cs
 using System.Collections.Generic;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 

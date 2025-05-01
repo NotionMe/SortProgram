@@ -1,7 +1,4 @@
-using Avalonia.Data.Converters;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
-using System;
-using System.Globalization;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Converters
 {

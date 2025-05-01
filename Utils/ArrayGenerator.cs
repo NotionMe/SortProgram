@@ -72,4 +72,4 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Utils
             return array;
         }
     }
-} 
+}

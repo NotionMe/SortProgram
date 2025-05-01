@@ -1,13 +1,14 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Shapes;
+using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Practika2_OPAM_Ubohyi_Stanislav.Auth;
+using Avalonia.VisualTree;
+using Avalonia.Controls.Shapes;
 using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
-using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Admin
 {

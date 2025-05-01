@@ -107,4 +107,4 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Styles
             }
         }
     }
-} 
+}

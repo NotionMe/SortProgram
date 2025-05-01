@@ -1,6 +1,5 @@
-using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using ReactiveUI;
-using System;
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {

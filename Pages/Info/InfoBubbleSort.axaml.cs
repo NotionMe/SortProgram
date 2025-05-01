@@ -1,8 +1,7 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
-
+using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
 {
@@ -45,4 +44,4 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
             }
         }
     }
-} 
+}

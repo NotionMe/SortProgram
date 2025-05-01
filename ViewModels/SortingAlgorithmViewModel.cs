@@ -1,12 +1,12 @@
+using System;
+using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Threading;
-using Practika2_OPAM_Ubohyi_Stanislav.Utils;
 using ReactiveUI;
-using System;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reactive;
+using Practika2_OPAM_Ubohyi_Stanislav.Algorithms;
+using Practika2_OPAM_Ubohyi_Stanislav.Utils;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {

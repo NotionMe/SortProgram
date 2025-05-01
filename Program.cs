@@ -1,7 +1,7 @@
-﻿using Avalonia;
-using System;
-using System.Globalization; // Додаємо для роботи з CultureInfo
-using System.Threading;    // Додаємо для доступу до Thread
+﻿using System;
+using System.Globalization;
+using System.Threading;
+using Avalonia;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;

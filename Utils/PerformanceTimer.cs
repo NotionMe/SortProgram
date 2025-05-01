@@ -75,4 +75,4 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Utils
         public long ElapsedMilliseconds { get; set; }
         public double ElapsedSeconds { get; set; }
     }
-} 
+}
