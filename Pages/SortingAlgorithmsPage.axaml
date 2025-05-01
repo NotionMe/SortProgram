@@ -20,21 +20,21 @@
                 BorderBrush="#555555">
                 <Grid>
                     <AutoCompleteBox 
-                        Classes="searchBox"
-                        x:Name="Algoritm" 
-                        FilterMode="StartsWith"
-                        Width="590"
-                        Height="50"
-                        Watermark="Search🔍"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontSize="125"
-                        
+                    Classes="searchBox"
+                    x:Name="Algoritm" 
+                    FilterMode="Contains"
+                    Width="590"
+                    Height="50"
+                    Watermark="Search🔍"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="20"
+                    TextChanged="Algoritm_TextChanged"
                     />
                 </Grid>
                 </Border>
 
-            <StackPanel Margin="30">
+            <StackPanel x:Name="AlgorithmsContainer" Margin="30">
                 <Border
                     Margin="0,10,0,20"
                     BoxShadow="0 4 8 #20000000"
