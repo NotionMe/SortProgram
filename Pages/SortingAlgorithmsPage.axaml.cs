@@ -7,11 +7,15 @@ using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 using System;
 using System.Linq;
 using Avalonia.Media;
+using System.Collections.Generic;
+using Avalonia.Threading;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
     public partial class SortingAlgorithmsPage : UserControl
     {
+
+        
         public SortingAlgorithmsPage()
         {
             InitializeComponent();
@@ -30,8 +34,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             .OrderBy(x => x);
             }
         }
-
-
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);

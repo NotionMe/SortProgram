@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Practika2_OPAM_Ubohyi_Stanislav/1.0.0": {
         "dependencies": {
+          "AnimatedImage.Avalonia": "2.0.0",
           "Avalonia": "11.2.7",
           "Avalonia.Controls.DataGrid": "11.2.7",
           "Avalonia.Desktop": "11.2.6",
@@ -22,6 +23,21 @@
         },
         "runtime": {
           "Practika2_OPAM_Ubohyi_Stanislav.dll": {}
+        }
+      },
+      "AnimatedImage.Avalonia/2.0.0": {
+        "dependencies": {
+          "Avalonia": "11.2.7"
+        },
+        "runtime": {
+          "lib/net6.0/AnimatedImage.Avalonia.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/net6.0/AnimatedImage.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
         }
       },
       "Avalonia/11.2.7": {
@@ -588,6 +604,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AnimatedImage.Avalonia/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ts0lfQjbozqk1q1uoXBm/dRH8nmxTTmMunan8IBuHsIPKG1MUL+60KDmbCyurnE0rNJh24boGjhIj2Ec9W5Jbg==",
+      "path": "animatedimage.avalonia/2.0.0",
+      "hashPath": "animatedimage.avalonia.2.0.0.nupkg.sha512"
     },
     "Avalonia/11.2.7": {
       "type": "package",

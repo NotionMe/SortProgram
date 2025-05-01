@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AnimatedImage.Avalonia" Version="2.0.0" />
     <PackageReference Include="Avalonia" Version="11.2.7" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.7" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />

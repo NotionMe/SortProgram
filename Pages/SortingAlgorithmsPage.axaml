@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:anim="using:AnimatedImage.Avalonia"
     mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel>
@@ -27,7 +28,7 @@
                         Watermark="Search🔍"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
-                        
+                        FontSize="125"
                         
                     />
                 </Grid>
@@ -77,13 +78,13 @@
                         </StackPanel>
                         <Border
                             Grid.Column="1"
-                            Width="200"
-                            Height="150"
+                            Width="400"
+                            Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="UniformToFill" />
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/bubble_sort.gif" Stretch="Uniform" />
                         </Border>
                     </Grid>
                 </Border>
@@ -130,13 +131,13 @@
                         </StackPanel>
                         <Border
                             Grid.Column="1"
-                            Width="200"
-                            Height="150"
+                            Width="400"
+                            Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="UniformToFill" />
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/selection_sort.gif" Stretch="Uniform" />
                         </Border>
                     </Grid>
                 </Border>
@@ -183,13 +184,13 @@
                         </StackPanel>
                         <Border
                             Grid.Column="1"
-                            Width="200"
-                            Height="150"
+                            Width="400"
+                            Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="UniformToFill" />
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/quick_sort.gif" Stretch="Uniform" />
                         </Border>
                     </Grid>
                 </Border>
@@ -236,13 +237,13 @@
                         </StackPanel>
                         <Border
                             Grid.Column="1"
-                            Width="200"
-                            Height="150"
+                            Width="400"
+                            Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
                             ClipToBounds="True"
                             CornerRadius="5">
-                            <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif" Stretch="UniformToFill" />
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/insertion_sort.gif" Stretch="Uniform" />
                         </Border>
                     </Grid>
                 </Border>

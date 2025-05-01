@@ -439,14 +439,9 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar7.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar8.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/bg.jpg
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/bubble_sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/DarkMode.png
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Github-Logo.png
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/insertion_sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Login.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Logo_Github-512.png
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/quick_sort.gif
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/selection_sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SignUp.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/WhiteMode.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav
@@ -531,3 +526,9 @@
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika.FCEDA048.Up2Date
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/AnimatedImage.Avalonia.dll
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/AnimatedImage.dll
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/bubble_sort.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/insertion_sort.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/quick_sort.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/selection_sort.gif

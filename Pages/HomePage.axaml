@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+    xmlns:anim="using:AnimatedImage.Avalonia"
     x:DataType="vm:HomePageViewModel"
     xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages" 
     mc:Ignorable="d">
@@ -68,16 +69,16 @@
                                HorizontalAlignment="Center" />
                 </Border>
                 <Border Grid.Column="0" Grid.Row="1" Classes="card" CornerRadius="8" Margin="0,15,5,15" Width="220" Height="150">
-                    <Image Name="BubbleSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/bubble_sort.gif" Stretch="Uniform" Margin="5" />
+                    <Image Name="BubbleSortImage" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/bubble_sort.gif" Stretch="Uniform" Margin="5" />
                 </Border>
                 <Border Grid.Column="1" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,5,15" Width="220" Height="150">
-                    <Image Name="SelectionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/selection_sort.gif" Stretch="Uniform" Margin="5" />
+                    <Image Name="SelectionSortImage" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/selection_sort.gif" Stretch="Uniform" Margin="5" />
                 </Border>
                 <Border Grid.Column="2" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,5,15" Width="220" Height="150">
-                    <Image Name="QuickSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif" Stretch="Uniform" Margin="5" />
+                    <Image Name="QuickSortImage" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/quick_sort.gif" Stretch="Uniform" Margin="5" />
                 </Border>
                 <Border Grid.Column="3" Grid.Row="1" Classes="card" CornerRadius="8" Margin="5,15,0,15" Width="220" Height="150">
-                    <Image Name="InsertionSortImage" Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/insertion_sort.gif" Stretch="Uniform" Margin="5" />
+                    <Image Name="InsertionSortImage" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/insertion_sort.gif" Stretch="Uniform" Margin="5" />
                 </Border>
                 <!-- Algorithm Descriptions -->
                 <Border Grid.Column="0" Grid.Row="2" Classes="card" CornerRadius="8" Margin="0,5,5,15" Width="220" BoxShadow="0 4 4 #40000000">
