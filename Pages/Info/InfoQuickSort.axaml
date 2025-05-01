@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:anim="using:AnimatedImage.Avalonia"
              Width="1050"
              Height="800"
              mc:Ignorable="d">
@@ -49,8 +50,8 @@
                             VerticalAlignment="Top"
                             ClipToBounds="True"
                             CornerRadius="5">
-                        <Image Source="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/quick_sort.gif"
-                               Stretch="UniformToFill" />
+                        <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/quick_sort.gif"
+                               Stretch="Uniform" />
                     </Border>
                     <Grid Grid.Row="1"
                           Grid.ColumnSpan="2"
