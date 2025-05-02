@@ -1,14 +1,14 @@
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
+using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-using Avalonia.Media.Imaging;
-using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Auth
 {

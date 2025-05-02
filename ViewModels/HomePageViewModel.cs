@@ -1,5 +1,6 @@
 using ReactiveUI;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
+using Avalonia.Threading;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
@@ -9,7 +10,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         
         public HomePageViewModel()
         {
-            LanguageManager.Instance.LanguageChanged += (s, e) => this.RaisePropertyChanged(nameof(LanguageManager));
+            // Ensure language change events are processed on UI thread
+            LanguageManager.Instance.LanguageChanged += (s, e) => 
+                Dispatcher.UIThread.Post(() => this.RaisePropertyChanged(nameof(LanguageManager)));
         }
     }
 }

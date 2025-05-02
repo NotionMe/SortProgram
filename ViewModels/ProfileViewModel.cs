@@ -1,20 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Media.Imaging;
-using Avalonia.Threading;
 using ReactiveUI;
-using System.Reactive.Linq;
-using System.Reactive.Concurrency;
-
+using System.Windows.Input;
+using Avalonia.Controls;
+using System;
+using Avalonia;
+using Avalonia.Media.Imaging;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
+using System.Reactive.Linq;
+using Avalonia.Threading;
+using Avalonia.ReactiveUI;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
@@ -98,28 +94,28 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             // Create canExecute observables on the UI thread
             var canToggleUsername = this.WhenAnyValue(x => x.IsEditingEmail)
                 .Select(isEditingEmail => !isEditingEmail)
-                .ObserveOn(RxApp.MainThreadScheduler);
+                .ObserveOn(AvaloniaScheduler.Instance);
 
             var canToggleEmail = this.WhenAnyValue(x => x.IsEditingUsername)
                 .Select(isEditingUsername => !isEditingUsername)
-                .ObserveOn(RxApp.MainThreadScheduler);
+                .ObserveOn(AvaloniaScheduler.Instance);
 
             // Observe property changes for validation
             this.WhenAnyValue(x => x.UserName)
-                .ObserveOn(RxApp.MainThreadScheduler)
+                .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(ValidateUsername);
 
             this.WhenAnyValue(x => x.Email)
-                .ObserveOn(RxApp.MainThreadScheduler)
+                .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(ValidateEmail);
 
             // Create commands with the UI thread scheduler
-            ToggleUsernameEditCommand = ReactiveCommand.Create(ToggleUsernameEdit, canToggleUsername, RxApp.MainThreadScheduler);
-            ToggleEmailEditCommand = ReactiveCommand.Create(ToggleEmailEdit, canToggleEmail, RxApp.MainThreadScheduler);
-            SaveUsernameCommand = ReactiveCommand.Create(SaveUsername, outputScheduler: RxApp.MainThreadScheduler);
-            SaveEmailCommand = ReactiveCommand.Create(SaveEmail, outputScheduler: RxApp.MainThreadScheduler);
-            CancelEditCommand = ReactiveCommand.Create(CancelEdit, outputScheduler: RxApp.MainThreadScheduler);
-            ChangeAvatarCommand = ReactiveCommand.CreateFromTask(ChangeAvatarAsync, outputScheduler: RxApp.MainThreadScheduler);
+            ToggleUsernameEditCommand = ReactiveCommand.Create(ToggleUsernameEdit, canToggleUsername, AvaloniaScheduler.Instance);
+            ToggleEmailEditCommand = ReactiveCommand.Create(ToggleEmailEdit, canToggleEmail, AvaloniaScheduler.Instance);
+            SaveUsernameCommand = ReactiveCommand.Create(SaveUsername, outputScheduler: AvaloniaScheduler.Instance);
+            SaveEmailCommand = ReactiveCommand.Create(SaveEmail, outputScheduler: AvaloniaScheduler.Instance);
+            CancelEditCommand = ReactiveCommand.Create(CancelEdit, outputScheduler: AvaloniaScheduler.Instance);
+            ChangeAvatarCommand = ReactiveCommand.CreateFromTask(ChangeAvatarAsync, outputScheduler: AvaloniaScheduler.Instance);
         }
 
         // Validation methods

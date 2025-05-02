@@ -139,16 +139,41 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 
         public bool CanExecute(object? parameter)
         {
+            // Ensure CanExecute is always evaluated on UI thread
+            if (!Dispatcher.UIThread.CheckAccess())
+            {
+                bool result = false;
+                Dispatcher.UIThread.InvokeAsync(() => 
+                {
+                    result = _canExecute == null || _canExecute(parameter);
+                }, DispatcherPriority.Send).Wait();
+                return result;
+            }
+            
             return _canExecute == null || _canExecute(parameter);
         }
 
         public void Execute(object? parameter)
         {
+            // Always execute on UI thread
+            if (!Dispatcher.UIThread.CheckAccess())
+            {
+                Dispatcher.UIThread.InvokeAsync(() => _execute(parameter));
+                return;
+            }
+            
             _execute(parameter);
         }
 
         public void RaiseCanExecuteChanged()
         {
+            // Ensure the event is raised on the UI thread
+            if (!Dispatcher.UIThread.CheckAccess())
+            {
+                Dispatcher.UIThread.InvokeAsync(() => CanExecuteChanged?.Invoke(this, EventArgs.Empty));
+                return;
+            }
+            
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }

@@ -1,6 +1,5 @@
-// filepath: /home/notionme/Document/Repos/SortProgram/Services/IAvatarService.cs
-using System.Collections.Generic;
 using Avalonia.Media.Imaging;
+using System.Collections.Generic;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 {

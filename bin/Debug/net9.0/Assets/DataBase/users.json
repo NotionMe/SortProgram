@@ -30,5 +30,21 @@
     "Role": "User",
     "RegistrationDate": "2025-04-30T17:10:26.3940045+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar5.png"
+  },
+  {
+    "Username": "1231",
+    "Email": "123123123@gmail.com",
+    "Password": "$2a$12$vIGOekm0vw2aRbkai5t5deAMi//XVktmWl75eBN6R9Ta08ow91ndC",
+    "Role": "User",
+    "RegistrationDate": "2025-05-02T01:04:04.2609322+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar5.png"
+  },
+  {
+    "Username": "stas",
+    "Email": "stas@gmail.com",
+    "Password": "$2a$12$GIeTV69/BAS2H.STJPPEQuNAHwVLZv8LepMEnsHSNy1n.SjiZPGku",
+    "Role": "User",
+    "RegistrationDate": "2025-05-02T01:20:50.0254256+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png"
   }
 ]

@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
 
@@ -104,27 +105,27 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
         // Обробники подій кнопок
         private void GenerateButton_Click(object? sender, RoutedEventArgs e)
         {
-            _viewModel?.GenerateCommand.Execute().Subscribe();
+            Dispatcher.UIThread.Post(() => _viewModel?.GenerateCommand.Execute().Subscribe());
         }
 
         private void StartButton_Click(object? sender, RoutedEventArgs e)
         {
-            _viewModel?.StartCommand.Execute().Subscribe();
+            Dispatcher.UIThread.Post(() => _viewModel?.StartCommand.Execute().Subscribe());
         }
 
         private void PauseButton_Click(object? sender, RoutedEventArgs e)
         {
-            _viewModel?.PauseCommand.Execute().Subscribe();
+            Dispatcher.UIThread.Post(() => _viewModel?.PauseCommand.Execute().Subscribe());
         }
 
         private void StepButton_Click(object? sender, RoutedEventArgs e)
         {
-            _viewModel?.StepCommand.Execute().Subscribe();
+            Dispatcher.UIThread.Post(() => _viewModel?.StepCommand.Execute().Subscribe());
         }
 
         private void ResetButton_Click(object? sender, RoutedEventArgs e)
         {
-            _viewModel?.ResetCommand.Execute().Subscribe();
+            Dispatcher.UIThread.Post(() => _viewModel?.ResetCommand.Execute().Subscribe());
         }
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)
