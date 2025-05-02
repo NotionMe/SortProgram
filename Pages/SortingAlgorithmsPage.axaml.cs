@@ -62,7 +62,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             "Bubble Sort",
             "Selection Sort",
             "Quick Sort",
-            "Insertion Sort"
+            "Insertion Sort",
+            "Merge Sort",
+            "Heap Sort",
+            "Radix Sort"
         };
 
         private void Algoritm_TextChanged(object sender, TextChangedEventArgs e)
@@ -90,10 +93,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private Dictionary<string, List<string>> _algorithmCategories = new Dictionary<string, List<string>>
         {
-            { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort" } },
-            { "Searching", new List<string> { "Binary Search", "Linear Search", "Depth-First Search", "Breadth-First Search" } },
-            { "Graph Traversal", new List<string> { "Depth-First Search", "Breadth-First Search", "Dijkstra's Algorithm", "A* Algorithm" } },
-            { "Tree-based", new List<string> { "Binary Search Tree", "AVL Tree", "Red-Black Tree", "Heap Sort" } }
+            { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort", "Merge Sort", "Heap Sort", "Radix Sort" } },
+            { "Searching", new List<string> { "Binary Search", "Linear Search", "Brute Force", "Interpolation Search", "Exponential Search", "Jump Search", "Hashing" } },
+            { "Graph Traversal", new List<string> { "BFS (Breadth-First Search)", "DFS (Depth-First Search)" } },
+            { "Tree-based", new List<string> { "Binary Search Tree (BST) Search", "Trie Search" } }
         };
 
         private void CategoryCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -235,6 +238,68 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             if (mainWindow != null)
             {
                 mainWindow.NavigateToPagePublic(new InsertionSort());
+            }
+        }
+
+        private void InfoMergeSort_Click(object sender, RoutedEventArgs e)
+        {
+            // Placeholder for InfoMergeSort
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Uncomment when the page is created
+                // mainWindow.NavigateToPagePublic(new InfoMergeSort());
+            }
+        }
+
+        private void MergeSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Uncomment when the page is created
+                // mainWindow.NavigateToPagePublic(new MergeSort());
+            }
+        }
+
+        private void InfoHeapSort_Click(object sender, RoutedEventArgs e)
+        {
+            // Placeholder for InfoHeapSort
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Uncomment when the page is created
+                // mainWindow.NavigateToPagePublic(new InfoHeapSort());
+            }
+        }
+
+        private void HeapSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Uncomment when the page is created
+                // mainWindow.NavigateToPagePublic(new HeapSort());
+            }
+        }
+
+        private void InfoRadixSort_Click(object sender, RoutedEventArgs e)
+        {
+            // Placeholder for InfoRadixSort
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // mainWindow.NavigateToPagePublic(new InfoRadixSort());
+            }
+        }
+
+        private void RadixSortPage_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                // Uncomment when the page is created
+                // mainWindow.NavigateToPagePublic(new RadixSort());
             }
         }
     }
