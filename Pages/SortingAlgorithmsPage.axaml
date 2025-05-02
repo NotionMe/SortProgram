@@ -35,6 +35,20 @@
                 </Grid>
                 </Border>
 
+            <!-- category -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <CheckBox x:Name="SortingCheckBox" Classes="styled" Content="Sorting 🔢" Margin="10,0" IsChecked="False" 
+                        Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
+                <CheckBox x:Name="SearchingCheckBox" Classes="styled" Content="Searching 🔍" Margin="10,0" IsChecked="False"
+                        Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
+                <CheckBox x:Name="GraphCheckBox" Classes="styled" Content="Graph Traversal 🕸️" Margin="10,0" IsChecked="False"
+                        Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
+                <CheckBox x:Name="TreeCheckBox" Classes="styled" Content="Tree-based Algorithms 🌳" Margin="10,0" IsChecked="False"
+                        Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
+            </StackPanel>
+            
+            
+
             <StackPanel x:Name="AlgorithmsContainer" Margin="30">
                 <Border
                     Margin="0,10,0,20"
@@ -83,7 +97,7 @@
                             Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
-                            ClipToBounds="True"
+                            ClipToBounds="False"
                             CornerRadius="5">
                             <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/bubble_sort.gif" Stretch="Uniform" />
                         </Border>
@@ -136,7 +150,7 @@
                             Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
-                            ClipToBounds="True"
+                            ClipToBounds="False"
                             CornerRadius="5">
                             <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/selection_sort.gif" Stretch="Uniform" />
                         </Border>
@@ -189,7 +203,7 @@
                             Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
-                            ClipToBounds="True"
+                            ClipToBounds="False"
                             CornerRadius="5">
                             <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/quick_sort.gif" Stretch="Uniform" />
                         </Border>
@@ -242,7 +256,7 @@
                             Height="125"
                             Margin="10,15,20,15"
                             BoxShadow="0 2 4 #20000000"
-                            ClipToBounds="True"
+                            ClipToBounds="False"
                             CornerRadius="5">
                             <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/insertion_sort.gif" Stretch="Uniform" />
                         </Border>

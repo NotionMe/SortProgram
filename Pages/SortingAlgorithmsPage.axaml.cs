@@ -88,6 +88,83 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
                 }
             }
         }
+        private Dictionary<string, List<string>> _algorithmCategories = new Dictionary<string, List<string>>
+        {
+            { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort" } },
+            { "Searching", new List<string> { "Binary Search", "Linear Search", "Depth-First Search", "Breadth-First Search" } },
+            { "Graph Traversal", new List<string> { "Depth-First Search", "Breadth-First Search", "Dijkstra's Algorithm", "A* Algorithm" } },
+            { "Tree-based", new List<string> { "Binary Search Tree", "AVL Tree", "Red-Black Tree", "Heap Sort" } }
+        };
+
+        private void CategoryCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateAlgorithmVisibility();
+        }
+        private void CategoryCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateAlgorithmVisibility();
+        }
+
+        private void UpdateAlgorithmVisibility()
+        {
+            List<string> selectedCategories = new List<string>();
+            
+            if (this.FindControl<CheckBox>("SortingCheckBox")?.IsChecked == true)
+                selectedCategories.Add("Sorting");
+                
+            if (this.FindControl<CheckBox>("SearchingCheckBox")?.IsChecked == true)
+                selectedCategories.Add("Searching");
+                
+            if (this.FindControl<CheckBox>("GraphCheckBox")?.IsChecked == true)
+                selectedCategories.Add("Graph Traversal");
+                
+            if (this.FindControl<CheckBox>("TreeCheckBox")?.IsChecked == true)
+                selectedCategories.Add("Tree-based");
+
+            var algorithmBorders = this.FindControl<StackPanel>("AlgorithmsContainer")?.Children
+                .OfType<Border>().ToList();
+            if (algorithmBorders == null || !algorithmBorders.Any())    
+                return;
+
+            if (!selectedCategories.Any())
+            {
+                foreach (var border in algorithmBorders)
+                {
+                    border.IsVisible = true;
+                }
+                return;
+            }
+
+            HashSet<string> visibleAlgorithms = new HashSet<string>();
+            foreach (var category in selectedCategories)
+            {
+                if (_algorithmCategories.TryGetValue(category, out var algorithms))
+                {
+                    foreach (var algorithm in algorithms)
+                    {
+                        visibleAlgorithms.Add(algorithm);
+                    }
+                }
+            }
+
+            foreach (var border in algorithmBorders)
+            {
+                var textBlock = border.FindDescendantOfType<TextBlock>(tb => tb.FontWeight == FontWeight.SemiBold && tb.FontSize == 36);
+                
+                if (textBlock != null)
+                {
+                    string algorithmName = textBlock.Text ?? string.Empty;
+                    border.IsVisible = visibleAlgorithms.Contains(algorithmName);
+                }
+            }
+            
+            if (Algoritm != null)
+            {
+                Algoritm.ItemsSource = visibleAlgorithms.Any() 
+                    ? visibleAlgorithms.OrderBy(x => x) 
+                    : _sortingAlgorithms.OrderBy(x => x);
+            }
+        }
 
         private void InfoBubbleSort_Click(object sender, RoutedEventArgs e)
         {

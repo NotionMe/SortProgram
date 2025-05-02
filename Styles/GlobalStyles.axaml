@@ -226,6 +226,39 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontWeight" Value="Medium" />
     </Style>
-
-   
+    
+    <Style Selector="CheckBox.styled">
+        <Setter Property="Height" Value = "25"/>
+        <Setter Property="Padding" Value="10,6"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="{DynamicResource Anonymous Pro}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+        <Setter Property="Transitions">
+        <Transitions>
+            <BrushTransition Property="Background" Duration="0:0:0.2"/>
+            <BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+            <BrushTransition Property="Foreground" Duration="0:0:0.2"/>
+            <DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+        </Transitions>
+        </Setter>
+    </Style>
+    <!-- Checked -->
+    <Style Selector="CheckBox.styled:checked /template/ Border">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryAccentBrush}"/>
+    </Style>
+    <!-- Dark theme specific -->
+    <Style Selector=".ThemeDark CheckBox.styled">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <!-- Disabled -->
+    <Style Selector="CheckBox.styled:disabled">
+        <Setter Property="Opacity" Value="0.5"/>
+    </Style>
 </Styles>
