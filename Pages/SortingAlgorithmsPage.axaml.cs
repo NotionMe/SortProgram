@@ -93,7 +93,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private Dictionary<string, List<string>> _algorithmCategories = new Dictionary<string, List<string>>
         {
-            { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort", "Merge Sort", "Heap Sort", "Radix Sort" } },
+            { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort", "Merge Sort", "Heap Sort", "Radix Sort", "Сортування бульбашкою", 
+            "Сортування вибором", "Швидке сортування", "Сортування вставками", "Сортування злиттям", "Пірамідальне сортування", "Сортування за розрядами" } },
             { "Searching", new List<string> { "Binary Search", "Linear Search", "Brute Force", "Interpolation Search", "Exponential Search", "Jump Search", "Hashing" } },
             { "Graph Traversal", new List<string> { "BFS (Breadth-First Search)", "DFS (Depth-First Search)" } },
             { "Tree-based", new List<string> { "Binary Search Tree (BST) Search", "Trie Search" } }
@@ -243,12 +244,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InfoMergeSort_Click(object sender, RoutedEventArgs e)
         {
-            // Placeholder for InfoMergeSort
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                // Uncomment when the page is created
-                // mainWindow.NavigateToPagePublic(new InfoMergeSort());
+                mainWindow.NavigateToPagePublic(new InfoMergeSort());
             }
         }
 
@@ -257,8 +256,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                // Uncomment when the page is created
-                // mainWindow.NavigateToPagePublic(new MergeSort());
+                //mainWindow.NavigateToPagePublic(new MergeSort());
             }
         }
 
@@ -268,8 +266,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                // Uncomment when the page is created
-                // mainWindow.NavigateToPagePublic(new InfoHeapSort());
+                mainWindow.NavigateToPagePublic(new InfoHeapSort());
             }
         }
 
@@ -285,11 +282,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void InfoRadixSort_Click(object sender, RoutedEventArgs e)
         {
-            // Placeholder for InfoRadixSort
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                // mainWindow.NavigateToPagePublic(new InfoRadixSort());
+                mainWindow.NavigateToPagePublic(new InfoRadixSort());
             }
         }
 

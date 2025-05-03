@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Username": "admin",
+    "Email": "admin@gmail.com",
+    "Password": "$2a$12$ATR1VB.I40/gG/pAnw7uUOJgVdGUODDQLsXl2ikYSd7v4c9q1WL8y",
+    "Role": "Admin",
+    "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png"
+  },
+  {
+    "Username": "NotionMe",
+    "Email": "hagami16@gmail.com",
+    "Password": "$2a$12$zjeVdpcnnbQxLUFfqQY6lu0JrrkK9AXyh54JyWSXzTv8iZ47v4D.W",
+    "Role": "User",
+    "RegistrationDate": "2025-04-20T16:59:44.3470702+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png"
+  },
+  {
+    "Username": "asdasd",
+    "Email": "asdasdasd@g.g",
+    "Password": "$2a$12$sjnMBq5f5ctuPFtt1rwQ8uO.BqqLZJ/RpmojzCa98DhX3PSVMV8MK",
+    "Role": "User",
+    "RegistrationDate": "2025-04-30T16:59:07.5883538+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
+  },
+  {
+    "Username": "123",
+    "Email": "123123@gmail.com",
+    "Password": "$2a$12$dodp9ylPQw.Nb2UMIe5kFeKVCocUBPCoF0hWnntEWoULxJJZULcXS",
+    "Role": "User",
+    "RegistrationDate": "2025-04-30T17:10:26.3940045+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar2.png"
+  },
+  {
+    "Username": "1231",
+    "Email": "123123123@gmail.com",
+    "Password": "$2a$12$vIGOekm0vw2aRbkai5t5deAMi//XVktmWl75eBN6R9Ta08ow91ndC",
+    "Role": "User",
+    "RegistrationDate": "2025-05-02T01:04:04.2609322+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar5.png"
+  },
+  {
+    "Username": "stas",
+    "Email": "stas@gmail.com",
+    "Password": "$2a$12$GIeTV69/BAS2H.STJPPEQuNAHwVLZv8LepMEnsHSNy1n.SjiZPGku",
+    "Role": "User",
+    "RegistrationDate": "2025-05-02T01:20:50.0254256+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png"
+  }
+]

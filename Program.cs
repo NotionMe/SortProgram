@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading;
 using Avalonia;
+using Avalonia.ReactiveUI;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
@@ -47,5 +48,12 @@ class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-            .LogToTrace();
+#if DEBUG
+            // Підтримка гарячого перезавантаження для додатку
+            .LogToTrace()
+            .UseReactiveUI()
+#else
+            .LogToTrace()
+#endif
+            ;
 }

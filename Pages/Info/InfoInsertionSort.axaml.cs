@@ -34,5 +34,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
                 }
             }
         }
+        
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new InfoMergeSort());
+            }
+        }
     }
 }

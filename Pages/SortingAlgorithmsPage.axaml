@@ -26,7 +26,7 @@
                     FilterMode="Contains"
                     Width="690"
                     Height="50"
-                    Watermark="Search🔍"
+                    Watermark="{DynamicResource AlgorithmSearch_WaterMark}"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     FontSize="20"
@@ -37,13 +37,13 @@
 
             <!-- category -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-                <CheckBox x:Name="SortingCheckBox" Classes="styled" Content="Sorting 🔢" Margin="10,0" IsChecked="False" 
+                <CheckBox x:Name="SortingCheckBox" Classes="styled" Content="{DynamicResource CategorySorting}" Margin="10,0" IsChecked="False" 
                         Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
-                <CheckBox x:Name="SearchingCheckBox" Classes="styled" Content="Searching 🔍" Margin="10,0" IsChecked="False"
+                <CheckBox x:Name="SearchingCheckBox" Classes="styled" Content="{DynamicResource CategorySearching}" Margin="10,0" IsChecked="False"
                         Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
-                <CheckBox x:Name="GraphCheckBox" Classes="styled" Content="Graph Traversal 🕸️" Margin="10,0" IsChecked="False"
+                <CheckBox x:Name="GraphCheckBox" Classes="styled" Content="{DynamicResource CategoryGraphTraversal}" Margin="10,0" IsChecked="False"
                         Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
-                <CheckBox x:Name="TreeCheckBox" Classes="styled" Content="Tree-based Algorithms 🌳" Margin="10,0" IsChecked="False"
+                <CheckBox x:Name="TreeCheckBox" Classes="styled" Content="{DynamicResource CategoryTree-basedAlgorithms}" Margin="10,0" IsChecked="False"
                         Checked="CategoryCheckBox_Checked" Unchecked="CategoryCheckBox_Unchecked"/>
             </StackPanel>
             
@@ -73,7 +73,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -127,7 +127,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -181,7 +181,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -235,7 +235,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -289,7 +289,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -344,7 +344,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"
@@ -399,7 +399,7 @@
                                 TextWrapping="Wrap" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Button
-                                    Width="120"
+                                    Width="180"
                                     Margin="0,10,0,0"
                                     Padding="12,8"
                                     HorizontalAlignment="Left"

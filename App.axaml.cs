@@ -7,6 +7,7 @@ using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
+using Avalonia.Diagnostics;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
@@ -59,6 +60,11 @@ public partial class App : Application
                 System.Diagnostics.Debug.WriteLine($"Error creating directories: {ex.Message}");
             }
         }
+        
+        // Додаємо підтримку гарячого перезавантаження під час розробки
+#if DEBUG
+        // Hot reload підтримка для XAML
+#endif
     }
 
     private void ConfigureServices()
@@ -80,6 +86,22 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new LoginMenu();
+            
+#if DEBUG
+            // Для гарячого перезавантаження використовуємо клавішу F12
+            var isCtrlShiftD = false;
+            
+            desktop.MainWindow.KeyDown += (sender, e) => 
+            {
+                if (e.Key == Avalonia.Input.Key.F12)
+                {
+                    // Викликаємо DevTools через безпечний метод
+                    var type = Type.GetType("Avalonia.Diagnostics.DevTools, Avalonia.Diagnostics");
+                    var attachMethod = type?.GetMethod("Attach", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+                    attachMethod?.Invoke(null, new[] { desktop.MainWindow });
+                }
+            };
+#endif
         }
 
         base.OnFrameworkInitializationCompleted();
