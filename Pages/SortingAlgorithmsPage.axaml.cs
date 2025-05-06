@@ -256,7 +256,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                //mainWindow.NavigateToPagePublic(new MergeSort());
+                mainWindow.NavigateToPagePublic(new MergeSort());
             }
         }
 

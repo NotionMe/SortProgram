@@ -17,7 +17,9 @@
           "Avalonia.ReactiveUI": "11.3.0",
           "Avalonia.Svg.Skia": "11.2.0.2",
           "Avalonia.Themes.Fluent": "11.3.0",
+          "Avalonia.Xaml.Behaviors": "11.3.0",
           "BCrypt.Net-Next": "4.0.3",
+          "MediaPlayer.Avalonia": "2.0.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.4",
           "ReactiveUI": "20.2.45"
         },
@@ -309,6 +311,101 @@
           }
         }
       },
+      "Avalonia.Xaml.Behaviors/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactions": "11.3.0",
+          "Avalonia.Xaml.Interactions.Custom": "11.3.0",
+          "Avalonia.Xaml.Interactions.DragAndDrop": "11.3.0",
+          "Avalonia.Xaml.Interactions.Draggable": "11.3.0",
+          "Avalonia.Xaml.Interactions.Events": "11.3.0",
+          "Avalonia.Xaml.Interactions.Responsive": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        }
+      },
+      "Avalonia.Xaml.Interactions/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactions.Custom/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.Custom.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactions.DragAndDrop/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.DragAndDrop.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactions.Draggable/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.Draggable.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactions.Events/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.Events.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactions.Responsive/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Avalonia.Xaml.Interactivity": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactions.Responsive.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "Avalonia.Xaml.Interactivity/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactivity.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
       "BCrypt.Net-Next/4.0.3": {
         "runtime": {
           "lib/net6.0/BCrypt.Net-Next.dll": {
@@ -404,6 +501,29 @@
           }
         }
       },
+      "JetBrains.Annotations/2022.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2022.3.1.0"
+          }
+        }
+      },
+      "MediaPlayer.Avalonia/2.0.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "JetBrains.Annotations": "2022.3.1",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Drawing.Common": "7.0.0",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediaPlayer.Avalonia.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "MicroCom.Runtime/0.11.0": {
         "runtime": {
           "lib/net5.0/MicroCom.Runtime.dll": {
@@ -428,6 +548,22 @@
           "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -579,6 +715,25 @@
         }
       },
       "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.IO.Pipelines/8.0.0": {},
       "System.Reactive/6.0.1": {
         "runtime": {
@@ -741,6 +896,62 @@
       "path": "avalonia.x11/11.3.0",
       "hashPath": "avalonia.x11.11.3.0.nupkg.sha512"
     },
+    "Avalonia.Xaml.Behaviors/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q8dgkQ3DCznraENPKZXN6N/dUYTWNXKF+p78dYKnQNZV/o9kbdor4WHXP2Q/nkP16k4RmhAO9MG3r7l58ELJ+g==",
+      "path": "avalonia.xaml.behaviors/11.3.0",
+      "hashPath": "avalonia.xaml.behaviors.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OhqS2kjHPytoL8zuXxmH15/xfrgOxtyT+hxxDHkR54fc2HE50349E+H1UsAnbUe7ZxKG9jt+5ddCyCmS4Oh7NQ==",
+      "path": "avalonia.xaml.interactions/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions.Custom/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZomrflQUhRGI4N1drThN/i4dsvJ8Mk2lCa+LruS8HHNz+5K1qsUJZoJE53im34wMlHBipQR3nsOk566oigp5mg==",
+      "path": "avalonia.xaml.interactions.custom/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.custom.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions.DragAndDrop/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gdb36UCL34Rwli+XP1uCPF1Gc5qUjTxGJSQhsRGwl3IQnGe++GtX3QJL/pI6jmxFsS7kP5e3J7JCNjfrmYz/MA==",
+      "path": "avalonia.xaml.interactions.draganddrop/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.draganddrop.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions.Draggable/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AbzkjMro8gDfEKbu3oP2KKNrzikcu0ysBZKWGqQpmOXdHZmXzCivO0v9iqLwulCwOBrsAX5KLvx56Hp2wakZJQ==",
+      "path": "avalonia.xaml.interactions.draggable/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.draggable.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions.Events/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AjlLU5Hdc1/SfxfTiF6aVs31FSSc+3suwbLF6C/SScnZMcbmonQvG6L8+WZUqUJi3+supa/vnv2qQUAqO5nD3A==",
+      "path": "avalonia.xaml.interactions.events/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.events.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactions.Responsive/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DzGhAFk6vC1zEL+yJowqZe5TBRPM0HbwM55uHZOJoQM5CuI0pMjs/9ZslTQlzBAdU/eWyr+oJY2sp36qndV+pQ==",
+      "path": "avalonia.xaml.interactions.responsive/11.3.0",
+      "hashPath": "avalonia.xaml.interactions.responsive.11.3.0.nupkg.sha512"
+    },
+    "Avalonia.Xaml.Interactivity/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-abRbQqRC4Bts7Sw0vSSdCL7P0tbz0PZSZiFC0OvIooRmfan93IQutHvk3V0dhj/WB5lFhIT/DxgMDUN6RzIn7w==",
+      "path": "avalonia.xaml.interactivity/11.3.0",
+      "hashPath": "avalonia.xaml.interactivity.11.3.0.nupkg.sha512"
+    },
     "BCrypt.Net-Next/4.0.3": {
       "type": "package",
       "serviceable": true,
@@ -797,6 +1008,20 @@
       "path": "harfbuzzsharp.nativeassets.win32/7.3.0.3",
       "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512"
     },
+    "JetBrains.Annotations/2022.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "path": "jetbrains.annotations/2022.3.1",
+      "hashPath": "jetbrains.annotations.2022.3.1.nupkg.sha512"
+    },
+    "MediaPlayer.Avalonia/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vrMPU96vzY7vWHSyxiTydSpCeXeDOvgZdhxZrjlmLib0od2It5rgILDY+j/lYw0aSwSme4C+adJyo5Amcz12NA==",
+      "path": "mediaplayer.avalonia/2.0.0",
+      "hashPath": "mediaplayer.avalonia.2.0.0.nupkg.sha512"
+    },
     "MicroCom.Runtime/0.11.0": {
       "type": "package",
       "serviceable": true,
@@ -817,6 +1042,13 @@
       "sha512": "sha512-UI0TQPVkS78bFdjkTodmkH0Fe8lXv9LnhGFKgKrsgUJ5a5FVdFRcgjIkBVLbGgdRhxWirxH/8IXUtEyYJx6GQg==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.4",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
     "ReactiveUI/20.2.45": {
       "type": "package",
@@ -908,6 +1140,13 @@
       "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
       "path": "system.componentmodel.annotations/5.0.0",
       "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
     },
     "System.IO.Pipelines/8.0.0": {
       "type": "package",

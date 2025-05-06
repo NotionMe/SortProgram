@@ -29,6 +29,8 @@
   "MergeSort_Description": "A divide-and-conquer algorithm that divides the array into halves, sorts them separately, and then merges the sorted halves back together.",
   "HeapSort_Description": "A comparison-based sorting algorithm that uses a binary heap data structure to build a max-heap and continuously extract the maximum element.",
   "RadixSort_Description": "A non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by individual digits that share the same position and value.",
+  "Merge Sort_Visual:Description":"Merge Sort:Description",
+  "MergeSort_DescriptionVisual": "Merge Sort is a sorting algorithm based on the divide and conquer principle. It splits the array into two halves, recursively sorts each half, and then merges the sorted halves into a single sorted array. Merge Sort belongs to the category of sorting algorithms.It is a stable algorithm with a time complexity of O(n log n) in the best, average, and worst cases. It is well-suited for sorting large datasets.",
   "SettingsPage_Title": "Settings",
   "LanguageSettings_Section": "Language Settings",
   "InterfaceLanguage_Label": "Interface Language",

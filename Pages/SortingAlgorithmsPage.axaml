@@ -26,7 +26,7 @@
                     FilterMode="Contains"
                     Width="690"
                     Height="50"
-                    Watermark="{DynamicResource AlgorithmSearch_WaterMark}"
+                    Watermark="Search🔍️"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     FontSize="20"

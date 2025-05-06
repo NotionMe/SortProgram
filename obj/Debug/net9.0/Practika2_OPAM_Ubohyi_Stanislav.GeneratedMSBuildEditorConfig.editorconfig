@@ -49,10 +49,19 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoBubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoHeapSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoInsertionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoMergeSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoQuickSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoRadixSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoSelectionSort.axaml]
@@ -80,6 +89,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/InsertionSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/MergeSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/QuickSort.axaml]

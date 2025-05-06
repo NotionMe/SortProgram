@@ -27,10 +27,19 @@
 /home/notion/.nuget/packages/avalonia.win32/11.3.0/lib/net8.0/Avalonia.Win32.Automation.dll
 /home/notion/.nuget/packages/avalonia.win32/11.3.0/lib/net8.0/Avalonia.Win32.dll
 /home/notion/.nuget/packages/avalonia.x11/11.3.0/lib/net8.0/Avalonia.X11.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions.custom/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.Custom.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions.draganddrop/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.DragAndDrop.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions.draggable/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.Draggable.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions.events/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.Events.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactions.responsive/11.3.0/lib/net8.0/Avalonia.Xaml.Interactions.Responsive.dll
+/home/notion/.nuget/packages/avalonia.xaml.interactivity/11.3.0/lib/net8.0/Avalonia.Xaml.Interactivity.dll
 /home/notion/.nuget/packages/bcrypt.net-next/4.0.3/lib/net6.0/BCrypt.Net-Next.dll
 /home/notion/.nuget/packages/dynamicdata/9.1.2/lib/net8.0/DynamicData.dll
 /home/notion/.nuget/packages/excss/4.2.3/lib/net7.0/ExCSS.dll
 /home/notion/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
+/home/notion/.nuget/packages/jetbrains.annotations/2022.3.1/lib/netstandard2.0/JetBrains.Annotations.dll
+/home/notion/.nuget/packages/mediaplayer.avalonia/2.0.0/lib/netstandard2.0/MediaPlayer.Avalonia.dll
 /home/notion/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/Microsoft.CSharp.dll
 /home/notion/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.4/lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -39,6 +48,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/Microsoft.VisualBasic.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/Microsoft.Win32.Primitives.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/Microsoft.Win32.Registry.dll
+/home/notion/.nuget/packages/microsoft.win32.systemevents/7.0.0/lib/net7.0/Microsoft.Win32.SystemEvents.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/mscorlib.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/netstandard.dll
 /home/notion/.nuget/packages/reactiveui/20.2.45/lib/net9.0/ReactiveUI.dll
@@ -79,6 +89,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Diagnostics.TraceSource.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Diagnostics.Tracing.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.dll
+/home/notion/.nuget/packages/system.drawing.common/7.0.0/lib/net7.0/System.Drawing.Common.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Drawing.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Drawing.Primitives.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Dynamic.Runtime.dll

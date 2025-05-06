@@ -17,14 +17,14 @@
           "/home/notion/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -41,8 +41,8 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "AnimatedImage.Avalonia": {
               "target": "Package",
@@ -80,9 +80,17 @@
               "target": "Package",
               "version": "[11.3.0, )"
             },
+            "Avalonia.Xaml.Behaviors": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "MediaPlayer.Avalonia": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
@@ -107,11 +115,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.15, 8.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.15, 8.0.15]"
+              "version": "[9.0.4, 9.0.4]"
             }
           ],
           "frameworkReferences": {

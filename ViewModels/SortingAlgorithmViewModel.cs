@@ -149,7 +149,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             }
         }
 
-        public void GenerateArray()
+        public virtual void GenerateArray()
         {
             // Скидання стану сортування
             ResetSortingState();
@@ -227,7 +227,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             }
         }
 
-        public void StepSorting()
+        public virtual void StepSorting()
         {
             if (!IsSorting)
             {
@@ -272,7 +272,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             _performanceTimer.Reset();
         }
 
-        private void Timer_Tick(object? sender, EventArgs e)
+        protected void Timer_Tick(object? sender, EventArgs e)
         {
             PerformSortingStep();
         }

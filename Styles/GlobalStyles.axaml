@@ -253,9 +253,18 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryAccentBrush}"/>
     </Style>
+    <!-- Ensure text color doesn't change on hover -->
+    <Style Selector="CheckBox.styled:pointerover /template/ ContentPresenter">
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+    </Style>
+    
     <!-- Dark theme specific -->
     <Style Selector=".ThemeDark CheckBox.styled">
         <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <!-- Keep dark theme text color on hover -->
+    <Style Selector=".ThemeDark CheckBox.styled:pointerover /template/ ContentPresenter">
+        <Setter Property="TextBlock.Foreground" Value="White"/>
     </Style>
     <!-- Disabled -->
     <Style Selector="CheckBox.styled:disabled">
