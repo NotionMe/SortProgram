@@ -123,5 +123,6 @@
   "Profile_UserName": "Name:",
   "Profile_Email": "Email:",
   "Profile_Edit": "Edit",
-  "Profile_Logout": "Logout"
+  "Profile_Logout": "Logout",
+  "InfoButtonToAttempt":"To attempt"
 }

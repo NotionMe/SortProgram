@@ -11,6 +11,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
         {
             InitializeComponent();
         }
+
+        private void AttemptButton_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new BubbleSort());
+            }
+        }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             SortProgram? mainWindow = this.VisualRoot as SortProgram;

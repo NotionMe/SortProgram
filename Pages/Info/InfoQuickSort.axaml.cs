@@ -18,6 +18,14 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
             AvaloniaXamlLoader.Load(this);
         }
         
+                private void AttemptButton_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null)
+            {
+                mainWindow.NavigateToPagePublic(new QuickSort());
+            }
+        }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
