@@ -1,0 +1,323 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching.LinearSearch"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="800"
+    x:DataType="vm:LinearSearchViewModel">
+
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                FontWeight="Bold"
+                Foreground="{DynamicResource ThemeForegroundBrush}"
+                Text="{DynamicResource LinearSearch_Visualization_Title}" />
+
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="18"
+                        FontWeight="SemiBold"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
+                        Text="{DynamicResource VisualizationPage_Settings}" />
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="5,10,5,5">
+                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8EC;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource VisualizationPage_ArraySize}" />
+                        </StackPanel>
+                        <ComboBox
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="{Binding SelectedArraySizeIndex}"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="15" />
+                            <ComboBoxItem Content="20" />
+                            <ComboBoxItem Content="25" />
+                            <ComboBoxItem Content="30" />
+                            <ComboBoxItem Content="40" />
+                            <ComboBoxItem Content="50" />
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xEC4A;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource VisualizationPage_Speed}" />
+                        </StackPanel>
+                        <ComboBox
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="{Binding SelectedSpeedIndex}"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="{DynamicResource Speed_VerySlow}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Slow}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Medium}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_Fast}" />
+                            <ComboBoxItem Content="{DynamicResource Speed_VeryFast}" />
+                        </ComboBox>
+
+                        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,15,15,0">
+                            <TextBlock
+                                FontFamily="Segoe MDL2 Assets"
+                                Text="&#xE8B7;"
+                                Foreground="{DynamicResource PrimaryBrush}"
+                                Margin="0,0,8,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                FontWeight="SemiBold"
+                                Text="{DynamicResource VisualizationPage_ArrayType}" />
+                        </StackPanel>
+                        <ComboBox
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Stretch"
+                            SelectedIndex="{Binding SelectedArrayTypeIndex}"
+                            BorderBrush="{DynamicResource ThemeBorderBrush}"
+                            Background="{DynamicResource ThemeCardBackgroundBrush}"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            CornerRadius="8"
+                            Height="35">
+                            <ComboBoxItem Content="{DynamicResource ArrayType_Random}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_AlmostSorted}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_ReverseOrder}" />
+                            <ComboBoxItem Content="{DynamicResource ArrayType_FewUnique}" />
+                        </ComboBox>
+
+                        <StackPanel
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal"
+                            Spacing="12">
+                            <Button
+                                Padding="12,8"
+                                Classes="blueButton"
+                                CornerRadius="10"
+                                Command="{Binding GenerateCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE8FB;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Generate}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Padding="12,8"
+                                Classes="successButton"
+                                CornerRadius="10"
+                                Command="{Binding StartCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE768;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Start}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Padding="12,8"
+                                Classes="warningButton"
+                                CornerRadius="10"
+                                Command="{Binding PauseCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE769;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Pause}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Padding="12,8"
+                                Classes="blueButton"
+                                CornerRadius="10"
+                                Command="{Binding StepCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE893;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Step}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                Padding="12,8"
+                                Classes="dangerButton"
+                                CornerRadius="10"
+                                Command="{Binding ResetCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="5">
+                                    <TextBlock
+                                        FontFamily="Segoe MDL2 Assets"
+                                        Text="&#xE777;"
+                                        VerticalAlignment="Center" />
+                                    <TextBlock Text="{DynamicResource Button_Reset}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Border
+                Height="300"
+                Margin="0,0,0,20"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Text="{DynamicResource LinearSearch_Title}" 
+                              HorizontalAlignment="Center" Margin="0,10,0,20" 
+                              FontSize="20" FontWeight="SemiBold"
+                              Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                    
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/> <!-- For Array Elements -->
+                            <RowDefinition Height="Auto"/> <!-- For Arrow -->
+                            <RowDefinition Height="Auto"/> <!-- For Search Result -->
+                        </Grid.RowDefinitions>
+                        
+                        <ItemsControl Grid.Row="0" ItemsSource="{Binding ArrayElements}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" Spacing="5"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="vm:ArrayElementViewModel">
+                                    <Border Width="40" Height="40" Background="{Binding Background}" CornerRadius="8" Margin="2">
+                                        <TextBlock Text="{Binding Value}" Foreground="{Binding Foreground}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        
+                        <TextBlock Grid.Row="1" Text="↓" FontSize="24" FontWeight="Bold"
+                                   HorizontalAlignment="Left" Margin="{Binding ArrowMargin}"
+                                   IsVisible="{Binding IsArrowVisible}"
+                                   Foreground="{DynamicResource PrimaryBrush}"/>
+                        
+                        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="5" Margin="0,10,0,0">
+                            <TextBlock Text="=" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"
+                                     Foreground="{DynamicResource ThemeForegroundBrush}"/>
+                            <TextBlock Text="{Binding SearchStatusText}" FontSize="18" FontWeight="Bold"
+                                     VerticalAlignment="Center" Foreground="{Binding SearchStatusColor}"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16"
+                BoxShadow="0 4 8 0 #20000000">
+                <Grid ColumnDefinitions="*,*,*">
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Comparisons}"></TextBlock>
+                        <TextBlock Text="{Binding Comparisons}" Foreground="{DynamicResource ThemeForegroundBrush}" HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Steps}"></TextBlock>
+                        <TextBlock Text="{Binding Steps}" Foreground="{DynamicResource ThemeForegroundBrush}" HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_ExecutionTime}"></TextBlock>
+                        <TextBlock Text="{Binding TimeElapsed}" Foreground="{DynamicResource ThemeForegroundBrush}" HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Button
+                Margin="0,0,0,20"
+                HorizontalAlignment="Left"
+                Classes="blueButton"
+                CornerRadius="10"
+                Padding="12,8"
+                Click="BackButton_Click">
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock
+                        FontFamily="Segoe MDL2 Assets"
+                        Text="&#xE72B;"
+                        VerticalAlignment="Center" />
+                    <TextBlock Text="{DynamicResource Button_Back}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

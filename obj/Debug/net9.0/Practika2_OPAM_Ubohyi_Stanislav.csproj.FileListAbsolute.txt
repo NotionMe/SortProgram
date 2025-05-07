@@ -550,3 +550,6 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/System.Drawing.Common.dll
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/linear_search.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/heap-sort.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/radix-sort.gif

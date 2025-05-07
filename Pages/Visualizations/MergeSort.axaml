@@ -47,10 +47,24 @@
                 CornerRadius="16">
                 <Grid Margin="15"> 
                     <Border CornerRadius="20">
-                        <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/mergesort.gif" Stretch="Fill" Margin="5" />
+                        <Image x:Name="MergeSortAnimation" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/mergesort.gif" Stretch="Fill" Margin="5" />
                     </Border>
                 </Grid>
             </Border>
+            
+            <!-- Animation Control Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,0,0,20">
+                <Button Classes="blueButton" Click="PlayButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Play}" />
+                </Button>
+                <Button Classes="blueButton" Click="PauseButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Pause}" />
+                </Button>
+                <Button Classes="blueButton" Click="ResetButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Reset}" />
+                </Button>
+            </StackPanel>
+            
             <Border
                 Margin="0,0,0,20"
                 Padding="15"

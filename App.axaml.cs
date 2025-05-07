@@ -86,11 +86,8 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new LoginMenu();
-            
+
 #if DEBUG
-            // Для гарячого перезавантаження використовуємо клавішу F12
-            var isCtrlShiftD = false;
-            
             desktop.MainWindow.KeyDown += (sender, e) => 
             {
                 if (e.Key == Avalonia.Input.Key.F12)

@@ -3,6 +3,25 @@ using ReactiveUI;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
+    // Інтерфейс для стратегії пошуку
+    public interface ISearchingStrategy
+    {
+        // Ініціалізація пошуку
+        void Initialize(int[] array, int valueToFind);
+        
+        // Виконання одного кроку пошуку
+        bool PerformStep(int[] array, ref int comparisons);
+        
+        // Отримання індексів елементів для візуалізації кольорів
+        (int, int, int) GetHighlightIndices();
+
+        // Отримання індексу знайденого елемента
+        int GetFoundIndex();
+
+        // Отримання значення, яке шукаємо
+        int GetValueToFind();
+    }
+
     // Інтерфейс для стратегії сортування
     public interface ISortingStrategy
     {

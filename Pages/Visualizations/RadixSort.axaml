@@ -1,0 +1,130 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.RadixSort"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:anim="using:AnimatedImage.Avalonia"
+    mc:Ignorable="d">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                FontWeight="Bold"
+                Foreground="{DynamicResource ThemeForegroundBrush}"
+                Text="{DynamicResource RadixSort_Visualization_Title}" />
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                BoxShadow="0 4 8 0 #20000000"
+                CornerRadius="16">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="18"
+                        FontWeight="SemiBold"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
+                        Text="{DynamicResource RadixSort_Visual:Description}" />
+                    <TextBlock
+                        Margin="0,10,0,10"
+                        TextWrapping="Wrap"
+                        Foreground="{DynamicResource ThemeForegroundBrush}"
+                        Text="{DynamicResource RadixSort_InfoDescription}" />
+                </StackPanel>
+            </Border>
+            <Border
+                Height="300"
+                Margin="0,0,0,20"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                BoxShadow="0 4 8 0 #20000000"
+                CornerRadius="16">
+                <Grid Margin="15"> 
+                    <Border CornerRadius="20">
+                        <Image x:Name="MergeSortAnimation" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/radix-sort.gif" Stretch="Fill" Margin="5" />
+                    </Border>
+                </Grid>
+            </Border>
+            
+            <!-- Animation Control Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10" Margin="0,0,0,20">
+                <Button Classes="blueButton" Click="PlayButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Play}" />
+                </Button>
+                <Button Classes="blueButton" Click="PauseButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Pause}" />
+                </Button>
+                <Button Classes="blueButton" Click="ResetButton_Click" CornerRadius="10" Padding="15,8">
+                    <TextBlock Text="{DynamicResource Button_Reset}" />
+                </Button>
+            </StackPanel>
+            
+            <Border
+                Margin="0,0,0,20"
+                Padding="15"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BorderBrush="{DynamicResource ThemeBorderBrush}"
+                BorderThickness="1"
+                BoxShadow="0 4 8 0 #20000000"
+                CornerRadius="16">
+                <Grid ColumnDefinitions="*,*,*">
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Comparisons}" />
+                        <TextBlock
+                            Name="ComparisonsTextBlock"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="397" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_Swaps}" />
+                        <TextBlock
+                            Name="SwapsTextBlock"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="1361" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{DynamicResource Stat_ExecutionTime}" />
+                        <TextBlock
+                            Name="TimeTextBlock"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="35 ms" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Button
+                Margin="0,0,0,20"
+                Padding="12,8"
+                HorizontalAlignment="Left"
+                Classes="blueButton"
+                Click="BackButton_Click"
+                CornerRadius="10">
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="Segoe MDL2 Assets"
+                        Text="" />
+                    <TextBlock VerticalAlignment="Center" Text="{DynamicResource Button_Back}" />
+                </StackPanel>
+            </Button>
+        
+        </StackPanel>
+    </Grid>
+</UserControl>
