@@ -12,25 +12,29 @@
     TransparencyLevelHint="Transparent"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
-        <Grid Margin="10">
-            <Border Background="#FFFFFF" CornerRadius="15">
-                <Border.BoxShadow>
-                    <BoxShadows>0 0 10 5 #DDDDDD</BoxShadows>
-                </Border.BoxShadow>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+    <Grid Margin="20">
+        <Border Background="#F9F9F9" CornerRadius="15">
+            <Border.BoxShadow>
+                <BoxShadows>0 0 15 5 #E0E0E0</BoxShadows>
+            </Border.BoxShadow>
+            <DockPanel Margin="20">
+                <StackPanel
+                    Margin="0,0,0,15"
+                    DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    Spacing="10">
                     <ComboBox
                         x:Name="SortComboBox"
-                        Width="250"
-                        Height="40"
-                        Margin="15,15,10,10"
-                        Foreground="#444444"
-                        Background="#F5F5F5"
-                        FontSize="24"
+                        Height="45"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        Background="#FFFFFF"
                         BorderBrush="#CCCCCC"
-                        CornerRadius="10"
-                        SelectedIndex="1"
                         BorderThickness="1"
+                        CornerRadius="8"
+                        FontSize="18"
+                        Foreground="#333333"
+                        SelectedIndex="1"
                         SelectionChanged="SortComboBox_SelectionChanged">
                         <ComboBoxItem Content="Bubble Sort" />
                         <ComboBoxItem Content="Selection Sort" />
@@ -42,50 +46,63 @@
                         <ComboBoxItem Content="Linear Search" />
                     </ComboBox>
                     <Label
-                        Width="250"
-                        Height="40"
-                        FontSize="24"
-                        VerticalContentAlignment="Center"
-                        HorizontalContentAlignment="Center"
-                        Foreground="#000000"
-                        Background="#ffffff"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
                         Content="Notate"
-                        Margin="10,15,15,10" />
+                        FontSize="28"
+                        FontWeight="SemiBold"
+                        Foreground="#222222" />
                 </StackPanel>
-            </Border>
-            <StackPanel Margin="0,70,0,0">
-                <TextBox
-                    x:Name="NoteTextBox"
-                    Width="560"
-                    Height="450"
-                    FontSize="24"
-                    Foreground="#444444"
-                    Background="#F5F5F5"
-                    BorderBrush="#CCCCCC"
-                    CornerRadius="10"
-                    VerticalContentAlignment="Top"
-                    HorizontalContentAlignment="Left"
-                    BorderThickness="1"
-                    TextWrapping="Wrap" />
+
                 <Button
                     x:Name="SaveButton"
-                    Width="560"
-                    Height="40"
-                    Margin="10,10,0,0"
-                    FontSize="24"
-                    Background="#3B82F6"
-                    CornerRadius="10"
-                    Content="Save Note"
+                    Height="50"
+                    Margin="0,15,0,0"
+                    HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
-                    Click="SaveButton_Click">
+                    Background="#007AFF"
+                    Click="SaveButton_Click"
+                    Content="Save Note"
+                    CornerRadius="8"
+                    DockPanel.Dock="Bottom"
+                    FontSize="20"
+                    FontWeight="Medium"
+                    Foreground="#FFFFFF">
                     <Button.Styles>
                         <Style Selector="Button:pointerover">
-                            <Setter Property="Background" Value="#2563EB" />
+                            <Setter Property="Background" Value="#005FCC" />
+                            <Setter Property="Transitions">
+                                <Transitions>
+                                    <BrushTransition Property="Background" Duration="0.2" />
+                                </Transitions>
+                            </Setter>
+                        </Style>
+                        <Style Selector="Button:pressed">
+                            <Setter Property="Background" Value="#004C99" />
                         </Style>
                     </Button.Styles>
                 </Button>
-            </StackPanel>
-        </Grid>
+
+                <TextBox
+                    x:Name="NoteTextBox"
+                    Margin="0,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Width="520"
+                    Height="400"
+                    VerticalContentAlignment="Top"
+                    HorizontalContentAlignment="Left"
+                    AcceptsReturn="True"
+                    Background="#FFFFFF"
+                    BorderBrush="#CCCCCC"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    FontSize="18"
+                    Foreground="#333333"
+                    Watermark="Enter your note here..."
+                    TextWrapping="Wrap" />
+            </DockPanel>
+        </Border>
     </Grid>
 </Window>

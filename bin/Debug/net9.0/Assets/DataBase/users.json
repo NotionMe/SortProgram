@@ -7,14 +7,8 @@
     "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png",
     "Notes": {
-      "NotesBubbleSort": "",
-      "NotesSelectionSort": "123123zz",
-      "NotesQuickSort": "123123",
-      "NoteInsertionSort": "123123",
-      "NoteMergeSort": "123123",
-      "NoteHeapSort": "123123",
-      "NoteRadixSort": "123123",
-      "NoteLinearSorting": "123123"
+      "NotesBubbleSort": "123",
+      "NoteLinearSorting": "123"
     }
   }
 ]

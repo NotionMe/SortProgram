@@ -1,6 +1,8 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Notates;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching
@@ -19,7 +21,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
-            
+
             if (mainWindow != null)
             {
                 SortingAlgorithmsPage algorithmsPage = new SortingAlgorithmsPage();
@@ -33,13 +35,29 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching
                 }
             }
         }
-        
+
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
                 // mainWindow.NavigateToPagePublic(new InfoBinarySearch());
+            }
+        }
+        private void NotesButton_Click(object sender, RoutedEventArgs e)
+        {
+            SortProgram? mainWindow = this.VisualRoot as SortProgram;
+            if (mainWindow != null && mainWindow.AuthService != null)
+            {
+                Notate notateWindow = new Notate(mainWindow.AuthService);
+                notateWindow.Show();
+
+                notateWindow.SortComboBox.SelectedIndex = 0;
+                notateWindow.LoadNoteForSelectedSort();
+            }
+            else
+            {
+                Console.WriteLine("Main window or AuthService is null.");
             }
         }
     }
