@@ -1,0 +1,91 @@
+<Window
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Notates.Notate"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="600"
+    Height="600"
+    Background="Transparent"
+    CanResize="False"
+    SystemDecorations="None"
+    TransparencyLevelHint="Transparent"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid Margin="10">
+            <Border Background="#FFFFFF" CornerRadius="15">
+                <Border.BoxShadow>
+                    <BoxShadows>0 0 10 5 #DDDDDD</BoxShadows>
+                </Border.BoxShadow>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <ComboBox
+                        x:Name="SortComboBox"
+                        Width="250"
+                        Height="40"
+                        Margin="15,15,10,10"
+                        Foreground="#444444"
+                        Background="#F5F5F5"
+                        FontSize="24"
+                        BorderBrush="#CCCCCC"
+                        CornerRadius="10"
+                        SelectedIndex="1"
+                        BorderThickness="1"
+                        SelectionChanged="SortComboBox_SelectionChanged">
+                        <ComboBoxItem Content="Bubble Sort" />
+                        <ComboBoxItem Content="Selection Sort" />
+                        <ComboBoxItem Content="Quick Sort" />
+                        <ComboBoxItem Content="Insertion Sort" />
+                        <ComboBoxItem Content="Merge Sort" />
+                        <ComboBoxItem Content="Heap Sort" />
+                        <ComboBoxItem Content="Radix Sort" />
+                        <ComboBoxItem Content="Linear Search" />
+                    </ComboBox>
+                    <Label
+                        Width="250"
+                        Height="40"
+                        FontSize="24"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Foreground="#000000"
+                        Background="#ffffff"
+                        Content="Notate"
+                        Margin="10,15,15,10" />
+                </StackPanel>
+            </Border>
+            <StackPanel Margin="0,70,0,0">
+                <TextBox
+                    x:Name="NoteTextBox"
+                    Width="560"
+                    Height="450"
+                    FontSize="24"
+                    Foreground="#444444"
+                    Background="#F5F5F5"
+                    BorderBrush="#CCCCCC"
+                    CornerRadius="10"
+                    VerticalContentAlignment="Top"
+                    HorizontalContentAlignment="Left"
+                    BorderThickness="1"
+                    TextWrapping="Wrap" />
+                <Button
+                    x:Name="SaveButton"
+                    Width="560"
+                    Height="40"
+                    Margin="10,10,0,0"
+                    FontSize="24"
+                    Background="#3B82F6"
+                    CornerRadius="10"
+                    Content="Save Note"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Click="SaveButton_Click">
+                    <Button.Styles>
+                        <Style Selector="Button:pointerover">
+                            <Setter Property="Background" Value="#2563EB" />
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

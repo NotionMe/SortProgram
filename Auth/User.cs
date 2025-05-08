@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic; // Add this for Dictionary
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Auth;
 
@@ -10,6 +11,7 @@ public class User
     public string Role { get; set; } = "User"; 
     public DateTime RegistrationDate { get; set; }
     public string Avatar { get; set; } 
+    public Dictionary<string, string> Notes { get; set; }
 
     public User()
     {
@@ -19,6 +21,7 @@ public class User
         Role = "User";
         RegistrationDate = DateTime.Now;
         Avatar = string.Empty;
+        Notes = new Dictionary<string, string>(); // Initialize Notes
     }
 
     public User(string username, string email, string password, string role = "User")
@@ -29,6 +32,7 @@ public class User
         Role = role;
         RegistrationDate = DateTime.Now;
         Avatar = string.Empty;
+        Notes = new Dictionary<string, string>(); // Initialize Notes
     }
     
 }

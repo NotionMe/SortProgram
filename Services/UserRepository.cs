@@ -104,7 +104,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 existingUser.Avatar = updatedUser.Avatar;
                 existingUser.Role = updatedUser.Role;
                 existingUser.RegistrationDate = updatedUser.RegistrationDate;
-                existingUser.Password = updatedUser.Password; // Preserve the password
+                existingUser.Password = updatedUser.Password; 
+                existingUser.Notes = updatedUser.Notes; 
 
                 // Save changes
                 SaveAllUsers(users);

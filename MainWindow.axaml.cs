@@ -18,7 +18,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
     public partial class SortProgram : Window
     {
         private Border? currentSelectedButton;
-        private readonly IAuthService _authService;
+        public IAuthService AuthService { get; }
         public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
         public SortProgram()
@@ -26,7 +26,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             InitializeComponent();
             
             // Get auth service through DI
-            _authService = App.GetService<IAuthService>();
+            AuthService = App.GetService<IAuthService>(); // Assign to the public property
             
             // Initialize the language manager with default language
             // You can get system language or use saved user preference
@@ -88,7 +88,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
             };
             
             LogoutButton.PointerPressed += (s, e) => {
-                _authService.Logout();
+                AuthService.Logout(); // Use the public property
                 NavigateToLogin();
             };
             
@@ -200,7 +200,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://github.com/NotionMe",
+                FileName = "https://github.com/NotionMe/SortProgram",
                 UseShellExecute = true
             });
         }

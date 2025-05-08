@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Practika2_OPAM_Ubohyi_Stanislav.Auth;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Avalonia.Diagnostics;
+using Practika2_OPAM_Ubohyi_Stanislav.Notates;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
@@ -85,7 +86,8 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new LoginMenu();
+            var authService = GetService<IAuthService>(); 
+            desktop.MainWindow = new LoginMenu(); 
 
 #if DEBUG
             desktop.MainWindow.KeyDown += (sender, e) => 
