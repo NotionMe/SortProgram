@@ -69,6 +69,12 @@ public partial class Notate : Window
             case 7: // Linear Sorting
                 noteKey = "NoteLinearSorting";
                 break;
+            case 8: // Binary Search
+                noteKey = "NoteBinarySearch";
+                break;
+            case 9: // Jump Search
+                noteKey = "NoteJumpSearch";
+                break;
             default:
                 NoteTextBox.Text = string.Empty;
                 return;
@@ -141,6 +147,12 @@ public partial class Notate : Window
                 break;
             case 7: // Linear Sorting
                 noteKey = "NoteLinearSorting";
+                break;
+            case 8: // Binary Search
+                noteKey = "NoteBinarySearch";
+                break;
+            case 9: // Jump Search
+                noteKey = "NoteJumpSearch";
                 break;
             default:
                 return;

@@ -44,6 +44,9 @@
                         <ComboBoxItem Content="Heap Sort" />
                         <ComboBoxItem Content="Radix Sort" />
                         <ComboBoxItem Content="Linear Search" />
+                        <ComboBoxItem Content="Binary Search" />
+                        <ComboBoxItem Content="Jump Search" />
+
                     </ComboBox>
                     <Label
                         HorizontalAlignment="Right"

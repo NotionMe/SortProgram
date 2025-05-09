@@ -12,6 +12,7 @@ using Practika2_OPAM_Ubohyi_Stanislav.Pages;
 using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
+using Practika2_OPAM_Ubohyi_Stanislav.Algorithms.Searching;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {

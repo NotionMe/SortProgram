@@ -58,7 +58,7 @@ public partial class InfoHeapSort : UserControl
                 Notate notateWindow = new Notate(mainWindow.AuthService);
                 notateWindow.Show();
                 
-                notateWindow.SortComboBox.SelectedIndex = 0; 
+                notateWindow.SortComboBox.SelectedIndex = 5; 
                 notateWindow.LoadNoteForSelectedSort(); 
             }
             else

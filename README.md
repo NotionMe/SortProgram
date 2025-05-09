@@ -51,6 +51,7 @@
 - **Selection Sort** - алгоритм, що розділяє вхідний список на відсортовану та невідсортовану частини
 - **Quick Sort** - швидкий алгоритм за принципом "розділяй і володарюй"
 - **Insertion Sort** - алгоритм, що будує кінцевий відсортований масив по одному елементу
+- **Linear Search** - послідовний пошук елемента в масиві шляхом перебору елементів один за одним
 
 ## 🔍 Інтерактивна візуалізація
 
@@ -71,12 +72,12 @@
 
 ## 🔧 Технології та архітектура
 
-- **Avalonia UI 11.2** - крос-платформний UI фреймворк
+- **Avalonia UI 11.3.0** - крос-платформний UI фреймворк
 - **C# та .NET 9.0** - сучасна мова програмування та платформа
 - **MVVM (Model-View-ViewModel)** - архітектурний патерн для чіткого розділення логіки та представлення
-- **ReactiveUI** - фреймворк для реактивного програмування
+- **ReactiveUI 20.2.45** - фреймворк для реактивного програмування
 - **PerformanceTimer** - для точного вимірювання продуктивності з можливістю паузи та відновлення
-- **BCrypt.Net-Next** - для безпечного хешування паролів
+- **BCrypt.Net-Next 4.0.3** - для безпечного хешування паролів
 - **JSON** - для зберігання даних користувачів та налаштувань
 - **Fluent Design** - сучасний дизайн інтерфейсу
 
@@ -159,12 +160,15 @@
 
 ```
 SortProgram/
-├── Algorithms/              # Алгоритми сортування
+├── Algorithms/              # Алгоритми сортування та пошуку
 │   ├── BubbleSort.cs        # Реалізація бульбашкового сортування
 │   ├── InsertionSort.cs     # Реалізація сортування вставками
 │   ├── QuickSort.cs         # Реалізація швидкого сортування
-│   └── SelectionSort.cs     # Реалізація сортування вибором
+│   ├── SelectionSort.cs     # Реалізація сортування вибором
+│   └── Searching/           # Алгоритми пошуку
+│       └── LinearSearch.cs  # Реалізація лінійного пошуку
 ├── Assets/                  # Ресурси програми
+│   ├── bg.jpg               # Фонове зображення
 │   ├── DataBase/            # База даних користувачів
 │   │   └── users.json       # Дані користувачів
 │   ├── Images/              # Зображення та анімації
@@ -181,30 +185,43 @@ SortProgram/
 │       ├── en.json          # Англійська локалізація
 │       └── uk.json          # Українська локалізація
 ├── Auth/                    # Компоненти авторизації
+│   ├── AvatarPickerDialog.axaml  # Діалог вибору аватара
+│   ├── AvatarPickerDialog.axaml.cs # Логіка діалогу вибору аватара
 │   ├── LoginMenu.axaml      # Форма входу
 │   ├── LoginMenu.axaml.cs   # Логіка форми входу
+│   ├── MessageBox.axaml     # Вікно повідомлень
+│   ├── MessageBox.cs        # Логіка вікна повідомлень
 │   ├── SignInMenu.axaml     # Форма реєстрації
 │   ├── SignInMenu.axaml.cs  # Логіка форми реєстрації
-│   ├── MessageBox.axaml     # Вікно повідомлень
 │   └── User.cs              # Модель користувача
 ├── Converters/              # Конвертери для UI
 │   └── LanguageConverter.cs # Конвертер для локалізації
 ├── Fonts/                   # Шрифти для програми
 │   ├── AnonymousPro-Regular.ttf # Моноширинний шрифт
 │   └── Oswald-VariableFont_wght.ttf # Шрифт для заголовків
+├── Notates/                 # Нотатки або записи користувача (приклад)
+│   ├── Notate.axaml         # Файл розмітки для нотаток
+│   └── Notate.axaml.cs      # Логіка для нотаток
 ├── Pages/                   # Сторінки програми
 │   ├── HomePage.axaml       # Головна сторінка програми
+│   ├── HomePage.axaml.cs    # Логіка головної сторінки
 │   ├── ProfilePage.axaml    # Сторінка профілю користувача
+│   ├── ProfilePage.axaml.cs # Логіка сторінки профілю
 │   ├── SettingsPage.axaml   # Сторінка налаштувань
+│   ├── SettingsPage.axaml.cs # Логіка сторінки налаштувань
 │   ├── SortingAlgorithmsPage.axaml # Сторінка з алгоритмами сортування
+│   ├── SortingAlgorithmsPage.axaml.cs # Логіка сторінки алгоритмів
 │   ├── StatisticsPage.axaml # Сторінка зі статистикою
+│   ├── StatisticsPage.axaml.cs # Логіка сторінки статистики
 │   ├── Admin/               # Адміністративні сторінки
 │   │   └── RoleManagementPage.axaml # Управління ролями користувачів
-│   ├── Info/                # Інформаційні сторінки
+│   ├── Helpers/             # Допоміжні компоненти для сторінок
+│   ├── Info/                # Інформаційні сторінки про алгоритми
 │   │   ├── InfoBubbleSort.axaml # Інформація про Bubble Sort
 │   │   ├── InfoSelectionSort.axaml # Інформація про Selection Sort
 │   │   ├── InfoQuickSort.axaml # Інформація про Quick Sort
 │   │   ├── InfoInsertionSort.axaml # Інформація про Insertion Sort
+│   ├── InfoAlgoritm/        # Додаткова інформація або компоненти для алгоритмів
 │   └── Visualizations/      # Візуалізації алгоритмів
 │       ├── BubbleSort.axaml # Візуалізація Bubble Sort
 │       ├── SelectionSort.axaml # Візуалізація Selection Sort
@@ -212,8 +229,14 @@ SortProgram/
 │       └── InsertionSort.axaml # Візуалізація Insertion Sort
 ├── Services/                # Сервіси програми
 │   ├── AuthService.cs       # Сервіс автентифікації
+│   ├── AvatarService.cs     # Сервіс для роботи з аватарами
+│   ├── IAuthService.cs      # Інтерфейс сервісу автентифікації
+│   ├── IAvatarService.cs    # Інтерфейс сервісу для роботи з аватарами
+│   ├── IRoleService.cs      # Інтерфейс сервісу для роботи з ролями
+│   ├── IUserRepository.cs   # Інтерфейс репозиторію користувачів
 │   ├── LanguageManager.cs   # Менеджер локалізації
 │   ├── PasswordHasher.cs    # Хешування паролів
+│   ├── RoleService.cs       # Сервіс для роботи з ролями
 │   └── UserRepository.cs    # Робота з базою користувачів
 ├── Styles/                  # Стилі програми
 │   ├── Components/          # Компоненти стилів
@@ -230,27 +253,34 @@ SortProgram/
 │   ├── GlobalStyles.axaml   # Глобальні стилі
 │   ├── Sidebar.axaml        # Стилі бічного меню
 │   └── ThemeManager.cs      # Менеджер тем
+├── TODO/                    # Завдання та плани по проекту
+│   └── mission.docx         # Документ з описом завдань
 ├── Utils/                   # Утиліти та допоміжні класи
 │   ├── ArrayGenerator.cs    # Генератор масивів для сортування
 │   ├── LocalizationService.cs # Сервіс локалізації
 │   └── PerformanceTimer.cs  # Таймер для вимірювання продуктивності
 ├── ViewModels/              # Моделі представлення (MVVM)
+│   ├── ArrayElementViewModel.cs # Модель представлення для елемента масиву (візуалізація)
 │   ├── BubbleSortViewModel.cs # Модель представлення для Bubble Sort
-│   ├── SelectionSortViewModel.cs # Модель представлення для Selection Sort
-│   ├── QuickSortViewModel.cs # Модель представлення для Quick Sort
-│   ├── InsertionSortViewModel.cs # Модель представлення для Insertion Sort
 │   ├── HomePageViewModel.cs # Модель представлення для головної сторінки
+│   ├── InsertionSortViewModel.cs # Модель представлення для Insertion Sort
+│   ├── LinearSearchViewModel.cs # Модель представлення для Linear Search
 │   ├── ProfileViewModel.cs  # Модель представлення для профілю
+│   ├── QuickSortViewModel.cs # Модель представлення для Quick Sort
+│   ├── RoleManagementViewModel.cs # Модель представлення для управління ролями
+│   ├── SelectionSortViewModel.cs # Модель представлення для Selection Sort
 │   ├── SettingsViewModel.cs # Модель представлення для налаштувань
 │   ├── SortingAlgorithmViewModel.cs # Базова модель для алгоритмів
 │   ├── UserViewModel.cs     # Модель представлення для користувача
 │   └── ViewModelBase.cs     # Базовий клас для моделей представлення
-├── App.axaml                # Головний файл додатку
+├── App.axaml                # Головний файл додатку (Avalonia)
 ├── App.axaml.cs             # Логіка додатку
+├── app.manifest             # Маніфест додатку
 ├── MainWindow.axaml         # Головне вікно програми
 ├── MainWindow.axaml.cs      # Логіка головного вікна
 ├── Program.cs               # Точка входу програми
-└── Practika2_OPAM_Ubohyi_Stanislav.csproj # Файл проекту
+├── Practika2_OPAM_Ubohyi_Stanislav.csproj # Файл проекту C#
+└── SortProgram.sln          # Файл рішення Visual Studio
 ```
 
 ## 📚 Ліцензія

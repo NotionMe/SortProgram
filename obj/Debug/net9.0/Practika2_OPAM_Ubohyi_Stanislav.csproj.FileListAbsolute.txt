@@ -553,3 +553,5 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/linear_search.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/heap-sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/radix-sort.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/BinarySearch.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/JumpSearch.gif

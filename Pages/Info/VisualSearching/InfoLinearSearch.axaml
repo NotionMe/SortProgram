@@ -75,6 +75,7 @@
                             VerticalContentAlignment="Top"
                             Background="{DynamicResource PrimaryBrush}"
                             Content="To attempt"
+                            Click="AttemptButton_Click"
                             CornerRadius="4"
                             Cursor="Hand"
                             FontFamily="{DynamicResource OswaldFont}"

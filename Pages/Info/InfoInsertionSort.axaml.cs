@@ -61,7 +61,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info
                 Notate notateWindow = new Notate(mainWindow.AuthService);
                 notateWindow.Show();
                 
-                notateWindow.SortComboBox.SelectedIndex = 0; 
+                notateWindow.SortComboBox.SelectedIndex = 3; 
                 notateWindow.LoadNoteForSelectedSort(); 
             }
             else

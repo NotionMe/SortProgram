@@ -8,7 +8,9 @@
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar8.png",
     "Notes": {
       "NotesBubbleSort": "123",
-      "NoteLinearSorting": "123"
+      "NoteLinearSorting": "123",
+      "NoteBinarySearch": "123123",
+      "NoteJumpSearch": "123123"
     }
   }
 ]

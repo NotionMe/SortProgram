@@ -61,7 +61,7 @@ public partial class InfoRadixSort : UserControl
                 Notate notateWindow = new Notate(mainWindow.AuthService);
                 notateWindow.Show();
                 
-                notateWindow.SortComboBox.SelectedIndex = 0; 
+                notateWindow.SortComboBox.SelectedIndex = 6; 
                 notateWindow.LoadNoteForSelectedSort(); 
             }
             else

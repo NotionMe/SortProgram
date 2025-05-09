@@ -56,7 +56,7 @@ public partial class InfoMergeSort : UserControl
                 Notate notateWindow = new Notate(mainWindow.AuthService);
                 notateWindow.Show();
                 
-                notateWindow.SortComboBox.SelectedIndex = 0; 
+                notateWindow.SortComboBox.SelectedIndex = 4; 
                 notateWindow.LoadNoteForSelectedSort(); 
             }
             else

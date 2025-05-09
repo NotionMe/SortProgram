@@ -98,7 +98,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         {
             { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort", "Merge Sort", "Heap Sort", "Radix Sort", "Сортування бульбашкою",
             "Сортування вибором", "Швидке сортування", "Сортування вставками", "Сортування злиттям", "Пірамідальне сортування", "Сортування за розрядами" } },
-            { "Searching", new List<string> { "Binary Search", "Linear Search", "Brute Force", "Interpolation Search", "Exponential Search", "Jump Search", "Hashing" } },
+            { "Searching", new List<string> { "Binary Search", "Linear Search", "Jump Search", "Лінійний пошук", "Бінарний пошук", "Стрибковий пошук" } },
             { "Graph Traversal", new List<string> { "BFS (Breadth-First Search)", "DFS (Depth-First Search)" } },
             { "Tree-based", new List<string> { "Binary Search Tree (BST) Search", "Trie Search" } }
         };
@@ -251,6 +251,24 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         private void LinearSearchPage_Click(object sender, RoutedEventArgs e)
         {
             NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new LinearSearch());
+        }
+
+        private void InfoBinarySearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoBinarySearch());
+        }
+        private void BinarySearchPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new BinarySearch());
+        }
+
+        private void InfoJumpSearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoJumpSearch());
+        }
+        private void JumpSearchPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new JumpSearch());
         }
     }
 }
