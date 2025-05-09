@@ -69,20 +69,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             set => this.RaiseAndSetIfChanged(ref _searchStatusColor, value);
         }
 
-        private bool _isArrowVisible;
-        public bool IsArrowVisible
-        {
-            get => _isArrowVisible;
-            set => this.RaiseAndSetIfChanged(ref _isArrowVisible, value);
-        }
-
-        private Avalonia.Thickness _arrowMargin;
-        public Avalonia.Thickness ArrowMargin
-        {
-            get => _arrowMargin;
-            set => this.RaiseAndSetIfChanged(ref _arrowMargin, value);
-        }
-
         public ReactiveCommand<Unit, Unit> StartCommand { get; }
         public ReactiveCommand<Unit, Unit> PauseCommand { get; }
         public ReactiveCommand<Unit, Unit> StepCommand { get; }
@@ -197,7 +183,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             UpdateTimerInterval();
             _performanceTimer.Start();
             _timer?.Start();
-            IsArrowVisible = _internalArray.Length > 0;
         }
 
         private void PauseSearch()
@@ -233,7 +218,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 if (_internalArray.Length > 0) _valueToFind = _internalArray[_random.Next(0, _internalArray.Length)];
                 else _valueToFind = _random.Next(1, 101);
                 _performanceTimer.Start(); // Start timer but don't start DispatcherTimer
-                IsArrowVisible = _internalArray.Length > 0;
             }
 
             PerformBinarySearchStep();
@@ -265,7 +249,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             TimeElapsed = "0 ms";
             SearchStatusText = "?";
             SearchStatusColor = new SolidColorBrush(Colors.Gray);
-            IsArrowVisible = false;
 
             foreach (var elem in ArrayElements)
             {
@@ -290,7 +273,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             {
                 _timer?.Stop();
                 _performanceTimer.Stop();
-                IsArrowVisible = false; // Hide arrow once completed
             }
         }
 

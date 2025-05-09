@@ -5,7 +5,7 @@ using Avalonia.Media;
 using Avalonia.Threading;
 using ReactiveUI;
 using System.Reactive;
-using Practika2_OPAM_Ubohyi_Stanislav.Algorithms;
+using Practika2_OPAM_Ubohyi_Stanislav.Algorithms; // Тепер ISortingStrategy тут
 using Practika2_OPAM_Ubohyi_Stanislav.Utils;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
@@ -25,7 +25,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         protected int _selectedArrayType = 0; // Індекс 0 = Випадковий масив
         protected string _executionTime = "0 мс";
         protected ObservableCollection<Border> _bars = new ObservableCollection<Border>();
-        protected ISortingStrategy _sortingStrategy;
+        protected ISortingStrategy _sortingStrategy; // Тепер має знайти ISortingStrategy
 
         // Публічні властивості
         public ObservableCollection<Border> Bars
@@ -90,7 +90,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         public ReactiveCommand<Unit, Unit> ResetCommand { get; }
 
         // Конструктор
-        public SortingAlgorithmViewModel(ISortingStrategy sortingStrategy)
+        public SortingAlgorithmViewModel(ISortingStrategy sortingStrategy) // Тепер має знайти ISortingStrategy
         {
             _sortingStrategy = sortingStrategy;
             
@@ -203,7 +203,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             
             // Початок нового сортування
             ResetSortingState();
-            _sortingStrategy.Initialize(_array);
+            if (_sortingStrategy != null)
+            {
+                _sortingStrategy.Initialize(_array);
+            }
             IsSorting = true;
             _performanceTimer.Start();
             _timer?.Start();
@@ -233,7 +236,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             {
                 // Якщо сортування ще не почалося, ініціалізуємо його
                 ResetSortingState();
-                _sortingStrategy.Initialize(_array);
+                if (_sortingStrategy != null)
+                {
+                    _sortingStrategy.Initialize(_array);
+                }
                 IsSorting = true;
                 _performanceTimer.Start();
             }
@@ -283,6 +289,12 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             ExecutionTime = $"{_performanceTimer.ElapsedMilliseconds} мс";
 
             // Виконання кроку сортування через стратегію
+            if (_sortingStrategy == null)
+            {
+                FinishSorting();
+                return;
+            }
+
             bool completed = _sortingStrategy.PerformStep(_array, ref _comparisons, ref _swaps);
             
             // Отримання індексів елементів для візуалізації
