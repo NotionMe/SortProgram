@@ -26,7 +26,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching
             SortProgram? mainWindow = this.VisualRoot as SortProgram;
             if (mainWindow != null)
             {
-                //mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching.JumpSearch());
+                mainWindow.NavigateToPagePublic(new Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching.JumpSearch());
             }
         }
 

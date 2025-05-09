@@ -121,6 +121,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/BinarySearch.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/JumpSearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/LinearSearch.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

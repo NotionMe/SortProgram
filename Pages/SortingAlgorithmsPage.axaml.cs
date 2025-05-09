@@ -268,7 +268,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private void JumpSearchPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new JumpSearch());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new JumpSearch());
         }
     }
 }
