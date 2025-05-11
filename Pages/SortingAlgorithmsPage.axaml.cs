@@ -101,7 +101,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             "Сортування вибором", "Швидке сортування", "Сортування вставками", "Сортування злиттям", "Пірамідальне сортування", "Сортування за розрядами" } },
             { "Searching", new List<string> { "Binary Search", "Linear Search", "Jump Search", "Лінійний пошук", "Бінарний пошук", "Стрибковий пошук" } },
             { "Graph Traversal", new List<string> { "Breadth-First Search", "Пошук у ширину", "Depth-First Search", "Пошук у глибину", "Dijkstras Algorithm", "Алгоритм Дейкстри"  } },
-            { "Tree-based", new List<string> { "Binary Search Tree (BST) Search", "Trie Search" } }
+            { "Tree-based", new List<string> { "Inorder Traversal", "Cиметричний обхід", "Preorder Traversal", "Обхід у прямому порядку", "Postorder Traversal", "Обхід у зворотному порядку" } }
         };
 
         private void CategoryCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -294,6 +294,30 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         private void DijkstrasPage_Click(object sender, RoutedEventArgs e)
         {
             //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Dijkstras());
+        }
+        private void InfoInorder_Traversal_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoInorder_Traversal());
+        }
+        private void Inorder_TraversalPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Inorder_Traversal());
+        }
+        private void InfoPreorder_Traversal_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPreorder_Traversal());
+        }
+        private void Preorder_TraversalPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Preorder_Traversal());
+        }
+        private void InfoPostorder_Traversal_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPostorder_Traversal());
+        }
+        private void Postorder_TraversalPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Postorder_Traversal());
         }
     }
 }
