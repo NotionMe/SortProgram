@@ -555,3 +555,6 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/radix-sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/BinarySearch.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/JumpSearch.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/BFS.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/DFS.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/Dijkstra_Algorithm.gif

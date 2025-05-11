@@ -63,7 +63,7 @@
                             Height="180"
                             ClipToBounds="True"
                             CornerRadius="5">
-                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/quick_sort.gif" Stretch="Uniform" />
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/insertion_sort.gif" Stretch="Uniform" />
                         </Border>
                         <Button
                             Grid.Row="1"

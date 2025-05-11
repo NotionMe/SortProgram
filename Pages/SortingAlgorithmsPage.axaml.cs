@@ -14,6 +14,7 @@ using Avalonia.VisualTree;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -99,7 +100,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
             { "Sorting", new List<string> { "Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort", "Merge Sort", "Heap Sort", "Radix Sort", "Сортування бульбашкою",
             "Сортування вибором", "Швидке сортування", "Сортування вставками", "Сортування злиттям", "Пірамідальне сортування", "Сортування за розрядами" } },
             { "Searching", new List<string> { "Binary Search", "Linear Search", "Jump Search", "Лінійний пошук", "Бінарний пошук", "Стрибковий пошук" } },
-            { "Graph Traversal", new List<string> { "BFS (Breadth-First Search)", "DFS (Depth-First Search)" } },
+            { "Graph Traversal", new List<string> { "Breadth-First Search", "Пошук у ширину", "Depth-First Search", "Пошук у глибину", "Dijkstras Algorithm", "Алгоритм Дейкстри"  } },
             { "Tree-based", new List<string> { "Binary Search Tree (BST) Search", "Trie Search" } }
         };
 
@@ -269,6 +270,30 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         private void JumpSearchPage_Click(object sender, RoutedEventArgs e)
         {
             NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new JumpSearch());
+        }
+        private void InfoBFS_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoBFS());
+        }
+        private void BFSPage_Click(object sender, RoutedEventArgs e)
+        {
+           //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new BFS());
+        }
+        private void InfoDFS_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDFS());
+        }
+        private void DFSPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new DFS());
+        }
+        private void InfoDijkstras_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDijkstras());
+        }
+        private void DijkstrasPage_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Dijkstras());
         }
     }
 }
