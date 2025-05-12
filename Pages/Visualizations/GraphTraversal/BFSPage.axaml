@@ -1,5 +1,5 @@
 <UserControl
-    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.GraphTraversal.BFSPage"
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.GraphTraversal.BFSPage"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:anim="using:AnimatedImage.Avalonia"
@@ -14,7 +14,7 @@
                 FontSize="32"
                 FontWeight="Bold"
                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                Text="{DynamicResource BubbleSort_Visualization_Title}" />
+                Text="{DynamicResource BFS_Visualization_Title}" />
 
             <Border
                 Margin="0,0,0,20"

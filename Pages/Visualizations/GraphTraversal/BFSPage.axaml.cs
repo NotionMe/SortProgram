@@ -18,4 +18,33 @@ public partial class BFSPage : UserControl
     {
         AvaloniaXamlLoader.Load(this);
     }
+
+    private void GenerateButton_Click(object? sender, RoutedEventArgs e)
+        {
+        }
+
+        private void StartButton_Click(object? sender, RoutedEventArgs e)
+        {
+        }
+
+        private void PauseButton_Click(object? sender, RoutedEventArgs e)
+        {
+        }
+
+        private void StepButton_Click(object? sender, RoutedEventArgs e)
+        {
+        }
+
+        private void ResetButton_Click(object? sender, RoutedEventArgs e)
+        {
+        }
+
+        private void BackButton_Click(object? sender, RoutedEventArgs e)
+        {
+            // Повернення до списку алгоритмів
+            if (this.VisualRoot is SortProgram mainWindow)
+            {
+                mainWindow.NavigateToPagePublic(new SortingAlgorithmsPage());
+            }
+        }
 }
