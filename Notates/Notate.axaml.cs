@@ -75,6 +75,15 @@ public partial class Notate : Window
             case 9: // Jump Search
                 noteKey = "NoteJumpSearch";
                 break;
+            case 10: // BFS
+                noteKey = "Breadth-FirstSearch";
+                break;
+            case 11: // DFS
+                noteKey = "Depth-FirstSearch";
+                break;
+            case 12: // Dijkstra
+                noteKey = "Dijkstra";
+                break;
             default:
                 NoteTextBox.Text = string.Empty;
                 return;
@@ -153,6 +162,15 @@ public partial class Notate : Window
                 break;
             case 9: // Jump Search
                 noteKey = "NoteJumpSearch";
+                break;
+            case 10: // BFS
+                noteKey = "Breadth-FirstSearch";
+                break;
+            case 11: // DFS
+                noteKey = "Depth-FirstSearch";
+                break;
+            case 12: // Dijkstra
+                noteKey = "Dijkstra";
                 break;
             default:
                 return;

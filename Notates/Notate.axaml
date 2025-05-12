@@ -46,6 +46,7 @@
                         <ComboBoxItem Content="Linear Search" />
                         <ComboBoxItem Content="Binary Search" />
                         <ComboBoxItem Content="Jump Search" />
+                        <ComboBoxItem Content="Breadth-First Search" />
 
                     </ComboBox>
                     <Label

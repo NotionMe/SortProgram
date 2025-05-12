@@ -15,6 +15,7 @@ using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.VisualSearching;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.GraphTraversal;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -273,7 +274,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private void InfoBFS_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoBFS());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoBFS());
         }
         private void BFSPage_Click(object sender, RoutedEventArgs e)
         {

@@ -16,7 +16,8 @@
       "NoteInsertionSort": "Insertion Sort",
       "NoteMergeSort": "Merge Sort",
       "NoteHeapSort": "Heap Sort",
-      "NoteRadixSort": "Radix Sort"
+      "NoteRadixSort": "Radix Sort",
+      "Breadth-FirstSearch": "BFS"
     }
   }
 ]
