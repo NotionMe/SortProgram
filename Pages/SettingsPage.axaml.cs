@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 using Practika2_OPAM_Ubohyi_Stanislav.ViewModels;
 
@@ -38,11 +39,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 
         private void OpenTutorial_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            SortProgram? mainWindow = this.VisualRoot as SortProgram;
-            if (mainWindow != null)
-            {
-                mainWindow.NavigateToPagePublic(new Algoritm());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Algoritm());
+
         }
 
         private void NavigateToPage(Control page)

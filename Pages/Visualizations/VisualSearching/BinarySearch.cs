@@ -3,7 +3,8 @@ using Avalonia.Interactivity;
 using Practika2_OPAM_Ubohyi_Stanislav.ViewModels; // Added for ViewModel
 using Avalonia.Markup.Xaml; // Keep for InitializeComponent
 using Practika2_OPAM_Ubohyi_Stanislav.Pages; // For SortingAlgorithmsPage if used for navigation
-using System.Diagnostics; // For Debug.WriteLine
+using System.Diagnostics;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers; // For Debug.WriteLine
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching
 {
@@ -25,11 +26,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.VisualSearching
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Повернення до списку алгоритмів
-            if (this.VisualRoot is SortProgram mainWindow)
-            {
-                mainWindow.NavigateToPagePublic(new SortingAlgorithmsPage());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
         }
     }
 }

@@ -1,4 +1,6 @@
+using System;
 using Avalonia.Controls;
+using Practika2_OPAM_Ubohyi_Stanislav.Algorithms.Searching;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers
 {

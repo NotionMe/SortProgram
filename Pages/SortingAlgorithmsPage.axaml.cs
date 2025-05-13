@@ -283,15 +283,15 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private void InfoDFS_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDFS());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDFS());
         }
         private void DFSPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new DFS());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new DFSPage());
         }
         private void InfoDijkstras_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDijkstras());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoDijkstras());
         }
         private void DijkstrasPage_Click(object sender, RoutedEventArgs e)
         {

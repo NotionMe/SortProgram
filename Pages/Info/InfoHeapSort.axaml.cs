@@ -5,6 +5,7 @@ using Avalonia.Interactivity;
 using Practika2_OPAM_Ubohyi_Stanislav.Algorithms;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations;
 using Practika2_OPAM_Ubohyi_Stanislav.Notates;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Info;
@@ -16,39 +17,19 @@ public partial class InfoHeapSort : UserControl
     {
         InitializeComponent();
     }
-            private void AttemptButton_Click(object sender, RoutedEventArgs e)
+        private void AttemptButton_Click(object sender, RoutedEventArgs e)
         {
-            SortProgram? mainWindow = this.VisualRoot as SortProgram;
-            if (mainWindow != null)
-            {
-                mainWindow.NavigateToPagePublic(new HeapSort());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new HeapSort());
         }
     private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            SortProgram? mainWindow = this.VisualRoot as SortProgram;
-            
-            if (mainWindow != null)
-            {
-                SortingAlgorithmsPage algorithmsPage = new SortingAlgorithmsPage();
-                mainWindow.NavigateToPagePublic(algorithmsPage);
-            }
-            else
-            {
-                if (this.Parent is ContentControl contentControl)
-                {
-                    contentControl.Content = new SortingAlgorithmsPage();
-                }
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
         }
         
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            SortProgram? mainWindow = this.VisualRoot as SortProgram;
-            if (mainWindow != null)
-            {
-                mainWindow.NavigateToPagePublic(new InfoRadixSort());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoRadixSort());
+
         }
         private void NotesButton_Click(object sender, RoutedEventArgs e)
         {

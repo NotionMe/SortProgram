@@ -47,6 +47,8 @@
                         <ComboBoxItem Content="Binary Search" />
                         <ComboBoxItem Content="Jump Search" />
                         <ComboBoxItem Content="Breadth-First Search" />
+                        <ComboBoxItem Content="Depth-First Search" />
+                        <ComboBoxItem Content="Dijkstra's Algorithm" />
 
                     </ComboBox>
                     <Label

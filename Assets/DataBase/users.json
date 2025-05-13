@@ -17,7 +17,9 @@
       "NoteMergeSort": "Merge Sort",
       "NoteHeapSort": "Heap Sort",
       "NoteRadixSort": "Radix Sort",
-      "Breadth-FirstSearch": "BFS"
+      "Breadth-FirstSearch": "BFS",
+      "Depth-FirstSearch": "DFS",
+      "Dijkstra": "Dijkstras\n"
     }
   }
 ]

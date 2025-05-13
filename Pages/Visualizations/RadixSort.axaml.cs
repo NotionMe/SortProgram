@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using System.ComponentModel;
 using System;
 using Avalonia.Markup.Xaml;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
 {
@@ -33,11 +34,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Повернення до списку алгоритмів
-            if (this.VisualRoot is SortProgram mainWindow)
-            {
-                mainWindow.NavigateToPagePublic(new SortingAlgorithmsPage());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
         }
     }
 }

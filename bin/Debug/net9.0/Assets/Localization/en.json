@@ -52,6 +52,7 @@
   "BFS_Description":"Breadth First Search (BFS) is a graph traversal algorithm that explores all the vertices of a graph in breadthward motion. It starts at a selected node (the 'source' node) and explores all its neighboring nodes at the present depth prior to moving on to nodes at the next depth level. BFS uses a queue data structure to keep track of the nodes that need to be explored. It is commonly used for finding the shortest path in unweighted graphs.",
   "BFS_Visualization_Title":"Breadth-First Search: Visualization",
   "InfoPage_DFS_Graph_Traversal_Title":"Depth-First Search", 
+  "DFS_Visualization_Title":"Depth-First Search: Visualization",
   "DFS_SmallDescription":"Graph traversal algorithm that explores as far as possible along each branch before backtracking.",
   "DFS_Description":"Depth First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. It uses a stack data structure to keep track of the nodes that need to be explored. DFS can be implemented using recursion or an explicit stack. It is commonly used for pathfinding and topological sorting.",
   "InfoPage_Dijkstras_Algorithm_Title":"Dijkstras Algorithm",

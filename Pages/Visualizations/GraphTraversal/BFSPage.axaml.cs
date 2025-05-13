@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Practika2_OPAM_Ubohyi_Stanislav.Notates;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.GraphTraversal;
 
@@ -41,10 +42,6 @@ public partial class BFSPage : UserControl
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Повернення до списку алгоритмів
-            if (this.VisualRoot is SortProgram mainWindow)
-            {
-                mainWindow.NavigateToPagePublic(new SortingAlgorithmsPage());
-            }
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
         }
 }

@@ -52,6 +52,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoBFS.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoDFS.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoDijkstras.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoBubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -104,6 +110,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/BFSPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/DFSPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/HeapSort.axaml]

@@ -220,9 +220,13 @@
                 Background="{DynamicResource ThemeCardBackgroundBrush}"
                 BorderBrush="{DynamicResource ThemeBorderBrush}"
                 BorderThickness="1"
-                CornerRadius="16"
-                BoxShadow="0 4 8 0 #20000000">
-                <Grid Name="VisualizationGrid" Margin="10" />
+                BoxShadow="0 4 8 0 #20000000"
+                CornerRadius="16">
+                <Grid Margin="15"> 
+                    <Border CornerRadius="20">
+                        <Image x:Name="MergeSortAnimation" anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/bfs_visualization.gif" Stretch="Fill" Margin="5" />
+                    </Border>
+                </Grid>
             </Border>
 
             <Border

@@ -561,3 +561,5 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/Inorder_Traversal.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/post-order-traversal.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/Preorder_Traversal.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/bfs_visualization.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/dfs_visualization.gif
