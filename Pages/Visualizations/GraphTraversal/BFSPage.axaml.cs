@@ -22,22 +22,27 @@ public partial class BFSPage : UserControl
 
     private void GenerateButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void StartButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void PauseButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void StepButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void ResetButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)

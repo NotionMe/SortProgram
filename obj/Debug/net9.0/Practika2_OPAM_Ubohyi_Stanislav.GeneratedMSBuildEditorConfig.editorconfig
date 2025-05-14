@@ -37,6 +37,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Auth/SignInMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/ErrorMessage/ErrorMessage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -113,6 +116,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/DFSPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/Dijkstars.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/HeapSort.axaml]

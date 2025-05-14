@@ -295,7 +295,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private void DijkstrasPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Dijkstras());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Dijkstars());
         }
         private void InfoInorder_Traversal_Click(object sender, RoutedEventArgs e)
         {

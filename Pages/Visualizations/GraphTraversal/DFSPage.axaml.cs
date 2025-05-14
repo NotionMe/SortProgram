@@ -21,27 +21,32 @@ public partial class DFSPage : UserControl
     }
 
     private void GenerateButton_Click(object? sender, RoutedEventArgs e)
-        {
-        }
+    {
+        ErrorMessage.ErrorMessage.ShowError();
+    }
 
-        private void StartButton_Click(object? sender, RoutedEventArgs e)
-        {
-        }
+    private void StartButton_Click(object? sender, RoutedEventArgs e)
+    {
+        ErrorMessage.ErrorMessage.ShowError();
+    }
 
-        private void PauseButton_Click(object? sender, RoutedEventArgs e)
-        {
-        }
+    private void PauseButton_Click(object? sender, RoutedEventArgs e)
+    {
+        ErrorMessage.ErrorMessage.ShowError();
+    }
 
-        private void StepButton_Click(object? sender, RoutedEventArgs e)
-        {
-        }
+    private void StepButton_Click(object? sender, RoutedEventArgs e)
+    {
+        ErrorMessage.ErrorMessage.ShowError();
+    }
 
-        private void ResetButton_Click(object? sender, RoutedEventArgs e)
-        {
-        }
+    private void ResetButton_Click(object? sender, RoutedEventArgs e)
+    {
+        ErrorMessage.ErrorMessage.ShowError();
+    }
 
-        private void BackButton_Click(object? sender, RoutedEventArgs e)
-        {
-            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
-        }
+    private void BackButton_Click(object? sender, RoutedEventArgs e)
+    {
+        NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new SortingAlgorithmsPage());
+    }
 }

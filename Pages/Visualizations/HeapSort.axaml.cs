@@ -22,15 +22,18 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations
 
         private void PlayButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
+
         }
 
         private void PauseButton_Click(object? sender, RoutedEventArgs e)
         {
-
+            ErrorMessage.ErrorMessage.ShowError();
         }
         
         private void ResetButton_Click(object? sender, RoutedEventArgs e)
         {
+            ErrorMessage.ErrorMessage.ShowError();
         }
 
         private void BackButton_Click(object? sender, RoutedEventArgs e)

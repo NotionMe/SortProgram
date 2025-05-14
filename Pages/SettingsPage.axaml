@@ -135,11 +135,11 @@
                                         FontSize="18"
                                         FontWeight="SemiBold"
                                         Foreground="#1E3A8A"
-                                        Text="Algorithm Tutorial" />
+                                        Text="{DynamicResource SettingButton_Tutorial}" />
                                     <TextBlock
                                         FontSize="14"
                                         Foreground="#4B5563"
-                                        Text="This tutorial will guide you through the algorithm's functionality and usage."
+                                        Text="{DynamicResource SettingDescription_Tutorial}"
                                         TextWrapping="Wrap" />
                                 </StackPanel>
                                 <Button
@@ -149,7 +149,7 @@
                                     VerticalAlignment="Center"
                                     Background="#3B82F6"
                                     Click="OpenTutorial_Click"
-                                    Content="{Binding LanguageManager[LearnMore_Button]}"
+                                    Content="{DynamicResource Button_LearnMore}"
                                     CornerRadius="8"
                                     FontWeight="SemiBold"
                                     Foreground="White">

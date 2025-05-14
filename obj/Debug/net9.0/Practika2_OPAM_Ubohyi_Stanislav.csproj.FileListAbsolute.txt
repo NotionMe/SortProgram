@@ -427,8 +427,6 @@
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /home/notionme/Document/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar8.png
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Localization/en.json
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Localization/uk.json
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/DataBase/users.json
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar1.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Avatar/Avatar2.png
@@ -563,3 +561,6 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/Preorder_Traversal.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/bfs_visualization.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/dfs_visualization.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/Dijkstars_Visualization.gif
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Localization/en.json
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Localization/uk.json

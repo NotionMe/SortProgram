@@ -1,0 +1,62 @@
+<Window
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.ErrorMessage.ErrorMessage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="600"
+    Height="200"
+    Background="Transparent"
+    CanResize="False"
+    SystemDecorations="None"
+    TransparencyLevelHint="Transparent"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    
+    <Border 
+        CornerRadius="10" 
+        Background="#80000000" 
+        BorderBrush="#FFCC0000" 
+        BorderThickness="2" 
+        Padding="20" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center">
+        
+        <Grid RowDefinitions="Auto,Auto,Auto">
+            <!-- Error Icon and Title -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                <TextBlock 
+                    Text="⚠️" 
+                    FontSize="24" 
+                    VerticalAlignment="Center" 
+                    Margin="0,0,10,0"/>
+                <TextBlock 
+                    Text="{DynamicResource ErrorMessage_Title}" 
+                    FontSize="20" 
+                    FontWeight="Bold" 
+                    Foreground="#FFEEEEEE"/>
+            </StackPanel>
+            
+            <!-- Error Message -->
+            <TextBlock 
+                Grid.Row="1" 
+                Text="{DynamicResource ErrorMessage_Info}" 
+                TextWrapping="Wrap" 
+                Margin="0,0,0,20" 
+                FontSize="16" 
+                Foreground="#FFDDDDDD" 
+                HorizontalAlignment="Center"/>
+            
+            <!-- OK Button -->
+            <Button 
+                Grid.Row="2" 
+                Content="OK" 
+                HorizontalAlignment="Center" 
+                Padding="30,10" 
+                Background="#FF333333" 
+                Foreground="White" 
+                Name="CloseButton" 
+                Click="CloseButton_Click"/>
+        </Grid>
+    </Border>
+</Window>

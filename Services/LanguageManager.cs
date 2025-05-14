@@ -63,13 +63,26 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             try
             {
                 string filePath = FindLocalizationFile(languageCode);
-                Debug.WriteLine($"Attempting to load language file from: {filePath}");
+                Debug.WriteLine($"[LanguageManager] Attempting to load language file from: {filePath}");
                 
                 if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                 {
                     string jsonContent = File.ReadAllText(filePath);
+                    Debug.WriteLine($"[LanguageManager] JSON content first 100 chars: {(jsonContent.Length > 100 ? jsonContent.Substring(0, 100) + "..." : jsonContent)}");
+                    
                     _currentLanguageStrings = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
-                    Debug.WriteLine($"Successfully loaded language file with {_currentLanguageStrings?.Count ?? 0} entries");
+                    Debug.WriteLine($"[LanguageManager] Successfully loaded language file with {_currentLanguageStrings?.Count ?? 0} entries");
+                    
+                    // Проверить первые 5 ключей и значений чтобы убедиться, что всё загрузилось правильно
+                    if (_currentLanguageStrings != null && _currentLanguageStrings.Count > 0)
+                    {
+                        int i = 0;
+                        foreach (var kvp in _currentLanguageStrings.Take(5))
+                        {
+                            Debug.WriteLine($"[LanguageManager] Key {i}: {kvp.Key}, Value: {kvp.Value}");
+                            i++;
+                        }
+                    }
                     
                     // Add localization strings to Avalonia resources
                     if (_currentLanguageStrings != null)
@@ -81,19 +94,24 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                             {
                                 resources[kvp.Key] = kvp.Value;
                             }
+                            Debug.WriteLine($"[LanguageManager] Added {_currentLanguageStrings.Count} resources to Avalonia.Resources");
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"[LanguageManager] ERROR: Application.Current?.Resources is null!");
                         }
                     }
                 }
                 else
                 {
-                    Debug.WriteLine($"Language file not found at path: {filePath}");
+                    Debug.WriteLine($"[LanguageManager] Language file not found at path: {filePath}");
                     _currentLanguageStrings = new Dictionary<string, string>();
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Error loading language file: {ex.Message}");
-                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
+                Debug.WriteLine($"[LanguageManager] Error loading language file: {ex.Message}");
+                Debug.WriteLine($"[LanguageManager] Stack trace: {ex.StackTrace}");
                 _currentLanguageStrings = new Dictionary<string, string>();
             }
         }
@@ -102,7 +120,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         {
             // Спочатку виводимо поточний робочий каталог для діагностики
             string currentDirectory = Directory.GetCurrentDirectory();
-            Debug.WriteLine($"Current directory: {currentDirectory}");
+            Debug.WriteLine($"[LanguageManager] Current directory: {currentDirectory}");
+            
+            // Вывод платформы для диагностики
+            Debug.WriteLine($"[LanguageManager] Current platform: {Environment.OSVersion.Platform}");
             
             // Якщо шлях вже кешований, використовуємо його
             if (!string.IsNullOrEmpty(_cachedLocalizationPath))
@@ -110,12 +131,19 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 try {
                     string directory = Path.GetDirectoryName(_cachedLocalizationPath) ?? string.Empty;
                     string filePath = Path.Combine(directory, $"{languageCode}.json");
-                    Debug.WriteLine($"Checking cached path: {filePath}");
+                    Debug.WriteLine($"[LanguageManager] Checking cached path: {filePath}");
                     if (File.Exists(filePath))
+                    {
+                        Debug.WriteLine($"[LanguageManager] Found file using cached path: {filePath}");
                         return filePath;
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"[LanguageManager] File not found using cached path: {filePath}");
+                    }
                 }
                 catch (Exception ex) {
-                    Debug.WriteLine($"Error with cached path: {ex.Message}");
+                    Debug.WriteLine($"[LanguageManager] Error with cached path: {ex.Message}");
                 }
             }
             

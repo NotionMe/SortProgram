@@ -611,7 +611,7 @@
                             Text="{DynamicResource InfoPage_BFS_Graph_Traversal_Title}" />
                         <TextBlock
                             Margin="0,0,0,10"
-                            Text="{DynamicResource Breadth-First_Search-Description}"
+                            Text="{DynamicResource Breadth-First Search-Description}"
                             TextWrapping="Wrap" />
                         <StackPanel Orientation="Horizontal" Spacing="10">
                             <Button
