@@ -134,7 +134,7 @@
                             FontWeight="Bold"
                             Foreground="{DynamicResource ThemePageNumberBrush}"
                             Opacity="0.5"
-                            Text="03" />
+                            Text="07" />
                     </Grid>
                 </Grid>
             </Grid>

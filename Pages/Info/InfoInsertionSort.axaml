@@ -132,7 +132,7 @@
                             FontWeight="Bold"
                             Foreground="{DynamicResource ThemePageNumberBrush}"
                             Opacity="0.5"
-                            Text="03" />
+                            Text="04" />
                         <Button
                             Width="65"
                             Height="65"

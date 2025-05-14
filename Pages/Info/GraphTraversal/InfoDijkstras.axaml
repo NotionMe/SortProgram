@@ -42,7 +42,7 @@
                             LineHeight="24"
                             TextAlignment="Justify"
                             TextWrapping="Wrap">
-                            <Run Text="{DynamicResource Dijkstras_Algorithm_Description}" />
+                            <Run Text="{DynamicResource Dijkstra_Description}" />
                         </TextBlock>
                     </Border>
                     <Grid
@@ -129,7 +129,7 @@
                             FontWeight="Bold"
                             Foreground="{DynamicResource ThemePageNumberBrush}"
                             Opacity="0.5"
-                            Text="01" />
+                            Text="03" />
                     </Grid>
                 </Grid>
             </Grid>
