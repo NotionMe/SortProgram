@@ -15,6 +15,7 @@
           "Avalonia.Diagnostics": "11.3.0",
           "Avalonia.Fonts.Inter": "11.2.6",
           "Avalonia.ReactiveUI": "11.3.0",
+          "Avalonia.Svg": "11.3.0",
           "Avalonia.Svg.Skia": "11.2.0.2",
           "Avalonia.Themes.Fluent": "11.3.0",
           "Avalonia.Xaml.Behaviors": "11.3.0",
@@ -246,6 +247,18 @@
           }
         }
       },
+      "Avalonia.Svg/11.3.0": {
+        "dependencies": {
+          "Avalonia": "11.3.0",
+          "Svg.Model": "3.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Svg.dll": {
+            "assemblyVersion": "11.3.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
       "Avalonia.Svg.Skia/11.2.0.2": {
         "dependencies": {
           "Avalonia": "11.3.0",
@@ -425,11 +438,11 @@
           }
         }
       },
-      "ExCSS/4.2.3": {
+      "ExCSS/4.3.0": {
         "runtime": {
-          "lib/net7.0/ExCSS.dll": {
-            "assemblyVersion": "4.2.3.0",
-            "fileVersion": "4.2.3.0"
+          "lib/net8.0/ExCSS.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
           }
         }
       },
@@ -581,11 +594,11 @@
           }
         }
       },
-      "ShimSkiaSharp/2.0.0.4": {
+      "ShimSkiaSharp/3.0.2": {
         "runtime": {
           "lib/net8.0/ShimSkiaSharp.dll": {
-            "assemblyVersion": "2.0.0.4",
-            "fileVersion": "2.0.0.4"
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
           }
         }
       },
@@ -677,26 +690,26 @@
           }
         }
       },
-      "Svg.Custom/2.0.0.4": {
+      "Svg.Custom/3.0.2": {
         "dependencies": {
-          "ExCSS": "4.2.3"
+          "ExCSS": "4.3.0"
         },
         "runtime": {
           "lib/net8.0/Svg.Custom.dll": {
-            "assemblyVersion": "2.0.0.4",
-            "fileVersion": "2.0.0.4"
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
           }
         }
       },
-      "Svg.Model/2.0.0.4": {
+      "Svg.Model/3.0.2": {
         "dependencies": {
-          "ShimSkiaSharp": "2.0.0.4",
-          "Svg.Custom": "2.0.0.4"
+          "ShimSkiaSharp": "3.0.2",
+          "Svg.Custom": "3.0.2"
         },
         "runtime": {
           "lib/net8.0/Svg.Model.dll": {
-            "assemblyVersion": "2.0.0.4",
-            "fileVersion": "2.0.0.4"
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
           }
         }
       },
@@ -704,8 +717,8 @@
         "dependencies": {
           "SkiaSharp": "2.88.9",
           "SkiaSharp.HarfBuzz": "2.88.8",
-          "Svg.Custom": "2.0.0.4",
-          "Svg.Model": "2.0.0.4"
+          "Svg.Custom": "3.0.2",
+          "Svg.Model": "3.0.2"
         },
         "runtime": {
           "lib/net8.0/Svg.Skia.dll": {
@@ -861,6 +874,13 @@
       "path": "avalonia.skia/11.3.0",
       "hashPath": "avalonia.skia.11.3.0.nupkg.sha512"
     },
+    "Avalonia.Svg/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hlTTpPDpaS78QD5neVSfaE+l7p38Vp2A8eTtm8WVfh7/04cWDQGGjIGLzJMzNk9Lss9ah7LaxnkWC5ThLhC1Sw==",
+      "path": "avalonia.svg/11.3.0",
+      "hashPath": "avalonia.svg.11.3.0.nupkg.sha512"
+    },
     "Avalonia.Svg.Skia/11.2.0.2": {
       "type": "package",
       "serviceable": true,
@@ -966,12 +986,12 @@
       "path": "dynamicdata/9.1.2",
       "hashPath": "dynamicdata.9.1.2.nupkg.sha512"
     },
-    "ExCSS/4.2.3": {
+    "ExCSS/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
-      "path": "excss/4.2.3",
-      "hashPath": "excss.4.2.3.nupkg.sha512"
+      "sha512": "sha512-LyVZ925Cl6Z4TJrbogt3+DkvanYWZcJs0tzKg8lWHAY9PgniVMluNy+l5vXDMmvt5gBgekULasEnUqVAavPuZw==",
+      "path": "excss/4.3.0",
+      "hashPath": "excss.4.3.0.nupkg.sha512"
     },
     "HarfBuzzSharp/7.3.0.3": {
       "type": "package",
@@ -1057,12 +1077,12 @@
       "path": "reactiveui/20.2.45",
       "hashPath": "reactiveui.20.2.45.nupkg.sha512"
     },
-    "ShimSkiaSharp/2.0.0.4": {
+    "ShimSkiaSharp/3.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7UDQA2c0k56I8yvgHWoRTq4JUOLU9alajszvixR4IDhXgTJaEHqXqzu618Dh26K31zvKMR4ndc9y+OhtuDdhqQ==",
-      "path": "shimskiasharp/2.0.0.4",
-      "hashPath": "shimskiasharp.2.0.0.4.nupkg.sha512"
+      "sha512": "sha512-VRLaZRQ7llIgQXf6H6Bjpt47RG/9UQvWZdJz97ReFlb4PHwjoId6HkoO84ETyqS/8J2GNT2fDnzmdVBMr5YXOg==",
+      "path": "shimskiasharp/3.0.2",
+      "hashPath": "shimskiasharp.3.0.2.nupkg.sha512"
     },
     "SkiaSharp/2.88.9": {
       "type": "package",
@@ -1113,19 +1133,19 @@
       "path": "splat/15.3.1",
       "hashPath": "splat.15.3.1.nupkg.sha512"
     },
-    "Svg.Custom/2.0.0.4": {
+    "Svg.Custom/3.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RTA2brxnCbPi+hR8Z6qRGNA0aB7CGR2dBn57xmK3KXbuZPmiV1OUEjuI5++oMN6HcnEMIXSa8UkHTanjNt3eMA==",
-      "path": "svg.custom/2.0.0.4",
-      "hashPath": "svg.custom.2.0.0.4.nupkg.sha512"
+      "sha512": "sha512-I5QtMsOPdZpR2YsKc3WcLsW2S1YptyGr0MqyXTD4gotZIQtGinY8ZICMrNRTtJBRWeVn352Xdf7lYUtQQABodg==",
+      "path": "svg.custom/3.0.2",
+      "hashPath": "svg.custom.3.0.2.nupkg.sha512"
     },
-    "Svg.Model/2.0.0.4": {
+    "Svg.Model/3.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-u3O0EW7w4PUI7hyYKeH9F5hm1KDgRnz3KRutwTyRwGia/MqCuYF6nf9HeNiw7rOuX0tR14wa8peQ/rw9RpWSOQ==",
-      "path": "svg.model/2.0.0.4",
-      "hashPath": "svg.model.2.0.0.4.nupkg.sha512"
+      "sha512": "sha512-a/EfBT3WGPgEnKybHl2B6pqKkxL64I25k+ozY+zF7YvQp/0v0vqR/KVGacpcv8hFGMINXIGDccxR8boqXJj5Zw==",
+      "path": "svg.model/3.0.2",
+      "hashPath": "svg.model.3.0.2.nupkg.sha512"
     },
     "Svg.Skia/2.0.0.4": {
       "type": "package",

@@ -63,26 +63,11 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             try
             {
                 string filePath = FindLocalizationFile(languageCode);
-                Debug.WriteLine($"[LanguageManager] Attempting to load language file from: {filePath}");
                 
                 if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                 {
                     string jsonContent = File.ReadAllText(filePath);
-                    Debug.WriteLine($"[LanguageManager] JSON content first 100 chars: {(jsonContent.Length > 100 ? jsonContent.Substring(0, 100) + "..." : jsonContent)}");
-                    
                     _currentLanguageStrings = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
-                    Debug.WriteLine($"[LanguageManager] Successfully loaded language file with {_currentLanguageStrings?.Count ?? 0} entries");
-                    
-                    // Проверить первые 5 ключей и значений чтобы убедиться, что всё загрузилось правильно
-                    if (_currentLanguageStrings != null && _currentLanguageStrings.Count > 0)
-                    {
-                        int i = 0;
-                        foreach (var kvp in _currentLanguageStrings.Take(5))
-                        {
-                            Debug.WriteLine($"[LanguageManager] Key {i}: {kvp.Key}, Value: {kvp.Value}");
-                            i++;
-                        }
-                    }
                     
                     // Add localization strings to Avalonia resources
                     if (_currentLanguageStrings != null)
@@ -94,63 +79,38 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                             {
                                 resources[kvp.Key] = kvp.Value;
                             }
-                            Debug.WriteLine($"[LanguageManager] Added {_currentLanguageStrings.Count} resources to Avalonia.Resources");
-                        }
-                        else
-                        {
-                            Debug.WriteLine($"[LanguageManager] ERROR: Application.Current?.Resources is null!");
                         }
                     }
                 }
                 else
                 {
-                    Debug.WriteLine($"[LanguageManager] Language file not found at path: {filePath}");
                     _currentLanguageStrings = new Dictionary<string, string>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Debug.WriteLine($"[LanguageManager] Error loading language file: {ex.Message}");
-                Debug.WriteLine($"[LanguageManager] Stack trace: {ex.StackTrace}");
                 _currentLanguageStrings = new Dictionary<string, string>();
             }
         }
 
         private string FindLocalizationFile(string languageCode)
         {
-            // Спочатку виводимо поточний робочий каталог для діагностики
-            string currentDirectory = Directory.GetCurrentDirectory();
-            Debug.WriteLine($"[LanguageManager] Current directory: {currentDirectory}");
-            
-            // Вывод платформы для диагностики
-            Debug.WriteLine($"[LanguageManager] Current platform: {Environment.OSVersion.Platform}");
-            
             // Якщо шлях вже кешований, використовуємо його
             if (!string.IsNullOrEmpty(_cachedLocalizationPath))
             {
                 try {
                     string directory = Path.GetDirectoryName(_cachedLocalizationPath) ?? string.Empty;
                     string filePath = Path.Combine(directory, $"{languageCode}.json");
-                    Debug.WriteLine($"[LanguageManager] Checking cached path: {filePath}");
                     if (File.Exists(filePath))
                     {
-                        Debug.WriteLine($"[LanguageManager] Found file using cached path: {filePath}");
                         return filePath;
                     }
-                    else
-                    {
-                        Debug.WriteLine($"[LanguageManager] File not found using cached path: {filePath}");
-                    }
                 }
-                catch (Exception ex) {
-                    Debug.WriteLine($"[LanguageManager] Error with cached path: {ex.Message}");
-                }
+                catch (Exception) { /* Ігноруємо помилки з кешованим шляхом */ }
             }
             
-            // Можливі шляхи до файлів локалізації у порядку пріоритету
-            List<string> possiblePaths = new List<string>();
-
-            // Базові шляхи, які будемо комбінувати
+            // Можливі шляхи до файлів локалізації
+            string currentDirectory = Directory.GetCurrentDirectory();
             List<string> baseLocalizationDirs = new List<string> {
                 Path.Combine("Assets", "Localization"),
                 Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Localization"),
@@ -158,119 +118,63 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                 Path.Combine(AppContext.BaseDirectory, "Assets", "Localization")
             };
 
-            // Додаємо шляхи відносно виконуваного файлу
-            try
+            // Додаємо Windows-специфічні шляхи
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                string executablePath = AppContext.BaseDirectory;
-                baseLocalizationDirs.Add(Path.Combine(executablePath, "Assets", "Localization"));
-                
-                // Для Windows також додаємо шляхи з кореневої директорії і батьківських каталогів
-                if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+                string exeDir = AppContext.BaseDirectory;
+                string? parentDir = Directory.GetParent(exeDir)?.FullName;
+                if (!string.IsNullOrEmpty(parentDir))
                 {
-                    string exeDir = AppContext.BaseDirectory;
-                    baseLocalizationDirs.Add(Path.Combine(exeDir, "Assets", "Localization"));
+                    baseLocalizationDirs.Add(Path.Combine(parentDir, "Assets", "Localization"));
                     
-                    // Перевіряємо також каталоги відносно батьківського каталогу 
-                    string? parentDir = Directory.GetParent(exeDir)?.FullName;
-                    if (!string.IsNullOrEmpty(parentDir))
+                    string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
+                    if (!string.IsNullOrEmpty(grandParentDir))
                     {
-                        baseLocalizationDirs.Add(Path.Combine(parentDir, "Assets", "Localization"));
-                        
-                        // Ще один рівень вгору (для Debug/Release/net9.0)
-                        string? grandParentDir = Directory.GetParent(parentDir)?.FullName;
-                        if (!string.IsNullOrEmpty(grandParentDir))
-                        {
-                            baseLocalizationDirs.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
-                        }
+                        baseLocalizationDirs.Add(Path.Combine(grandParentDir, "Assets", "Localization"));
                     }
-                    
-                    // Додаємо Windows-специфічні шляхи з зворотними слешами
-                    string winPath = currentDirectory + "\\Assets\\Localization";
-                    baseLocalizationDirs.Add(winPath);
-                    
-                    string exeDirWin = AppContext.BaseDirectory;
-                    baseLocalizationDirs.Add(exeDirWin + "\\Assets\\Localization");
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error getting assembly paths: {ex.Message}");
-            }
 
-            // Перевіряємо кожен базовий шлях
+            // Шукаємо файл у всіх можливих директоріях
             foreach (string baseDir in baseLocalizationDirs.Distinct())
             {
-                // Переконуємося, що директорія існує перед перевіркою файлу
                 if (Directory.Exists(baseDir))
                 {
                     string filePath = Path.Combine(baseDir, $"{languageCode}.json");
-                    possiblePaths.Add(filePath);
-                    
-                    // Логуємо знайдені директорії
-                    Debug.WriteLine($"Found directory: {baseDir}");
-                    try
+                    if (File.Exists(filePath))
                     {
-                        string[] files = Directory.GetFiles(baseDir, "*.json");
-                        Debug.WriteLine($"Available language files in {baseDir}: {string.Join(", ", files)}");
+                        _cachedLocalizationPath = filePath;
+                        return filePath;
                     }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine($"Error listing files in {baseDir}: {ex.Message}");
-                    }
-                }
-                else
-                {
-                    Debug.WriteLine($"Directory does not exist: {baseDir}");
                 }
             }
 
-            // Видаляємо дублікати
-            possiblePaths = possiblePaths.Distinct().ToList();
-
-            foreach (string path in possiblePaths)
-            {
-                Debug.WriteLine($"Checking path: {path}");
-                if (File.Exists(path))
-                {
-                    Debug.WriteLine($"Found localization file at: {path}");
-                    _cachedLocalizationPath = path;
-                    return path;
-                }
-            }
-
-            // Спеціальний код для Windows - спроба створити директорії та файли локалізації, якщо їх немає
+            // Спроба створити і скопіювати файл для Windows
             if (Environment.OSVersion.Platform == PlatformID.Win32NT && string.IsNullOrEmpty(_cachedLocalizationPath))
             {
                 try
                 {
-                    string exeDir = AppContext.BaseDirectory;
-                    string localizationDir = Path.Combine(exeDir, "Assets", "Localization");
+                    string localizationDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Localization");
                     
-                    // Створюємо директорію, якщо її немає
                     if (!Directory.Exists(localizationDir))
                     {
                         Directory.CreateDirectory(localizationDir);
-                        Debug.WriteLine($"Created directory: {localizationDir}");
                     }
                     
-                    // Створюємо порожній файл локалізації, щоб знати шлях для наступного разу
                     string tempFilePath = Path.Combine(localizationDir, $"{languageCode}.json");
                     
-                    // Копіюємо вбудований файл локалізації, якщо він існує в ресурсах
                     if (CopyEmbeddedResource(languageCode, tempFilePath))
                     {
-                        Debug.WriteLine($"Created localization file from embedded resource: {tempFilePath}");
                         _cachedLocalizationPath = tempFilePath;
                         return tempFilePath;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception) 
                 {
-                    Debug.WriteLine($"Error creating localization directory/file: {ex.Message}");
+                    
                 }
             }
 
-            Debug.WriteLine($"No localization file found for language: {languageCode}");
             return string.Empty;
         }
 
@@ -278,7 +182,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         {
             try
             {
-                // Шукаємо ресурс Avalonia з локалізацією
                 string resourceKey = $"avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Localization/{languageCode}.json";
                 Uri uri = new Uri(resourceKey);
                 
@@ -292,9 +195,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Debug.WriteLine($"Error copying embedded resource: {ex.Message}");
+                // Помилка копіювання вбудованого ресурсу
             }
             return false;
         }
@@ -323,7 +226,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
         {
             LoadLanguage(_currentLanguage);
             
-            // Додаткова перевірка, що ресурси оновлені в Avalonia Resources
             if (_currentLanguageStrings != null)
             {
                 Avalonia.Controls.IResourceDictionary? resources = Application.Current?.Resources;
@@ -342,7 +244,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
 
         public List<string> GetAvailableLanguages()
         {
-            // Стандартні мови, які завжди доступні
             List<string> defaultLanguages = new List<string> { "en", "uk" };
             
             if (string.IsNullOrEmpty(_cachedLocalizationPath))
@@ -358,9 +259,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
             
             try
             {
-                Debug.WriteLine($"Пошук файлів локалізації в директорії: {directory}");
-                
-                // Виправляємо повернення значення, щоб гарантувати, що немає null-значень в списку
                 var files = Directory.GetFiles(directory, "*.json")
                     .Select(Path.GetFileNameWithoutExtension)
                     .Where(name => !string.IsNullOrEmpty(name))
@@ -368,9 +266,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Services
                     
                 return files.Count > 0 ? files! : defaultLanguages;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Debug.WriteLine($"Помилка при отриманні доступних мов: {ex.Message}");
                 return defaultLanguages;
             }
         }

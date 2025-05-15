@@ -49,6 +49,9 @@
                         <ComboBoxItem Content="Breadth-First Search" />
                         <ComboBoxItem Content="Depth-First Search" />
                         <ComboBoxItem Content="Dijkstra's Algorithm" />
+                        <ComboBoxItem Content="Inorder Traversal" />
+                        <ComboBoxItem Content="Preorder Traversal" />
+                        <ComboBoxItem Content="Postorder Traversal" />
 
                     </ComboBox>
                     <Label

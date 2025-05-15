@@ -13,6 +13,8 @@ using Practika2_OPAM_Ubohyi_Stanislav.Styles;
 using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 using Practika2_OPAM_Ubohyi_Stanislav.Algorithms.Searching;
+using Svg.Skia;
+using Svg;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav
 {
@@ -168,22 +170,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
                 TextBlock? labelTextBlock = themeButton.GetVisualDescendants()
                     .OfType<TextBlock>()
                     .FirstOrDefault(t => t.Classes.Contains("ButtonLabel"));
-                
-                if (iconTextBlock != null && labelTextBlock != null)
-                {
-                    if (ThemeManager.IsDarkTheme)
-                    {
-                        iconTextBlock.Text = "☀️";
-                        labelTextBlock.Text = "Light Theme";
-                    }
-                    else
-                    {
-                        iconTextBlock.Text = "🌙";
-                        labelTextBlock.Text = "Dark Theme";
-                    }
-                }
             }
-
         }
         
         // Метод для навігації до сторінки входу при виході з системи

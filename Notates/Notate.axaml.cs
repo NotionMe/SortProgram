@@ -84,6 +84,15 @@ public partial class Notate : Window
             case 12: // Dijkstra
                 noteKey = "Dijkstra";
                 break;
+            case 13: // Inorder Traversal
+                noteKey = "InorderTraversal";
+                break;
+            case 14: // Preorder Traversal
+                noteKey = "PreorderTraversal";
+                break;
+            case 15: // Postorder Traversal
+                noteKey = "PostorderTraversal";
+                break;
             default:
                 NoteTextBox.Text = string.Empty;
                 return;

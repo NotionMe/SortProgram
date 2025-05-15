@@ -9,421 +9,479 @@
 
     <UserControl.Styles>
         <Style Selector="Button.accent">
-            <Setter Property="Background" Value="#4F8EF7"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderBrush" Value="#4F8EF7"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Width" Value="32"/>
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Background" Value="#4F8EF7" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderBrush" Value="#4F8EF7" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="6" />
             <Setter Property="Template">
                 <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"/>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                        <ContentPresenter
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}" />
                     </Border>
                 </ControlTemplate>
             </Setter>
             <Setter Property="Transitions">
                 <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
-                    <BrushTransition Property="Background" Duration="0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+                    <BrushTransition Property="Background" Duration="0.2" />
                 </Transitions>
             </Setter>
         </Style>
-        
+
         <Style Selector="Button.accent:pointerover">
-            <Setter Property="Background" Value="#2563EB"/>
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="Background" Value="#2563EB" />
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
         <Style Selector="Button.danger">
-            <Setter Property="Background" Value="#F87171"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="10"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderBrush" Value="#F87171"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#F87171" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderBrush" Value="#F87171" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Transitions">
                 <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
-                    <BrushTransition Property="Background" Duration="0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+                    <BrushTransition Property="Background" Duration="0.2" />
                 </Transitions>
             </Setter>
             <Setter Property="Template">
                 <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" 
-                            CornerRadius="10"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </ControlTemplate>
             </Setter>
         </Style>
         <Style Selector="Button.danger:pointerover">
-            <Setter Property="Background" Value="#DC2626"/>
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="Background" Value="#DC2626" />
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
-        
+
         <Style Selector="Border.profileContainer">
             <Setter Property="Transitions">
                 <Transitions>
-                    <BoxShadowsTransition Property="BoxShadow" Duration="0.3"/>
+                    <BoxShadowsTransition Property="BoxShadow" Duration="0.3" />
                 </Transitions>
             </Setter>
         </Style>
-        
+
         <Style Selector="Border.profileContainer:pointerover">
-            <Setter Property="BoxShadow" Value="0 8 20 0.15 #000000"/>
+            <Setter Property="BoxShadow" Value="0 8 20 0.15 #000000" />
         </Style>
-        
+
         <Style Selector="Border.avatar">
             <Setter Property="Transitions">
                 <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0.3"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.3" />
                 </Transitions>
             </Setter>
         </Style>
-        
+
         <Style Selector="Border.avatar:pointerover">
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
 
         <Style Selector="Button.transparent">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Cursor" Value="Hand" />
         </Style>
 
         <Style Selector="TextBox">
-            <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Padding" Value="8,6"/>
-            <Setter Property="CaretBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource ThemeControlBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="CaretBrush" Value="{DynamicResource ThemeForegroundBrush}" />
         </Style>
-        
+
         <Style Selector="TextBox:focus">
-            <Setter Property="BorderBrush" Value="#4F8EF7"/>
-            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#4F8EF7" />
+            <Setter Property="BorderThickness" Value="2" />
         </Style>
-        
+
         <Style Selector="Button.save">
-            <Setter Property="Background" Value="#22C55E"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="12,6"/>
-            <Setter Property="Margin" Value="8,8,0,0"/>
+            <Setter Property="Background" Value="#22C55E" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="12,6" />
+            <Setter Property="Margin" Value="8,8,0,0" />
         </Style>
-        
+
         <Style Selector="Button.save:pointerover">
-            <Setter Property="Background" Value="#16A34A"/>
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="Background" Value="#16A34A" />
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
-        
+
         <Style Selector="Button.cancel">
-            <Setter Property="Background" Value="#6B7280"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="12,6"/>
-            <Setter Property="Margin" Value="8,8,0,0"/>
+            <Setter Property="Background" Value="#6B7280" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="12,6" />
+            <Setter Property="Margin" Value="8,8,0,0" />
         </Style>
-        
+
         <Style Selector="Button.cancel:pointerover">
-            <Setter Property="Background" Value="#4B5563"/>
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="Background" Value="#4B5563" />
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
 
         <Style Selector="Button.editButton">
-            <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Width" Value="32"/>
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Margin" Value="8,0,0,0"/>
-            <Setter Property="Padding" Value="4"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Margin" Value="8,0,0,0" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Transitions">
                 <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
-                    <BrushTransition Property="Background" Duration="0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+                    <BrushTransition Property="Background" Duration="0.2" />
                 </Transitions>
             </Setter>
         </Style>
-        
+
         <Style Selector="Button.editButton:pointerover">
-            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
-        
-        <Style Selector="Button.editButton > TextBlock">
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+
+        <Style Selector="Button.editButton &gt; TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
 
         <Style Selector="Button.actionButton">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="CornerRadius" Value="4"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Margin" Value="4,8,0,0"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="4,8,0,0" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Transitions">
                 <Transitions>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2"/>
-                    <BrushTransition Property="Background" Duration="0.2"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+                    <BrushTransition Property="Background" Duration="0.2" />
                 </Transitions>
             </Setter>
         </Style>
-        
+
         <Style Selector="Button.actionButton:pointerover">
-            <Setter Property="RenderTransform" Value="scale(1.05)"/>
+            <Setter Property="RenderTransform" Value="scale(1.05)" />
         </Style>
-        
+
         <Style Selector="Button.save">
-            <Setter Property="Background" Value="{DynamicResource SuccessBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource SuccessBrush}" />
         </Style>
-        
+
         <Style Selector="Button.save:pointerover">
-            <Setter Property="Background" Value="{DynamicResource SuccessDarkButtonBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource SuccessDarkButtonBrush}" />
         </Style>
-        
+
         <Style Selector="Button.cancel">
-            <Setter Property="Background" Value="{DynamicResource GreyDarkBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource GreyDarkBrush}" />
         </Style>
-        
+
         <Style Selector="Button.cancel:pointerover">
-            <Setter Property="Background" Value="{DynamicResource GreyDarkerBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource GreyDarkerBrush}" />
         </Style>
     </UserControl.Styles>
 
     <UserControl.DataContext>
         <vm:ProfileViewModel />
     </UserControl.DataContext>
-    
+
     <Grid>
         <Grid.Background>
-            <SolidColorBrush Color="{DynamicResource ThemeBackground}"/>
+            <SolidColorBrush Color="{DynamicResource ThemeBackground}" />
         </Grid.Background>
-        
-        <Grid RowDefinitions="Auto,*" Margin="0,20,0,0">
-            <!-- Верхня частина з аватаром -->
-            <Grid Grid.Row="0" 
-                  Width="200" 
-                  Height="200" 
-                  Margin="0,20,0,30" 
-                  HorizontalAlignment="Center">
-                
-                <Border Width="200"
-                        Height="200"
-                        CornerRadius="100"
-                        BoxShadow="0 4 15 0.3 #4F8EF7">
+
+        <Grid Margin="0,20,0,0" RowDefinitions="Auto,*">
+            <!--  Верхня частина з аватаром  -->
+            <Grid
+                Grid.Row="0"
+                Width="200"
+                Height="200"
+                Margin="0,20,0,30"
+                HorizontalAlignment="Center">
+
+                <Border
+                    Width="200"
+                    Height="200"
+                    BoxShadow="0 4 15 0.3 #4F8EF7"
+                    CornerRadius="100">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-                            <GradientStop Offset="0" Color="#4F8EF7"/>
-                            <GradientStop Offset="1" Color="#3F78E0"/>
+                            <GradientStop Offset="0" Color="#4F8EF7" />
+                            <GradientStop Offset="1" Color="#3F78E0" />
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
-                
-                <Border Width="190" 
-                       Height="190" 
-                       Classes="avatar"
-                       ClipToBounds="True"
-                       CornerRadius="95"
-                       VerticalAlignment="Center" 
-                       HorizontalAlignment="Center"
-                       Background="White">
-                    <Image Source="{Binding AvatarImage}" 
-                           Stretch="UniformToFill"/>
+
+                <Border
+                    Width="190"
+                    Height="190"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="White"
+                    Classes="avatar"
+                    ClipToBounds="True"
+                    CornerRadius="95">
+                    <Image Source="{Binding AvatarImage}" Stretch="UniformToFill" />
                 </Border>
-                
-                <!-- Кнопка зміни аватару -->
-                <Button HorizontalAlignment="Right"
-                        VerticalAlignment="Bottom"
-                        Width="40"
-                        Height="40"
-                        Margin="0,0,10,10"
-                        CornerRadius="20"
-                        Background="{DynamicResource ThemeAccentBrush}"
-                        Foreground="White"
-                        Command="{Binding ChangeAvatarCommand}">
-                    <TextBlock Text="📷" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <!--  Кнопка зміни аватару  -->
+                <Button
+                    Width="40"
+                    Height="40"
+                    Margin="0,0,10,10"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Background="{DynamicResource ThemeAccentBrush}"
+                    Command="{Binding ChangeAvatarCommand}"
+                    CornerRadius="20"
+                    Foreground="White">
+                    <Image
+                        Width="24"
+                        Height="24"
+                        VerticalAlignment="Center"
+                        Source="{SvgImage Assets/Images/SVG/photo-camera-svgrepo-com.svg}" />
                 </Button>
             </Grid>
 
-            <!-- Нижня частина з даними користувача -->
-            <Border Grid.Row="1"
-                    Classes="profileContainer"
-                    Background="{DynamicResource ThemeCardBackgroundBrush}"
-                    BoxShadow="0 4 15 0.08 #000000"
-                    CornerRadius="30"
-                    Margin="40,0,40,40"
-                    Padding="30">
+            <!--  Нижня частина з даними користувача  -->
+            <Border
+                Grid.Row="1"
+                Margin="40,0,40,40"
+                Padding="30"
+                Background="{DynamicResource ThemeCardBackgroundBrush}"
+                BoxShadow="0 4 15 0.08 #000000"
+                Classes="profileContainer"
+                CornerRadius="30">
                 <StackPanel Spacing="25">
-                    <!-- Ім'я користувача -->
+                    <!--  Ім'я користувача  -->
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="👤" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="{DynamicResource UserNameLabel}"
-                                     FontSize="16"
-                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
-                                     Margin="0,0,0,2"/>
-                            <Button Classes="editButton"
-                                    Command="{Binding ToggleUsernameEditCommand}">
-                                <TextBlock Text="✏️" FontSize="16" VerticalAlignment="Center"/>
+                            <Image
+                                Width="24"
+                                Height="24"
+                                VerticalAlignment="Center"
+                                Source="{SvgImage Assets/Images/SVG/account-avatar-profile-user-6-svgrepo-com.svg}" />
+                            <TextBlock
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                Text="{DynamicResource UserNameLabel}" />
+                            <Button Classes="editButton" Command="{Binding ToggleUsernameEditCommand}">
+                                <Image
+                                    Width="24"
+                                    Height="24"
+                                    Source="{SvgImage Assets/Images/SVG/edit-svgrepo-com.svg}" />
                             </Button>
                         </StackPanel>
                         <Grid>
-                            <TextBlock Text="{Binding UserName}"
-                                     FontSize="28"
-                                     FontWeight="Bold"
-                                     Foreground="{DynamicResource ThemeForegroundBrush}"
-                                     Margin="0,5,0,0"
-                                     IsVisible="{Binding !IsEditingUsername}"/>
-                            <TextBox Text="{Binding UserName}"
-                                    FontSize="28"
-                                    FontWeight="Bold"
-                                    Margin="0,5,0,0"
-                                    IsVisible="{Binding IsEditingUsername}">
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                IsVisible="{Binding !IsEditingUsername}"
+                                Text="{Binding UserName}" />
+                            <TextBox
+                                Margin="0,5,0,0"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                IsVisible="{Binding IsEditingUsername}"
+                                Text="{Binding UserName}">
                                 <TextBox.KeyBindings>
-                                    <KeyBinding Gesture="Enter" Command="{Binding SaveUsernameCommand}"/>
-                                    <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
+                                    <KeyBinding Command="{Binding SaveUsernameCommand}" Gesture="Enter" />
+                                    <KeyBinding Command="{Binding CancelEditCommand}" Gesture="Escape" />
                                 </TextBox.KeyBindings>
                             </TextBox>
-                            <TextBlock Text="{Binding UsernameValidationMessage}"
-                                     Foreground="#DC2626"
-                                     FontSize="12"
-                                     Margin="0,5,0,0"
-                                     IsVisible="{Binding !IsUsernameValid}"/>
-                            <StackPanel Orientation="Horizontal" 
-                                       IsVisible="{Binding IsEditingUsername}"
-                                       HorizontalAlignment="Right">
-                                <Button Classes="save"
-                                       Command="{Binding SaveUsernameCommand}"
-                                       IsEnabled="{Binding IsUsernameValid}">
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                FontSize="12"
+                                Foreground="#DC2626"
+                                IsVisible="{Binding !IsUsernameValid}"
+                                Text="{Binding UsernameValidationMessage}" />
+                            <StackPanel
+                                HorizontalAlignment="Right"
+                                IsVisible="{Binding IsEditingUsername}"
+                                Orientation="Horizontal">
+                                <Button
+                                    Classes="save"
+                                    Command="{Binding SaveUsernameCommand}"
+                                    IsEnabled="{Binding IsUsernameValid}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <TextBlock Text="✓" FontSize="14"/>
-                                        <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>
+                                        <TextBlock FontSize="14" Text="✓" />
+                                        <TextBlock FontSize="14" Text="{DynamicResource SaveButton}" />
                                     </StackPanel>
                                 </Button>
-                                <Button Classes="cancel"
-                                       Command="{Binding CancelEditCommand}">
+                                <Button Classes="cancel" Command="{Binding CancelEditCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <TextBlock Text="✕" FontSize="14"/>
-                                        <TextBlock Text="{DynamicResource CancelButton}" FontSize="14"/>
+                                        <TextBlock FontSize="14" Text="✕" />
+                                        <TextBlock FontSize="14" Text="{DynamicResource CancelButton}" />
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
                         </Grid>
-                        <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
+                        <Separator
+                            Height="1"
+                            Margin="0,15,0,0"
+                            Background="{DynamicResource ThemeBorderBrush}" />
                     </StackPanel>
 
-                    <!-- Email -->
+                    <!--  Email  -->
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="✉️" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="{DynamicResource EmailLabel}"
-                                     FontSize="16"
-                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
-                                     Margin="0,0,0,2"/>
-                            <Button Classes="editButton"
-                                    Command="{Binding ToggleEmailEditCommand}">
-                                <TextBlock Text="✏️" FontSize="16" VerticalAlignment="Center"/>
+                            <Image
+                                    Width="24"
+                                    Height="24"
+                                    VerticalAlignment="Center"
+                                    Source="{SvgImage Assets/Images/SVG/mail-svgrepo-com.svg}" />
+                            <TextBlock
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                Text="{DynamicResource EmailLabel}" />
+                            <Button Classes="editButton" Command="{Binding ToggleEmailEditCommand}">
+                                <Image
+                                    Width="24"
+                                    Height="24"
+                                    Source="{SvgImage Assets/Images/SVG/edit-svgrepo-com.svg}" />
                             </Button>
                         </StackPanel>
                         <Grid>
-                            <TextBlock Text="{Binding Email}"
-                                     FontSize="22"
-                                     FontWeight="SemiBold"
-                                     Foreground="{DynamicResource ThemeForegroundBrush}"
-                                     Margin="0,5,0,0"
-                                     IsVisible="{Binding !IsEditingEmail}"/>
-                            <TextBox Text="{Binding Email}"
-                                    FontSize="22"
-                                    FontWeight="SemiBold"
-                                    Margin="0,5,0,0"
-                                    IsVisible="{Binding IsEditingEmail}">
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                FontSize="22"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource ThemeForegroundBrush}"
+                                IsVisible="{Binding !IsEditingEmail}"
+                                Text="{Binding Email}" />
+                            <TextBox
+                                Margin="0,5,0,0"
+                                FontSize="22"
+                                FontWeight="SemiBold"
+                                IsVisible="{Binding IsEditingEmail}"
+                                Text="{Binding Email}">
                                 <TextBox.KeyBindings>
-                                    <KeyBinding Gesture="Enter" Command="{Binding SaveEmailCommand}"/>
-                                    <KeyBinding Gesture="Escape" Command="{Binding CancelEditCommand}"/>
+                                    <KeyBinding Command="{Binding SaveEmailCommand}" Gesture="Enter" />
+                                    <KeyBinding Command="{Binding CancelEditCommand}" Gesture="Escape" />
                                 </TextBox.KeyBindings>
                             </TextBox>
-                            <TextBlock Text="{Binding EmailValidationMessage}"
-                                     Foreground="#DC2626"
-                                     FontSize="12"
-                                     Margin="0,5,0,0"
-                                     IsVisible="{Binding !IsEmailValid}"/>
-                            <StackPanel Orientation="Horizontal" 
-                                       IsVisible="{Binding IsEditingEmail}"
-                                       HorizontalAlignment="Right">
-                                <Button Classes="save"
-                                       Command="{Binding SaveEmailCommand}"
-                                       IsEnabled="{Binding IsEmailValid}">
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                FontSize="12"
+                                Foreground="#DC2626"
+                                IsVisible="{Binding !IsEmailValid}"
+                                Text="{Binding EmailValidationMessage}" />
+                            <StackPanel
+                                HorizontalAlignment="Right"
+                                IsVisible="{Binding IsEditingEmail}"
+                                Orientation="Horizontal">
+                                <Button
+                                    Classes="save"
+                                    Command="{Binding SaveEmailCommand}"
+                                    IsEnabled="{Binding IsEmailValid}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <TextBlock Text="✓" FontSize="14"/>
-                                        <TextBlock Text="{DynamicResource SaveButton}" FontSize="14"/>
+                                        <TextBlock FontSize="14" Text="✓" />
+                                        <TextBlock FontSize="14" Text="{DynamicResource SaveButton}" />
                                     </StackPanel>
                                 </Button>
-                                <Button Classes="cancel"
-                                       Command="{Binding CancelEditCommand}">
+                                <Button Classes="cancel" Command="{Binding CancelEditCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="5">
-                                        <TextBlock Text="✕" FontSize="14"/>
-                                        <TextBlock Text="{DynamicResource CancelButton}" FontSize="14"/>
+                                        <TextBlock FontSize="14" Text="✕" />
+                                        <TextBlock FontSize="14" Text="{DynamicResource CancelButton}" />
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
                         </Grid>
-                        <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
+                        <Separator
+                            Height="1"
+                            Margin="0,15,0,0"
+                            Background="{DynamicResource ThemeBorderBrush}" />
                     </StackPanel>
 
-                    <!-- Дата регистрации -->
+                    <!--  Дата регистрации  -->
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="📅" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="{DynamicResource RegistrationDateLabel}"
-                                     FontSize="16"
-                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
-                                     Margin="0,0,0,2"/>
+                            <Image
+                                    Width="24"
+                                    Height="24"
+                                    VerticalAlignment="Center"
+                                    Source="{SvgImage Assets/Images/SVG/date-svgrepo-com.svg}" />
+                            <TextBlock
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                Text="{DynamicResource RegistrationDateLabel}" />
                         </StackPanel>
-                        <TextBlock Text="{Binding RegistrationDate, StringFormat=\{0:dd.MM.yyyy\}}"
-                                 FontSize="22"
-                                 FontWeight="SemiBold"
-                                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                                 Margin="0,5,0,0"/>
-                        <Separator Height="1" Background="{DynamicResource ThemeBorderBrush}" Margin="0,15,0,0"/>
+                        <TextBlock
+                            Margin="0,5,0,0"
+                            FontSize="22"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{Binding RegistrationDate, StringFormat=\{0:dd.MM.yyyy\}}" />
+                        <Separator
+                            Height="1"
+                            Margin="0,15,0,0"
+                            Background="{DynamicResource ThemeBorderBrush}" />
                     </StackPanel>
 
-                    <!-- Роль користувача -->
+                    <!--  Роль користувача  -->
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="🔑" FontSize="18" VerticalAlignment="Center"/>
-                            <TextBlock Text="{DynamicResource UserRoleLabel}"
-                                     FontSize="16"
-                                     Foreground="{DynamicResource ThemeSidebarTextBrush}"
-                                     Margin="0,0,0,2"/>
+                            <Image
+                                    Width="24"
+                                    Height="24"
+                                    VerticalAlignment="Center"
+                                    Source="{SvgImage Assets/Images/SVG/key-svgrepo-com.svg}" />
+                            <TextBlock
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="{DynamicResource ThemeSidebarTextBrush}"
+                                Text="{DynamicResource UserRoleLabel}" />
                         </StackPanel>
-                        <TextBlock Text="{Binding UserRole}"
-                                 FontSize="22"
-                                 FontWeight="SemiBold"
-                                 Foreground="{DynamicResource ThemeForegroundBrush}"
-                                 Margin="0,5,0,0"/>
+                        <TextBlock
+                            Margin="0,5,0,0"
+                            FontSize="22"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            Text="{Binding UserRole}" />
                     </StackPanel>
                 </StackPanel>
             </Border>

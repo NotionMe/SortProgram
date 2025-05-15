@@ -5,290 +5,386 @@
     xmlns:conv="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Converters"
     xmlns:local="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav"
     xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
-    xmlns:vm="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
     xmlns:services="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Services"
-    x:DataType="vm:ViewModelBase"
+    xmlns:vm="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
     Title="AlgoStart"
     Width="1460"
     Height="900"
-    WindowStartupLocation="CenterScreen"
-    ExtendClientAreaToDecorationsHint="True">
-    
+    x:DataType="vm:ViewModelBase"
+    ExtendClientAreaToDecorationsHint="True"
+    WindowStartupLocation="CenterScreen">
+
     <Window.Resources>
-        <conv:LanguageConverter x:Key="LanguageConverter"/>
+        <conv:LanguageConverter x:Key="LanguageConverter" />
     </Window.Resources>
 
     <Window.DataContext>
-        <vm:ViewModelBase/>
+        <vm:ViewModelBase />
     </Window.DataContext>
 
-    <Grid ClipToBounds="False" Name="MainGrid">
+    <Grid Name="MainGrid" ClipToBounds="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <!-- Бічна панель -->
-        <Grid Name="Sidebar" Grid.Column="0" Classes="Sidebar" ClipToBounds="False" Margin="0,0,0,0"
-              PointerEntered="Sidebar_PointerEnter" PointerExited="Sidebar_PointerLeave">
+
+        <!--  Бічна панель  -->
+        <Grid
+            Name="Sidebar"
+            Grid.Column="0"
+            Margin="0,0,0,0"
+            Classes="Sidebar"
+            ClipToBounds="False"
+            PointerEntered="Sidebar_PointerEnter"
+            PointerExited="Sidebar_PointerLeave">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
-            
-            <!-- Верхні кнопки -->
+
+            <!--  Верхні кнопки  -->
             <StackPanel Grid.Row="1" ClipToBounds="False">
-                <!-- Головна сторінка -->
-                <Border Classes="SidebarButton Selected" Name="HomeButton">
+                <!--  Головна сторінка  -->
+                <Border Name="HomeButton" Classes="SidebarButton Selected">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="#1E90FF" Grid.Column="0" 
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="🏠" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#1E90FF"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/icons8-home-24.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Home}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Home}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка профілю -->
-                <Border Classes="SidebarButton" Name="ProfileButton">
+
+                <!--  Кнопка профілю  -->
+                <Border Name="ProfileButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="👤" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/account-avatar-profile-user-6-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Profile}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Profile}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка пошуку алгоритмів -->
-                <Border Classes="SidebarButton" Name="SearchButton">
+
+                <!--  Кнопка пошуку алгоритмів  -->
+                <Border Name="SearchButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="🔍" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/search-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Algorithms}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Algorithms}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка статистики -->
-                <Border Classes="SidebarButton" Name="StatisticsButton">
+
+                <!--  Кнопка статистики  -->
+                <Border Name="StatisticsButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="📊" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/stats-business-and-finance-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Statistics}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Statistics}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка адмін панелі (видима лише для адміністраторів) -->
-                <Border Classes="SidebarButton" Name="AdminButton" IsVisible="{Binding IsAdminVisible}">
+
+                <!--  Кнопка адмін панелі (видима лише для адміністраторів)  -->
+                <Border
+                    Name="AdminButton"
+                    Classes="SidebarButton"
+                    IsVisible="{Binding IsAdminVisible}">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="#8B0000" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="👑" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#8B0000"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/crown-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Admin} " 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Admin}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка налаштувань -->
-                <Border Classes="SidebarButton" Name="SettingsButton">
+
+                <!--  Кнопка налаштувань  -->
+                <Border Name="SettingsButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="🔧" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/setting-1-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Settings}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Settings}" />
                     </Grid>
                 </Border>
             </StackPanel>
-            
-            <!-- Нижні кнопки -->
+
+            <!--  Нижні кнопки  -->
             <StackPanel Grid.Row="3" ClipToBounds="False">
-                <!-- Кнопка зміни теми -->
-                <Border Classes="SidebarButton" Name="ThemeButton">
+                <!--  Кнопка зміни теми  -->
+                <Border Name="ThemeButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="🌙" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                x:Name="ThemeIcon"
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/moon-phases-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Theme}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Theme}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка виходу -->
-                <Border Classes="SidebarButton" Name="ExitButton">
+
+                <!--  Кнопка виходу  -->
+                <Border Name="ExitButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="🚪" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/door-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Exit}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Exit}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка Logout -->
-                <Border Classes="SidebarButton" Name="LogoutButton">
+
+                <!--  Кнопка Logout  -->
+                <Border Name="LogoutButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="👤" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image 
+                                Width="24"
+                                Height="24"
+                                Source="{SvgImage Assets/Images/SVG/logout-3-svgrepo-com.svg}" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="{DynamicResource SideBar_Logout}" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="{DynamicResource SideBar_Logout}" />
                     </Grid>
                 </Border>
-                
-                <!-- Кнопка GitHub -->
-                <Border Classes="SidebarButton" Name="GitHubButton">
+
+                <!--  Кнопка GitHub  -->
+                <Border Name="GitHubButton" Classes="SidebarButton">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Border Classes="ButtonIconBackground" Background="Transparent" Grid.Column="0"
-                               HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/Assets/Images/Logo_Github-512.png" Width="24" Height="24"/>
+
+                        <Border
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Classes="ButtonIconBackground">
+                            <Image
+                                Width="24"
+                                Height="24"
+                                Source="/Assets/Images/Logo_Github-512.png" />
                         </Border>
-                        
-                        <TextBlock Grid.Column="1" 
-                                  Text="GitHub" 
-                                  Classes="ButtonLabel"
-                                  Margin="5,0,0,0"
-                                  VerticalAlignment="Center"
-                                  FontSize="14"
-                                  FontWeight="SemiBold"
-                                  Foreground="White"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Classes="ButtonLabel"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="GitHub" />
                     </Grid>
                 </Border>
             </StackPanel>
         </Grid>
-        
-        <!-- Основний контент -->
-        <Border Name="ContentBorder" Grid.Column="1" Background="{DynamicResource ThemeBackgroundBrush}" Padding="25" CornerRadius="16" Margin="10,10,10,10">
-            <!-- Вміст за замовчуванням буде замінено на сторінки -->
+
+        <!--  Основний контент  -->
+        <Border
+            Name="ContentBorder"
+            Grid.Column="1"
+            Margin="10,10,10,10"
+            Padding="25"
+            Background="{DynamicResource ThemeBackgroundBrush}"
+            CornerRadius="16">
+            <!--  Вміст за замовчуванням буде замінено на сторінки  -->
         </Border>
     </Grid>
 </Window>

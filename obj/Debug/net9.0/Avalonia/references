@@ -20,6 +20,7 @@
 /home/notion/.nuget/packages/avalonia.reactiveui/11.3.0/lib/net8.0/Avalonia.ReactiveUI.dll
 /home/notion/.nuget/packages/avalonia.remote.protocol/11.3.0/lib/net8.0/Avalonia.Remote.Protocol.dll
 /home/notion/.nuget/packages/avalonia.skia/11.3.0/lib/net8.0/Avalonia.Skia.dll
+/home/notion/.nuget/packages/avalonia.svg/11.3.0/lib/net8.0/Avalonia.Svg.dll
 /home/notion/.nuget/packages/avalonia.svg.skia/11.2.0.2/lib/net8.0/Avalonia.Svg.Skia.dll
 /home/notion/.nuget/packages/avalonia.themes.fluent/11.3.0/lib/net8.0/Avalonia.Themes.Fluent.dll
 /home/notion/.nuget/packages/avalonia.themes.simple/11.3.0/lib/net8.0/Avalonia.Themes.Simple.dll
@@ -36,7 +37,7 @@
 /home/notion/.nuget/packages/avalonia.xaml.interactivity/11.3.0/lib/net8.0/Avalonia.Xaml.Interactivity.dll
 /home/notion/.nuget/packages/bcrypt.net-next/4.0.3/lib/net6.0/BCrypt.Net-Next.dll
 /home/notion/.nuget/packages/dynamicdata/9.1.2/lib/net8.0/DynamicData.dll
-/home/notion/.nuget/packages/excss/4.2.3/lib/net7.0/ExCSS.dll
+/home/notion/.nuget/packages/excss/4.3.0/lib/net8.0/ExCSS.dll
 /home/notion/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
 /home/notion/.nuget/packages/jetbrains.annotations/2022.3.1/lib/netstandard2.0/JetBrains.Annotations.dll
 /home/notion/.nuget/packages/mediaplayer.avalonia/2.0.0/lib/netstandard2.0/MediaPlayer.Avalonia.dll
@@ -52,12 +53,12 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/mscorlib.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/netstandard.dll
 /home/notion/.nuget/packages/reactiveui/20.2.45/lib/net9.0/ReactiveUI.dll
-/home/notion/.nuget/packages/shimskiasharp/2.0.0.4/lib/net8.0/ShimSkiaSharp.dll
+/home/notion/.nuget/packages/shimskiasharp/3.0.2/lib/net8.0/ShimSkiaSharp.dll
 /home/notion/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
 /home/notion/.nuget/packages/skiasharp.harfbuzz/2.88.8/lib/net6.0/SkiaSharp.HarfBuzz.dll
 /home/notion/.nuget/packages/splat/15.3.1/lib/net9.0/Splat.dll
-/home/notion/.nuget/packages/svg.custom/2.0.0.4/lib/net8.0/Svg.Custom.dll
-/home/notion/.nuget/packages/svg.model/2.0.0.4/lib/net8.0/Svg.Model.dll
+/home/notion/.nuget/packages/svg.custom/3.0.2/lib/net8.0/Svg.Custom.dll
+/home/notion/.nuget/packages/svg.model/3.0.2/lib/net8.0/Svg.Model.dll
 /home/notion/.nuget/packages/svg.skia/2.0.0.4/lib/net8.0/Svg.Skia.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.AppContext.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/ref/net9.0/System.Buffers.dll

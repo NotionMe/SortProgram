@@ -72,6 +72,10 @@
               "target": "Package",
               "version": "[11.3.0, )"
             },
+            "Avalonia.Svg": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Avalonia.Svg.Skia": {
               "target": "Package",
               "version": "[11.2.0.2, )"

@@ -121,7 +121,7 @@
                             FontSize="24"
                             FontWeight="Bold"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
-                            Text="Tutorial" />
+                            Text="{DynamicResource Setting_Tutorial}" />
                         <Border
                             Padding="20"
                             Background="{DynamicResource ThemeBackgroundBrush}"

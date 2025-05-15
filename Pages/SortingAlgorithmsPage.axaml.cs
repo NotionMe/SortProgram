@@ -17,6 +17,7 @@ using Practika2_OPAM_Ubohyi_Stanislav.Pages.Helpers;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.InfoAlgoritm;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.GraphTraversal;
 using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.GraphTraversal;
+using Practika2_OPAM_Ubohyi_Stanislav.Pages.Visualizations.TreebasedAlgorithms;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
 {
@@ -299,27 +300,27 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         }
         private void InfoInorder_Traversal_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoInorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoInorder_Traversal());
         }
         private void Inorder_TraversalPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Inorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Inorder_TraversalPage());
         }
         private void InfoPreorder_Traversal_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPreorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPreorder_Traversal());
         }
         private void Preorder_TraversalPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Preorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Preorder_TraversalPage());
         }
         private void InfoPostorder_Traversal_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPostorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new InfoPostorder_Traversal());
         }
         private void Postorder_TraversalPage_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Postorder_Traversal());
+            NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Postorder_TraversalPage());
         }
     }
 }

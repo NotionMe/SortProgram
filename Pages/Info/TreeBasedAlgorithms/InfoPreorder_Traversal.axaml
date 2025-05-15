@@ -1,0 +1,157 @@
+<UserControl
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.Pages.Info.GraphTraversal.InfoPreorder_Traversal"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:anim="using:AnimatedImage.Avalonia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="1050"
+    Height="800"
+    mc:Ignorable="d">
+    <Grid>
+        <Border
+            Margin="20"
+            Background="{DynamicResource ThemeBackgroundBrush}"
+            BoxShadow="0 3 10 #40000000"
+            CornerRadius="8">
+            <Grid Margin="30,30,30,20" RowDefinitions="Auto,*">
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="0,10,0,20"
+                    HorizontalAlignment="Center"
+                    FontSize="42"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource ThemeForegroundBrush}"
+                    Text="{DynamicResource Tree-based_Algorithm_PreorderInfo}" />
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="*, Auto"
+                    RowDefinitions="*,Auto">
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="727"
+                        Height="520"
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock
+                            Margin="0"
+                            FontSize="24"
+                            Foreground="{DynamicResource ThemeForegroundBrush}"
+                            LineHeight="24"
+                            TextAlignment="Justify"
+                            TextWrapping="Wrap">
+                            <Run Text="{DynamicResource Tree-based_Algorithm_PreorderDescription}" />
+                        </TextBlock>
+                    </Border>
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Grid.Row="0"
+                            Width="220"
+                            Height="180"
+                            ClipToBounds="True"
+                            CornerRadius="5">
+                            <Image anim:ImageBehavior.AnimatedSource="avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Animation/Preorder_Traversal.gif" Stretch="Uniform" />
+                        </Border>
+                        <Button
+                            Grid.Row="1"
+                            Width="200"
+                            Height="50"
+                            Margin="0,10,0,0"
+                            Padding="15,8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Top"
+                            Background="{DynamicResource PrimaryBrush}"
+                            Click="AttemptButton_Click"
+                            Content="{DynamicResource InfoButtonToAttempt}"
+                            CornerRadius="4"
+                            FontFamily="{DynamicResource OswaldFont}"
+                            FontSize="24"
+                            Foreground="White" />
+                        <Button
+                            Grid.Row="2"
+                            Width="200"
+                            Height="50"
+                            Margin="0,10,0,0"
+                            Padding="15,8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Top"
+                            Background="{DynamicResource SecondaryBrush}"
+                            Click="NotesButton_Click"
+                            Content="{DynamicResource InfoButtonToNotes}"
+                            CornerRadius="4"
+                            FontFamily="{DynamicResource OswaldFont}"
+                            FontSize="24"
+                            Foreground="White" />
+                    </Grid>
+                    <Grid
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,15,0,0">
+                        <Button
+                            Width="65"
+                            Height="65"
+                            Margin="5,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Background="{DynamicResource PrimaryBrush}"
+                            BorderThickness="0"
+                            Click="BackButton_Click"
+                            CornerRadius="32"
+                            Cursor="Hand">
+                            <TextBlock
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="32"
+                                Foreground="White"
+                                Text="←" />
+                        </Button>
+                        <TextBlock
+                            Margin="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="100"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource ThemePageNumberBrush}"
+                            Opacity="0.5"
+                            Text="02" />
+                        <Button
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,20,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Background="{DynamicResource PrimaryBrush}"
+                            BorderThickness="0"
+                            Click="NextButton_Click"
+                            CornerRadius="32"
+                            Cursor="Hand">
+                            <TextBlock
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="32"
+                                Foreground="White"
+                                Text="→" />
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

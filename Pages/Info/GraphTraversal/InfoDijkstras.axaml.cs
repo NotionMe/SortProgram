@@ -23,7 +23,7 @@ public partial class InfoDijkstras: UserControl
 
     private void AttemptButton_Click(object sender, RoutedEventArgs e)
     {
-        //NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new DijkstrasPage());
+        NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Dijkstars());
     }
 
     private void BackButton_Click(object sender, RoutedEventArgs e)
