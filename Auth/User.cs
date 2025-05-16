@@ -21,7 +21,7 @@ public class User
         Role = "User";
         RegistrationDate = DateTime.Now;
         Avatar = string.Empty;
-        Notes = new Dictionary<string, string>(); // Initialize Notes
+        Notes = new Dictionary<string, string>();
     }
 
     public User(string username, string email, string password, string role = "User")
@@ -32,7 +32,7 @@ public class User
         Role = role;
         RegistrationDate = DateTime.Now;
         Avatar = string.Empty;
-        Notes = new Dictionary<string, string>(); // Initialize Notes
+        Notes = new Dictionary<string, string>();
     }
     
 }
