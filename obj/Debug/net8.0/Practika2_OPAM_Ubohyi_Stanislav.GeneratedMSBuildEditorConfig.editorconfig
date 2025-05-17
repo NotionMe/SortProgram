@@ -37,13 +37,28 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Auth/SignInMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/ErrorMessage/ErrorMessage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Notates/Notate.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Admin/RoleManagementPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/HomePage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoBFS.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoDFS.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/GraphTraversal/InfoDijkstras.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoBubbleSort.axaml]
@@ -67,6 +82,24 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Pages/Info/InfoSelectionSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/TreeBasedAlgorithms/InfoInorder_Traversal.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/TreeBasedAlgorithms/InfoPostorder_Traversal.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/TreeBasedAlgorithms/InfoPreorder_Traversal.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/VisualSearching/InfoBinarySearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/VisualSearching/InfoJumpSearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Info/VisualSearching/InfoLinearSearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/InfoAlgoritm/Algoritm.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -88,13 +121,49 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/BubbleSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/BFSPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/DFSPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/GraphTraversal/Dijkstars.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/HeapSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/InsertionSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/MergeSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/QuickSort.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/RadixSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/SelectionSort.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/TreebasedAlgorithms/Inorder_TraversalPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/TreebasedAlgorithms/Postorder_TraversalPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/TreebasedAlgorithms/Preorder_TraversalPage.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/BinarySearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/JumpSearch.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/notion/Documents/Repos/SortProgram/Pages/Visualizations/VisualSearching/LinearSearch.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/notion/Documents/Repos/SortProgram/Styles/Colors.axaml]
