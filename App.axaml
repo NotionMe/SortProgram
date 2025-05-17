@@ -15,10 +15,10 @@
               <NativeMenu>
                 <NativeMenuItem Header="Settings">
                   <NativeMenu>
-                    <NativeMenuItem Header="Option 1"   />
+                    <NativeMenuItem Header="Option 1"/>
                     <NativeMenuItem Header="Option 2"   />
                     <NativeMenuItemSeparator />
-                    <NativeMenuItem Header="Option 3"  />
+                    <NativeMenuItem Header="Exit"  />
                   </NativeMenu>
                 </NativeMenuItem>
               </NativeMenu>

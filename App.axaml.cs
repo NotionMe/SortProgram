@@ -10,12 +10,15 @@ using Practika2_OPAM_Ubohyi_Stanislav.Services;
 using Avalonia.Diagnostics;
 using Practika2_OPAM_Ubohyi_Stanislav.Notates;
 using Avalonia.Controls;
+using HarfBuzzSharp;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
 public partial class App : Application
 {
     public static IServiceProvider ServiceProvider { get; private set; } = null!;
+
+    
 
     public override void Initialize()
     {
@@ -53,7 +56,6 @@ public partial class App : Application
             }
         }
     }
-
     private void ConfigureServices()
     {
         var services = new ServiceCollection();
@@ -71,9 +73,12 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new LoginMenu();
+            
         }
-
         base.OnFrameworkInitializationCompleted();
+
+
+        
     }
 
     public static T GetService<T>() where T : class
