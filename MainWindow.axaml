@@ -7,11 +7,12 @@
     xmlns:pages="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Pages"
     xmlns:services="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.Services"
     xmlns:vm="clr-namespace:Practika2_OPAM_Ubohyi_Stanislav.ViewModels"
-    Title="AlgoStart"
+    Title="SortProgram"
     Width="1460"
     Height="900"
     x:DataType="vm:ViewModelBase"
     ExtendClientAreaToDecorationsHint="True"
+    Icon="/Assets/Images/Icon.png"
     WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -324,7 +325,7 @@
                             VerticalAlignment="Center"
                             Background="Transparent"
                             Classes="ButtonIconBackground">
-                            <Image 
+                            <Image
                                 Width="24"
                                 Height="24"
                                 Source="{SvgImage Assets/Images/SVG/logout-3-svgrepo-com.svg}" />

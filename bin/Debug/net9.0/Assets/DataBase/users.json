@@ -1,13 +1,13 @@
 ﻿[
   {
-    "Username": "test",
-    "Email": "test@gmail.com",
+    "Username": "123",
+    "Email": "123@gmail.com",
     "Password": "$2a$12$ATR1VB.I40/gG/pAnw7uUOJgVdGUODDQLsXl2ikYSd7v4c9q1WL8y",
     "Role": "Admin",
     "RegistrationDate": "2025-04-17T17:11:37.2703076+03:00",
-    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png",
     "Notes": {
-      "NotesBubbleSort": "Hello test\n",
+      "NotesBubbleSort": "Bubble Sort",
       "NoteLinearSorting": "Linear Search",
       "NoteBinarySearch": "Binary Search",
       "NoteJumpSearch": "Jump Search",

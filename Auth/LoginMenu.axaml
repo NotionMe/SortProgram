@@ -10,7 +10,8 @@
 	Background="Transparent"
 	WindowStartupLocation="CenterScreen"
 	ExtendClientAreaToDecorationsHint="True"
-	mc:Ignorable="d">
+	mc:Ignorable="d"
+	Icon="/Assets/Images/Icon.png">
 
 	<Border Background="White" CornerRadius="5">
 		<Grid Margin="20" ColumnDefinitions="Auto,*">
