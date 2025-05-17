@@ -12,10 +12,8 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute(("Програма для сортування даних з інтуїтивним інтерфейсом на Avalonia UI. Дозволяє " +
-    "ефективно організовувати, фільтрувати та аналізувати різні типи інформації."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+681661a59a9fe0a37d066fd1e4b354d4eb374a25")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a4918cf7bf77adfbe05f5432b0009cd5c5f971a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Practika2_OPAM_Ubohyi_Stanislav")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

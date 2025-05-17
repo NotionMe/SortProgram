@@ -2,9 +2,30 @@
     x:Class="Practika2_OPAM_Ubohyi_Stanislav.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    
+    xmlns:local="using:AvaloniaTrayIcon"
+    xmlns:trayIcon="clr-namespace:Avalonia.Tray;assembly=Avalonia.Tray"
     RequestedThemeVariant="Default">
     <!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
+
+    <TrayIcon.Icons>
+        <TrayIcons>
+          <TrayIcon Icon="/Assets/Images/Icon.ico" 
+                    ToolTipText="SortProgram">
+            <TrayIcon.Menu>
+              <NativeMenu>
+                <NativeMenuItem Header="Settings">
+                  <NativeMenu>
+                    <NativeMenuItem Header="Option 1"   />
+                    <NativeMenuItem Header="Option 2"   />
+                    <NativeMenuItemSeparator />
+                    <NativeMenuItem Header="Option 3"  />
+                  </NativeMenu>
+                </NativeMenuItem>
+              </NativeMenu>
+            </TrayIcon.Menu>
+          </TrayIcon>
+        </TrayIcons>
+      </TrayIcon.Icons>
 
     <Application.Styles>
         <FluentTheme />

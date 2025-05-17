@@ -8,9 +8,11 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <AvaloniaTrimmedPreviewerPackageVersion>11.3.0</AvaloniaTrimmedPreviewerPackageVersion>
     <AvaloniaPreviewerNetCoreToolPath>dotnet</AvaloniaPreviewerNetCoreToolPath>
-    <Description>Програма для сортування даних з інтуїтивним інтерфейсом на Avalonia UI. Дозволяє ефективно організовувати, фільтрувати та аналізувати різні типи інформації.</Description>
-    <PackageIcon>Assets\Images\Icon.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets/Images/Icon.ico" />
+  </ItemGroup>
 
   <!-- Import Avalonia Design-time targets -->
   <ItemGroup>
@@ -67,12 +69,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>Assets\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
     </ContentWithTargetPath>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Assets\Images\Icon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   
   

@@ -582,3 +582,4 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/mail-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/photo-camera-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Icon.png
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Icon.ico

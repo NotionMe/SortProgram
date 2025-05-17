@@ -71,20 +71,6 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new LoginMenu();
-            using var stream = File.OpenRead("Assets/Images/Icon.png");
-            desktop.MainWindow.Icon = new WindowIcon(stream);
-
-#if DEBUG
-            desktop.MainWindow.KeyDown += (sender, e) =>
-            {
-                if (e.Key == Avalonia.Input.Key.F12)
-                {
-                    var type = Type.GetType("Avalonia.Diagnostics.DevTools, Avalonia.Diagnostics");
-                    var attachMethod = type?.GetMethod("Attach", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
-                    attachMethod?.Invoke(null, new[] { desktop.MainWindow });
-                }
-            };
-#endif
         }
 
         base.OnFrameworkInitializationCompleted();

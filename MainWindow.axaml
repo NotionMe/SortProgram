@@ -12,7 +12,6 @@
     Height="900"
     x:DataType="vm:ViewModelBase"
     ExtendClientAreaToDecorationsHint="True"
-    Icon="/Assets/Images/Icon.png"
     WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
