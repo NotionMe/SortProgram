@@ -1,0 +1,87 @@
+<Window
+    x:Class="Practika2_OPAM_Ubohyi_Stanislav.AccountDelete.MessageDelete"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="400"
+    Height="200"
+    Background="Transparent"
+    CanResize="False"
+    SystemDecorations="None"
+    TransparencyLevelHint="Transparent"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <Border
+        Margin="10"
+        Background="White"
+        BorderBrush="#dc3545"
+        BorderThickness="1"
+        BoxShadow="0 4 8 #66000000"
+        CornerRadius="8">
+        <Grid Margin="20" RowDefinitions="Auto,*,Auto">
+            <!--  Header  -->
+            <TextBlock
+                Name="TitleTextBlock"
+                Grid.Row="0"
+                Margin="0,0,0,10"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#333333"
+                Text="Видалення профілю" />
+
+            <!--  Message  -->
+            <ScrollViewer
+                Grid.Row="1"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto">
+                <TextBlock
+                    Name="MessageTextBlock"
+                    Margin="0,5"
+                    FontSize="14"
+                    Foreground="#555555"
+                    Text="Ви дійсно хочете видалити профіль?"
+                    TextWrapping="Wrap" />
+            </ScrollViewer>
+
+            <!--  Buttons  -->
+            <StackPanel 
+                Grid.Row="2" 
+                Margin="0,10,0,0" 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Right" 
+                Spacing="10">
+                <Button
+                    Name="NoButton"
+                    Padding="20,10"
+                    Background="#6c757d"
+                    Click="NoButton_Click"
+                    Content="Ні"
+                    CornerRadius="4"
+                    Foreground="White">
+                    <Button.Styles>
+                        <Style Selector="Button:pointerover">
+                            <Setter Property="Background" Value="#5a6268" />
+                        </Style>
+                    </Button.Styles>
+                </Button>
+                
+                <Button
+                    Name="YesButton"
+                    Padding="20,10"
+                    Background="#dc3545"
+                    Click="YesButton_Click"
+                    Content="Так"
+                    CornerRadius="4"
+                    Foreground="White">
+                    <Button.Styles>
+                        <Style Selector="Button:pointerover">
+                            <Setter Property="Background" Value="#c82333" />
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -259,6 +259,7 @@
   "AlgorithmComplexity_RadixSortTime": "Time O(nk)",
   "AlgorithmComplexity_RadixSortSpace": "Space O(n+k)",
   "Profile_Title": "User Profile",
+  "Delete_profile":"Delete profile",
   "Profile_UserName": "Name:",
   "Profile_Email": "Email:",
   "Profile_Edit": "Edit",

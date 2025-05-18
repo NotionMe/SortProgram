@@ -428,10 +428,16 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             set => this.RaiseAndSetIfChanged(ref _avatarImage, value);
         }
 
-        private void DeleteAccount()
+        private async void DeleteAccount()
         {
-            // Видаляємо акаунт безпосередньо
-            DeleteUserAccount();
+            // Показуємо діалогове вікно підтвердження
+            bool confirmed = await AccountDelete.MessageDelete.ShowAsync("Ви дійсно хочете видалити профіль?", "Видалення профілю");
+
+            // Видаляємо акаунт тільки якщо користувач підтвердив дію
+            if (confirmed)
+            {
+                DeleteUserAccount();
+            }
         }
 
         private void DeleteUserAccount()
@@ -484,7 +490,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         {
             LoginMenu loginMenu = new LoginMenu();
             loginMenu.Show();
-            
+
             if (Application.Current?.ApplicationLifetime is Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)
             {
                 foreach (Window window in desktop.Windows)

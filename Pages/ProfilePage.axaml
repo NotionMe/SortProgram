@@ -469,7 +469,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <Button
-                                Width="150"
+                                Width="180"
                                 HorizontalAlignment="Left"
                                 Classes="dangerBtn"
                                 Command="{Binding DeleteAccountCommand}">
@@ -484,7 +484,7 @@
                                         FontSize="14"
                                         FontWeight="SemiBold"
                                         Foreground="White"
-                                        Text="Delete profile" />
+                                        Text="{DynamicResource Delete_profile}" />
                                 </StackPanel>
                             </Button>
                         </StackPanel>

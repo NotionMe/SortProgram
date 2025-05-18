@@ -1,1 +1,20 @@
-[]
+﻿[
+  {
+    "Username": "danya",
+    "Email": "danya@gmail.com",
+    "Password": "$2a$12$pevlowlrr4GT.Wx40zzoL.RZzuRX7VeM3ysaE/BhbSDTEfWFn6o0O",
+    "Role": "User",
+    "RegistrationDate": "2025-05-18T13:59:24.9800601+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png",
+    "Notes": {}
+  },
+  {
+    "Username": "123",
+    "Email": "123123@gmail.com",
+    "Password": "$2a$12$rZ.HgnL/h76v/lvJv5DGQuqkEfMiTp98Ej57Y6UycHV0RzkvgVpJO",
+    "Role": "User",
+    "RegistrationDate": "2025-05-18T14:20:00.8617626+03:00",
+    "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar4.png",
+    "Notes": {}
+  }
+]

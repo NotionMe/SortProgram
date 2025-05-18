@@ -259,6 +259,7 @@
   "AlgorithmComplexity_RadixSortTime": "Час O(nk)",
   "AlgorithmComplexity_RadixSortSpace": "Пам'ять O(n+k)",
   "Profile_Title": "Профіль користувача",
+  "Delete_profile":"Видалити профіль",
   "Profile_UserName": "Ім'я:",
   "Profile_Email": "Електронна пошта:",
   "Profile_Edit": "Редагувати",
