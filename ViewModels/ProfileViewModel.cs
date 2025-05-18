@@ -431,7 +431,9 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         private async void DeleteAccount()
         {
             // Показуємо діалогове вікно підтвердження
-            bool confirmed = await AccountDelete.MessageDelete.ShowAsync("Ви дійсно хочете видалити профіль?", "Видалення профілю");
+            bool confirmed = await AccountDelete.MessageDelete.ShowAsync(   
+                LanguageManager.GetString("DeleteProfileText"),
+                LanguageManager.GetString("Delete_profile"));
 
             // Видаляємо акаунт тільки якщо користувач підтвердив дію
             if (confirmed)

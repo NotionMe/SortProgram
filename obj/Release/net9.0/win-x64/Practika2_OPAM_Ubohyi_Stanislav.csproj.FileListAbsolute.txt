@@ -581,3 +581,4 @@
 /home/notion/Documents/Repos/SortProgram/obj/Release/net9.0/win-x64/Practika2_OPAM_Ubohyi_Stanislav.pdb
 /home/notion/Documents/Repos/SortProgram/obj/Release/net9.0/win-x64/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/notion/Documents/Repos/SortProgram/obj/Release/net9.0/win-x64/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
+/home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/Assets/Images/SVG/trash-svgrepo-com.svg

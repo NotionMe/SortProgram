@@ -55,6 +55,7 @@
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/Assets/Images/SVG/search-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/Assets/Images/SVG/setting-1-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/Assets/Images/SVG/stats-business-and-finance-svgrepo-com.svg
+/home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/Assets/Images/SVG/trash-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/Assets/Images/WhiteMode.png
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/av_libglesv2.dll
 /home/notion/Documents/Repos/SortProgram/bin/Release/net9.0/win-x64/publish/libHarfBuzzSharp.dll

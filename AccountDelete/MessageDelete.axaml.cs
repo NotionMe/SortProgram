@@ -13,11 +13,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.AccountDelete
         private TextBlock? _titleTextBlock;
         private TextBlock? _messageTextBlock;
 
-        // Result will be true if user clicked "Yes", false if clicked "No" or closed the dialog
         public bool Result { get; private set; } = false;
 
-        public string MessageTitle { get; set; } = "Видалення профілю";
-        public string Message { get; set; } = "Ви дійсно хочете видалити профіль?";
+        public string? MessageTitle { get; set; }
+        public string? Message { get; set; }
 
         public MessageDelete()
         {
@@ -62,7 +61,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.AccountDelete
         /// <param name="message">The message to display.</param>
         /// <param name="title">The title of the dialog.</param>
         /// <returns>True if the user clicks "Yes", false otherwise.</returns>
-        public static async Task<bool> ShowAsync(string message = "Ви дійсно хочете видалити профіль?", string title = "Видалення профілю")
+        public static async Task<bool> ShowAsync(string message , string title)
         {
             var messageBox = new MessageDelete
             {
@@ -70,7 +69,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.AccountDelete
                 Message = message
             };
 
-            // Find a valid owner window that is visible
             Window? validOwner = null;
 
             if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -93,9 +91,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.AccountDelete
                 }
                 else
                 {
-                    // If we can't find a valid owner, show as a regular window
                     messageBox.Show();
-                    // Wait for the window to close
                     while (messageBox.IsVisible)
                     {
                         await Task.Delay(100);
@@ -104,9 +100,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.AccountDelete
             }
             catch (System.InvalidOperationException)
             {
-                // If showing the dialog fails, show as a regular window
                 messageBox.Show();
-                // Wait for the window to close
                 while (messageBox.IsVisible)
                 {
                     await Task.Delay(100);

@@ -1,132 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-<path fill="#3498DB" d="M50 0c27.613 0 50 22.386 50 50 0 27.615-22.387 50-50 50-27.614 0-50-22.385-50-50C0 22.386 22.386 0 50 0z"/>
-
-<defs>
-
-<circle id="a" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="b">
-
-<use xlink:href="#a" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#b)" fill="#2980B9" d="M0 100h31L20 49 0 69z"/>
-
-<defs>
-
-<circle id="c" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="d">
-
-<use xlink:href="#c" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#d)" fill="#EBEDEE" d="M74.736 100L80 50H20l5.263 50z"/>
-
-<defs>
-
-<circle id="e" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="f">
-
-<use xlink:href="#e" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#f)" fill="#C3C9CD" d="M50 100V50H20l5.172 50z"/>
-
-<defs>
-
-<circle id="g" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="h">
-
-<use xlink:href="#g" overflow="visible"/>
-
-</clipPath>
-
-<g clip-path="url(#h)">
-
-<path fill="#95A5A6" d="M79.982 50.801l-.26.004C77.756 53.738 65.203 56 50 56c-15.15 0-27.67-2.246-29.704-5.164h-.285C19.956 50.834 20 53.945 20 54c0 3.314 13.432 6 30 6 16.568 0 30-2.686 30-6 0-.066.038-3.238-.018-3.199z"/>
-
-<path fill="#7F8C8D" d="M50.078 60h-.357C33.281 59.971 20 57.295 20 54c0-.055-.044-3.166.011-3.164.01 0 15.013 0 30.009-.005.024.009.08 9.185.058 9.169z"/>
-
-<path fill="#EBEDEE" d="M50 44c16.568 0 30 2.687 30 6 0 3.314-13.432 6-30 6-16.568 0-30-2.686-30-6 0-3.313 13.432-6 30-6z"/>
-
-<path fill="#F1C40E" d="M50 56c7.678 0 14.678-.577 19.98-1.525l-9.48-9.479-11.005 11.002L50 56z"/>
-
-<path fill="#ffffff" d="M50 56c4.227 0 8.247-.175 11.895-.49L46 39.615 30.978 54.639C36.154 55.488 42.776 56 50 56z"/>
-
-</g>
-
-<defs>
-
-<circle id="i" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="j">
-
-<use xlink:href="#i" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#j)" fill="#95A5A6" d="M33.628 100L32 65a2 2 0 0 0-4 0l1.628 35h4z"/>
-
-<defs>
-
-<circle id="k" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="l">
-
-<use xlink:href="#k" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#l)" fill="#BDC3C7" d="M69.372 100L71 65a2 2 0 0 0-4 0l-1.628 35h4z"/>
-
-<defs>
-
-<circle id="m" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="n">
-
-<use xlink:href="#m" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#n)" fill="#BDC3C7" d="M59.21 100L60 66a2 2 0 0 0-4 0l-.79 34h4z"/>
-
-<defs>
-
-<circle id="o" cx="50" cy="50" r="50"/>
-
-</defs>
-
-<clipPath id="p">
-
-<use xlink:href="#o" overflow="visible"/>
-
-</clipPath>
-
-<path clip-path="url(#p)" fill="#95A5A6" d="M43.791 100L43 66a2 2 0 0 0-4 0l.791 34h4z"/>
-
+<svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512.001 512.001" xml:space="preserve">
+<path style="fill:#FFB74A;" d="M216.303,254.699c-104.616,0-191.005,78.035-204.136,179.073c-0.88,6.775,1.202,13.599,5.714,18.729
+	c4.512,5.13,11.015,8.06,17.847,8.06h361.149c6.826,0,13.319-2.943,17.827-8.068c4.508-5.126,6.613-11.953,5.734-18.722
+	C407.308,332.734,320.919,254.699,216.303,254.699z"/>
+<path style="fill:#FFC56E;" d="M216.303,254.699c-104.616,0-191.004,78.035-204.135,179.073c-0.88,6.775,1.202,13.599,5.714,18.729
+	c4.512,5.13,11.015,8.06,17.847,8.06h180.574L216.303,254.699L216.303,254.699z"/>
+<path style="fill:#DE9F40;" d="M313.597,279.138c-28.977-15.573-62.094-24.439-97.294-24.439s-68.317,8.866-97.294,24.439
+	c22.858,33.968,57.935,55.735,97.294,55.735S290.739,313.105,313.597,279.138z"/>
+<ellipse style="fill:#FFDBAC;" cx="216.3" cy="148.763" rx="124.718" ry="148.763"/>
+<path style="fill:#FFEED9;" d="M216.303,0c-68.882,0-124.72,66.603-124.72,148.762s55.838,148.762,124.719,148.762V0H216.303z"/>
+<circle style="fill:#146691;" cx="403.393" cy="415.358" r="96.639"/>
+<path style="fill:#1A85BD;" d="M306.749,415.358c0,53.375,43.268,96.643,96.643,96.643V318.715
+	C350.017,318.715,306.749,361.983,306.749,415.358z"/>
+<path style="fill:#5BBBED;" d="M441.742,398.644h-21.636h-33.427h-21.638c-9.23,0-16.714,7.483-16.714,16.714
+	c0,9.23,7.483,16.714,16.714,16.714h21.638h33.427h21.636c9.23,0,16.714-7.483,16.714-16.714
+	C458.456,406.128,450.974,398.644,441.742,398.644z"/>
+<path style="fill:#80C8ED;" d="M403.392,432.072v-33.427h-16.714h-21.638c-9.23,0-16.714,7.483-16.714,16.714
+	c0,9.23,7.483,16.714,16.714,16.714h21.638H403.392z"/>
 </svg>

@@ -29,7 +29,7 @@
                 FontSize="20"
                 FontWeight="Bold"
                 Foreground="#333333"
-                Text="Видалення профілю" />
+                Text="{DynamicResource Delete_profile}" />
 
             <!--  Message  -->
             <ScrollViewer
@@ -41,7 +41,7 @@
                     Margin="0,5"
                     FontSize="14"
                     Foreground="#555555"
-                    Text="Ви дійсно хочете видалити профіль?"
+                    Text="{DynamicResource DeleteProfileText}"
                     TextWrapping="Wrap" />
             </ScrollViewer>
 
@@ -57,7 +57,7 @@
                     Padding="20,10"
                     Background="#6c757d"
                     Click="NoButton_Click"
-                    Content="Ні"
+                    Content="{DynamicResource ButtonNo}"
                     CornerRadius="4"
                     Foreground="White">
                     <Button.Styles>
@@ -72,7 +72,7 @@
                     Padding="20,10"
                     Background="#dc3545"
                     Click="YesButton_Click"
-                    Content="Так"
+                    Content="{DynamicResource ButtonYes}"
                     CornerRadius="4"
                     Foreground="White">
                     <Button.Styles>

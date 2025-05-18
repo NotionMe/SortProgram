@@ -483,6 +483,7 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/search-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/setting-1-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/stats-business-and-finance-svgrepo-com.svg
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/trash-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/WhiteMode.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.deps.json
@@ -583,4 +584,3 @@
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.pdb
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/trash-svgrepo-com.svg
