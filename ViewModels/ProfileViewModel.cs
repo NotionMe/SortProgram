@@ -11,6 +11,10 @@ using Avalonia.Threading;
 using Avalonia.ReactiveUI;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Reflection;
+using System.Collections.Generic;
+using System.IO;
+using System.Reactive.Concurrency;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
 {
@@ -80,6 +84,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         public ICommand SaveEmailCommand { get; }
         public ICommand CancelEditCommand { get; }
         public ICommand ChangeAvatarCommand { get; }
+        public ICommand DeleteAccountCommand { get; }
 
         public ProfileViewModel()
         {
@@ -116,6 +121,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             SaveEmailCommand = ReactiveCommand.Create(SaveEmail, outputScheduler: AvaloniaScheduler.Instance);
             CancelEditCommand = ReactiveCommand.Create(CancelEdit, outputScheduler: AvaloniaScheduler.Instance);
             ChangeAvatarCommand = ReactiveCommand.CreateFromTask(ChangeAvatarAsync, outputScheduler: AvaloniaScheduler.Instance);
+            DeleteAccountCommand = ReactiveCommand.Create(DeleteAccount, outputScheduler: AvaloniaScheduler.Instance);
         }
 
         // Validation methods
@@ -262,7 +268,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
             try
             {
                 var dialog = new AvatarPickerDialog();
-                
+
                 // Set initial selected avatar if user already has one
                 var user = _authService.GetCurrentUser();
                 if (!string.IsNullOrEmpty(user.Avatar))
@@ -270,10 +276,10 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                     // Pre-select the current avatar
                     dialog.PreSelectAvatar(user.Avatar);
                 }
-                
+
                 // Використовуємо інший підхід до отримання батьківського вікна
                 Window? parentWindow = null;
-                
+
                 // Виконуємо пошук батьківського вікна на UI потоці
                 await Dispatcher.UIThread.InvokeAsync(() =>
                 {
@@ -288,7 +294,7 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                                 break;
                             }
                         }
-                        
+
                         // Якщо активне вікно не знайдено, використовуємо перше з відкритих вікон
                         if (parentWindow == null && desktop.Windows.Count > 0)
                         {
@@ -296,37 +302,37 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                         }
                     }
                 });
-                
+
                 if (parentWindow == null)
                 {
                     Console.WriteLine("Failed to find valid parent window for avatar dialog");
                     return;
                 }
-                
+
                 // Перевіряємо, чи дійсне батьківське вікно, перш ніж показувати діалог
                 if (!parentWindow.IsVisible)
                 {
                     Console.WriteLine("Parent window is not visible, cannot show dialog");
                     return;
                 }
-                
+
                 var result = await dialog.ShowDialog<bool?>(parentWindow);
-                
+
                 if (result == true)
                 {
                     string newAvatarPath = dialog.SelectedAvatarPath;
-                    
+
                     // Make sure we have a valid path
                     if (string.IsNullOrEmpty(newAvatarPath))
                     {
                         Console.WriteLine("No avatar selected");
                         return;
                     }
-                    
+
                     // Update user avatar
                     user.Avatar = newAvatarPath;
                     _authService.UpdateCurrentUser(user);
-                    
+
                     // Update UI
                     AvatarPath = newAvatarPath;
                     AvatarImage = _avatarService.LoadAvatar(newAvatarPath);
@@ -337,7 +343,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
                 Console.WriteLine($"Error changing avatar: {ex.Message}");
             }
         }
-
         private void UpdateUserInfo()
         {
             var currentUser = _authService.GetCurrentUser();
@@ -421,6 +426,76 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.ViewModels
         {
             get => _avatarImage;
             set => this.RaiseAndSetIfChanged(ref _avatarImage, value);
+        }
+
+        private void DeleteAccount()
+        {
+            // Видаляємо акаунт безпосередньо
+            DeleteUserAccount();
+        }
+
+        private void DeleteUserAccount()
+        {
+            try
+            {
+                var currentUser = _authService.GetCurrentUser();
+                if (currentUser != null)
+                {
+                    // Видаляємо користувача з бази даних
+                    var allUsers = _userRepository.GetAllUsers();
+                    allUsers.RemoveAll(u => u.Email == currentUser.Email);
+
+                    // Зберігаємо оновлений список користувачів
+                    SaveAllUsers(allUsers);
+
+                    // Виходимо з облікового запису
+                    _authService.Logout();
+
+                    // Перенаправляємо на сторінку входу
+                    NavigateToLoginPage();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting user account: {ex.Message}");
+            }
+        }
+
+        private void SaveAllUsers(List<User> users)
+        {
+            try
+            {
+                var tempRepository = new UserRepository();
+
+                System.IO.File.WriteAllText("Assets/DataBase/users.json", "[]");
+
+                foreach (var user in users)
+                {
+                    tempRepository.SaveUser(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving users: {ex.Message}");
+            }
+        }
+
+        private void NavigateToLoginPage()
+        {
+            LoginMenu loginMenu = new LoginMenu();
+            loginMenu.Show();
+            
+            if (Application.Current?.ApplicationLifetime is Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                foreach (Window window in desktop.Windows)
+                {
+                    if (window is SortProgram)
+                    {
+                        window.Close();
+                        break;
+                    }
+                }
+            }
         }
     }
 }

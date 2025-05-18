@@ -11,6 +11,7 @@ using Avalonia.Diagnostics;
 using Practika2_OPAM_Ubohyi_Stanislav.Notates;
 using Avalonia.Controls;
 using HarfBuzzSharp;
+using Avalonia.Interactivity;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav;
 
@@ -18,7 +19,7 @@ public partial class App : Application
 {
     public static IServiceProvider ServiceProvider { get; private set; } = null!;
 
-    
+
 
     public override void Initialize()
     {
@@ -73,12 +74,12 @@ public partial class App : Application
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new LoginMenu();
-            
+
         }
         base.OnFrameworkInitializationCompleted();
 
 
-        
+
     }
 
     public static T GetService<T>() where T : class
@@ -113,5 +114,10 @@ public partial class App : Application
         {
             Console.WriteLine($"Error copying localization files: {ex.Message}");
         }
+    }
+    
+    public static void ExitButton_Click(object sender, RoutedEventArgs e)
+    {
+        Environment.Exit(0);
     }
 }

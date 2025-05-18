@@ -18,7 +18,7 @@
                     <NativeMenuItem Header="Option 1"/>
                     <NativeMenuItem Header="Option 2"   />
                     <NativeMenuItemSeparator />
-                    <NativeMenuItem Header="Exit"  />
+                    <NativeMenuItem Header="Exit" />
                   </NativeMenu>
                 </NativeMenuItem>
               </NativeMenu>

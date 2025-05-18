@@ -24,6 +24,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav
         public IAuthService AuthService { get; }
         public bool IsDarkTheme => ThemeManager.IsDarkTheme;
 
+        public object Envieronment { get; internal set; }
+
         public SortProgram()
         {
             InitializeComponent();

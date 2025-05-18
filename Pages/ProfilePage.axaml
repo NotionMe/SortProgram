@@ -365,10 +365,10 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <Image
-                                    Width="24"
-                                    Height="24"
-                                    VerticalAlignment="Center"
-                                    Source="{SvgImage Assets/Images/SVG/mail-svgrepo-com.svg}" />
+                                Width="24"
+                                Height="24"
+                                VerticalAlignment="Center"
+                                Source="{SvgImage Assets/Images/SVG/mail-svgrepo-com.svg}" />
                             <TextBlock
                                 Margin="0,0,0,2"
                                 VerticalAlignment="Center"
@@ -434,41 +434,14 @@
                             Background="{DynamicResource ThemeBorderBrush}" />
                     </StackPanel>
 
-                    <!--  Дата регистрации  -->
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal" Spacing="8">
-                            <Image
-                                    Width="24"
-                                    Height="24"
-                                    VerticalAlignment="Center"
-                                    Source="{SvgImage Assets/Images/SVG/date-svgrepo-com.svg}" />
-                            <TextBlock
-                                Margin="0,0,0,2"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="{DynamicResource ThemeSidebarTextBrush}"
-                                Text="{DynamicResource RegistrationDateLabel}" />
-                        </StackPanel>
-                        <TextBlock
-                            Margin="0,5,0,0"
-                            FontSize="22"
-                            FontWeight="SemiBold"
-                            Foreground="{DynamicResource ThemeForegroundBrush}"
-                            Text="{Binding RegistrationDate, StringFormat=\{0:dd.MM.yyyy\}}" />
-                        <Separator
-                            Height="1"
-                            Margin="0,15,0,0"
-                            Background="{DynamicResource ThemeBorderBrush}" />
-                    </StackPanel>
-
                     <!--  Роль користувача  -->
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <Image
-                                    Width="24"
-                                    Height="24"
-                                    VerticalAlignment="Center"
-                                    Source="{SvgImage Assets/Images/SVG/key-svgrepo-com.svg}" />
+                                Width="24"
+                                Height="24"
+                                VerticalAlignment="Center"
+                                Source="{SvgImage Assets/Images/SVG/key-svgrepo-com.svg}" />
                             <TextBlock
                                 Margin="0,0,0,2"
                                 VerticalAlignment="Center"
@@ -482,7 +455,47 @@
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource ThemeForegroundBrush}"
                             Text="{Binding UserRole}" />
+                        <Separator
+                            Height="1"
+                            Margin="0,15,0,0"
+                            Background="{DynamicResource ThemeBorderBrush}" />
                     </StackPanel>
+
+                    <!--  Видалення облікового запису  -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <Button
+                                Width="150"
+                                HorizontalAlignment="Left"
+                                Classes="dangerBtn"
+                                Command="{Binding DeleteAccountCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <Image
+                                        Width="24"
+                                        Height="24"
+                                        Source="{SvgImage Assets/Images/SVG/trash-svgrepo-com.svg}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        FontWeight="SemiBold"
+                                        Foreground="White"
+                                        Text="Delete profile" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Foreground="{DynamicResource ThemeSecondaryTextBrush}"
+                            Text="{DynamicResource DeleteAccountWarningText}"
+                            TextWrapping="Wrap" />
+                    </Grid>
                 </StackPanel>
             </Border>
         </Grid>
