@@ -464,7 +464,6 @@
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Animation/selection_sort.gif
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Icon.ico
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Icon.png
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Login.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/Logo_Github-512.png
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/account-avatar-profile-user-6-svgrepo-com.svg
 /home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/SVG/crown-svgrepo-com.svg
@@ -581,4 +580,5 @@
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.pdb
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/Practika2_OPAM_Ubohyi_Stanislav.genruntimeconfig.cache
 /home/notion/Documents/Repos/SortProgram/obj/Debug/net9.0/ref/Practika2_OPAM_Ubohyi_Stanislav.dll
-/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/test.mp4
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/LoginMenu.png
+/home/notion/Documents/Repos/SortProgram/bin/Debug/net9.0/Assets/Images/test.gif

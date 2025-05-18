@@ -57,7 +57,9 @@
                     <Label
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
-                        Content="Notate"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Content="{DynamicResource Notates_Title}"
                         FontSize="28"
                         FontWeight="SemiBold"
                         Foreground="#222222" />
@@ -72,7 +74,7 @@
                     VerticalContentAlignment="Center"
                     Background="#007AFF"
                     Click="SaveButton_Click"
-                    Content="Save Note"
+                    Content="{DynamicResource SaveNote_Button}"
                     CornerRadius="8"
                     DockPanel.Dock="Bottom"
                     FontSize="20"

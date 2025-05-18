@@ -271,5 +271,8 @@
   "InfoButtonToNotes": "Нотатки",
 
   "ErrorMessage_Title": "Функція недоступна",
-  "ErrorMessage_Info": "Ця функція наразі в розробці. Будь ласка, зачекайте на наступне оновлення програми."
+  "ErrorMessage_Info": "Ця функція наразі в розробці. Будь ласка, зачекайте на наступне оновлення програми.",
+
+  "Notates_Title": "Notate",
+  "SaveNote_Button":"Save Note"
 }
