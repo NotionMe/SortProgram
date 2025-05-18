@@ -1,10 +1,10 @@
 # 📊 SortProgram - Візуалізація алгоритмів сортування
 
 <div align="center">
-  <img src="Assets/Images/bubble_sort.gif" alt="Bubble Sort Algorithm" width="200" />
-  <img src="Assets/Images/selection_sort.gif" alt="Selection Sort Algorithm" width="200" />
-  <img src="Assets/Images/quick_sort.gif" alt="Quick Sort Algorithm" width="200" />
-  <img src="Assets/Images/insertion_sort.gif" alt="Insertion Sort Algorithm" width="200" />
+  <img src="Assets/Images/Animation/bubble_sort.gif" alt="Bubble Sort Algorithm" width="200" />
+  <img src="Assets/Images/Animation/selection_sort.gif" alt="Selection Sort Algorithm" width="200" />
+  <img src="Assets/Images/Animation/quick_sort.gif" alt="Quick Sort Algorithm" width="200" />
+  <img src="Assets/Images/Animation/insertion_sort.gif" alt="Insertion Sort Algorithm" width="200" />
 </div>
 
 ## 📑 Зміст
@@ -17,9 +17,8 @@
   - [🔧 Технології та архітектура](#-технології-та-архітектура)
   - [📋 Вимоги до системи](#-вимоги-до-системи)
   - [📥 Встановлення](#-встановлення)
-  - [📷 Скріншоти](#-скріншоти)
+  - [📷 Программа](#-программа)
     - [Основний інтерфейс](#основний-інтерфейс)
-    - [🔐 Форми автентифікації](#-форми-автентифікації)
   - [🧭 Навігація](#-навігація)
   - [🌍 Локалізація](#-локалізація)
   - [🎨 Теми оформлення](#-теми-оформлення)
@@ -107,21 +106,15 @@
    dotnet run
    ```
 
-## 📷 Скріншоти
+## 📷 Программа
 
 ### Основний інтерфейс
 
 <div align="center">
-  <img src="Assets/Images/DarkMode.png" alt="Dark Mode" width="400" />
-  <img src="Assets/Images/WhiteMode.png" alt="Light Mode" width="400" />
+  <img src="Assets/Images/test.mp4" alt="Dark Mode" width="600" />
+  
 </div>
 
-### 🔐 Форми автентифікації
-
-<div align="center">
-  <img src="Assets/Images/Login.png" alt="Login Form" width="400" />
-  <img src="Assets/Images/SignUp.png" alt="Sign Up Form" width="400" />
-</div>
 
 Програма має систему автентифікації з двома основними формами:
 - **LoginMenu** - форма входу для існуючих користувачів з полями для імені користувача, email та пароля
