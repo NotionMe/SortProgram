@@ -111,9 +111,9 @@
 ### Основний інтерфейс
 
 <div align="center">
-  <video width="320" height="240" controls>
-  <source src="Assets/Images/test.mp4" type="video/mp4">
-</video>
+  <img src="Assets/Images/LoginMenu.png" alt="Інтерфейс програми" width="500" /><br>
+  <i>Скріншот інтерфейсу програми (GIF-анімації доступні в розділі "Візуалізація")</i><br>
+  <a href="Assets/Images/test.mp4" target="_blank">🎬 Переглянути демо-відео</a>
 </div>
 
 
