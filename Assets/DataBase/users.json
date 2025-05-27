@@ -3,7 +3,7 @@
     "Username": "danya",
     "Email": "danya@gmail.com",
     "Password": "$2a$12$pevlowlrr4GT.Wx40zzoL.RZzuRX7VeM3ysaE/BhbSDTEfWFn6o0O",
-    "Role": "User",
+    "Role": "Admin",
     "RegistrationDate": "2025-05-18T13:59:24.9800601+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar7.png",
     "Notes": {}
@@ -12,7 +12,7 @@
     "Username": "123",
     "Email": "123@gmail.com",
     "Password": "$2a$12$B/p1dfBlW0a1sYlKnyHIPudcISu8PoTcmWpWs0WZWytGCLnKVC4pC",
-    "Role": "User",
+    "Role": "Admin",
     "RegistrationDate": "2025-05-18T17:43:14.0339642+03:00",
     "Avatar": "avares://Practika2_OPAM_Ubohyi_Stanislav/Assets/Images/Avatar/Avatar1.png",
     "Notes": {

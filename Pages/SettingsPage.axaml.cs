@@ -40,7 +40,6 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Pages
         private void OpenTutorial_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             NavigationHandlers.NavigateToPage(this.VisualRoot as SortProgram, new Algoritm());
-
         }
 
         private void NavigateToPage(Control page)

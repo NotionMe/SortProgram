@@ -1,4 +1,3 @@
-// filepath: /home/notion/Documents/Repos/SortProgram/Algorithms/Searching/BinarySearch.cs
 using System;
 
 namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms.Searching
@@ -7,8 +6,8 @@ namespace Practika2_OPAM_Ubohyi_Stanislav.Algorithms.Searching
     {
         public int Mid { get; set; }
         public bool Found { get; set; }
-        public bool SearchInUpperHalf { get; set; } // True if valueToFind > array[mid]
-        public bool Completed { get; set; } // True if search is over (found or not found)
+        public bool SearchInUpperHalf { get; set; } 
+        public bool Completed { get; set; } 
     }
 
     public static class BinarySearchAlgorithm
